@@ -27,9 +27,19 @@ BUILD = {
     "pnpm-10290": "pnpm -C pnpm exec tsgo --build && pnpm -C pnpm run bundle",
 }
 SETUP = {
+    "eslint-19245": "npm install --ignore-scripts",
+    "eslint-19924": "npm install --ignore-scripts",
+    "eslint-19818": "npm install --ignore-scripts",
+    "eslint-18575-windows": "npm install --ignore-scripts",
+    "eslint-20209-fixed": "npm install --ignore-scripts",
+    "eslint-19957": "npm install --ignore-scripts",
+    "eslint-19637": "npm install --ignore-scripts",
+    "eslint-19033-fixed": "npm install --ignore-scripts",
     "vite-20705": "pnpm install --frozen-lockfile",
     "ts-60573": "npm ci --ignore-scripts",
     "pnpm-10290": "pnpm install --frozen-lockfile",
+    "vue-12294": "source ~/.nvm/nvm.sh && pnpm i --frozen-lockfile",
+    "vue-13611": "source ~/.nvm/nvm.sh && pnpm i --frozen-lockfile",
 }
 # Upstream fixes that change APIs existing tests use; their test changes are needed to compile.
 POST_EXTRA = {"urfave-cli-2176": "upstream_test.patch"}
@@ -162,6 +172,7 @@ def main():
         elif no_artifact:
             record = {"label": label, "case": case["id"], "verdict": "no_reproduction_artifact"}
         else:
+            clear_grade_files(out_dir, label)
             record = grade(case, label, result, out_dir)
         (out_dir / f"{label}.json").write_text(json.dumps(record, indent=2))
         print(f"{label}: {record['verdict']} pre={record.get('pre')} post={record.get('post')}", flush=True)

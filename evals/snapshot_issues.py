@@ -41,6 +41,21 @@ def cutoff(case, issue, comments):
     return token
 
 
+def content_at_cutoff(nodes, current_body, created_at, limit):
+    current = current_body or ""
+    if not nodes:
+        return current
+    nodes = sorted(nodes, key=lambda node: node["editedAt"])
+    if nodes[-1]["diff"] != current:
+        raise ValueError("latest GraphQL body edit does not match current body")
+    eligible = [node for node in nodes if node["editedAt"] < limit]
+    if eligible:
+        return eligible[-1]["diff"]
+    if nodes[0]["editedAt"] != created_at:
+        raise ValueError("GraphQL history does not expose the original body")
+    return nodes[0]["diff"]
+
+
 def body_at_cutoff(case, issue, limit):
     owner, name = case["repo"].split("/")
     query = """
@@ -73,20 +88,39 @@ def body_at_cutoff(case, issue, limit):
             break
         cursor = page["endCursor"]
 
-    if not nodes:
-        return issue["body"] or ""
+    return content_at_cutoff(nodes, issue["body"], issue["created_at"], limit)
 
-    nodes.sort(key=lambda node: node["editedAt"])
-    current = issue["body"] or ""
-    if nodes[-1]["diff"] != current:
-        raise ValueError(f"latest GraphQL body edit does not match current body for {case['id']}")
 
-    eligible = [node for node in nodes if node["editedAt"] < limit]
-    if eligible:
-        return eligible[-1]["diff"]
-    if nodes[0]["editedAt"] != issue["created_at"]:
-        raise ValueError(f"GraphQL history does not expose the original body for {case['id']}")
-    return nodes[0]["diff"]
+def comment_body_at_cutoff(comment, limit):
+    query = """
+    query($id: ID!, $cursor: String) {
+      node(id: $id) {
+        ... on IssueComment {
+          userContentEdits(first: 100, after: $cursor) {
+            nodes { editedAt diff }
+            pageInfo { hasNextPage endCursor }
+          }
+        }
+      }
+    }
+    """
+    nodes = []
+    cursor = None
+    while True:
+        args = ["gh", "api", "graphql", "-f", f"query={query}", "-F", f"id={comment['node_id']}"]
+        if cursor:
+            args.extend(["-F", f"cursor={cursor}"])
+        result = subprocess.run(args, check=True, capture_output=True, text=True)
+        node = json.loads(result.stdout)["data"]["node"]
+        if node is None:
+            raise ValueError(f"GraphQL comment not found: {comment['node_id']}")
+        connection = node.get("userContentEdits") or {}
+        nodes.extend(connection.get("nodes") or [])
+        page = connection.get("pageInfo") or {}
+        if not page.get("hasNextPage"):
+            break
+        cursor = page["endCursor"]
+    return content_at_cutoff(nodes, comment["body"], comment["created_at"], limit)
 
 
 def main():
@@ -103,7 +137,8 @@ def main():
                  f"Reported by @{issue['user']['login']} on {issue['created_at'][:10]}\n",
                  body_at_cutoff(case, issue, limit)]
         for c in kept:
-            parts.append(f"\n---\n\n**@{c['user']['login']}** commented on {c['created_at'][:10]}:\n\n{c['body']}")
+            body = comment_body_at_cutoff(c, limit)
+            parts.append(f"\n---\n\n**@{c['user']['login']}** commented on {c['created_at'][:10]}:\n\n{body}")
         out = ROOT / "cases" / case["id"] / "issue.md"
         outputs.append((case["id"], out, "\n".join(parts).rstrip() + "\n", limit, len(kept), len(comments)))
 

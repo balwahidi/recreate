@@ -17,6 +17,7 @@
 - Evaluated agents must not share memory or notes across sessions; see the isolation note in `docs/methodology.md`.
 - `python3 evals/grade.py <run> [label filters]` replays the patches before and after the upstream fix. It expects the prepared checkouts under `~/grade/<case>/repo`, plus `fix.patch`, `upstream_test.patch` for urfave/cli, and `fix_grade.patch` for ripgrep-3009 and ts-60573 next to them.
 - Per-case `SETUP` commands reinstall dependencies after the initial reset and before any pre-side build.
+- Out-of-checkout prerequisites include the pydantic-11849 replay venv, pytest-13312's prepared host PyPy environment, and Go/Rust dependencies fetched during builds.
 
 Patch files come from the case's upstream fix commit and `fix_prod_files` in `cases/cases.json`. `fix.patch` contains the fix's production-file changes; for `ALL_NON_TEST`, omit test files, testdata, docs, and changelog Markdown. `fix_grade.patch` is a grading-only production patch for ripgrep-3009 and ts-60573: it removes ripgrep's colliding upstream test functions and uses reduced context for TypeScript's CRLF checkout (see `docs/methodology.md`). `upstream_test.patch` contains urfave/cli's test and fixture changes from the fix commit; `POST_EXTRA` applies it after `fix.patch` so the updated tests compile against the changed API.
 
