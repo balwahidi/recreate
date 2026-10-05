@@ -40,7 +40,7 @@ The evaluated agent returns `final_message`, `patch` (its whole working tree dif
 
 `evals/workflow.py` runs each (case, arm, task, repeat) as an independent Devin session, all on the same model. That means a single harness and a single model: the results don't show how other agents behave.
 
-**Isolation.** Evaluated sessions are told not to read or write persistent memory. Without that line, sessions in an early batch saved case notes to shared memory, and later runs read them. Those runs (`holdout-v3`, `ablation-v2`, `treatment-v1-probe`) are excluded. The clean reruns are `holdout-v3b` and `ablation-v2b`.
+**Isolation.** Evaluated sessions are told not to read or write persistent memory. Without that line, sessions in an early batch saved case notes to shared memory, and later runs read them. Those runs (`holdout-v3`, `ablation-v2`, `treatment-v1-probe`) are excluded. The clean reruns are `holdout-v3b` and `ablation-v2b`. In `ablation-v2b`, the two eslint-20209-fixed treatment repeats ran in a single session. `r2` is therefore stored as a duplicate-session error and isn't counted, so the skill's 5/5 on that case counts `r1` only.
 
 ## Replay grading
 
