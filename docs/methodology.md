@@ -18,7 +18,7 @@ The ts-60573 snapshot used in every run had one corrupted snippet (`T['_type',Ke
 - eslint-19924: a maintainer's reproduction recipe;
 - vite-20705 and ts-60573: the regressing PR.
 
-So in all four, the issue text the agents saw included the maintainers' findings. Every recorded run used those snapshots, in both arms, so the comparison is like-for-like, but those cases were easier than intended. The snapshots are now cut at the first non-reporter comment. The versions the runs used are in commit 87769c1. `results.md` reports holdout numbers with and without the leaked cases.
+So in all four, the issue text the agents saw included the maintainers' findings. Every recorded run used those snapshots, in both arms, so the comparison is like-for-like, but those cases were easier than intended. Separately, snapshots used to copy the issue's *current* body. For pydantic-11849, the reporter later edited the body: the edit added a forward-reference field to the example and removed the note that the examples can't reproduce the bug as-is. Every run saw that edited body, which may count as a leak. The snapshots are now cut at the first non-reporter comment, and bodies are taken as they stood at the cutoff, from GitHub's edit history. The versions the runs used are in commit 87769c1. `results.md` reports holdout numbers with and without the leaked cases.
 
 **Holdout use.** The native-test rule was removed after v0, partly on evidence from the v0 holdout run. That makes holdout-v0 the only unseen-data treatment measurement. Later holdout runs (`holdout-v3b`) are reported, but labelled as tuned.
 

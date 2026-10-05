@@ -27,6 +27,7 @@ On "Reproduce this bug" prompts, the reproduction must fail before the upstream 
 - **Control: 4 of 8.**
 - **Skill v0: 7 of 8.**
 - Without the two leaked cases: 3 of 6 vs 5 of 6.
+- Also without pydantic-11849, whose body may have leaked through a later edit: 3 of 5 vs 5 of 5.
 
 The Control column also counts two extra control samples per case (run holdout-control-r). They were drawn only on the four cases where the arms differed, so they aren't pooled into the comparison. What they show is that the control's failures there weren't one-offs: 3 of 8 extra samples passed.
 
