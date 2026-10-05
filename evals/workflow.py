@@ -5,6 +5,8 @@ output is written to evals/results/<RUN['name']>/<case>__<arm>__<task>.json.
 When passing this file's text to run_workflow, run it from the repository root.
 Repeated samples get numbered neutral prompt suffixes; duplicate session IDs
 are recorded as errors instead of keeping a result.
+Existing result labels outside the current work are rejected before sessions
+start; runs with the same labels can be resumed.
 """
 import asyncio, json, pathlib, re, sys
 
@@ -76,15 +78,27 @@ def mark_duplicate_sessions(out_dir, labels):
             log(f"{label}: duplicate session {session_id}")
 
 
+def reject_stale_outputs(out_dir, work_labels):
+    if not out_dir.exists():
+        return
+    stale = sorted(
+        path.stem for path in out_dir.glob("*.json")
+        if path.is_file() and path.name != "sessions.json" and path.stem not in work_labels
+    )
+    if stale:
+        raise ValueError(f"stale result labels in {out_dir}: {', '.join(stale)}")
+
+
 async def main():
     work = list(units())
+    out_dir = ROOT / "evals/results" / RUN["name"]
+    reject_stale_outputs(out_dir, {label for label, _ in work})
     await register_workflow({
         "name": RUN["name"],
         "description": "Recreate eval: evaluated agents attempt bug reproduction from historical issues",
         "phases": [{"title": "evaluate", "detail": "one agent per case x arm x task",
                     "labels": [label for label, _ in work]}],
     })
-    out_dir = ROOT / "evals/results" / RUN["name"]
     out_dir.mkdir(parents=True, exist_ok=True)
     await asyncio.gather(*(run_one(label, prompt, out_dir) for label, prompt in work))
     mark_duplicate_sessions(out_dir, [label for label, _ in work])

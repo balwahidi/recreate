@@ -1,12 +1,11 @@
 """Replay agents' reproductions against the pre-fix and fixed revisions.
 
-For each result with a patch and run_command whose case has an upstream fix:
+For each result with a run_command whose case has an upstream fix:
   1. reset ~/grade/<id>/repo to its checkout (tracked + untracked, ignored files kept)
-  2. apply the agent's patch, run run_command            -> "pre"
-  3. reset the checkout, then reapply the agent's patch
-  4. apply ~/grade/<id>/fix.patch (production files only) and any POST_EXTRA patch,
-     then run the configured post build
-  5. run run_command                                    -> "post"
+  2. apply the agent's patch if present, run SETUP and BUILD, then run run_command -> "pre"
+  3. reset the checkout, reapply the agent's patch if present, and apply the fix and
+     any POST_EXTRA patch
+  4. run SETUP and BUILD, then run run_command            -> "post"
 A reproduction is fail-to-pass when pre exits non-zero (or times out) and post
 exits zero. Flaky cases run each side RUNS_FLAKY times: pre must fail at least
 once, post must never fail. Output: evals/results/<run>/grade/<label>.json
@@ -38,8 +37,8 @@ SETUP = {
     "vite-20705": "pnpm install --frozen-lockfile",
     "ts-60573": "npm ci --ignore-scripts",
     "pnpm-10290": "pnpm install --frozen-lockfile",
-    "vue-12294": "source ~/.nvm/nvm.sh && pnpm i --frozen-lockfile",
-    "vue-13611": "source ~/.nvm/nvm.sh && pnpm i --frozen-lockfile",
+    "vue-12294": "{ [ -s ~/.nvm/nvm.sh ] && . ~/.nvm/nvm.sh; true; } && pnpm i --frozen-lockfile",
+    "vue-13611": "{ [ -s ~/.nvm/nvm.sh ] && . ~/.nvm/nvm.sh; true; } && pnpm i --frozen-lockfile",
 }
 # Upstream fixes that change APIs existing tests use; their test changes are needed to compile.
 POST_EXTRA = {"urfave-cli-2176": "upstream_test.patch"}
@@ -73,6 +72,8 @@ def reset(repo, checkout):
 
 
 def apply(repo, patch_text):
+    if not patch_text or not patch_text.strip():
+        return True, ""
     p = subprocess.run(["git", "apply", "--whitespace=nowarn", "-"], cwd=repo, input=patch_text,
                        capture_output=True, text=True)
     return p.returncode == 0, p.stderr[-2000:]
@@ -117,18 +118,18 @@ def grade(case, label, result, out_dir):
     record = {"label": label, "case": case["id"], "runs_per_side": runs}
     try:
         reset(repo, case["checkout"])
-        setup_log = out_dir / f"{label}.setup.log"
-        if not setup(case, repo, setup_log):
-            return dict(record, verdict="setup_failed", side="pre", log=str(setup_log))
-        ok, err = apply(repo, result["patch"])
+        ok, err = apply(repo, result.get("patch") or "")
         if not ok:
             return dict(record, verdict="patch_failed", error=err)
+        pre_setup_log = out_dir / f"{label}.pre.setup.log"
+        if not setup(case, repo, pre_setup_log):
+            return dict(record, verdict="setup_failed", side="pre", log=str(pre_setup_log))
         pre_build_log = out_dir / f"{label}.pre.build.log"
         if not build(case, repo, pre_build_log):
             return dict(record, verdict="build_failed", side="pre", log=str(pre_build_log))
         pre = side(repo, result["run_command"], runs, timeout, out_dir / f"{label}.pre.log")
         reset(repo, case["checkout"])
-        ok, err = apply(repo, result["patch"])
+        ok, err = apply(repo, result.get("patch") or "")
         if not ok:
             return dict(record, verdict="patch_failed", error=err, pre=pre)
         # fix_grade.patch: the fix without upstream test hunks that collide with agents' tests
@@ -137,6 +138,9 @@ def grade(case, label, result, out_dir):
             ok, err = apply(repo, (GRADE / case["id"] / name).read_text())
             if not ok:
                 return dict(record, verdict="fix_conflicts_with_patch", error=f"{name}: {err}", pre=pre)
+        post_setup_log = out_dir / f"{label}.post.setup.log"
+        if not setup(case, repo, post_setup_log):
+            return dict(record, verdict="setup_failed", side="post", log=str(post_setup_log), pre=pre)
         post_build_log = out_dir / f"{label}.post.build.log"
         if not build(case, repo, post_build_log):
             return dict(record, verdict="build_failed", side="post", log=str(post_build_log))
@@ -162,7 +166,7 @@ def main():
         case = cases[label.split("__")[0]]
         result = json.loads(path.read_text())
         has_error = "error" in result
-        no_artifact = not result.get("patch") or not result.get("run_command")
+        no_artifact = not result.get("run_command")
         if has_error or no_artifact:
             clear_grade_files(out_dir, label)
         if has_error:
