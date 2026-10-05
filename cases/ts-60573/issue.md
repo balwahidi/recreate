@@ -35,7 +35,7 @@ const value = objWrapper({
 })
 
 type Unwrap<T extends Wrapper<any>> = T['_type'] extends Record<string, Wrapper<any>> 
-    ? { [Key in keyof T['_type']]: Unwrap<T['_type',Key]> } 
+    ? { [Key in keyof T['_type']]: Unwrap<T['_type'][Key]> } 
     : T['_type']
 
 type Test = Unwrap<typeof value>

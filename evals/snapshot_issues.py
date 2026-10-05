@@ -14,9 +14,20 @@ ONLY = set(sys.argv[1:])
 
 
 def gh(path):
-    out = subprocess.run(["gh", "api", "--paginate", path], check=True, capture_output=True, text=True).stdout
-    # --paginate concatenates JSON arrays as "][": normalise.
-    return json.loads(out.replace("]\n[", ",").replace("][", ","))
+    out = subprocess.run(
+        ["gh", "api", "--paginate", "--slurp", path],
+        check=True,
+        capture_output=True,
+        text=True,
+    ).stdout
+    pages = json.loads(out)
+    if not isinstance(pages, list):
+        raise ValueError(f"expected --slurp to return a list of pages for {path}")
+    if all(isinstance(page, list) for page in pages):
+        return [item for page in pages for item in page]
+    if len(pages) == 1 and isinstance(pages[0], dict):
+        return pages[0]
+    raise ValueError(f"unexpected --slurp page structure for {path}")
 
 
 def cutoff(case, issue, comments):

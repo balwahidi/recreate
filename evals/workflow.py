@@ -2,10 +2,11 @@
 
 Edit RUN below, then pass this file to run_workflow. Each agent's structured
 output is written to evals/results/<RUN['name']>/<case>__<arm>__<task>.json.
+When passing this file's text to run_workflow, run it from the repository root.
 """
 import asyncio, json, pathlib, re, sys
 
-ROOT = pathlib.Path("/home/ubuntu/repos/recreate")
+ROOT = pathlib.Path(__file__).resolve().parent.parent if "__file__" in globals() else pathlib.Path.cwd()
 sys.path.insert(0, str(ROOT / "evals"))
 from prompts import SCHEMA, build_prompt  # noqa: E402
 

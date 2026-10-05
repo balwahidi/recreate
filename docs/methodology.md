@@ -11,6 +11,7 @@
 The case kinds are deterministic bugs, regressions, flaky races, OS-specific reports, already-fixed reports, a report of behavior that is working as designed, and fixture or integration-heavy setups.
 
 `evals/snapshot_issues.py` saves each issue as `cases/<id>/issue.md`. The snapshot stops before the first maintainer diagnosis or linked fix, so the agent sees what a triager would have seen.
+The ts-60573 snapshot used in every run had one corrupted snippet (`T['_type',Key]` for `T['_type'][Key]`, from a pagination bug since fixed); both arms saw the same text.
 
 ## Arms and prompts
 

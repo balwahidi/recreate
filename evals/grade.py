@@ -11,7 +11,7 @@ plus pre/post logs. Symptom match is judged by hand from the logs.
 
 usage: python3 evals/grade.py <run-name> [label-substring ...]
 """
-import json, pathlib, subprocess, sys
+import json, os, pathlib, signal, subprocess, sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 GRADE = pathlib.Path.home() / "grade"
@@ -28,12 +28,24 @@ POST_EXTRA = {"urfave-cli-2176": "upstream_test.patch"}
 
 
 def sh(cmd, cwd, timeout):
+    p = subprocess.Popen(
+        ["bash", "-lc", cmd],
+        cwd=cwd,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        text=True,
+        start_new_session=True,
+    )
     try:
-        p = subprocess.run(["bash", "-lc", cmd], cwd=cwd, capture_output=True, text=True, timeout=timeout)
-        return p.returncode, (p.stdout + p.stderr)[-20000:]
-    except subprocess.TimeoutExpired as e:
-        out = (e.stdout or b"") + (e.stderr or b"")
-        return "timeout", out.decode(errors="replace")[-20000:] if isinstance(out, bytes) else str(out)[-20000:]
+        stdout, stderr = p.communicate(timeout=timeout)
+    except subprocess.TimeoutExpired:
+        try:
+            os.killpg(p.pid, signal.SIGKILL)
+        except ProcessLookupError:
+            pass
+        stdout, stderr = p.communicate()
+        return "timeout", (stdout + stderr)[-20000:]
+    return p.returncode, (stdout + stderr)[-20000:]
 
 
 def reset(repo, checkout):
@@ -59,11 +71,11 @@ def side(repo, cmd, runs, timeout, log):
 
 
 def build(case, repo, log):
-    if case["id"] in BUILD:
-        code, out = sh(BUILD[case["id"]], repo, 1800)
-        log.write_text(f"exit {code}\n{out}")
-        if code != 0:
-            raise RuntimeError(f"build failed for {case['id']}, see {log}")
+    if case["id"] not in BUILD:
+        return True
+    code, out = sh(BUILD[case["id"]], repo, 1800)
+    log.write_text(f"exit {code}\n{out}")
+    return code == 0
 
 
 def grade(case, label, result, out_dir):
@@ -76,7 +88,9 @@ def grade(case, label, result, out_dir):
         ok, err = apply(repo, result["patch"])
         if not ok:
             return dict(record, verdict="patch_failed", error=err)
-        build(case, repo, out_dir / f"{label}.pre.build.log")
+        pre_build_log = out_dir / f"{label}.pre.build.log"
+        if not build(case, repo, pre_build_log):
+            return dict(record, verdict="build_failed", side="pre", log=str(pre_build_log))
         pre = side(repo, result["run_command"], runs, timeout, out_dir / f"{label}.pre.log")
         # fix_grade.patch: the fix without upstream test hunks that collide with agents' tests
         fix = "fix_grade.patch" if (GRADE / case["id"] / "fix_grade.patch").exists() else "fix.patch"
@@ -84,7 +98,9 @@ def grade(case, label, result, out_dir):
             ok, err = apply(repo, (GRADE / case["id"] / name).read_text())
             if not ok:
                 return dict(record, verdict="fix_conflicts_with_patch", error=f"{name}: {err}", pre=pre)
-        build(case, repo, out_dir / f"{label}.post.build.log")
+        post_build_log = out_dir / f"{label}.post.build.log"
+        if not build(case, repo, post_build_log):
+            return dict(record, verdict="build_failed", side="post", log=str(post_build_log))
         post = side(repo, result["run_command"], runs, timeout, out_dir / f"{label}.post.log")
     finally:
         reset(repo, case["checkout"])
