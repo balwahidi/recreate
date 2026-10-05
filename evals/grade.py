@@ -3,7 +3,10 @@
 For each result with a patch and run_command whose case has an upstream fix:
   1. reset ~/grade/<id>/repo to its checkout (tracked + untracked, ignored files kept)
   2. apply the agent's patch, run run_command            -> "pre"
-  3. apply ~/grade/<id>/fix.patch (production files only) -> "post"
+  3. reset the checkout, then reapply the agent's patch
+  4. apply ~/grade/<id>/fix.patch (production files only) and any POST_EXTRA patch,
+     then run the configured post build
+  5. run run_command                                    -> "post"
 A reproduction is fail-to-pass when pre exits non-zero (or times out) and post
 exits zero. Flaky cases run each side RUNS_FLAKY times: pre must fail at least
 once, post must never fail. Output: evals/results/<run>/grade/<label>.json
@@ -92,6 +95,10 @@ def grade(case, label, result, out_dir):
         if not build(case, repo, pre_build_log):
             return dict(record, verdict="build_failed", side="pre", log=str(pre_build_log))
         pre = side(repo, result["run_command"], runs, timeout, out_dir / f"{label}.pre.log")
+        reset(repo, case["checkout"])
+        ok, err = apply(repo, result["patch"])
+        if not ok:
+            return dict(record, verdict="patch_failed", error=err, pre=pre)
         # fix_grade.patch: the fix without upstream test hunks that collide with agents' tests
         fix = "fix_grade.patch" if (GRADE / case["id"] / "fix_grade.patch").exists() else "fix.patch"
         for name in [fix] + ([POST_EXTRA[case["id"]]] if case["id"] in POST_EXTRA else []):
