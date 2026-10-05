@@ -1,0 +1,12 @@
+{
+  "label": "ts-60573__control__reproduce__r2",
+  "case": "ts-60573",
+  "runs_per_side": 1,
+  "verdict": "fails_both",
+  "pre": [
+    2
+  ],
+  "post": [
+    2
+  ]
+}

@@ -1,0 +1,18 @@
+===== run 1: exit 0
+C      concurrent -> OK  C: C(id='ok', name='test', forward=None)
+C      rebuilder  -> OK  C: C(id='ok', name='test', forward=None)
+Direct concurrent -> OK  Direct: Direct(id='ok', forward=None)
+Direct rebuilder  -> OK  Direct: Direct(id='ok', forward=None)
+
+===== run 2: exit 0
+C      concurrent -> OK  C: C(id='ok', name='test', forward=None)
+C      rebuilder  -> OK  C: C(id='ok', name='test', forward=None)
+Direct concurrent -> OK  Direct: Direct(id='ok', forward=None)
+Direct rebuilder  -> OK  Direct: Direct(id='ok', forward=None)
+
+===== run 3: exit 0
+C      concurrent -> OK  C: C(id='ok', name='test', forward=None)
+C      rebuilder  -> OK  C: C(id='ok', name='test', forward=None)
+Direct concurrent -> OK  Direct: Direct(id='ok', forward=None)
+Direct rebuilder  -> OK  Direct: Direct(id='ok', forward=None)
+

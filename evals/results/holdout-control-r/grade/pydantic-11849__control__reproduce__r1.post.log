@@ -1,0 +1,24 @@
+===== run 1: exit 1
+pydantic 2.11.4, python 3.10.12
+[example 2] trial 0: expected C, got: [PydanticUserError('`C` is not fully defined; you should define `Foo`, then call `C.model_rebuild()`.'), PydanticUserError('`C` is not fully defined; you should define `Foo`, then call `C.model_rebuild()`.'), PydanticUserError('`C` is not fully defined; you should define `Foo`, then call `C.model_rebuild()`.'), PydanticUserError('`C` is not fully defined; you should define `Foo`, then call `C.model_rebuild()`.'), PydanticUserError('`C` is not fully defined; you should define `Foo`, then call `C.model_rebuild()`.'), PydanticUserError('`C` is not fully defined; you should define `Foo`, then call `C.model_rebuild()`.'), PydanticUserError('`C` is not fully defined; you should define `Foo`, then call `C.model_rebuild()`.'), PydanticUserError('`C` is not fully defined; you should define `Foo`, then call `C.model_rebuild()`.')]
+[example 1] trial 3: got: ['RuntimeError: dictionary changed size during iteration']
+example 2 (A->B->C): 50/50 trials returned a non-C result
+example 1 (Direct):  2/50 trials returned a non-Direct result
+BUG REPRODUCED
+
+===== run 2: exit 1
+pydantic 2.11.4, python 3.10.12
+[example 2] trial 0: expected C, got: [PydanticUserError('`C` is not fully defined; you should define `Foo`, then call `C.model_rebuild()`.'), PydanticUserError('`C` is not fully defined; you should define `Foo`, then call `C.model_rebuild()`.'), PydanticUserError('`C` is not fully defined; you should define `Foo`, then call `C.model_rebuild()`.'), PydanticUserError('`C` is not fully defined; you should define `Foo`, then call `C.model_rebuild()`.'), PydanticUserError('`C` is not fully defined; you should define `Foo`, then call `C.model_rebuild()`.'), PydanticUserError('`C` is not fully defined; you should define `Foo`, then call `C.model_rebuild()`.'), PydanticUserError('`C` is not fully defined; you should define `Foo`, then call `C.model_rebuild()`.'), PydanticUserError('`C` is not fully defined; you should define `Foo`, then call `C.model_rebuild()`.')]
+[example 1] trial 28: got: ['RuntimeError: dictionary changed size during iteration']
+example 2 (A->B->C): 50/50 trials returned a non-C result
+example 1 (Direct):  2/50 trials returned a non-Direct result
+BUG REPRODUCED
+
+===== run 3: exit 1
+pydantic 2.11.4, python 3.10.12
+[example 2] trial 0: expected C, got: [PydanticUserError('`C` is not fully defined; you should define `Foo`, then call `C.model_rebuild()`.'), PydanticUserError('`C` is not fully defined; you should define `Foo`, then call `C.model_rebuild()`.'), PydanticUserError('`C` is not fully defined; you should define `Foo`, then call `C.model_rebuild()`.'), PydanticUserError('`C` is not fully defined; you should define `Foo`, then call `C.model_rebuild()`.'), PydanticUserError('`C` is not fully defined; you should define `Foo`, then call `C.model_rebuild()`.'), PydanticUserError('`C` is not fully defined; you should define `Foo`, then call `C.model_rebuild()`.'), PydanticUserError('`C` is not fully defined; you should define `Foo`, then call `C.model_rebuild()`.'), PydanticUserError('`C` is not fully defined; you should define `Foo`, then call `C.model_rebuild()`.')]
+[example 1] trial 7: got: ['AttributeError: __pydantic_core_schema__']
+example 2 (A->B->C): 50/50 trials returned a non-C result
+example 1 (Direct):  1/50 trials returned a non-Direct result
+BUG REPRODUCED
+

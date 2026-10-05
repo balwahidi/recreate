@@ -1,0 +1,8 @@
+===== run 1: exit 1
+ESLint 9.25.0
+ecmaVersion 3: Program.body[0].directive = undefined; 2 message(s)
+  1:1 no-unused-expressions Expected an assignment or function call and instead saw an expression.
+  3:3 no-unused-expressions Expected an assignment or function call and instead saw an expression.
+ecmaVersion 5: Program.body[0].directive = "use strict"; 0 message(s)
+ecmaVersion latest: Program.body[0].directive = "use strict"; 0 message(s)
+

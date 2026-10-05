@@ -1,0 +1,37 @@
+===== run 1: exit 1
+
+ RUN  v3.1.4 /home/ubuntu/grade/vue-13611/repo
+
+ ❯ |unit| packages/vue/__tests__/slotUnderscoreName.spec.ts (2 tests | 1 failed) 26ms
+   ✓ slot whose name starts with an underscore > renders provided _duration slot (no v-if sibling slot) 16ms
+   × slot whose name starts with an underscore > renders provided _duration slot when sibling of v-if slot 9ms
+     → expected '<div><p>conditional</p><span>provided…' to contain 'provided _duration'
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 passed (2)
+   Start at  19:48:05
+   Duration  1.20s (transform 614ms, setup 9ms, collect 781ms, tests 26ms, environment 208ms, prepare 40ms)
+
+ Vitest  "environmentMatchGlobs" is deprecated. Use "workspace" to define different configurations instead.
+ Vitest  "environmentMatchGlobs" is deprecated. Use "workspace" to define different configurations instead.
+ Vitest  "environmentMatchGlobs" is deprecated. Use "workspace" to define different configurations instead.
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| packages/vue/__tests__/slotUnderscoreName.spec.ts > slot whose name starts with an underscore > renders provided _duration slot when sibling of v-if slot
+AssertionError: expected '<div><p>conditional</p><span>provided…' to contain 'provided _duration'
+
+Expected: [32m"provided _duration"[39m
+Received: [31m"<div><p>conditional</p><span>provided title</span><span>default _duration</span></div>"[39m
+
+ ❯ packages/vue/__tests__/slotUnderscoreName.spec.ts:49:18
+     47|       </BaseLayout>`)
+     48|     expect(html).toContain('provided title')
+     49|     expect(html).toContain('provided _duration')
+       |                  ^
+     50|     expect(html).not.toContain('default _duration')
+     51|   })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+

@@ -1,0 +1,6 @@
+===== run 1: exit 0
+ESLint 9.25.0
+ecmaVersion 3: Program.body[0].directive = undefined; 0 message(s)
+ecmaVersion 5: Program.body[0].directive = "use strict"; 0 message(s)
+ecmaVersion latest: Program.body[0].directive = "use strict"; 0 message(s)
+

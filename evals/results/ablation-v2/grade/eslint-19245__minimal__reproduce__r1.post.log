@@ -1,0 +1,5 @@
+===== run 1: exit 0
+[]
+
+Not reproduced: no no-useless-assignment report on the try-block assignment.
+

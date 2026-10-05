@@ -1,0 +1,14 @@
+===== run 1: exit 1
+[FALSE POSITIVE] report: return in try, value read in catch
+    4:5 no-useless-assignment: This assigned value is not used in subsequent statements.
+[FALSE POSITIVE] break in try, value read in catch
+    5:7 no-useless-assignment: This assigned value is not used in subsequent statements.
+[ok] throw in try, value read in catch
+[ok] control: no return in try (expected clean, already passes)
+
+Code path segments for the reported case (segment: started at -> next segments):
+    s1_1 (Program@1) -> []
+    s2_1 (FunctionDeclaration@1) -> [s2_2, s2_4]
+    s2_2 (Literal@4) -> []
+    s2_4 (CatchClause@7) -> []
+

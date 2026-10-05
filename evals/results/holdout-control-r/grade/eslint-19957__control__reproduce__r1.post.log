@@ -1,0 +1,13 @@
+===== run 1: exit 0
+ok   9.000e+3           value=9000               reported=false expected=false
+ok   9.000e3            value=9000               reported=false expected=false
+ok   9.0000e4           value=90000              reported=false expected=false
+ok   1.0e1              value=10                 reported=false expected=false
+ok   9.000e4            value=90000              reported=false expected=false
+ok   9.0000e5           value=900000             reported=false expected=false
+ok   9000               value=9000               reported=false expected=false
+ok   9.0                value=9                  reported=false expected=false
+ok   9007199254740993   value=9007199254740992   reported=true expected=true
+
+all cases behave as expected
+

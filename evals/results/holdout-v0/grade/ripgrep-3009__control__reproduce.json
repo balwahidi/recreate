@@ -1,0 +1,16 @@
+{
+  "label": "ripgrep-3009__control__reproduce",
+  "case": "ripgrep-3009",
+  "runs_per_side": 3,
+  "verdict": "passes_pre",
+  "pre": [
+    0,
+    0,
+    0
+  ],
+  "post": [
+    0,
+    0,
+    0
+  ]
+}

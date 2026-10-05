@@ -1,0 +1,12 @@
+{
+  "label": "vue-12294__control__reproduce",
+  "case": "vue-12294",
+  "runs_per_side": 1,
+  "verdict": "fail_to_pass",
+  "pre": [
+    1
+  ],
+  "post": [
+    0
+  ]
+}

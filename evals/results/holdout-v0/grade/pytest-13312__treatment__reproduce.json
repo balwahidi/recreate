@@ -1,0 +1,16 @@
+{
+  "label": "pytest-13312__treatment__reproduce",
+  "case": "pytest-13312",
+  "runs_per_side": 3,
+  "verdict": "fail_to_pass",
+  "pre": [
+    1,
+    1,
+    1
+  ],
+  "post": [
+    0,
+    0,
+    0
+  ]
+}

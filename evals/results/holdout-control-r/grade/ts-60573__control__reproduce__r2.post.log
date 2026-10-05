@@ -1,0 +1,19 @@
+===== run 1: exit 2
+Using ~/grade/ts-60573/repo/Herebyfile.mjs to run tsc
+Starting lib
+Starting shim-compile-cache-tsc
+Starting generate-diagnostics
+> /home/ubuntu/.nvm/versions/node/v24.19.0/bin/node scripts/processDiagnosticMessages.mjs src/compiler/diagnosticMessages.json
+Finished shim-compile-cache-tsc in 5ms
+Reading diagnostics from src/compiler/diagnosticMessages.json
+Finished lib in 43ms
+Finished generate-diagnostics in 54ms
+Starting bundle-tsc
+Starting build-tsc
+Finished bundle-tsc in 196ms
+Finished build-tsc in 229ms
+Completed tsc in 284ms
+repro/unwrapAssertion.ts(23,7): error TS2322: Type '{ prop1: "hello"; }' is not assignable to type 'number'.
+repro/unwrapAssertion.ts(31,7): error TS2322: Type '{ prop1: "hello"; }' is not assignable to type 'number'.
+repro/unwrapAssertion.ts(35,7): error TS2322: Type '"x"' is not assignable to type '"hello"'.
+

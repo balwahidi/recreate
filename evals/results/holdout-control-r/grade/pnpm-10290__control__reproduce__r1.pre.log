@@ -1,0 +1,54 @@
+===== run 1: exit 1
+pnpm                                     |  WARN  The field "pnpm.overrides" was found in /home/ubuntu/grade/pnpm-10290/repo/pnpm/package.json. This will not take effect. You should configure "pnpm.overrides" at the root of the workspace instead.
+  console.log
+    {
+      expected: '/tmp/store-dir-repro-R85ulf/project/.pnpm-store',
+      fromRoot: {
+        storeDir: '../.pnpm-store',
+        dir: '/tmp/store-dir-repro-R85ulf/project/web',
+        resolved: '/tmp/store-dir-repro-R85ulf/project/.pnpm-store'
+      },
+      fromSubPkg: {
+        storeDir: '../.pnpm-store',
+        dir: '/tmp/store-dir-repro-R85ulf/project/web/apps/website',
+        resolved: '/tmp/store-dir-repro-R85ulf/project/web/apps/.pnpm-store'
+      }
+    }
+
+      at Object.<anonymous> (test/storeDirRelativeToWorkspaceYaml.ts:47:11)
+
+undefined
+/home/ubuntu/grade/pnpm-10290/repo/config/config:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: jest --coverage=false test/storeDirRelativeToWorkspaceYaml.ts
+ts-jest[ts-jest-transformer] (WARN) Define `ts-jest` config under `globals` is deprecated. Please do
+transform: {
+    <transform_regex>: ['ts-jest', { /* ts-jest config goes here in Jest */ }],
+},
+See more at https://kulshekhar.github.io/ts-jest/docs/getting-started/presets#advanced
+(node:230904) ExperimentalWarning: VM Modules is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+FAIL test/storeDirRelativeToWorkspaceYaml.ts
+  ✕ relative storeDir from pnpm-workspace.yaml resolves relative to the workspace root, not cwd (34 ms)
+
+  ● relative storeDir from pnpm-workspace.yaml resolves relative to the workspace root, not cwd
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "/tmp/store-dir-repro-R85ulf/project/.pnpm-store"
+    Received: "/tmp/store-dir-repro-R85ulf/project/web/apps/.pnpm-store"
+
+      50 |   // Fails: storeDir stays the raw string '../.pnpm-store' and config.dir is the
+      51 |   // sub-package, so it resolves to <workspace>/apps/.pnpm-store instead.
+    > 52 |   expect(fromSubPkg.resolved).toBe(expected)
+         |                               ^
+      53 | })
+      54 |
+
+      at Object.<anonymous> (test/storeDirRelativeToWorkspaceYaml.ts:52:31)
+
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 1 total
+Snapshots:   0 total
+Time:        0.541 s
+Ran all test suites matching test/storeDirRelativeToWorkspaceYaml.ts.
+

@@ -1,0 +1,13 @@
+===== run 1: exit 1
+BUG  9.000e+3           value=9000               reported=true expected=false
+BUG  9.000e3            value=9000               reported=true expected=false
+BUG  9.0000e4           value=90000              reported=true expected=false
+OK   9.000e4            value=90000              reported=false expected=false
+OK   9.0000e5           value=900000             reported=false expected=false
+BUG  1.0e1              value=10                 reported=true expected=false
+BUG  1.00e2             value=100                reported=true expected=false
+BUG  12.30e2            value=1230               reported=true expected=false
+OK   9007199254740993   value=9007199254740992   reported=true expected=true
+
+6 unexpected result(s)
+

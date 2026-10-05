@@ -1,0 +1,44 @@
+===== run 1: exit 1
+pnpm                                     |  WARN  The field "pnpm.overrides" was found in /home/ubuntu/grade/pnpm-10290/repo/pnpm/package.json. This will not take effect. You should configure "pnpm.overrides" at the root of the workspace instead.
+Scope: all 198 workspace projects
+Already up to date
+Done in 251ms using pnpm v11.0.0-alpha.3
+../../pnpm                               |  WARN  The field "pnpm.overrides" was found in /home/ubuntu/grade/pnpm-10290/repo/pnpm/package.json. This will not take effect. You should configure "pnpm.overrides" at the root of the workspace instead.
+../../pnpm                               |  WARN  The field "pnpm.overrides" was found in /home/ubuntu/grade/pnpm-10290/repo/pnpm/package.json. This will not take effect. You should configure "pnpm.overrides" at the root of the workspace instead.
+
+> @pnpm/config@1004.4.2 _test /home/ubuntu/grade/pnpm-10290/repo/config/config
+> cross-env NODE_OPTIONS="$NODE_OPTIONS --experimental-vm-modules" jest --coverage=false test/storeDirRelativeToWorkspace.test.ts
+
+ ELIFECYCLE  Command failed with exit code 1.
+ts-jest[ts-jest-transformer] (WARN) Define `ts-jest` config under `globals` is deprecated. Please do
+transform: {
+    <transform_regex>: ['ts-jest', { /* ts-jest config goes here in Jest */ }],
+},
+See more at https://kulshekhar.github.io/ts-jest/docs/getting-started/presets#advanced
+(node:159996) ExperimentalWarning: VM Modules is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+FAIL test/storeDirRelativeToWorkspace.test.ts
+  ✕ relative storeDir from pnpm-workspace.yaml resolves to the same location from a workspace subpackage (28 ms)
+
+  ● relative storeDir from pnpm-workspace.yaml resolves to the same location from a workspace subpackage
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "/home/ubuntu/grade/pnpm-10290/pnpm_tmp/11_159996/1/project/.pnpm-store"
+    Received: "/home/ubuntu/grade/pnpm-10290/pnpm_tmp/11_159996/1/project/web/apps/.pnpm-store"
+
+      36 |   expect(await resolveStoreDir(workspaceDir)).toBe(expected)
+      37 |   // Fails: resolves to <project>/web/apps/.pnpm-store
+    > 38 |   expect(await resolveStoreDir(pkgDir)).toBe(expected)
+         |                                         ^
+      39 | })
+      40 |
+
+      at Object.<anonymous> (test/storeDirRelativeToWorkspace.test.ts:38:41)
+
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 1 total
+Snapshots:   0 total
+Time:        0.672 s, estimated 1 s
+Ran all test suites matching test/storeDirRelativeToWorkspace.test.ts.
+

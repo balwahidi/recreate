@@ -1,0 +1,74 @@
+===== run 1: exit 0
+
+added 349 packages, and audited 350 packages in 2s
+
+81 packages are looking for funding
+  run `npm fund` for details
+
+34 vulnerabilities (2 low, 7 moderate, 24 high, 1 critical)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+Using ~/grade/ts-60573/repo/Herebyfile.mjs to run local
+Starting generate-diagnostics
+> /home/ubuntu/.nvm/versions/node/v24.19.0/bin/node scripts/processDiagnosticMessages.mjs src/compiler/diagnosticMessages.json
+Starting lib
+Starting shim-compile-cache-tsc
+Starting shim-compile-cache-tsserver
+Starting shim-compile-cache-typings-installer
+Starting bundle-watch-guard
+Starting build-watch-guard
+Starting generate-types-map
+Finished shim-compile-cache-typings-installer in 7ms
+Finished shim-compile-cache-tsserver in 7ms
+Finished shim-compile-cache-tsc in 7ms
+Finished generate-types-map in 7ms
+Finished bundle-watch-guard in 9ms
+Reading diagnostics from src/compiler/diagnosticMessages.json
+Finished lib in 46ms
+Finished generate-diagnostics in 58ms
+Starting localize
+Starting bundle-tsc
+Starting build-tsc
+Starting bundle-services
+Starting build-services
+Starting bundle-tsserver
+Starting build-tsserver
+Starting bundle-typings-installer
+Starting build-typings-installer
+Starting copy-built-local-diagnostic-messages
+Finished localize in 1ms
+Finished copy-built-local-diagnostic-messages in 3ms
+Finished bundle-tsserver in 27ms
+Finished bundle-typings-installer in 34ms
+Finished bundle-tsc in 274ms
+Finished build-watch-guard in 333ms
+Finished build-tsc in 277ms
+Finished build-services in 277ms
+Finished build-tsserver in 277ms
+Finished build-typings-installer in 277ms
+Starting dts-services
+Finished dts-services in 1ms
+Starting dts-lssl
+Finished dts-lssl in 1ms
+Finished bundle-services in 346ms
+Starting lssl
+Finished lssl in 1ms
+Completed local in 405ms
+TypeScript 5.8.0-dev
+Test  typeToString: { prop1: "hello"; }
+      quickinfo:    type Test = { prop1: "hello"; }
+Test2 typeToString: { prop1: "hello"; }
+      quickinfo:    type Test2 = { prop1: "hello"; }
+Test3 typeToString: "hello"
+      quickinfo:    type Test3 = "hello"
+
+OK
+npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+npm warn deprecated glob@8.1.0: Glob versions prior to v9 are no longer supported
+

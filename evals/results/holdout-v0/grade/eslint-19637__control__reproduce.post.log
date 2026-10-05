@@ -1,0 +1,6 @@
+===== run 1: exit 0
+ecmaVersion 3: Program.body[0].directive=undefined, reports: []
+ecmaVersion 5: Program.body[0].directive="use strict", reports: []
+ecmaVersion 2015: Program.body[0].directive="use strict", reports: []
+ecmaVersion latest: Program.body[0].directive="use strict", reports: []
+

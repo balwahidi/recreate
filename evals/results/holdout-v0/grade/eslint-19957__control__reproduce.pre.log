@@ -1,0 +1,15 @@
+===== run 1: exit 1
+FLAGGED  9.000e+3   value=9000   toPrecision(4)=9000
+FLAGGED  9.000e3    value=9000   toPrecision(4)=9000
+FLAGGED  9.0000e4   value=90000  toPrecision(5)=90000
+ok       9.000e4    value=90000  toPrecision(4)=9.000e+4
+ok       9.0000e5   value=900000 toPrecision(5)=9.0000e+5
+ok       9.000      value=9      toPrecision(4)=9.000
+ok       9000       value=9000   toPrecision(4)=9000
+FLAGGED  1.0e1      value=10     toPrecision(2)=10
+FLAGGED  1.00e2     value=100    toPrecision(3)=100
+FLAGGED  1.50e2     value=150    toPrecision(3)=150
+ok       12.30e1    value=123    toPrecision(4)=123.0
+
+6 false positive(s) from no-loss-of-precision (expected 0).
+

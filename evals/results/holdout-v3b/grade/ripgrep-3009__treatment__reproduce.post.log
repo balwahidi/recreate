@@ -1,0 +1,81 @@
+===== run 1: exit 0
+
+running 1 test
+walk::tests::panic_in_parallel --- FAILED
+
+failures:
+
+---- walk::tests::panic_in_parallel stdout ----
+
+thread '<unnamed>' (139968) panicked at crates/ignore/src/walk.rs:2504:34:
+oops!
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+thread 'walk::tests::panic_in_parallel' (139963) panicked at crates/ignore/src/walk.rs:1473:31:
+called `Result::unwrap()` on an `Err` value: Any { .. }
+note: panic did not contain expected string
+      panic message: "called `Result::unwrap()` on an `Err` value: Any { .. }"
+ expected substring: "oops!"
+
+failures:
+    walk::tests::panic_in_parallel
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 147 filtered out; finished in 0.00s
+
+exit=101
+error: test failed, to rerun pass `-p ignore --lib`
+
+===== run 2: exit 0
+
+running 1 test
+walk::tests::panic_in_parallel --- FAILED
+
+failures:
+
+---- walk::tests::panic_in_parallel stdout ----
+
+thread '<unnamed>' (140033) panicked at crates/ignore/src/walk.rs:2504:34:
+oops!
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+thread 'walk::tests::panic_in_parallel' (140032) panicked at crates/ignore/src/walk.rs:1473:31:
+called `Result::unwrap()` on an `Err` value: Any { .. }
+note: panic did not contain expected string
+      panic message: "called `Result::unwrap()` on an `Err` value: Any { .. }"
+ expected substring: "oops!"
+
+failures:
+    walk::tests::panic_in_parallel
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 147 filtered out; finished in 0.00s
+
+exit=101
+error: test failed, to rerun pass `-p ignore --lib`
+
+===== run 3: exit 0
+
+running 1 test
+walk::tests::panic_in_parallel --- FAILED
+
+failures:
+
+---- walk::tests::panic_in_parallel stdout ----
+
+thread '<unnamed>' (140102) panicked at crates/ignore/src/walk.rs:2504:34:
+oops!
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+thread 'walk::tests::panic_in_parallel' (140101) panicked at crates/ignore/src/walk.rs:1473:31:
+called `Result::unwrap()` on an `Err` value: Any { .. }
+note: panic did not contain expected string
+      panic message: "called `Result::unwrap()` on an `Err` value: Any { .. }"
+ expected substring: "oops!"
+
+failures:
+    walk::tests::panic_in_parallel
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 147 filtered out; finished in 0.00s
+
+exit=101
+error: test failed, to rerun pass `-p ignore --lib`
+

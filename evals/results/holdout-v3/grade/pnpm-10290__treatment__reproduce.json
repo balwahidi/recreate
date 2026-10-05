@@ -1,0 +1,12 @@
+{
+  "label": "pnpm-10290__treatment__reproduce",
+  "case": "pnpm-10290",
+  "runs_per_side": 1,
+  "verdict": "fails_both",
+  "pre": [
+    1
+  ],
+  "post": [
+    1
+  ]
+}

@@ -1,0 +1,130 @@
+===== run 1: exit 2
+
+
+  no-useless-assignment (try/catch, #19245)
+    valid
+      1) async function fn() {
+            let intermediaryValue;
+            try {
+                intermediaryValue = 42;
+                unsafeFn();
+                return { error: undefined };
+            } catch {
+                return { intermediaryValue };
+            }
+        }
+        function unsafeFn() { throw new Error(); }
+        fn();
+      2) function fn() {
+            let v;
+            while (cond()) {
+                try {
+                    v = 42;
+                    unsafeFn();
+                    break;
+                } catch {
+                    console.log(v);
+                }
+            }
+        }
+        fn();
+      ✔ function fn() {
+            let v;
+            try {
+                v = 42;
+                unsafeFn();
+            } catch {
+                return { v };
+            }
+            return {};
+        }
+        fn();
+
+
+  1 passing (34ms)
+  2 failing
+
+  1) no-useless-assignment (try/catch, #19245)
+       valid
+         async function fn() {
+            let intermediaryValue;
+            try {
+                intermediaryValue = 42;
+                unsafeFn();
+                return { error: undefined };
+            } catch {
+                return { intermediaryValue };
+            }
+        }
+        function unsafeFn() { throw new Error(); }
+        fn();:
+
+      AssertionError [ERR_ASSERTION]: Should have no errors but had 1: [
+  {
+    ruleId: 'rule-to-test/no-useless-assignment (try/catch, #19245)',
+    severity: 1,
+    message: 'This assigned value is not used in subsequent statements.',
+    line: 4,
+    column: 17,
+    nodeType: 'Identifier',
+    messageId: 'unnecessaryAssignment',
+    endLine: 4,
+    endColumn: 34
+  }
+]
+
+1 !== 0
+
+      + expected - actual
+
+      -1
+      +0
+      
+      at testValidTemplate (lib/rule-tester/rule-tester.js:924:20)
+      at Context.<anonymous> (lib/rule-tester/rule-tester.js:1273:37)
+      at process.processImmediate (node:internal/timers:534:21)
+
+  2) no-useless-assignment (try/catch, #19245)
+       valid
+         function fn() {
+            let v;
+            while (cond()) {
+                try {
+                    v = 42;
+                    unsafeFn();
+                    break;
+                } catch {
+                    console.log(v);
+                }
+            }
+        }
+        fn();:
+
+      AssertionError [ERR_ASSERTION]: Should have no errors but had 1: [
+  {
+    ruleId: 'rule-to-test/no-useless-assignment (try/catch, #19245)',
+    severity: 1,
+    message: 'This assigned value is not used in subsequent statements.',
+    line: 5,
+    column: 21,
+    nodeType: 'Identifier',
+    messageId: 'unnecessaryAssignment',
+    endLine: 5,
+    endColumn: 22
+  }
+]
+
+1 !== 0
+
+      + expected - actual
+
+      -1
+      +0
+      
+      at testValidTemplate (lib/rule-tester/rule-tester.js:924:20)
+      at Context.<anonymous> (lib/rule-tester/rule-tester.js:1273:37)
+      at process.processImmediate (node:internal/timers:534:21)
+
+
+
+

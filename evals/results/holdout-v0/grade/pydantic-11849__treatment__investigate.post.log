@@ -1,0 +1,23 @@
+===== run 1: exit 0
+example 2 (C.model_validate): 1/200 trials produced a wrong result
+       1x  RuntimeError('dictionary changed size during iteration')
+    afterwards C.model_validate: C(id='x', name=None, forward=None)
+example 1 (Direct(...)): 3/200 trials produced a wrong result
+       3x  RuntimeError('dictionary changed size during iteration')
+
+===== run 2: exit 0
+example 2 (C.model_validate): 2/200 trials produced a wrong result
+       1x  RuntimeError('dictionary changed size during iteration')
+       1x  AttributeError('__pydantic_core_schema__')
+    afterwards C.model_validate: C(id='x', name=None, forward=None)
+example 1 (Direct(...)): 0/200 trials produced a wrong result
+
+===== run 3: exit 0
+example 2 (C.model_validate): 3/200 trials produced a wrong result
+       2x  AttributeError('__pydantic_core_schema__')
+       1x  RuntimeError('dictionary changed size during iteration')
+    afterwards C.model_validate: C(id='x', name=None, forward=None)
+example 1 (Direct(...)): 2/200 trials produced a wrong result
+       1x  RuntimeError('dictionary changed size during iteration')
+       1x  PydanticUserError('Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly')
+

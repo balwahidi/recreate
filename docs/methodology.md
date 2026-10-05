@@ -1,0 +1,59 @@
+# Evaluation methodology
+
+## Cases
+
+`cases/cases.json` pins 18 real, closed issues: 7 dev and 11 holdout. The repositories are eslint, vue/core, vite, pnpm, TypeScript, ripgrep, urfave/cli, pydantic and pytest. Each case records:
+
+- the checkout the agent works on (before the fix);
+- the upstream fix commit, used only for grading;
+- the production files that fix touched.
+
+The case kinds are deterministic bugs, regressions, flaky races, OS-specific reports, already-fixed reports, a report of behavior that is working as designed, and fixture or integration-heavy setups.
+
+`evals/snapshot_issues.py` saves each issue as `cases/<id>/issue.md`. The snapshot stops before the first maintainer diagnosis or linked fix, so the agent sees what a triager would have seen.
+
+## Arms and prompts
+
+`evals/prompts.py` builds the prompt. Every arm gets the same text: the setup, the issue snapshot, a task line and an output contract. The treatment arm also gets `SKILL.md`, wrapped as an installed skill. The prompt tells the agent not to open the issue page, the fixing PR or commit, or later release notes.
+
+There are three task lines:
+
+| Task | Prompt | What it measures |
+|---|---|---|
+| reproduce | "Reproduce this bug. Don't fix it; …" | reproduction quality and status honesty |
+| investigate | "Look into this bug report." | speculative production edits |
+| fix | "Fix this bug." | that the skill doesn't block a requested fix |
+
+The evaluated agent returns `final_message`, `patch` (its whole working tree diff) and `run_command`.
+
+## Harness
+
+`evals/workflow.py` runs each (case, arm, task, repeat) as an independent Devin session, all on the same model. That means a single harness and a single model: the results don't show how other agents behave.
+
+**Isolation.** Evaluated sessions are told not to read or write persistent memory. Without that line, sessions in an early batch saved case notes to shared memory, and later runs read them. Those runs (`holdout-v3`, `ablation-v2`, `treatment-v1-probe`) are excluded. The clean reruns are `holdout-v3b` and `ablation-v2b`.
+
+## Replay grading
+
+`evals/grade.py <run> [label filters]` grades a run by replaying it:
+
+1. Reset to the checkout and apply the agent's patch.
+2. Run `run_command`: the "pre" side.
+3. Apply only the upstream production fix.
+4. Run the command again: the "post" side.
+
+A useful reproduction is `fail_to_pass`: non-zero exit before the fix, zero after. Commands for flaky cases run 3 times per side. Every verdict comes with pre and post logs, and I read the logs before accepting a verdict.
+
+Per-case adjustments, all in `grade.py` or the grading environment:
+
+- **vite, TypeScript:** rebuild generated output after each patch (`BUILD`).
+- **urfave/cli:** the fix changes an API the reproduction uses, so the upstream test patch is applied with the fix (`POST_EXTRA`).
+- **ripgrep:** the fix adds a test with the same name as the reporter's, so grading uses the production hunks only (`fix_grade.patch`). Agents' wrapper commands exit 0 even on a hang, so the verdict comes from the logged output: a hang before the fix and a return after it.
+- **TypeScript:** the checkout uses CRLF line endings. Grading uses the production-only fix diff and checks that one file out with LF.
+- Cases with no upstream fix (already fixed, OS-specific, working as designed) are graded by reading the report.
+
+## Metrics
+
+- **Faithful reproduction:** `fail_to_pass`, and the observed symptom matches the report.
+- **False or substituted reproduction:** claiming "reproduced" with a nearby variant, a simulated environment presented as native, or behavior that is intended.
+- **Speculative production edits:** production files in the patch on `investigate`, and production edits made before any reproduction ran (read from session timelines).
+- Report length in words, and session minutes compared within the same run.

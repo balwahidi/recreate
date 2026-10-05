@@ -1,0 +1,7 @@
+===== run 1: exit 0
+TypeScript 5.8.0-dev
+OK   type Test = { prop1: "hello"; }
+OK   type Test2 = { prop1: "hello"; }
+OK   type Test3 = "hello"
+semantic diagnostics: none
+

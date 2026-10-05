@@ -1,0 +1,68 @@
+===== run 1: exit 0
+Scope: all 241 workspace projects
+Lockfile is up to date, resolution step is skipped
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Packages: +90
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Progress: resolved 90, reused 90, downloaded 0, added 90, done
+
+. postinstall$ simple-git-hooks
+. postinstall: [INFO] Successfully set the pre-commit with command: pnpm exec lint-staged --concurrent false
+. postinstall: [INFO] Successfully set all git hooks
+. postinstall: Done
+Done in 1s using pnpm v10.17.1
+
+> vite@7.1.7 build /home/ubuntu/grade/vite-20705/repo/packages/vite
+> premove dist && pnpm build-bundle && pnpm build-types
+
+
+> vite@7.1.7 build-bundle /home/ubuntu/grade/vite-20705/repo/packages/vite
+> rolldown --config rolldown.config.ts
+
+shimmed: postcss-import/index.js
+shimmed: postcss-load-config/src/req.js
+shimmed: postcss-import/lib/parse-styles.js
+<DIR>/client/env.mjs  chunk │ size: 0.61 kB
+<DIR>/client/client.mjs  chunk │ size: 33.39 kB
+<DIR>/node/chunks/dep-qe6qgDlX.js  chunk │ size:     0.12 kB
+<DIR>/node/chunks/dep-Bwho5cFQ.js  chunk │ size:     0.21 kB
+<DIR>/node/chunks/dep-BE9vdNJC.js  chunk │ size:     0.27 kB
+<DIR>/node/chunks/dep-8Jc1Oguu.js  chunk │ size:     0.53 kB
+<DIR>/node/chunks/dep-DY6jUl0r.js  chunk │ size:     0.60 kB
+<DIR>/node/chunks/dep-lCKrEJQm.js  chunk │ size:     1.38 kB
+<DIR>/node/index.js                chunk │ size:     3.39 kB
+<DIR>/node/chunks/dep-SmwnYDP9.js  chunk │ size:    11.51 kB
+<DIR>/node/chunks/dep-BuoK8Wda.js  chunk │ size:    12.24 kB
+<DIR>/node/chunks/dep-CwrJo3zV.js  chunk │ size:    19.60 kB
+<DIR>/node/cli.js                  chunk │ size:    26.86 kB
+<DIR>/node/chunks/dep-DrqJEUj9.js  chunk │ size:   213.90 kB
+<DIR>/node/chunks/dep-CCSnTAeo.js  chunk │ size:   241.06 kB
+<DIR>/node/chunks/dep-DQ-J0yX1.js  chunk │ size: 1,346.61 kB
+<DIR>/node/module-runner.js  chunk │ size: 48.73 kB
+
+✔ rolldown v1.0.0-beta.41 Finished in 488.78 ms
+
+> vite@7.1.7 build-types /home/ubuntu/grade/vite-20705/repo/packages/vite
+> pnpm build-types-roll && pnpm build-types-check
+
+
+> vite@7.1.7 build-types-roll /home/ubuntu/grade/vite-20705/repo/packages/vite
+> rolldown --config rolldown.dts.config.ts
+
+<DIR>/moduleRunnerTransport-BWUZBVLX.d.ts  chunk │ size:   2.90 kB
+<DIR>/module-runner.d.ts                   chunk │ size:  11.34 kB
+<DIR>/index.d.ts                           chunk │ size: 147.83 kB
+
+✔ rolldown v1.0.0-beta.41 Finished in 1.44 s
+
+> vite@7.1.7 build-types-check /home/ubuntu/grade/vite-20705/repo/packages/vite
+> tsc --project tsconfig.check.json
+
+vite 7.1.7 at http://localhost:5199
+browser click link (1st): GET /test -> 200 text/html => index.html
+browser reload (2nd): GET /test -> 200 text/html => index.html
+browser direct goto /test -> 200 text/html => index.html
+fetch Accept: text/html,... Sec-Fetch-Dest: document: GET /test -> 200 text/html => index.html
+fetch Accept: */* (curl default): GET /test -> 200 text/javascript => test.js
+OK: browser navigation to /test got index.html
+

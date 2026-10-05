@@ -1,0 +1,22 @@
+===== run 1: exit 0
+
+running 1 test
+exit=124
+   Compiling ignore v0.4.29 (/home/ubuntu/grade/ripgrep-3009/repo/crates/ignore)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.78s
+     Running unittests src/lib.rs (/home/ubuntu/grade/ripgrep-3009/repo/target/debug/deps/ignore-ae9fc929b29c0c0a)
+
+===== run 2: exit 0
+
+running 1 test
+exit=124
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.01s
+     Running unittests src/lib.rs (/home/ubuntu/grade/ripgrep-3009/repo/target/debug/deps/ignore-ae9fc929b29c0c0a)
+
+===== run 3: exit 0
+
+running 1 test
+exit=124
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+     Running unittests src/lib.rs (/home/ubuntu/grade/ripgrep-3009/repo/target/debug/deps/ignore-ae9fc929b29c0c0a)
+

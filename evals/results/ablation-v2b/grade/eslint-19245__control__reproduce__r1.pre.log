@@ -1,0 +1,10 @@
+===== run 1: exit 1
+--- report: return in try, value read in catch
+    5:5 no-useless-assignment: This assigned value is not used in subsequent statements.
+--- break in try, value read in catch
+    6:7 no-useless-assignment: This assigned value is not used in subsequent statements.
+--- control: no return in try (expected to pass)
+    no problems (correct)
+
+BUG REPRODUCED: false positive(s) above
+

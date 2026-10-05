@@ -1,0 +1,42 @@
+===== run 1: exit 1
+[PyPy 7.3.17 with GCC 10.2.1 20210130 (Red Hat 10.2.1-11)]
+== OrderedDict alone (PyPy):
+pypy: KeyError(125) in move_to_end; len(d)=127, iterated keys=127, distinct=126
+== pytest --collect-only (PyPy, this checkout):
+INTERNALERROR>   File "/home/ubuntu/grade/pytest-13312/repo/src/_pytest/fixtures.py", line 1704, in pytest_collection_modifyitems
+INTERNALERROR>   File "/home/ubuntu/grade/pytest-13312/repo/src/_pytest/fixtures.py", line 241, in reorder_items
+INTERNALERROR>   File "/home/ubuntu/grade/pytest-13312/repo/src/_pytest/fixtures.py", line 295, in reorder_items_atscope
+INTERNALERROR>   File "/home/ubuntu/grade/pytest-13312/repo/src/_pytest/fixtures.py", line 295, in reorder_items_atscope
+INTERNALERROR>   File "/home/ubuntu/grade/pytest-13312/repo/src/_pytest/fixtures.py", line 290, in reorder_items_atscope
+INTERNALERROR> KeyError: <Function test_it[only-2-24]>
+138 tests collected in 0.03s
+BUG REPRODUCED
+
+===== run 2: exit 1
+[PyPy 7.3.17 with GCC 10.2.1 20210130 (Red Hat 10.2.1-11)]
+== OrderedDict alone (PyPy):
+pypy: KeyError(125) in move_to_end; len(d)=127, iterated keys=127, distinct=126
+== pytest --collect-only (PyPy, this checkout):
+INTERNALERROR>   File "/home/ubuntu/grade/pytest-13312/repo/src/_pytest/fixtures.py", line 1704, in pytest_collection_modifyitems
+INTERNALERROR>   File "/home/ubuntu/grade/pytest-13312/repo/src/_pytest/fixtures.py", line 241, in reorder_items
+INTERNALERROR>   File "/home/ubuntu/grade/pytest-13312/repo/src/_pytest/fixtures.py", line 295, in reorder_items_atscope
+INTERNALERROR>   File "/home/ubuntu/grade/pytest-13312/repo/src/_pytest/fixtures.py", line 295, in reorder_items_atscope
+INTERNALERROR>   File "/home/ubuntu/grade/pytest-13312/repo/src/_pytest/fixtures.py", line 290, in reorder_items_atscope
+INTERNALERROR> KeyError: <Function test_it[only-2-24]>
+138 tests collected in 0.02s
+BUG REPRODUCED
+
+===== run 3: exit 1
+[PyPy 7.3.17 with GCC 10.2.1 20210130 (Red Hat 10.2.1-11)]
+== OrderedDict alone (PyPy):
+pypy: KeyError(125) in move_to_end; len(d)=127, iterated keys=127, distinct=126
+== pytest --collect-only (PyPy, this checkout):
+INTERNALERROR>   File "/home/ubuntu/grade/pytest-13312/repo/src/_pytest/fixtures.py", line 1704, in pytest_collection_modifyitems
+INTERNALERROR>   File "/home/ubuntu/grade/pytest-13312/repo/src/_pytest/fixtures.py", line 241, in reorder_items
+INTERNALERROR>   File "/home/ubuntu/grade/pytest-13312/repo/src/_pytest/fixtures.py", line 295, in reorder_items_atscope
+INTERNALERROR>   File "/home/ubuntu/grade/pytest-13312/repo/src/_pytest/fixtures.py", line 295, in reorder_items_atscope
+INTERNALERROR>   File "/home/ubuntu/grade/pytest-13312/repo/src/_pytest/fixtures.py", line 290, in reorder_items_atscope
+INTERNALERROR> KeyError: <Function test_it[only-2-24]>
+138 tests collected in 0.03s
+BUG REPRODUCED
+

@@ -1,0 +1,186 @@
+===== run 1: exit 5
+
+up to date, audited 1128 packages in 900ms
+
+224 packages are looking for funding
+  run `npm fund` for details
+
+35 vulnerabilities (6 low, 4 moderate, 22 high, 3 critical)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues possible (including breaking changes), run:
+  npm audit fix --force
+
+Some issues need review, and may require choosing
+a different dependency.
+
+Run `npm audit` for details.
+
+
+  no-loss-of-precision (repro #19957)
+    valid
+      1) const test = 9.000e+3
+      2) const foo = 9.000e3
+      3) const test = 9.0000e4
+      ✔ const bar = 9.000e4
+      ✔ const baz = 9.0000e5
+      4) const x = 9.0e1
+      5) const v = 1.50e2
+      ✔ const y = 1.50e1
+      ✔ const z = 9000
+      ✔ const w = 9e3
+
+
+  5 passing (35ms)
+  5 failing
+
+  1) no-loss-of-precision (repro #19957)
+       valid
+         const test = 9.000e+3:
+
+      AssertionError [ERR_ASSERTION]: Should have no errors but had 1: [
+  {
+    ruleId: 'rule-to-test/no-loss-of-precision (repro #19957)',
+    severity: 1,
+    message: 'This number literal will lose precision at runtime.',
+    line: 1,
+    column: 14,
+    nodeType: 'Literal',
+    messageId: 'noLossOfPrecision',
+    endLine: 1,
+    endColumn: 22
+  }
+]
+
+1 !== 0
+
+      + expected - actual
+
+      -1
+      +0
+      
+      at testValidTemplate (lib/rule-tester/rule-tester.js:1000:11)
+      at Context.<anonymous> (lib/rule-tester/rule-tester.js:1543:10)
+      at process.processImmediate (node:internal/timers:534:21)
+
+  2) no-loss-of-precision (repro #19957)
+       valid
+         const foo = 9.000e3:
+
+      AssertionError [ERR_ASSERTION]: Should have no errors but had 1: [
+  {
+    ruleId: 'rule-to-test/no-loss-of-precision (repro #19957)',
+    severity: 1,
+    message: 'This number literal will lose precision at runtime.',
+    line: 1,
+    column: 13,
+    nodeType: 'Literal',
+    messageId: 'noLossOfPrecision',
+    endLine: 1,
+    endColumn: 20
+  }
+]
+
+1 !== 0
+
+      + expected - actual
+
+      -1
+      +0
+      
+      at testValidTemplate (lib/rule-tester/rule-tester.js:1000:11)
+      at Context.<anonymous> (lib/rule-tester/rule-tester.js:1543:10)
+      at process.processImmediate (node:internal/timers:534:21)
+
+  3) no-loss-of-precision (repro #19957)
+       valid
+         const test = 9.0000e4:
+
+      AssertionError [ERR_ASSERTION]: Should have no errors but had 1: [
+  {
+    ruleId: 'rule-to-test/no-loss-of-precision (repro #19957)',
+    severity: 1,
+    message: 'This number literal will lose precision at runtime.',
+    line: 1,
+    column: 14,
+    nodeType: 'Literal',
+    messageId: 'noLossOfPrecision',
+    endLine: 1,
+    endColumn: 22
+  }
+]
+
+1 !== 0
+
+      + expected - actual
+
+      -1
+      +0
+      
+      at testValidTemplate (lib/rule-tester/rule-tester.js:1000:11)
+      at Context.<anonymous> (lib/rule-tester/rule-tester.js:1543:10)
+      at process.processImmediate (node:internal/timers:534:21)
+
+  4) no-loss-of-precision (repro #19957)
+       valid
+         const x = 9.0e1:
+
+      AssertionError [ERR_ASSERTION]: Should have no errors but had 1: [
+  {
+    ruleId: 'rule-to-test/no-loss-of-precision (repro #19957)',
+    severity: 1,
+    message: 'This number literal will lose precision at runtime.',
+    line: 1,
+    column: 11,
+    nodeType: 'Literal',
+    messageId: 'noLossOfPrecision',
+    endLine: 1,
+    endColumn: 16
+  }
+]
+
+1 !== 0
+
+      + expected - actual
+
+      -1
+      +0
+      
+      at testValidTemplate (lib/rule-tester/rule-tester.js:1000:11)
+      at Context.<anonymous> (lib/rule-tester/rule-tester.js:1543:10)
+      at process.processImmediate (node:internal/timers:534:21)
+
+  5) no-loss-of-precision (repro #19957)
+       valid
+         const v = 1.50e2:
+
+      AssertionError [ERR_ASSERTION]: Should have no errors but had 1: [
+  {
+    ruleId: 'rule-to-test/no-loss-of-precision (repro #19957)',
+    severity: 1,
+    message: 'This number literal will lose precision at runtime.',
+    line: 1,
+    column: 11,
+    nodeType: 'Literal',
+    messageId: 'noLossOfPrecision',
+    endLine: 1,
+    endColumn: 17
+  }
+]
+
+1 !== 0
+
+      + expected - actual
+
+      -1
+      +0
+      
+      at testValidTemplate (lib/rule-tester/rule-tester.js:1000:11)
+      at Context.<anonymous> (lib/rule-tester/rule-tester.js:1543:10)
+      at process.processImmediate (node:internal/timers:534:21)
+
+
+
+

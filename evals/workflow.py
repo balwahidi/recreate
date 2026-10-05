@@ -1,0 +1,69 @@
+"""Run evaluated agents as Devin child sessions.
+
+Edit RUN below, then pass this file to run_workflow. Each agent's structured
+output is written to evals/results/<RUN['name']>/<case>__<arm>__<task>.json.
+"""
+import asyncio, json, pathlib, re, sys
+
+ROOT = pathlib.Path("/home/ubuntu/repos/recreate")
+sys.path.insert(0, str(ROOT / "evals"))
+from prompts import SCHEMA, build_prompt  # noqa: E402
+
+RUN = {
+    # Last run: the frozen skill on the holdout split. Earlier configs are recorded in evals/notes/.
+    "name": "holdout-v3b",
+    "arms": ["treatment"],
+    # (split, case ids or None for every case in the split, tasks)
+    "plan": [
+        ("holdout", None, ["reproduce"]),
+        ("holdout", ["eslint-19637", "pydantic-11849", "eslint-19033-fixed"], ["investigate"]),
+        ("holdout", ["eslint-19957", "vue-13611"], ["fix"]),
+    ],
+}
+# Skill text per arm; arms not listed get no skill.
+SKILLS = {"treatment": "SKILL.md", "minimal": "evals/variants/SKILL-minimal.md"}
+
+
+def units():
+    cases = json.loads((ROOT / "cases/cases.json").read_text())["cases"]
+    skills = {arm: (ROOT / path).read_text() for arm, path in SKILLS.items() if arm in RUN["arms"]}
+    for split, ids, tasks in RUN["plan"]:
+        for case in cases:
+            if case["split"] != split or (ids and case["id"] not in ids):
+                continue
+            report = (ROOT / "cases" / case["id"] / "issue.md").read_text()
+            case = dict(case, report_date=re.search(r"Reported by @\S+ on (\S+)", report).group(1))
+            for arm in RUN["arms"]:
+                for task in tasks:
+                    prompt = build_prompt(case, report, task, skills.get(arm))
+                    label = f"{case['id']}__{arm}__{task}"
+                    repeats = RUN.get("repeats", 1)
+                    for n in range(1, repeats + 1):
+                        yield (f"{label}__r{n}" if repeats > 1 else label), prompt
+
+
+async def run_one(label, prompt, out_dir):
+    try:
+        result = await agent(prompt, phase="evaluate", schema=SCHEMA, label=label,
+                             soft_time_limit_minutes=45)
+    except WorkflowAgentError as e:
+        result = {"error": str(e)}
+    (out_dir / f"{label}.json").write_text(json.dumps(result, indent=2, sort_keys=True))
+    log(f"{label}: {'error' if 'error' in result else 'done'}")
+    return result
+
+
+async def main():
+    work = list(units())
+    await register_workflow({
+        "name": RUN["name"],
+        "description": "Recreate eval: evaluated agents attempt bug reproduction from historical issues",
+        "phases": [{"title": "evaluate", "detail": "one agent per case x arm x task",
+                    "labels": [label for label, _ in work]}],
+    })
+    out_dir = ROOT / "evals/results" / RUN["name"]
+    out_dir.mkdir(parents=True, exist_ok=True)
+    await asyncio.gather(*(run_one(label, prompt, out_dir) for label, prompt in work))
+
+
+asyncio.run(main())

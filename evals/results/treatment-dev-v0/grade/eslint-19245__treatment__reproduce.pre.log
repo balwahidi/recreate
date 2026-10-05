@@ -1,0 +1,689 @@
+===== run 1: exit 2
+
+/home/ubuntu/grade/eslint-19245/repo/repro/input.js
+  4:5  warning  This assigned value is not used in subsequent statements  no-useless-assignment
+
+✖ 1 problem (0 errors, 1 warning)
+
+
+
+  no-useless-assignment
+    valid
+      ✔ let v = 'used';
+        console.log(v);
+        v = 'used-2'
+        console.log(v);
+      ✔ function foo() {
+            let v = 'used';
+            console.log(v);
+            v = 'used-2';
+            console.log(v);
+        }
+      ✔ function foo() {
+            let v = 'used';
+            if (condition) {
+                v = 'used-2';
+                console.log(v);
+                return
+            }
+            console.log(v);
+        }
+      ✔ function foo() {
+            let v = 'used';
+            if (condition) {
+                console.log(v);
+            } else {
+                v = 'used-2';
+                console.log(v);
+            }
+        }
+      ✔ function foo() {
+            let v = 'used';
+            if (condition) {
+                //
+            } else {
+                v = 'used-2';
+            }
+            console.log(v);
+        }
+      ✔ var foo = function () {
+            let v = 'used';
+            console.log(v);
+            v = 'used-2'
+            console.log(v);
+        }
+      ✔ var foo = () => {
+            let v = 'used';
+            console.log(v);
+            v = 'used-2'
+            console.log(v);
+        }
+      ✔ class foo {
+            static {
+                let v = 'used';
+                console.log(v);
+                v = 'used-2'
+                console.log(v);
+            }
+        }
+      ✔ function foo () {
+            let v = 'used';
+            for (let i = 0; i < 10; i++) {
+                console.log(v);
+                v = 'used in next iteration';
+            }
+        }
+      ✔ function foo () {
+            let i = 0;
+            i++;
+            i++;
+            console.log(i);
+        }
+      ✔ export let foo = 'used';
+        console.log(foo);
+        foo = 'unused like but exported';
+      ✔ export function foo () {};
+        console.log(foo);
+        foo = 'unused like but exported';
+      ✔ export class foo {};
+        console.log(foo);
+        foo = 'unused like but exported';
+      ✔ export default function foo () {};
+        console.log(foo);
+        foo = 'unused like but exported';
+      ✔ export default class foo {};
+        console.log(foo);
+        foo = 'unused like but exported';
+      ✔ let foo = 'used';
+        export { foo };
+        console.log(foo);
+        foo = 'unused like but exported';
+      ✔ function foo () {};
+        export { foo };
+        console.log(foo);
+        foo = 'unused like but exported';
+      ✔ class foo {};
+        export { foo };
+        console.log(foo);
+        foo = 'unused like but exported';
+      ✔ /* exported foo */
+            let foo = 'used';
+            console.log(foo);
+            foo = 'unused like but exported with directive';
+      ✔ /*eslint test/use-a:1*/
+        let a = 'used';
+        console.log(a);
+        a = 'unused like but marked by markVariableAsUsed()';
+        
+      ✔ v = 'used';
+        console.log(v);
+        v = 'unused'
+      ✔ let v = 'used variable';
+      ✔ function foo() {
+            return;
+
+            const x = 1;
+            if (y) {
+                bar(x);
+            }
+        }
+      ✔ function foo() {
+            const x = 1;
+            console.log(x);
+            return;
+
+            x = 'Foo'
+        }
+      ✔ function foo() {
+            let a = 42;
+            console.log(a);
+            a++;
+            console.log(a);
+        }
+      ✔ function foo() {
+            let a = 42;
+            console.log(a);
+            a--;
+            console.log(a);
+        }
+      ✔ function foo() {
+            let a = 42;
+            console.log(a);
+            a = 10;
+            a = a + 1;
+            console.log(a);
+        }
+      ✔ function foo() {
+            let a = 42;
+            console.log(a);
+            a = 10;
+            if (cond) {
+                a = a + 1;
+            } else {
+                a = 2 + a;
+            }
+            console.log(a);
+        }
+      ✔ function foo() {
+            let a = 'used', b = 'used', c = 'used', d = 'used';
+            console.log(a, b, c, d);
+            ({ a, arr: [b, c, ...d] } = fn());
+            console.log(a, b, c, d);
+        }
+      ✔ function foo() {
+            let a = 'used', b = 'used', c = 'used';
+            console.log(a, b, c);
+            ({ a = 'unused', foo: b, ...c } = fn());
+            console.log(a, b, c);
+        }
+      ✔ function foo() {
+            let a = {};
+            console.log(a);
+            a.b = 'unused like, but maybe used in setter';
+        }
+      ✔ function foo() {
+            let a = { b: 42 };
+            console.log(a);
+            a.b++;
+        }
+      ✔ function foo () {
+            let v = 'used';
+            console.log(v);
+            function bar() {
+                v = 'used in outer scope';
+            }
+            bar();
+            console.log(v);
+        }
+      ✔ function foo () {
+            let v = 'used';
+            console.log(v);
+            setTimeout(() => console.log(v), 1);
+            v = 'used in other scope';
+        }
+      ✔ function foo () {
+            let v = 'used';
+            console.log(v);
+            for (let i = 0; i < 10; i++) {
+                if (condition) {
+                    v = 'maybe used';
+                    continue;
+                }
+                console.log(v);
+            }
+        }
+      ✔ /* globals foo */
+        const bk = foo;
+        foo = 42;
+        try {
+            // process
+        } finally {
+            foo = bk;
+        }
+      ✔ 
+            const bk = console;
+            console = { log () {} };
+            try {
+                // process
+            } finally {
+                console = bk;
+            }
+      ✔ let message = 'init';
+        try {
+            const result = call();
+            message = result.message;
+        } catch (e) {
+            // ignore
+        }
+        console.log(message)
+      ✔ let message = 'init';
+        try {
+            message = call().message;
+        } catch (e) {
+            // ignore
+        }
+        console.log(message)
+      ✔ let v = 'init';
+        try {
+            v = callA();
+            try {
+                v = callB();
+            } catch (e) {
+                // ignore
+            }
+        } catch (e) {
+            // ignore
+        }
+        console.log(v)
+      ✔ let v = 'init';
+        try {
+            try {
+                v = callA();
+            } catch (e) {
+                // ignore
+            }
+        } catch (e) {
+            // ignore
+        }
+        console.log(v)
+      ✔ let a;
+        try {
+            foo();
+        } finally {
+            a = 5;
+        }
+        console.log(a);
+      ✔ const obj = { a: 5 };
+        const { a, b = a } = obj;
+        console.log(b); // 5
+      ✔ const arr = [6];
+        const [c, d = c] = arr;
+        console.log(d); // 6
+      ✔ const obj = { a: 1 };
+        let {
+            a,
+            b = (a = 2)
+        } = obj;
+        console.log(a, b);
+      ✔ let { a, b: {c = a} = {} } = obj;
+        console.log(c);
+      ✔ /*eslint test/jsx:1*/
+                function App() {
+                    const A = "";
+                    return <A/>;
+                }
+            
+      ✔ /*eslint test/jsx:1*/
+                function App() {
+                    let A = "";
+                    foo(A);
+                    A = "A";
+                    return <A/>;
+                }
+            
+      ✔ /*eslint test/jsx:1*/
+                function App() {
+                    let A = "a";
+                    A = "b";
+                    A = "c";
+                    foo(A);
+                    return <A/>;
+                }
+            
+      1) async function fn() {
+            let intermediaryValue;
+            try {
+                intermediaryValue = 42;
+                unsafeFn();
+                return { error: undefined };
+            } catch {
+                return { intermediaryValue };
+            }
+        }
+
+        function unsafeFn() {
+            throw new Error();
+        }
+      2) function fn() {
+            let intermediaryValue;
+            while (true) {
+                try {
+                    intermediaryValue = 42;
+                    unsafeFn();
+                    break;
+                } catch {
+                    console.log(intermediaryValue);
+                    break;
+                }
+            }
+        }
+    invalid
+      ✔ let v = 'used';
+            console.log(v);
+            v = 'unused'
+      ✔ function foo() {
+                let v = 'used';
+                console.log(v);
+                v = 'unused';
+            }
+      ✔ function foo() {
+                let v = 'used';
+                if (condition) {
+                    v = 'unused';
+                    return
+                }
+                console.log(v);
+            }
+      ✔ function foo() {
+                let v = 'used';
+                if (condition) {
+                    console.log(v);
+                } else {
+                    v = 'unused';
+                }
+            }
+      ✔ var foo = function () {
+                let v = 'used';
+                console.log(v);
+                v = 'unused'
+            }
+      ✔ var foo = () => {
+                let v = 'used';
+                console.log(v);
+                v = 'unused'
+            }
+      ✔ class foo {
+                static {
+                    let v = 'used';
+                    console.log(v);
+                    v = 'unused'
+                }
+            }
+      ✔ function foo() {
+                let v = 'unused';
+                if (condition) {
+                    v = 'used';
+                    console.log(v);
+                    return
+                }
+            }
+      ✔ function foo() {
+                let v = 'used';
+                console.log(v);
+                v = 'unused';
+                v = 'unused';
+            }
+      ✔ function foo() {
+                let v = 'used';
+                console.log(v);
+                v = 'unused';
+                v = 'used';
+                console.log(v);
+                v = 'used';
+                console.log(v);
+            }
+      ✔ 
+            let v;
+            v = 'unused';
+            if (foo) {
+                v = 'used';
+            } else {
+                v = 'used';
+            }
+            console.log(v);
+      ✔ function foo() {
+                let v = 'used';
+                console.log(v);
+                v = 'unused';
+                v = 'unused';
+                v = 'used';
+                console.log(v);
+            }
+      ✔ function foo() {
+                let v = 'unused';
+                if (condition) {
+                    if (condition2) {
+                        v = 'used-2';
+                    } else {
+                        v = 'used-3';
+                    }
+                } else {
+                    v = 'used-4';
+                }
+                console.log(v);
+            }
+      ✔ function foo() {
+                let v;
+                if (condition) {
+                    v = 'unused';
+                } else {
+                    //
+                }
+                if (condition2) {
+                    v = 'used-1';
+                } else {
+                    v = 'used-2';
+                }
+                console.log(v);
+            }
+      ✔ function foo() {
+                let v = 'used';
+                if (condition) {
+                    v = 'unused';
+                    v = 'unused';
+                    v = 'used';
+                }
+                console.log(v);
+            }
+      ✔ function foo() {
+                let a = 42;
+                console.log(a);
+                a++;
+            }
+      ✔ function foo() {
+                let a = 42;
+                console.log(a);
+                a--;
+            }
+      ✔ function foo() {
+                let a = 'used', b = 'used', c = 'used', d = 'used';
+                console.log(a, b, c, d);
+                ({ a, arr: [b, c,, ...d] } = fn());
+                console.log(c);
+            }
+      ✔ function foo() {
+                let a = 'used', b = 'used', c = 'used';
+                console.log(a, b, c);
+                ({ a = 'unused', foo: b, ...c } = fn());
+            }
+      ✔ function foo () {
+                let v = 'used';
+                console.log(v);
+                setTimeout(() => v = 42, 1);
+                v = 'unused and variable is only updated in other scopes';
+            }
+      ✔ function foo() {
+                let v = 'used';
+                if (condition) {
+                    let v = 'used';
+                    console.log(v);
+                    v = 'unused';
+                }
+                console.log(v);
+                v = 'unused';
+            }
+      ✔ function foo() {
+                let v = 'used';
+                if (condition) {
+                    console.log(v);
+                    v = 'unused';
+                } else {
+                    v = 'unused';
+                }
+            }
+      ✔ function foo () {
+                let v = 'used';
+                console.log(v);
+                v = 'unused';
+                return;
+                console.log(v);
+            }
+      ✔ function foo () {
+                let v = 'used';
+                console.log(v);
+                v = 'unused';
+                throw new Error();
+                console.log(v);
+            }
+      ✔ function foo () {
+                let v = 'used';
+                console.log(v);
+                for (let i = 0; i < 10; i++) {
+                    v = 'unused';
+                    continue;
+                    console.log(v);
+                }
+            }
+            function bar () {
+                let v = 'used';
+                console.log(v);
+                for (let i = 0; i < 10; i++) {
+                    v = 'unused';
+                    break;
+                    console.log(v);
+                }
+            }
+      ✔ function foo () {
+                let v = 'used';
+                console.log(v);
+                for (let i = 0; i < 10; i++) {
+                    if (condition) {
+                        v = 'unused';
+                        break;
+                    }
+                    console.log(v);
+                }
+            }
+      ✔ let message = 'unused';
+            try {
+                const result = call();
+                message = result.message;
+            } catch (e) {
+                message = 'used';
+            }
+            console.log(message)
+      ✔ let message = 'unused';
+            try {
+                message = 'used';
+                console.log(message)
+            } catch (e) {
+            }
+      ✔ let message = 'unused';
+            try {
+                message = call();
+            } catch (e) {
+                message = 'used';
+            }
+            console.log(message)
+      ✔ let v = 'unused';
+            try {
+                v = callA();
+                try {
+                    v = callB();
+                } catch (e) {
+                    // ignore
+                }
+            } catch (e) {
+                v = 'used';
+            }
+            console.log(v)
+      ✔ 
+            var x = 1; // used
+            x = x + 1; // unused
+            x = 5; // used
+            f(x);
+      ✔ 
+            var x = 1; // used
+            x = // used
+                x++; // unused
+            f(x);
+      ✔ const obj = { a: 1 };
+            let {
+                a,
+                b = (a = 2)
+            } = obj;
+            a = 3
+            console.log(a, b);
+
+
+  82 passing (170ms)
+  2 failing
+
+  1) no-useless-assignment
+       valid
+         async function fn() {
+            let intermediaryValue;
+            try {
+                intermediaryValue = 42;
+                unsafeFn();
+                return { error: undefined };
+            } catch {
+                return { intermediaryValue };
+            }
+        }
+
+        function unsafeFn() {
+            throw new Error();
+        }:
+
+      AssertionError [ERR_ASSERTION]: Should have no errors but had 1: [
+  {
+    ruleId: 'rule-to-test/no-useless-assignment',
+    severity: 1,
+    message: 'This assigned value is not used in subsequent statements.',
+    line: 4,
+    column: 17,
+    nodeType: 'Identifier',
+    messageId: 'unnecessaryAssignment',
+    endLine: 4,
+    endColumn: 34
+  }
+]
+
+1 !== 0
+
+      + expected - actual
+
+      -1
+      +0
+      
+      at testValidTemplate (lib/rule-tester/rule-tester.js:924:20)
+      at Context.<anonymous> (lib/rule-tester/rule-tester.js:1273:37)
+      at process.processImmediate (node:internal/timers:534:21)
+
+  2) no-useless-assignment
+       valid
+         function fn() {
+            let intermediaryValue;
+            while (true) {
+                try {
+                    intermediaryValue = 42;
+                    unsafeFn();
+                    break;
+                } catch {
+                    console.log(intermediaryValue);
+                    break;
+                }
+            }
+        }:
+
+      AssertionError [ERR_ASSERTION]: Should have no errors but had 1: [
+  {
+    ruleId: 'rule-to-test/no-useless-assignment',
+    severity: 1,
+    message: 'This assigned value is not used in subsequent statements.',
+    line: 5,
+    column: 21,
+    nodeType: 'Identifier',
+    messageId: 'unnecessaryAssignment',
+    endLine: 5,
+    endColumn: 38
+  }
+]
+
+1 !== 0
+
+      + expected - actual
+
+      -1
+      +0
+      
+      at testValidTemplate (lib/rule-tester/rule-tester.js:924:20)
+      at Context.<anonymous> (lib/rule-tester/rule-tester.js:1273:37)
+      at process.processImmediate (node:internal/timers:534:21)
+
+
+
+(node:48702) ESLintIgnoreWarning: The ".eslintignore" file is no longer supported. Switch to using the "ignores" property in "eslint.config.js": https://eslint.org/docs/latest/use/configure/migration-guide#ignoring-files
+(Use `node --trace-warnings ...` to show where the warning was created)
+

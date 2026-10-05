@@ -1,0 +1,12 @@
+{
+  "label": "eslint-19957__control__reproduce__r2",
+  "case": "eslint-19957",
+  "runs_per_side": 1,
+  "verdict": "fails_both",
+  "pre": [
+    1
+  ],
+  "post": [
+    1
+  ]
+}

@@ -1,0 +1,12 @@
+===== run 1: exit 1
+[
+  {
+    "line": 5,
+    "column": 5,
+    "ruleId": "no-useless-assignment",
+    "message": "This assigned value is not used in subsequent statements."
+  }
+]
+
+BUG REPRODUCED: `intermediaryValue = 42` flagged although it is read in the catch block.
+

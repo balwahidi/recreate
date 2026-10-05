@@ -1,0 +1,12 @@
+{
+  "label": "urfave-cli-2176__control__investigate",
+  "case": "urfave-cli-2176",
+  "runs_per_side": 3,
+  "verdict": "fix_conflicts_with_patch",
+  "error": "fix.patch: error: patch failed: command_setup.go:80\nerror: command_setup.go: patch does not apply\n",
+  "pre": [
+    0,
+    0,
+    0
+  ]
+}

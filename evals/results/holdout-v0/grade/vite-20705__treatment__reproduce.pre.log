@@ -1,0 +1,56 @@
+===== run 1: exit 1
+Scope: all 241 workspace projects
+Progress: resolved 0, reused 1, downloaded 0, added 0
+Progress: resolved 1383, reused 1213, downloaded 0, added 0
+Packages: +96
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Progress: resolved 1383, reused 1213, downloaded 0, added 90, done
+. postinstall$ simple-git-hooks
+. postinstall: [INFO] Successfully set the pre-commit with command: pnpm exec lint-staged --concurrent false
+. postinstall: [INFO] Successfully set all git hooks
+. postinstall: Done
+ WARN  Issues with peer dependencies found
+playground/external
+└─┬ vue 3.4.38
+  └─┬ @vue/server-renderer 3.4.38
+    └── ✕ unmet peer vue@3.4.38: found 3.5.22
+
+Done in 2.2s using pnpm v10.17.1
+
+ RUN  v3.2.4 /home/ubuntu/grade/vite-20705/repo
+
+ ❯ packages/vite/src/node/server/middlewares/__tests__/htmlFallback.spec.ts (2 tests | 2 failed) 62ms
+   × html fallback when the url matches a source file basename > browser navigation to /test serves index.html (first request) 28ms
+     → expected 'text/javascript' to match /^text\/html/html
+   × html fallback when the url matches a source file basename > browser navigation to /test serves index.html (second request) 8ms
+     → expected 'text/javascript' to match /^text\/html/html
+
+ Test Files  1 failed (1)
+      Tests  2 failed (2)
+   Start at  19:47:53
+   Duration  1.19s (transform 583ms, setup 0ms, collect 933ms, tests 62ms, environment 0ms, prepare 48ms)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/vite/src/node/server/middlewares/__tests__/htmlFallback.spec.ts > html fallback when the url matches a source file basename > browser navigation to /test serves index.html (first request)
+ FAIL  packages/vite/src/node/server/middlewares/__tests__/htmlFallback.spec.ts > html fallback when the url matches a source file basename > browser navigation to /test serves index.html (second request)
+AssertionError: expected 'text/javascript' to match /^text\/html/html
+
+[32m- Expected:[39m 
+/^text\/html/
+
+[31m+ Received:[39m 
+"text/javascript"
+
+ ❯ packages/vite/src/node/server/middlewares/__tests__/htmlFallback.spec.ts:46:47
+     44|       const res = await fetch(`${base}/test`, { headers: navigationHea…
+     45|       const body = await res.text()
+     46|       expect(res.headers.get('content-type')).toMatch(/^text\/html/)
+       |                                               ^
+     47|       expect(body).toContain('click me')
+     48|       expect(body).not.toContain('THIS_IS_TEST_JS')
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+
