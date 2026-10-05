@@ -1,7 +1,8 @@
 """Write cases/<id>/issue.md: the issue as the agent may see it.
 
-Comments at or after the case's cutoff are withheld so the agent cannot read
-the maintainers' diagnosis or the fix. Cutoff tokens in cases.json:
+Issue titles and bodies are restored to the case's cutoff. Comments at or
+after the cutoff are withheld so the agent cannot read the diagnosis or fix.
+Cutoff tokens in cases.json:
   FIX_PR_CREATED              creation time of the PR that merged `fix`
   FIRST_NON_REPORTER_COMMENT  first comment by anyone other than the reporter
   <ISO timestamp>             literal
@@ -39,6 +40,20 @@ def cutoff(case, issue, comments):
         others = [c["created_at"] for c in comments if c["user"]["login"] != issue["user"]["login"]]
         return min(others) if others else "9999"
     return token
+
+
+def title_at_cutoff(case, issue, events, limit):
+    renames = sorted(
+        (event for event in events if event.get("event") == "renamed"),
+        key=lambda event: event["created_at"],
+    )
+    title = issue["title"]
+    if renames and renames[-1]["rename"]["to"] != title:
+        raise ValueError(f"latest issue rename does not match current title for {case['id']}")
+    for event in reversed(renames):
+        if event["created_at"] >= limit:
+            title = event["rename"]["from"]
+    return title
 
 
 def content_at_cutoff(nodes, current_body, created_at, limit):
@@ -131,9 +146,11 @@ def main():
             continue
         issue = gh(f"repos/{case['repo']}/issues/{case['issue']}")
         comments = gh(f"repos/{case['repo']}/issues/{case['issue']}/comments")
+        events = gh(f"repos/{case['repo']}/issues/{case['issue']}/events")
         limit = cutoff(case, issue, comments)
+        title = title_at_cutoff(case, issue, events, limit)
         kept = [c for c in comments if c["created_at"] < limit]
-        parts = [f"# {issue['title']}\n",
+        parts = [f"# {title}\n",
                  f"Reported by @{issue['user']['login']} on {issue['created_at'][:10]}\n",
                  body_at_cutoff(case, issue, limit)]
         for c in kept:

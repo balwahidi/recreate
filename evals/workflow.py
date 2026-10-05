@@ -5,8 +5,8 @@ output is written to evals/results/<RUN['name']>/<case>__<arm>__<task>.json.
 When passing this file's text to run_workflow, run it from the repository root.
 Repeated samples get numbered neutral prompt suffixes; duplicate session IDs
 are recorded as errors instead of keeping a result.
-Existing result labels outside the current work are rejected before sessions
-start; runs with the same labels can be resumed.
+Existing result-shaped labels outside the current work are rejected before
+sessions start; metadata JSON files are ignored.
 """
 import asyncio, json, pathlib, re, sys
 
@@ -34,7 +34,7 @@ def units():
     skills = {arm: (ROOT / path).read_text() for arm, path in SKILLS.items() if arm in RUN["arms"]}
     for split, ids, tasks in RUN["plan"]:
         for case in cases:
-            if case["split"] != split or (ids and case["id"] not in ids):
+            if case["split"] != split or (ids is not None and case["id"] not in ids):
                 continue
             report = (ROOT / "cases" / case["id"] / "issue.md").read_text()
             case = dict(case, report_date=re.search(r"Reported by @\S+ on (\S+)", report).group(1))
@@ -78,13 +78,18 @@ def mark_duplicate_sessions(out_dir, labels):
             log(f"{label}: duplicate session {session_id}")
 
 
-def reject_stale_outputs(out_dir, work_labels):
+def reject_stale_outputs(out_dir, work_labels, case_ids):
     if not out_dir.exists():
         return
-    stale = sorted(
-        path.stem for path in out_dir.glob("*.json")
-        if path.is_file() and path.name != "sessions.json" and path.stem not in work_labels
-    )
+    stale = []
+    for path in out_dir.glob("*.json"):
+        if not path.is_file():
+            continue
+        parts = path.stem.split("__")
+        result_shaped = len(parts) in (3, 4) and parts[0] in case_ids
+        if result_shaped and path.stem not in work_labels:
+            stale.append(path.stem)
+    stale.sort()
     if stale:
         raise ValueError(f"stale result labels in {out_dir}: {', '.join(stale)}")
 
@@ -92,7 +97,9 @@ def reject_stale_outputs(out_dir, work_labels):
 async def main():
     work = list(units())
     out_dir = ROOT / "evals/results" / RUN["name"]
-    reject_stale_outputs(out_dir, {label for label, _ in work})
+    cases_path = ROOT / "cases/cases.json"
+    case_ids = {case["id"] for case in json.loads(cases_path.read_text())["cases"]}
+    reject_stale_outputs(out_dir, {label for label, _ in work}, case_ids)
     await register_workflow({
         "name": RUN["name"],
         "description": "Recreate eval: evaluated agents attempt bug reproduction from historical issues",
