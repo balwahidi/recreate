@@ -14,25 +14,20 @@ This happens on multiple models which directly or indirectly derive from `BaseMo
 
 The example 1 is by far the most pure and most minimalistic one, example 2 shows an occurance where there is a chain of inheritance. I've included it to give a more detailed perspective in the behaviour where it seems to skip 1 layer of inheritance.
 
-[to be clear, the examples are not able to reproduce the race condition as-is, but they illustrate the relevant models involved]
-
 ### Example Code
 
 ```Python
-from __future__ import annotations # support forward refs
-from pydantic import BaseModel , model_validator, ValidationInfo
+from pydantic import BaseModel
 from typing import Self
 
-
+class Translatable(BaseModel):   
+    en: str = ""
+    ...
 
 class Direct(BaseModel):
     model_config = ConfigDict(populate_by_name=True)
     id: str
     description: Optional[Translatable] = None
-    ...
-
-class Translatable(BaseModel):   
-    en: str = ""
     ...
 
 d = Direct(id="test", description=Translatable(en="ok")) # raises PydanticUserError("Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly")
@@ -53,10 +48,7 @@ class B(A):
 
 class C(B):
     name: str | None = None
-    forward: Foo | None = None
 
-class Foo:
-    pass
 
 c1 = C.model_validate({"name": "test", "id": "ok1"}) # correctly instantiates
 c2 = C.model_validate({"name": "test", "id": "ok2"}) # correctly instantiates

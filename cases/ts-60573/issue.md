@@ -4,7 +4,7 @@ Reported by @denk0403 on 2024-11-23
 
 ### 🔎 Search Terms
 
-"typescript 5.7", "type assertions", "casting", "regression", "zod", "tsc"
+"typescript 5.7", "type assertions", "casting", "regression", "zod"
 
 ### 🕗 Version & Regression Information
 

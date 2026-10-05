@@ -41,8 +41,57 @@ def cutoff(case, issue, comments):
     return token
 
 
+def body_at_cutoff(case, issue, limit):
+    owner, name = case["repo"].split("/")
+    query = """
+    query($owner: String!, $name: String!, $number: Int!, $cursor: String) {
+      repository(owner: $owner, name: $name) {
+        issue(number: $number) {
+          userContentEdits(first: 100, after: $cursor) {
+            nodes { editedAt diff }
+            pageInfo { hasNextPage endCursor }
+          }
+        }
+      }
+    }
+    """
+    nodes = []
+    cursor = None
+    while True:
+        args = [
+            "gh", "api", "graphql", "-f", f"query={query}",
+            "-F", f"owner={owner}", "-F", f"name={name}",
+            "-F", f"number={case['issue']}",
+        ]
+        if cursor:
+            args.extend(["-F", f"cursor={cursor}"])
+        result = subprocess.run(args, check=True, capture_output=True, text=True)
+        connection = json.loads(result.stdout)["data"]["repository"]["issue"]["userContentEdits"]
+        nodes.extend(connection["nodes"])
+        page = connection["pageInfo"]
+        if not page["hasNextPage"]:
+            break
+        cursor = page["endCursor"]
+
+    if not nodes:
+        return issue["body"] or ""
+
+    nodes.sort(key=lambda node: node["editedAt"])
+    current = issue["body"] or ""
+    if nodes[-1]["diff"] != current:
+        raise ValueError(f"latest GraphQL body edit does not match current body for {case['id']}")
+
+    eligible = [node for node in nodes if node["editedAt"] < limit]
+    if eligible:
+        return eligible[-1]["diff"]
+    if nodes[0]["editedAt"] != issue["created_at"]:
+        raise ValueError(f"GraphQL history does not expose the original body for {case['id']}")
+    return nodes[0]["diff"]
+
+
 def main():
     cases = json.loads((ROOT / "cases/cases.json").read_text())["cases"]
+    outputs = []
     for case in cases:
         if ONLY and case["id"] not in ONLY:
             continue
@@ -52,13 +101,16 @@ def main():
         kept = [c for c in comments if c["created_at"] < limit]
         parts = [f"# {issue['title']}\n",
                  f"Reported by @{issue['user']['login']} on {issue['created_at'][:10]}\n",
-                 issue["body"] or ""]
+                 body_at_cutoff(case, issue, limit)]
         for c in kept:
             parts.append(f"\n---\n\n**@{c['user']['login']}** commented on {c['created_at'][:10]}:\n\n{c['body']}")
         out = ROOT / "cases" / case["id"] / "issue.md"
+        outputs.append((case["id"], out, "\n".join(parts).rstrip() + "\n", limit, len(kept), len(comments)))
+
+    for case_id, out, text, limit, kept, total in outputs:
         out.parent.mkdir(parents=True, exist_ok=True)
-        out.write_text("\n".join(parts).rstrip() + "\n")
-        print(f"{case['id']}: cutoff={limit} kept {len(kept)}/{len(comments)} comments")
+        out.write_text(text)
+        print(f"{case_id}: cutoff={limit} kept {kept}/{total} comments")
 
 
 if __name__ == "__main__":

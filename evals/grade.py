@@ -26,6 +26,11 @@ BUILD = {
     "ts-60573": "npx hereby local",
     "pnpm-10290": "pnpm -C pnpm exec tsgo --build && pnpm -C pnpm run bundle",
 }
+SETUP = {
+    "vite-20705": "pnpm install --frozen-lockfile",
+    "ts-60573": "npm ci --ignore-scripts",
+    "pnpm-10290": "pnpm install --frozen-lockfile",
+}
 # Upstream fixes that change APIs existing tests use; their test changes are needed to compile.
 POST_EXTRA = {"urfave-cli-2176": "upstream_test.patch"}
 
@@ -81,6 +86,14 @@ def build(case, repo, log):
     return code == 0
 
 
+def setup(case, repo, log):
+    if case["id"] not in SETUP:
+        return True
+    code, out = sh(SETUP[case["id"]], repo, 1800)
+    log.write_text(f"exit {code}\n{out}")
+    return code == 0
+
+
 def grade(case, label, result, out_dir):
     repo = GRADE / case["id"] / "repo"
     runs = RUNS_FLAKY if "flaky" in case["kind"] else 1
@@ -88,6 +101,9 @@ def grade(case, label, result, out_dir):
     record = {"label": label, "case": case["id"], "runs_per_side": runs}
     try:
         reset(repo, case["checkout"])
+        setup_log = out_dir / f"{label}.setup.log"
+        if not setup(case, repo, setup_log):
+            return dict(record, verdict="setup_failed", side="pre", log=str(setup_log))
         ok, err = apply(repo, result["patch"])
         if not ok:
             return dict(record, verdict="patch_failed", error=err)

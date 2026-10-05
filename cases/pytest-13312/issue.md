@@ -1,4 +1,4 @@
-# [regression,8.2.2] `KeyError` sometimes crashes test collection on PyPy while reordering fixtures
+# [regression][8.2.2] `KeyError` sometimes crashes test collection on PyPy while reordering fixtures
 
 Reported by @webknjaz on 2025-03-19
 
@@ -102,7 +102,7 @@ It kinda suggests that the PyPy implementation of `OrderedDict` is weird:
 (Pdb) pp [(k, v) for k, v in scoped_items_by_argkey[key].items() if str(k) == '<Function test_popitem[case-insensitive-pure-python-module]>']
 [(<Function test_popitem[case-insensitive-pure-python-module]>, None),
  (<Function test_popitem[case-insensitive-pure-python-module]>, None)]
-(Pdb) pp scoped_items_by_argkey[key,item]
+(Pdb) pp scoped_items_by_argkey[key][item]
 *** KeyError: <Function test_popitem[case-insensitive-pure-python-module]>
 (Pdb) pp [(k, v, id(k), hash(k)) for k, v in scoped_items_by_argkey[key].items() if str(k) == '<Function test_popitem[case-insensitive-pure-python-module]>']
 [(<Function test_popitem[case-insensitive-pure-python-module]>,
