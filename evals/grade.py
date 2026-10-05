@@ -68,7 +68,7 @@ def sh(cmd, cwd, timeout):
 def reset(repo, checkout):
     subprocess.run(["git", "checkout", "-q", "-f", checkout], cwd=repo, check=True)
     subprocess.run(["git", "checkout", "-q", "--", "."], cwd=repo, check=True)
-    subprocess.run(["git", "clean", "-fdq"], cwd=repo, check=True)
+    subprocess.run(["git", "clean", "-ffdq"], cwd=repo, check=True)
 
 
 def apply(repo, patch_text):
@@ -163,12 +163,11 @@ def main():
         label = path.stem
         if label.split("__")[0] not in cases or (filters and not any(f in label for f in filters)):
             continue
+        clear_grade_files(out_dir, label)
         case = cases[label.split("__")[0]]
         result = json.loads(path.read_text())
         has_error = "error" in result
         no_artifact = not result.get("run_command")
-        if has_error or no_artifact:
-            clear_grade_files(out_dir, label)
         if has_error:
             record = {"label": label, "case": case["id"], "verdict": "agent_error"}
         elif not case["fix"]:
@@ -176,7 +175,6 @@ def main():
         elif no_artifact:
             record = {"label": label, "case": case["id"], "verdict": "no_reproduction_artifact"}
         else:
-            clear_grade_files(out_dir, label)
             record = grade(case, label, result, out_dir)
         (out_dir / f"{label}.json").write_text(json.dumps(record, indent=2))
         print(f"{label}: {record['verdict']} pre={record.get('pre')} post={record.get('post')}", flush=True)
