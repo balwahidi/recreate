@@ -13,6 +13,15 @@ The case kinds are deterministic bugs, regressions, flaky races, OS-specific rep
 `evals/snapshot_issues.py` saves each issue as `cases/<id>/issue.md`. The snapshot stops before the first maintainer diagnosis or linked fix, so the agent sees what a triager would have seen.
 The ts-60573 snapshot used in every run had one corrupted snippet (`T['_type',Key]` for `T['_type'][Key]`, from a pagination bug since fixed); both arms saw the same text.
 
+**Known leak.** Four cases were first cut when the fix PR was opened rather than at the first maintainer comment:
+- eslint-19245: the root cause;
+- eslint-19924: a maintainer's reproduction recipe;
+- vite-20705 and ts-60573: the regressing PR.
+
+So in all four, the issue text the agents saw included the maintainers' findings. Every recorded run used those snapshots, in both arms, so the comparison is like-for-like, but those cases were easier than intended. The snapshots are now cut at the first non-reporter comment. The versions the runs used are in commit 87769c1. `results.md` reports holdout numbers with and without the leaked cases.
+
+**Holdout use.** The native-test rule was removed after v0, partly on evidence from the v0 holdout run. That makes holdout-v0 the only unseen-data treatment measurement. Later holdout runs (`holdout-v3b`) are reported, but labelled as tuned.
+
 ## Arms and prompts
 
 `evals/prompts.py` builds the prompt. Every arm gets the same text: the setup, the issue snapshot, a task line and an output contract. The treatment arm also gets `SKILL.md`, wrapped as an installed skill. The prompt tells the agent not to open the issue page, the fixing PR or commit, or later release notes.

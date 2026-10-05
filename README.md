@@ -24,7 +24,7 @@ Each finding below compares a control (the same model with no skill) against the
 - **Flaky bugs get a rate,** such as "9 panics in 100,000 subtests". Control 0 of 3 runs, skill 3 of 3.
 - **Simulated environments are labelled.** When the skill simulated Windows on Linux, it put that in the status line in 6 of 6 runs. The control buried it in the body in all 6.
 
-- **Reproductions survive a fix check more often.** On holdout cases, a reproduction counts when it fails before the real upstream fix and passes after it. That held for 15 of 16 skill samples and 7 of 16 control samples. The control always found the bug, but its tests sometimes:
+- **Reproductions survive a fix check more often.** On holdout cases, a reproduction counts when it fails before the real upstream fix and passes after it. The frozen skill passed in 7 of 8 samples and the control in 7 of 16 (5 of 6 vs 5 of 12 without two cases whose issue text leaked the maintainers' diagnosis). The control always found the bug, but its tests sometimes:
   - asserted more than the report said;
   - exercised a different code path from the command the reporter ran;
   - counted unrelated errors as the bug.
