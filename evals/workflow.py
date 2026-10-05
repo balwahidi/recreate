@@ -3,6 +3,8 @@
 Edit RUN below, then pass this file to run_workflow. Each agent's structured
 output is written to evals/results/<RUN['name']>/<case>__<arm>__<task>.json.
 When passing this file's text to run_workflow, run it from the repository root.
+Repeated samples get numbered neutral prompt suffixes; duplicate session IDs
+are recorded as errors instead of keeping a result.
 """
 import asyncio, json, pathlib, re, sys
 
@@ -40,7 +42,8 @@ def units():
                     label = f"{case['id']}__{arm}__{task}"
                     repeats = RUN.get("repeats", 1)
                     for n in range(1, repeats + 1):
-                        yield (f"{label}__r{n}" if repeats > 1 else label), prompt
+                        sample_prompt = f"{prompt}\n\n(Evaluation sample {n}.)" if repeats > 1 else prompt
+                        yield (f"{label}__r{n}" if repeats > 1 else label), sample_prompt
 
 
 async def run_one(label, prompt, out_dir):
@@ -54,6 +57,25 @@ async def run_one(label, prompt, out_dir):
     return result
 
 
+def mark_duplicate_sessions(out_dir, labels):
+    sessions_path = out_dir / "sessions.json"
+    sessions = json.loads(sessions_path.read_text())
+    by_session = {}
+    for label in labels:
+        session_id = sessions.get(label)
+        if session_id is not None:
+            by_session.setdefault(session_id, []).append(label)
+    for session_id, duplicates in by_session.items():
+        if len(duplicates) < 2:
+            continue
+        for label in duplicates:
+            result_path = out_dir / f"{label}.json"
+            result_path.write_text(json.dumps(
+                {"error": f"duplicate session {session_id}"}, indent=2, sort_keys=True
+            ))
+            log(f"{label}: duplicate session {session_id}")
+
+
 async def main():
     work = list(units())
     await register_workflow({
@@ -65,6 +87,7 @@ async def main():
     out_dir = ROOT / "evals/results" / RUN["name"]
     out_dir.mkdir(parents=True, exist_ok=True)
     await asyncio.gather(*(run_one(label, prompt, out_dir) for label, prompt in work))
+    mark_duplicate_sessions(out_dir, [label for label, _ in work])
 
 
 asyncio.run(main())

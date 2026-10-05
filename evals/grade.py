@@ -94,6 +94,12 @@ def setup(case, repo, log):
     return code == 0
 
 
+def clear_grade_files(out_dir, label):
+    (out_dir / f"{label}.json").unlink(missing_ok=True)
+    for path in out_dir.glob(f"{label}.*.log"):
+        path.unlink()
+
+
 def grade(case, label, result, out_dir):
     repo = GRADE / case["id"] / "repo"
     runs = RUNS_FLAKY if "flaky" in case["kind"] else 1
@@ -145,9 +151,15 @@ def main():
             continue
         case = cases[label.split("__")[0]]
         result = json.loads(path.read_text())
-        if "error" in result or not case["fix"]:
+        has_error = "error" in result
+        no_artifact = not result.get("patch") or not result.get("run_command")
+        if has_error or no_artifact:
+            clear_grade_files(out_dir, label)
+        if has_error:
+            record = {"label": label, "case": case["id"], "verdict": "agent_error"}
+        elif not case["fix"]:
             continue
-        if not result.get("patch") or not result.get("run_command"):
+        elif no_artifact:
             record = {"label": label, "case": case["id"], "verdict": "no_reproduction_artifact"}
         else:
             record = grade(case, label, result, out_dir)
