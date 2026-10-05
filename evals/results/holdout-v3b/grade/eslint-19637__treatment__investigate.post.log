@@ -1,0 +1,10 @@
+===== run 1: exit 0
+ecmaVersion=3 sourceType=script: no errors
+ecmaVersion=3 sourceType=commonjs: no errors
+ecmaVersion=5 sourceType=script: no errors
+ecmaVersion=5 sourceType=commonjs: no errors
+ecmaVersion=2015 sourceType=script: no errors
+ecmaVersion=2015 sourceType=commonjs: no errors
+ecmaVersion=latest sourceType=script: no errors
+ecmaVersion=latest sourceType=commonjs: no errors
+

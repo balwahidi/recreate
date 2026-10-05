@@ -1,0 +1,18 @@
+===== run 1: exit 1
+during C's rebuild: '__pydantic_validator__' in C.__dict__ = False
+thread 1 (did the rebuild): C C(id='ok1', name='test', forward=None)
+thread 2 (validated during rebuild): B B(id='ok2')
+c2.name -> AttributeError: 'B' object has no attribute 'name'
+
+===== run 2: exit 1
+during C's rebuild: '__pydantic_validator__' in C.__dict__ = False
+thread 1 (did the rebuild): C C(id='ok1', name='test', forward=None)
+thread 2 (validated during rebuild): B B(id='ok2')
+c2.name -> AttributeError: 'B' object has no attribute 'name'
+
+===== run 3: exit 1
+during C's rebuild: '__pydantic_validator__' in C.__dict__ = False
+thread 1 (did the rebuild): C C(id='ok1', name='test', forward=None)
+thread 2 (validated during rebuild): B B(id='ok2')
+c2.name -> AttributeError: 'B' object has no attribute 'name'
+

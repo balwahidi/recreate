@@ -1,0 +1,12 @@
+{
+  "label": "eslint-19637__treatment__investigate__r1",
+  "case": "eslint-19637",
+  "runs_per_side": 1,
+  "verdict": "fail_to_pass",
+  "pre": [
+    1
+  ],
+  "post": [
+    0
+  ]
+}

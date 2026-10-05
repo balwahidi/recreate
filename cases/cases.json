@@ -15,7 +15,7 @@
    "fix_prod_files": [
     "lib/rules/no-useless-assignment.js"
    ],
-   "snapshot_before": "FIX_PR_CREATED",
+   "snapshot_before": "FIRST_NON_REPORTER_COMMENT",
    "expected": "reproduced"
   },
   {
@@ -48,7 +48,7 @@
    "fix_prod_files": [
     "lib/eslint/eslint.js"
    ],
-   "snapshot_before": "FIX_PR_CREATED",
+   "snapshot_before": "FIRST_NON_REPORTER_COMMENT",
    "expected": "reproduced"
   },
   {
@@ -175,7 +175,7 @@
    "fix_prod_files": [
     "packages/vite/src/node/server/middlewares/transform.ts"
    ],
-   "snapshot_before": "FIX_PR_CREATED",
+   "snapshot_before": "FIRST_NON_REPORTER_COMMENT",
    "expected": "reproduced"
   },
   {
@@ -209,7 +209,7 @@
    "fix_prod_files": [
     "src/compiler/expressionToTypeNode.ts"
    ],
-   "snapshot_before": "FIX_PR_CREATED",
+   "snapshot_before": "FIRST_NON_REPORTER_COMMENT",
    "expected": "reproduced"
   },
   {

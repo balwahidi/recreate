@@ -1,0 +1,15 @@
+===== run 1: exit 0
+
+ RUN  v3.1.4 /home/ubuntu/grade/vue-13611/repo
+
+ ✓ |unit| packages/runtime-core/__tests__/componentSlots.spec.ts (18 tests) 19ms
+
+ Test Files  1 passed (1)
+      Tests  18 passed (18)
+   Start at  21:58:20
+   Duration  691ms (transform 400ms, setup 8ms, collect 490ms, tests 19ms, environment 0ms, prepare 40ms)
+
+ Vitest  "environmentMatchGlobs" is deprecated. Use "workspace" to define different configurations instead.
+ Vitest  "environmentMatchGlobs" is deprecated. Use "workspace" to define different configurations instead.
+ Vitest  "environmentMatchGlobs" is deprecated. Use "workspace" to define different configurations instead.
+

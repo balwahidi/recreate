@@ -1,0 +1,15 @@
+===== run 1: exit 0
+during C's rebuild: '__pydantic_validator__' in C.__dict__ = True
+thread 1 (did the rebuild): C C(id='ok1', name='test', forward=None)
+thread 2 (validated during rebuild): C C(id='ok2', name='test', forward=None)
+
+===== run 2: exit 0
+during C's rebuild: '__pydantic_validator__' in C.__dict__ = True
+thread 1 (did the rebuild): C C(id='ok1', name='test', forward=None)
+thread 2 (validated during rebuild): C C(id='ok2', name='test', forward=None)
+
+===== run 3: exit 0
+during C's rebuild: '__pydantic_validator__' in C.__dict__ = True
+thread 1 (did the rebuild): C C(id='ok1', name='test', forward=None)
+thread 2 (validated during rebuild): C C(id='ok2', name='test', forward=None)
+

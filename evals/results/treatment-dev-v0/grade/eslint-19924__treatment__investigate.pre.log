@@ -1,0 +1,13 @@
+===== run 1: exit 1
+Running eslint --fix on 1124 files with ulimit -n 1024...
+eslint exit code: 2
+files left unfixed: 121/1124
+❌ Bug reproduced:
+Error: EMFILE: too many open files, open '/home/ubuntu/grade/eslint-19924/repo/tmp/emfile-fix-check/file_890.js'
+    at async open (node:internal/fs/promises:697:25)
+    at async Object.writeFile (node:internal/fs/promises:1317:14)
+    at async Promise.all (index 1003)
+    at async ESLint.outputFixes (/home/ubuntu/grade/eslint-19924/repo/lib/eslint/eslint.js:533:3)
+    at async Object.execute (/home/ubuntu/grade/eslint-19924/repo/lib/cli.js:637:4)
+    at async main (/home/ubuntu/grade/eslint-19924/repo/bin/eslint.js:175:19)
+

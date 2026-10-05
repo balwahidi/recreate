@@ -67,29 +67,3 @@ type Test = Unwrap<typeof value>
 ```
 
 This is a simplified version of an issue I'm seeing with some [Zod](https://github.com/colinhacks/zod) schemas after upgrading to TypeScript 5.7.
-
----
-
-**@Andarist** commented on 2024-11-24:
-
-This ia **display-only** bug introduced by https://github.com/microsoft/TypeScript/pull/59282 . For type printing purposes it reuses here the assertion type but it misses the fact that this type can be processed by the template of a mapped type.
-
-How do we know it's just a display-only bug? Just inspect this:
-```ts
-type Test2 = Unwrap<typeof value>["prop1"]
-//       ^? type Test2 = "hello"
-```
-
----
-
-**@denk0403** commented on 2024-11-24:
-
-You're right that my minimal reproduction is a display-only bug. But in a larger codebase, I am seeing a very similar example break type-inference and checking for a Zod schema. What's weirder is that the larger example displays correctly in my IDE, but only errors when running `tsc`.
-
-I will try to refine my reproduction above to see if I can produce the type-checking regression.
-
----
-
-**@Andarist** commented on 2024-11-24:
-
-It would be appreciated because it should be a completely different bug. Fixing this display-only bug is just very unlikely to fix what you are describing above.

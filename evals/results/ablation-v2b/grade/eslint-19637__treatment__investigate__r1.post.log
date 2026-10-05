@@ -1,0 +1,6 @@
+===== run 1: exit 0
+eslint 9.25.0 ecmaVersion=3: no errors
+eslint 9.25.0 ecmaVersion=5: no errors
+eslint 9.25.0 ecmaVersion=2015: no errors
+eslint 9.25.0 ecmaVersion=latest: no errors
+

@@ -1,0 +1,10 @@
+{
+  "label": "vue-13611__control__fix",
+  "case": "vue-13611",
+  "runs_per_side": 1,
+  "verdict": "fix_conflicts_with_patch",
+  "error": "fix.patch: error: patch failed: packages/runtime-core/src/componentSlots.ts:86\nerror: packages/runtime-core/src/componentSlots.ts: patch does not apply\n",
+  "pre": [
+    0
+  ]
+}

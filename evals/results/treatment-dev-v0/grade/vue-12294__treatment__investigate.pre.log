@@ -1,0 +1,85 @@
+===== run 1: exit 1
+
+ RUN  v3.1.3 /home/ubuntu/grade/vue-12294/repo
+
+ ❯ |unit| packages/runtime-core/__tests__/syncWatcherRepro.spec.ts (4 tests | 3 failed) 15ms
+   × sync watcher resetting its own source > reporter playground (component + button clicks) 11ms
+     → expected '<h1>true</h1><button>test</button>' to contain '<h1>false</h1>'
+   × sync watcher resetting its own source > ref source 3ms
+     → expected [ false, true ] to deeply equal [ false, false ]
+   × sync watcher resetting its own source > computed source 1ms
+     → expected [ false, true ] to deeply equal [ false, false ]
+   ✓ sync watcher resetting its own source > shallowRef source (control) 0ms
+
+ Test Files  1 failed (1)
+      Tests  3 failed | 1 passed (4)
+   Start at  21:53:33
+   Duration  677ms (transform 389ms, setup 8ms, collect 475ms, tests 15ms, environment 0ms, prepare 45ms)
+
+ Vitest  "environmentMatchGlobs" is deprecated. Use "workspace" to define different configurations instead.
+ Vitest  "environmentMatchGlobs" is deprecated. Use "workspace" to define different configurations instead.
+ Vitest  "environmentMatchGlobs" is deprecated. Use "workspace" to define different configurations instead.
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| packages/runtime-core/__tests__/syncWatcherRepro.spec.ts > sync watcher resetting its own source > reporter playground (component + button clicks)
+AssertionError: expected '<h1>true</h1><button>test</button>' to contain '<h1>false</h1>'
+
+Expected: [32m"<h1>[7mfals[27me</h1>"[39m
+Received: [31m"<h1>[7mtru[27me</h1>[7m<button>test</button>[27m"[39m
+
+ ❯ packages/runtime-core/__tests__/syncWatcherRepro.spec.ts:47:34
+     45|     await nextTick()
+     46|     // watcher should fire again and reset to false
+     47|     expect(serializeInner(root)).toContain('<h1>false</h1>')
+       |                                  ^
+     48|   })
+     49| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  |unit| packages/runtime-core/__tests__/syncWatcherRepro.spec.ts > sync watcher resetting its own source > ref source
+AssertionError: expected [ false, true ] to deeply equal [ false, false ]
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[2m  [[22m
+[2m    false,[22m
+[32m-   false,[39m
+[31m+   true,[39m
+[2m  ][22m
+
+ ❯ packages/runtime-core/__tests__/syncWatcherRepro.spec.ts:70:37
+     68|   test('ref source', () => {
+     69|     const v = ref(false)
+     70|     expect(clickTwice(v, v).values).toEqual([false, false])
+       |                                     ^
+     71|   })
+     72| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  |unit| packages/runtime-core/__tests__/syncWatcherRepro.spec.ts > sync watcher resetting its own source > computed source
+AssertionError: expected [ false, true ] to deeply equal [ false, false ]
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[2m  [[22m
+[2m    false,[22m
+[32m-   false,[39m
+[31m+   true,[39m
+[2m  ][22m
+
+ ❯ packages/runtime-core/__tests__/syncWatcherRepro.spec.ts:76:37
+     74|     const v = ref(false)
+     75|     const c = computed(() => v.value)
+     76|     expect(clickTwice(v, c).values).toEqual([false, false])
+       |                                     ^
+     77|   })
+     78| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
