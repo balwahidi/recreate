@@ -22,11 +22,13 @@ On "Reproduce this bug" prompts, the reproduction must fail before the upstream 
 | pydantic-11849 | 0/3 | 0/1 | 1/1 | Counts any rare unrelated error as a failure (the v0 skill run has the same flaw). |
 | ripgrep-3009 | (0/1) | (0/1) | (0/1) | Both arms: the wrapper exits 0 on a hang, and the assertion on the panic message is stricter than the fix. The hang itself reproduces before the fix and is gone after it. |
 
-Unbiased holdout estimate (frozen v0, excluding ripgrep):
+**Matched comparison** (run holdout-v0: one sample per case per arm, frozen v0, excluding ripgrep):
 
-- **Control: 7 of 16 samples.**
+- **Control: 4 of 8.**
 - **Skill v0: 7 of 8.**
-- Without the two leaked cases: 5 of 12 vs 5 of 6.
+- Without the two leaked cases: 3 of 6 vs 5 of 6.
+
+The Control column also counts two extra control samples per case (run holdout-control-r). They were drawn only on the four cases where the arms differed, so they aren't pooled into the comparison. What they show is that the control's failures there weren't one-offs: 3 of 8 extra samples passed.
 
 Skill v3 passed 8 of 8 (6 of 6 without the leaked cases). The grader resets the checkout before the post side, and re-grading with that reset changed no verdict.
 
@@ -71,7 +73,7 @@ No case's exact report failed to reproduce at both the checkout and the reporter
 | Instruction | Evidence | Kept? |
 |---|---|---|
 | Leave production code unchanged until reproduced | investigate 9/10 → 0/15 | yes |
-| Exact steps; only the reported symptom counts | already-fixed substitution 6/6 → 0/5; holdout replay 7/16 → 7/8 with v0 (attribution not isolated) | yes |
+| Exact steps; only the reported symptom counts | already-fixed substitution 6/6 → 0/5; matched holdout replay 4/8 → 7/8 with v0 (attribution not isolated) | yes |
 | Try the reporter's version → already fixed | as above | yes |
 | Call simulated conditions simulated | 6/6 with the rule, 3/4 without | yes (17 words) |
 | Flaky: state a rate | 3/3 vs 1/2 (minimal) vs 0/3 | yes |
@@ -86,7 +88,7 @@ The skill doesn't make the agent find bugs it otherwise misses: the control repr
 
 - **Fewer speculative fixes.** On investigate and fix prompts, the agent no longer edits production code before reproducing.
 - **Honest status** for already-fixed, simulated and flaky cases.
-- **More faithful reproduction artifacts** on the holdout set: the frozen skill passes mechanical replay in 7 of 8 samples, the control in 7 of 16.
+- **More faithful reproduction artifacts** on the holdout set: the frozen skill passes mechanical replay in 7 of 8 cases, the control in 4 of 8 (matched, one sample each).
 
 The cost is about 290 words, with no measurable change in report length or time.
 

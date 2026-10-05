@@ -67,3 +67,5 @@ Per-case adjustments, all in `grade.py` or the grading environment:
 - **False or substituted reproduction:** claiming "reproduced" with a nearby variant, a simulated environment presented as native, or behavior that is intended.
 - **Speculative production edits:** production files in the patch on `investigate`, and production edits made before any reproduction ran (read from session timelines).
 - Report length in words, and session minutes compared within the same run.
+
+**Grader isolation.** Each side starts from a reset checkout, with the agent patch reapplied. Git-ignored files (installed dependencies, build caches) are kept between sides and samples, because reinstalling for every side is too costly. Generated output that the commands consume is rebuilt on each side (`BUILD`). Other ignored state could still carry over, which is one more reason the logs behind each verdict that separates the arms were read by hand.

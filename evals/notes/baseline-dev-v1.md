@@ -129,4 +129,4 @@ Replay passes (the reproduction fails before the fix and passes after it):
 | ts-60573 | 1/3 | 2/2 |
 | pydantic-11849 | 0/3 | 1/2 |
 
-The control's failures are real symptoms with unfaithful artifacts. On the replay itself the arms differ: holdout total control 7/16, skill v0 (frozen before any holdout look) 7/8, v0+v3 pooled 15/16. v3 was tuned partly on holdout-v0, so v0 is the unbiased estimate. Details are in docs/results.md.
+The control's failures are real symptoms with unfaithful artifacts. On the replay itself the arms differ: the matched holdout-v0 run gives control 4/8 vs skill v0 7/8. These control repeats were drawn only on cases where the arms differed, so they are not pooled into that comparison. v3 was tuned partly on holdout-v0. Details are in docs/results.md.
