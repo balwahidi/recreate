@@ -2,7 +2,7 @@
 Scope: all 241 workspace projects
 Progress: resolved 0, reused 1, downloaded 0, added 0
 Progress: resolved 1383, reused 1213, downloaded 0, added 0
-Packages: +90
+Packages: +96
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Progress: resolved 1383, reused 1213, downloaded 0, added 90, done
 . postinstall$ simple-git-hooks
@@ -15,15 +15,15 @@ playground/external
   └─┬ @vue/server-renderer 3.4.38
     └── ✕ unmet peer vue@3.4.38: found 3.5.22
 
-Done in 2.2s using pnpm v10.17.1
+Done in 2.1s using pnpm v10.17.1
 
  RUN  v3.2.4 /home/ubuntu/grade/vite-20705/repo
 
- ✓ packages/vite/src/node/server/middlewares/__tests__/htmlFallback.spec.ts (2 tests) 69ms
+ ✓ packages/vite/src/node/server/middlewares/__tests__/htmlFallback.spec.ts (2 tests) 72ms
 
  Test Files  1 passed (1)
       Tests  2 passed (2)
-   Start at  19:47:59
-   Duration  1.20s (transform 587ms, setup 0ms, collect 946ms, tests 69ms, environment 0ms, prepare 44ms)
+   Start at  00:04:59
+   Duration  1.12s (transform 560ms, setup 0ms, collect 882ms, tests 72ms, environment 0ms, prepare 44ms)
 
 

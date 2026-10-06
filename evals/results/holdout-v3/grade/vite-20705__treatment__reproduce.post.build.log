@@ -24,4 +24,4 @@ shimmed: postcss-import/lib/parse-styles.js
 <DIR>/node/chunks/dep-DQ-J0yX1.js  chunk │ size: 1,346.61 kB
 <DIR>/node/module-runner.js  chunk │ size: 48.73 kB
 
-✔ rolldown v1.0.0-beta.41 Finished in 494.44 ms
+✔ rolldown v1.0.0-beta.41 Finished in 596.21 ms

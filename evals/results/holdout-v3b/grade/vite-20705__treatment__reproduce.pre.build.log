@@ -24,4 +24,4 @@ shimmed: postcss-import/lib/parse-styles.js
 <DIR>/node/chunks/dep-BegfyvbA.js  chunk │ size: 1,346.23 kB
 <DIR>/node/module-runner.js  chunk │ size: 48.73 kB
 
-✔ rolldown v1.0.0-beta.41 Finished in 617.74 ms
+✔ rolldown v1.0.0-beta.41 Finished in 505.74 ms

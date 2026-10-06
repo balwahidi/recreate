@@ -263,10 +263,10 @@ INTERNALERROR>   File "/home/ubuntu/grade/pytest-13312/repo/src/_pytest/fixtures
 INTERNALERROR>     other_scoped_items_by_argkey[argkey].move_to_end(
 INTERNALERROR> KeyError: <Function test_it[0-12-9]>
 
-320 tests collected in 0.06s
+320 tests collected in 0.07s
 =========================== short test summary info ============================
 FAILED testing/python/fixtures.py::test_reorder_items_many_session_params_no_keyerror
-====================== 1 failed, 204 deselected in 2.12s =======================
+====================== 1 failed, 204 deselected in 1.01s =======================
 
 ===== run 2: exit 1
 _session_params_no_keyerror.py::test_it[0-12-5]
@@ -533,10 +533,10 @@ INTERNALERROR>   File "/home/ubuntu/grade/pytest-13312/repo/src/_pytest/fixtures
 INTERNALERROR>     other_scoped_items_by_argkey[argkey].move_to_end(
 INTERNALERROR> KeyError: <Function test_it[0-12-9]>
 
-320 tests collected in 0.06s
+320 tests collected in 0.07s
 =========================== short test summary info ============================
 FAILED testing/python/fixtures.py::test_reorder_items_many_session_params_no_keyerror
-====================== 1 failed, 204 deselected in 0.63s =======================
+====================== 1 failed, 204 deselected in 0.70s =======================
 
 ===== run 3: exit 1
 _session_params_no_keyerror.py::test_it[0-12-5]
@@ -803,8 +803,8 @@ INTERNALERROR>   File "/home/ubuntu/grade/pytest-13312/repo/src/_pytest/fixtures
 INTERNALERROR>     other_scoped_items_by_argkey[argkey].move_to_end(
 INTERNALERROR> KeyError: <Function test_it[0-12-9]>
 
-320 tests collected in 0.06s
+320 tests collected in 0.08s
 =========================== short test summary info ============================
 FAILED testing/python/fixtures.py::test_reorder_items_many_session_params_no_keyerror
-====================== 1 failed, 204 deselected in 0.64s =======================
+====================== 1 failed, 204 deselected in 0.76s =======================
 

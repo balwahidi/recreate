@@ -40,7 +40,7 @@ shimmed: postcss-import/lib/parse-styles.js
 <DIR>/node/chunks/dep-DQ-J0yX1.js  chunk │ size: 1,346.61 kB
 <DIR>/node/module-runner.js  chunk │ size: 48.73 kB
 
-✔ rolldown v1.0.0-beta.41 Finished in 488.78 ms
+✔ rolldown v1.0.0-beta.41 Finished in 541.87 ms
 
 > vite@7.1.7 build-types /home/ubuntu/grade/vite-20705/repo/packages/vite
 > pnpm build-types-roll && pnpm build-types-check
@@ -53,7 +53,7 @@ shimmed: postcss-import/lib/parse-styles.js
 <DIR>/module-runner.d.ts                   chunk │ size:  11.34 kB
 <DIR>/index.d.ts                           chunk │ size: 147.83 kB
 
-✔ rolldown v1.0.0-beta.41 Finished in 1.44 s
+✔ rolldown v1.0.0-beta.41 Finished in 1.53 s
 
 > vite@7.1.7 build-types-check /home/ubuntu/grade/vite-20705/repo/packages/vite
 > tsc --project tsconfig.check.json

@@ -4,18 +4,18 @@ Starting lib
 Starting generate-diagnostics
 > /home/ubuntu/.nvm/versions/node/v24.19.0/bin/node scripts/processDiagnosticMessages.mjs src/compiler/diagnosticMessages.json
 Reading diagnostics from src/compiler/diagnosticMessages.json
-Finished lib in 47ms
-Finished generate-diagnostics in 56ms
+Finished generate-diagnostics in 59ms
 Starting bundle-tests
 Starting build-tests
 Starting build-services
-Finished bundle-tests in 271ms
-Finished build-tests in 284ms
-Finished build-services in 284ms
+Finished lib in 72ms
+Finished build-tests in 306ms
+Finished build-services in 306ms
 Starting dts-services
 Finished dts-services in 1ms
 Starting dts-lssl
 Finished dts-lssl in 1ms
+Finished bundle-tests in 347ms
 Starting runtests
 Running tests with config: {"test":["mappedTypeOverInlineTypeAssertionDisplay|quickInfoMappedTypeOverInlineTypeAssertion"],"light":true,"noColor":false,"timeout":40000,"keepFailed":false}
 > /home/ubuntu/.nvm/versions/node/v24.19.0/bin/node /home/ubuntu/grade/ts-60573/repo/node_modules/mocha/bin/_mocha -R /home/ubuntu/grade/ts-60573/repo/scripts/failed-tests.cjs -O "reporter=mocha-fivemat-progress-reporter" -g "mappedTypeOverInlineTypeAssertionDisplay|quickInfoMappedTypeOverInlineTypeAssertion" --colors -t 40000 ./built/local/run.js
@@ -134,7 +134,7 @@ Error: New baseline created at tests/baselines/local/mappedTypeOverInlineTypeAss
 [0m
 
 
-Completed runtests with errors in 3s
+Completed runtests with errors in 3.1s
 Error in runtests in 2.7s
 Error: Process exited with code: 3
 

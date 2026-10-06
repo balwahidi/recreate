@@ -204,7 +204,7 @@ INTERNALERROR>   File "/home/ubuntu/grade/pytest-13312/repo/src/_pytest/fixtures
 INTERNALERROR>     other_scoped_items_by_argkey[argkey].move_to_end(
 INTERNALERROR> KeyError: <Function test_39[0-3]>
 
-160 tests collected in 0.05s
+160 tests collected in 0.06s
 WARN Failed to find base Python executable: failed to read symbolic link `/home/ubuntu/.local/pypy3.9-v7.3.16/bin/pypy3.9`: Invalid argument (os error 22)
 INFO add_decision: Id::<PubGrubPackage>(0) @ 0a0.dev0 without checking dependencies    
 INFO add_decision: Id::<PubGrubPackage>(1) @ 0.1.dev16629+gc7aabccde without checking dependencies    
@@ -221,7 +221,6 @@ INFO add_decision: Id::<PubGrubPackage>(13) @ 2.4.1 without checking dependencie
 INFO add_decision: Id::<PubGrubPackage>(11) @ 4.16.0 without checking dependencies    
 INFO add_decision: Id::<PubGrubPackage>(12) @ 4.16.0 without checking dependencies    
 INFO add_decision: Id::<PubGrubPackage>(14) @ 4.16.0 without checking dependencies    
-Installed 8 packages in 4ms
 
 ===== run 2: exit 3
 test_reorder_keyerror.py::test_0[0-0]

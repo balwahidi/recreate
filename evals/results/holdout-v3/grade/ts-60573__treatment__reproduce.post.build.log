@@ -9,13 +9,14 @@ Starting shim-compile-cache-typings-installer
 Starting bundle-watch-guard
 Starting build-watch-guard
 Starting generate-types-map
-Finished shim-compile-cache-tsserver in 7ms
-Finished shim-compile-cache-tsc in 8ms
-Finished shim-compile-cache-typings-installer in 8ms
-Finished generate-types-map in 8ms
-Finished bundle-watch-guard in 10ms
+Finished shim-compile-cache-tsc in 10ms
+Finished shim-compile-cache-typings-installer in 10ms
+Finished shim-compile-cache-tsserver in 10ms
+Finished generate-types-map in 11ms
+Finished bundle-watch-guard in 13ms
 Reading diagnostics from src/compiler/diagnosticMessages.json
-Finished generate-diagnostics in 57ms
+Finished lib in 56ms
+Finished generate-diagnostics in 136ms
 Starting localize
 Starting bundle-tsc
 Starting build-tsc
@@ -27,13 +28,12 @@ Starting bundle-typings-installer
 Starting build-typings-installer
 Starting copy-built-local-diagnostic-messages
 Finished localize in 1ms
-Finished copy-built-local-diagnostic-messages in 3ms
-Finished lib in 75ms
-Finished bundle-typings-installer in 59ms
-Finished bundle-tsserver in 91ms
-Finished bundle-tsc in 296ms
-Finished bundle-services in 346ms
-Finished build-watch-guard in 1.6s
+Finished copy-built-local-diagnostic-messages in 4ms
+Finished bundle-typings-installer in 36ms
+Finished bundle-tsserver in 88ms
+Finished build-watch-guard in 273ms
+Finished bundle-tsc in 390ms
+Finished bundle-services in 449ms
 Finished build-tsc in 1.6s
 Finished build-services in 1.6s
 Finished build-tsserver in 1.6s
@@ -43,7 +43,7 @@ Starting dts-services
 Starting lssl
 Finished lssl in 1ms
 Bundling ./built/local/typescript/typescript.d.ts to ./built/local/typescript.d.ts and ./built/local/typescript.internal.d.ts
-Finished dts-services in 1.4s
+Finished dts-services in 1.5s
 Starting dts-lssl
 Finished dts-lssl in 1ms
-Completed local in 3.1s
+Completed local in 3.3s

@@ -3,7 +3,7 @@
 running 1 test
 exit=124 (124 = hung)
    Compiling ignore v0.4.29 (/home/ubuntu/grade/ripgrep-3009/repo/crates/ignore)
-    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.84s
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.77s
      Running unittests src/lib.rs (target/debug/deps/ignore-ae9fc929b29c0c0a)
 
 ===== run 2: exit 0

@@ -1,0 +1,771 @@
+===== run 1: exit 0
+849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 616, in model_rebuild
+    already_complete = cls.__pydantic_complete__
+RecursionError: maximum recursion depth exceeded while calling a Python object
+
+===== run 2: exit 0
+849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 616, in model_rebuild
+    already_complete = cls.__pydantic_complete__
+RecursionError: maximum recursion depth exceeded while calling a Python object
+
+===== run 3: exit 0
+849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/deterministic_11849.py", line 53, in spy
+    c1 = C.model_validate({'name': 'test', 'id': 'ok1'})
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 616, in model_rebuild
+    already_complete = cls.__pydantic_complete__
+RecursionError: maximum recursion depth exceeded while calling a Python object
+

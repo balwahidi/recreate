@@ -23,7 +23,7 @@ INTERNALERROR>   File "/home/ubuntu/grade/pytest-13312/repo/src/_pytest/fixtures
 INTERNALERROR>   File "/home/ubuntu/grade/pytest-13312/repo/src/_pytest/fixtures.py", line 295, in reorder_items_atscope
 INTERNALERROR>   File "/home/ubuntu/grade/pytest-13312/repo/src/_pytest/fixtures.py", line 290, in reorder_items_atscope
 INTERNALERROR> KeyError: <Function test_it[only-2-24]>
-138 tests collected in 0.02s
+138 tests collected in 0.03s
 BUG REPRODUCED
 
 ===== run 3: exit 1

@@ -1,6 +1,6 @@
 ===== run 1: exit 0
 pnpm version: 11.0.0-alpha.3
-workspace root   : config get store-dir=../.pnpm-store  store path=/tmp/tmp.F7sw5vJ9dd/project/.pnpm-store/v11
-apps/website     : config get store-dir=../.pnpm-store  store path=/tmp/tmp.F7sw5vJ9dd/project/.pnpm-store/v11
+workspace root   : config get store-dir=../.pnpm-store  store path=/tmp/tmp.INq0LmbvCw/project/.pnpm-store/v11
+apps/website     : config get store-dir=../.pnpm-store  store path=/tmp/tmp.INq0LmbvCw/project/.pnpm-store/v11
 OK: same store path
 

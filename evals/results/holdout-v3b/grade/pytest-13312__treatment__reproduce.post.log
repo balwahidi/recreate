@@ -160,7 +160,7 @@ test_reorder_keyerror.py::test_37[0-3]
 test_reorder_keyerror.py::test_38[0-3]
 test_reorder_keyerror.py::test_39[0-3]
 
-160 tests collected in 0.26s
+160 tests collected in 0.25s
 WARN Failed to find base Python executable: failed to read symbolic link `/home/ubuntu/.local/pypy3.9-v7.3.16/bin/pypy3.9`: Invalid argument (os error 22)
 INFO add_decision: Id::<PubGrubPackage>(0) @ 0a0.dev0 without checking dependencies    
 INFO add_decision: Id::<PubGrubPackage>(1) @ 0.1.dev16629+gc7aabccde without checking dependencies    
@@ -340,7 +340,7 @@ test_reorder_keyerror.py::test_37[0-3]
 test_reorder_keyerror.py::test_38[0-3]
 test_reorder_keyerror.py::test_39[0-3]
 
-160 tests collected in 0.30s
+160 tests collected in 0.32s
 WARN Failed to find base Python executable: failed to read symbolic link `/home/ubuntu/.local/pypy3.9-v7.3.16/bin/pypy3.9`: Invalid argument (os error 22)
 INFO add_decision: Id::<PubGrubPackage>(0) @ 0a0.dev0 without checking dependencies    
 INFO add_decision: Id::<PubGrubPackage>(1) @ 0.1.dev16629+gc7aabccde without checking dependencies    
@@ -520,7 +520,7 @@ test_reorder_keyerror.py::test_37[0-3]
 test_reorder_keyerror.py::test_38[0-3]
 test_reorder_keyerror.py::test_39[0-3]
 
-160 tests collected in 0.27s
+160 tests collected in 0.28s
 WARN Failed to find base Python executable: failed to read symbolic link `/home/ubuntu/.local/pypy3.9-v7.3.16/bin/pypy3.9`: Invalid argument (os error 22)
 INFO add_decision: Id::<PubGrubPackage>(0) @ 0a0.dev0 without checking dependencies    
 INFO add_decision: Id::<PubGrubPackage>(1) @ 0.1.dev16629+gc7aabccde without checking dependencies    

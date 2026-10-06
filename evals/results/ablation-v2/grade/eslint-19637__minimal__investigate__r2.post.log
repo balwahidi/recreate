@@ -1,0 +1,13 @@
+===== run 1: exit 0
+
+
+  no-unused-expressions
+    valid
+      ✔ 'use strict';
+      ✔ function f() { 'use strict'; }
+      ✔ 'use strict';
+
+
+  3 passing (27ms)
+
+

@@ -28,7 +28,7 @@
         }
 
 
-  1 passing (32ms)
+  1 passing (31ms)
   1 failing
 
   1) no-useless-assignment (issue repro)

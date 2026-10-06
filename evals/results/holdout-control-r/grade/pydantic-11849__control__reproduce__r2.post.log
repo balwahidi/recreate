@@ -1,113 +1,18 @@
 ===== run 1: exit 1
-usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
-    self.run()
-  File "/usr/lib/python3.10/threading.py", line 953, in run
-    self._target(*self._args, **self._kwargs)
-  File "/home/ubuntu/grade/pydantic-11849/repo/repro/race_11849.py", line 131, in worker
-    results.append(type(Direct(id='test', description=Translatable(en='ok'))))
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 253, in __init__
-    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
-    val_ser = self._attempt_rebuild()
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
-    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 628, in model_rebuild
-    delattr(cls, attr)
-AttributeError: __pydantic_core_schema__
-Exception in thread Thread-218 (worker):
-Traceback (most recent call last):
-  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
-    self.run()
-  File "/usr/lib/python3.10/threading.py", line 953, in run
-    self._target(*self._args, **self._kwargs)
-  File "/home/ubuntu/grade/pydantic-11849/repo/repro/race_11849.py", line 127, in worker
-    results.append(type(C.model_validate({'name': 'test', 'id': 'x'})))
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
-    return cls.__pydantic_validator__.validate_python(
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
-    val_ser = self._attempt_rebuild()
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
-    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 628, in model_rebuild
-    delattr(cls, attr)
-AttributeError: __pydantic_core_schema__
-Exception in thread Thread-541 (worker):
-Traceback (most recent call last):
-  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
-    self.run()
-  File "/usr/lib/python3.10/threading.py", line 953, in run
-    self._target(*self._args, **self._kwargs)
-  File "/home/ubuntu/grade/pydantic-11849/repo/repro/race_11849.py", line 131, in worker
-    results.append(type(Direct(id='test', description=Translatable(en='ok'))))
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 253, in __init__
-    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
-    val_ser = self._attempt_rebuild()
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
-    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
-    return _model_construction.complete_model_class(
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_model_construction.py", line 599, in complete_model_class
-    cls.__pydantic_fields__ = rebuild_model_fields(
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_fields.py", line 430, in rebuild_model_fields
-    ann = _typing_extra.eval_type(
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_typing_extra.py", line 397, in eval_type
-    return eval_type_backport(value, globalns, localns)
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_typing_extra.py", line 429, in eval_type_backport
-    return _eval_type_backport(value, globalns, localns, type_params)
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_typing_extra.py", line 466, in _eval_type_backport
-    return _eval_type(value, globalns, localns, type_params)
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_typing_extra.py", line 500, in _eval_type
-    return typing._eval_type(  # type: ignore
-  File "/usr/lib/python3.10/typing.py", line 327, in _eval_type
-    return t._evaluate(globalns, localns, recursive_guard)
-  File "/usr/lib/python3.10/typing.py", line 694, in _evaluate
-    eval(self.__forward_code__, globalns, localns),
-  File "<string>", line 1, in <module>
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_namespace_utils.py", line 97, in __getitem__
-    return self.data[key]
-  File "/usr/lib/python3.10/functools.py", line 981, in __get__
-    val = self.func(instance)
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_namespace_utils.py", line 91, in data
-    return {k: v for ns in self._namespaces for k, v in ns.items()}
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_namespace_utils.py", line 91, in <dictcomp>
-    return {k: v for ns in self._namespaces for k, v in ns.items()}
-RuntimeError: dictionary changed size during iteration
-Exception in thread Thread-563 (worker):
-Traceback (most recent call last):
-  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
-    self.run()
-  File "/usr/lib/python3.10/threading.py", line 953, in run
-    self._target(*self._args, **self._kwargs)
-  File "/home/ubuntu/grade/pydantic-11849/repo/repro/race_11849.py", line 131, in worker
-    results.append(type(Direct(id='test', description=Translatable(en='ok'))))
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 253, in __init__
-    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
-    val_ser = self._attempt_rebuild()
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
-    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 628, in model_rebuild
-    delattr(cls, attr)
-AttributeError: __pydantic_core_schema__
-Exception in thread Thread-732 (worker):
-Traceback (most recent call last):
-  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
-    self.run()
-  File "/usr/lib/python3.10/threading.py", line 953, in run
-    self._target(*self._args, **self._kwargs)
-  File "/home/ubuntu/grade/pydantic-11849/repo/repro/race_11849.py", line 131, in worker
-    results.append(type(Direct(id='test', description=Translatable(en='ok'))))
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 253, in __init__
-    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
-    val_ser = self._attempt_rebuild()
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
-    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 628, in model_rebuild
-    delattr(cls, attr)
-AttributeError: __pydantic_core_schema__
-Exception in thread Thread-844 (worker):
+pydantic 2.11.4 | python 3.10.12
+=== Part 1: deterministic (rebuild paused inside schema generation) ===
+C: "__pydantic_validator__" in __dict__ during rebuild: True
+  concurrent call returned C: C(id='ok1', name='test', forward=None)
+  after rebuild finished: C: C(id='ok1', name='test', forward=None)
+Direct: "__pydantic_validator__" in __dict__ during rebuild: True
+  concurrent call returned Direct: Direct(id='test', description=Translatable(en='ok'))
+  after rebuild finished: Direct: Direct(id='test', description=Translatable(en='ok'))
+
+=== Part 2: unmodified code, 8 threads racing first use, 300 attempts ===
+C validated as B: 0 times; Direct raised "BaseModel cannot be instantiated directly": 4 times
+/home/ubuntu/grade/pydantic-11849/repo/repro/race_11849.py:72: UserWarning: Subclassing `GenerateSchema` is not supported. The API is highly subject to change in minor versions.
+  class SlowGenerateSchema(orig_gen):  # (emits a harmless "Subclassing GenerateSchema" warning)
+Exception in thread Thread-375 (worker):
 Traceback (most recent call last):
   File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
     self.run()
@@ -149,7 +54,7 @@ Traceback (most recent call last):
   File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_namespace_utils.py", line 91, in <dictcomp>
     return {k: v for ns in self._namespaces for k, v in ns.items()}
 RuntimeError: dictionary changed size during iteration
-Exception in thread Thread-858 (worker):
+Exception in thread Thread-618 (worker):
 Traceback (most recent call last):
   File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
     self.run()
@@ -166,7 +71,7 @@ Traceback (most recent call last):
   File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 628, in model_rebuild
     delattr(cls, attr)
 AttributeError: __pydantic_core_schema__
-Exception in thread Thread-1080 (worker):
+Exception in thread Thread-896 (worker):
 Traceback (most recent call last):
   File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
     self.run()
@@ -183,7 +88,7 @@ Traceback (most recent call last):
   File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 628, in model_rebuild
     delattr(cls, attr)
 AttributeError: __pydantic_core_schema__
-Exception in thread Thread-1090 (worker):
+Exception in thread Thread-1002 (worker):
 Traceback (most recent call last):
   File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
     self.run()
@@ -200,16 +105,16 @@ Traceback (most recent call last):
   File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 628, in model_rebuild
     delattr(cls, attr)
 AttributeError: __pydantic_core_schema__
-Exception in thread Thread-1320 (worker):
+Exception in thread Thread-1079 (worker):
 Traceback (most recent call last):
   File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
     self.run()
   File "/usr/lib/python3.10/threading.py", line 953, in run
     self._target(*self._args, **self._kwargs)
-  File "/home/ubuntu/grade/pydantic-11849/repo/repro/race_11849.py", line 127, in worker
-    results.append(type(C.model_validate({'name': 'test', 'id': 'x'})))
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
-    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/race_11849.py", line 131, in worker
+    results.append(type(Direct(id='test', description=Translatable(en='ok'))))
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 253, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
   File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
     val_ser = self._attempt_rebuild()
   File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
@@ -242,7 +147,7 @@ Traceback (most recent call last):
   File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_namespace_utils.py", line 91, in <dictcomp>
     return {k: v for ns in self._namespaces for k, v in ns.items()}
 RuntimeError: dictionary changed size during iteration
-Exception in thread Thread-1354 (worker):
+Exception in thread Thread-1148 (worker):
 Traceback (most recent call last):
   File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
     self.run()
@@ -259,24 +164,7 @@ Traceback (most recent call last):
   File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 628, in model_rebuild
     delattr(cls, attr)
 AttributeError: __pydantic_core_schema__
-Exception in thread Thread-1939 (worker):
-Traceback (most recent call last):
-  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
-    self.run()
-  File "/usr/lib/python3.10/threading.py", line 953, in run
-    self._target(*self._args, **self._kwargs)
-  File "/home/ubuntu/grade/pydantic-11849/repo/repro/race_11849.py", line 131, in worker
-    results.append(type(Direct(id='test', description=Translatable(en='ok'))))
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 253, in __init__
-    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
-    val_ser = self._attempt_rebuild()
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
-    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 628, in model_rebuild
-    delattr(cls, attr)
-AttributeError: __pydantic_core_schema__
-Exception in thread Thread-2254 (worker):
+Exception in thread Thread-2237 (worker):
 Traceback (most recent call last):
   File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
     self.run()
@@ -295,14 +183,20 @@ Traceback (most recent call last):
 AttributeError: __pydantic_core_schema__
 
 ===== run 2: exit 1
-en='ok'))
+pydantic 2.11.4 | python 3.10.12
+=== Part 1: deterministic (rebuild paused inside schema generation) ===
+C: "__pydantic_validator__" in __dict__ during rebuild: True
+  concurrent call returned C: C(id='ok1', name='test', forward=None)
+  after rebuild finished: C: C(id='ok1', name='test', forward=None)
+Direct: "__pydantic_validator__" in __dict__ during rebuild: True
+  concurrent call returned Direct: Direct(id='test', description=Translatable(en='ok'))
   after rebuild finished: Direct: Direct(id='test', description=Translatable(en='ok'))
 
 === Part 2: unmodified code, 8 threads racing first use, 300 attempts ===
-C validated as B: 0 times; Direct raised "BaseModel cannot be instantiated directly": 4 times
+C validated as B: 0 times; Direct raised "BaseModel cannot be instantiated directly": 3 times
 /home/ubuntu/grade/pydantic-11849/repo/repro/race_11849.py:72: UserWarning: Subclassing `GenerateSchema` is not supported. The API is highly subject to change in minor versions.
   class SlowGenerateSchema(orig_gen):  # (emits a harmless "Subclassing GenerateSchema" warning)
-Exception in thread Thread-574 (worker):
+Exception in thread Thread-237 (worker):
 Traceback (most recent call last):
   File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
     self.run()
@@ -319,7 +213,66 @@ Traceback (most recent call last):
   File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 628, in model_rebuild
     delattr(cls, attr)
 AttributeError: __pydantic_core_schema__
-Exception in thread Thread-581 (worker):
+Exception in thread Thread-954 (worker):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/race_11849.py", line 127, in worker
+    results.append(type(C.model_validate({'name': 'test', 'id': 'x'})))
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 628, in model_rebuild
+    delattr(cls, attr)
+AttributeError: __pydantic_core_schema__
+Exception in thread Thread-1186 (worker):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/race_11849.py", line 127, in worker
+    results.append(type(C.model_validate({'name': 'test', 'id': 'x'})))
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
+    return _model_construction.complete_model_class(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_model_construction.py", line 599, in complete_model_class
+    cls.__pydantic_fields__ = rebuild_model_fields(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_fields.py", line 430, in rebuild_model_fields
+    ann = _typing_extra.eval_type(
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_typing_extra.py", line 397, in eval_type
+    return eval_type_backport(value, globalns, localns)
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_typing_extra.py", line 429, in eval_type_backport
+    return _eval_type_backport(value, globalns, localns, type_params)
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_typing_extra.py", line 466, in _eval_type_backport
+    return _eval_type(value, globalns, localns, type_params)
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_typing_extra.py", line 500, in _eval_type
+    return typing._eval_type(  # type: ignore
+  File "/usr/lib/python3.10/typing.py", line 327, in _eval_type
+    return t._evaluate(globalns, localns, recursive_guard)
+  File "/usr/lib/python3.10/typing.py", line 694, in _evaluate
+    eval(self.__forward_code__, globalns, localns),
+  File "<string>", line 1, in <module>
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_namespace_utils.py", line 97, in __getitem__
+    return self.data[key]
+  File "/usr/lib/python3.10/functools.py", line 981, in __get__
+    val = self.func(instance)
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_namespace_utils.py", line 91, in data
+    return {k: v for ns in self._namespaces for k, v in ns.items()}
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_namespace_utils.py", line 91, in <dictcomp>
+    return {k: v for ns in self._namespaces for k, v in ns.items()}
+RuntimeError: dictionary changed size during iteration
+Exception in thread Thread-2220 (worker):
 Traceback (most recent call last):
   File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
     self.run()
@@ -336,234 +289,7 @@ Traceback (most recent call last):
   File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 628, in model_rebuild
     delattr(cls, attr)
 AttributeError: __pydantic_core_schema__
-Exception in thread Thread-668 (worker):
-Traceback (most recent call last):
-  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
-    self.run()
-  File "/usr/lib/python3.10/threading.py", line 953, in run
-    self._target(*self._args, **self._kwargs)
-  File "/home/ubuntu/grade/pydantic-11849/repo/repro/race_11849.py", line 131, in worker
-    results.append(type(Direct(id='test', description=Translatable(en='ok'))))
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 253, in __init__
-    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
-    val_ser = self._attempt_rebuild()
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
-    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 628, in model_rebuild
-    delattr(cls, attr)
-AttributeError: __pydantic_core_schema__
-Exception in thread Thread-1643 (worker):
-Traceback (most recent call last):
-  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
-    self.run()
-  File "/usr/lib/python3.10/threading.py", line 953, in run
-    self._target(*self._args, **self._kwargs)
-  File "/home/ubuntu/grade/pydantic-11849/repo/repro/race_11849.py", line 127, in worker
-    results.append(type(C.model_validate({'name': 'test', 'id': 'x'})))
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
-    return cls.__pydantic_validator__.validate_python(
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
-    val_ser = self._attempt_rebuild()
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
-    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
-    return _model_construction.complete_model_class(
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_model_construction.py", line 599, in complete_model_class
-    cls.__pydantic_fields__ = rebuild_model_fields(
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_fields.py", line 430, in rebuild_model_fields
-    ann = _typing_extra.eval_type(
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_typing_extra.py", line 397, in eval_type
-    return eval_type_backport(value, globalns, localns)
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_typing_extra.py", line 429, in eval_type_backport
-    return _eval_type_backport(value, globalns, localns, type_params)
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_typing_extra.py", line 466, in _eval_type_backport
-    return _eval_type(value, globalns, localns, type_params)
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_typing_extra.py", line 500, in _eval_type
-    return typing._eval_type(  # type: ignore
-  File "/usr/lib/python3.10/typing.py", line 327, in _eval_type
-    return t._evaluate(globalns, localns, recursive_guard)
-  File "/usr/lib/python3.10/typing.py", line 694, in _evaluate
-    eval(self.__forward_code__, globalns, localns),
-  File "<string>", line 1, in <module>
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_namespace_utils.py", line 97, in __getitem__
-    return self.data[key]
-  File "/usr/lib/python3.10/functools.py", line 981, in __get__
-    val = self.func(instance)
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_namespace_utils.py", line 91, in data
-    return {k: v for ns in self._namespaces for k, v in ns.items()}
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_namespace_utils.py", line 91, in <dictcomp>
-    return {k: v for ns in self._namespaces for k, v in ns.items()}
-RuntimeError: dictionary changed size during iteration
-Exception in thread Thread-1663 (worker):
-Traceback (most recent call last):
-  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
-    self.run()
-  File "/usr/lib/python3.10/threading.py", line 953, in run
-    self._target(*self._args, **self._kwargs)
-  File "/home/ubuntu/grade/pydantic-11849/repo/repro/race_11849.py", line 127, in worker
-    results.append(type(C.model_validate({'name': 'test', 'id': 'x'})))
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
-    return cls.__pydantic_validator__.validate_python(
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
-    val_ser = self._attempt_rebuild()
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
-    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
-    return _model_construction.complete_model_class(
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_model_construction.py", line 599, in complete_model_class
-    cls.__pydantic_fields__ = rebuild_model_fields(
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_fields.py", line 430, in rebuild_model_fields
-    ann = _typing_extra.eval_type(
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_typing_extra.py", line 397, in eval_type
-    return eval_type_backport(value, globalns, localns)
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_typing_extra.py", line 429, in eval_type_backport
-    return _eval_type_backport(value, globalns, localns, type_params)
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_typing_extra.py", line 466, in _eval_type_backport
-    return _eval_type(value, globalns, localns, type_params)
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_typing_extra.py", line 500, in _eval_type
-    return typing._eval_type(  # type: ignore
-  File "/usr/lib/python3.10/typing.py", line 327, in _eval_type
-    return t._evaluate(globalns, localns, recursive_guard)
-  File "/usr/lib/python3.10/typing.py", line 694, in _evaluate
-    eval(self.__forward_code__, globalns, localns),
-  File "<string>", line 1, in <module>
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_namespace_utils.py", line 97, in __getitem__
-    return self.data[key]
-  File "/usr/lib/python3.10/functools.py", line 981, in __get__
-    val = self.func(instance)
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_namespace_utils.py", line 91, in data
-    return {k: v for ns in self._namespaces for k, v in ns.items()}
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_namespace_utils.py", line 91, in <dictcomp>
-    return {k: v for ns in self._namespaces for k, v in ns.items()}
-RuntimeError: dictionary changed size during iteration
-Exception in thread Thread-2193 (worker):
-Traceback (most recent call last):
-  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
-    self.run()
-  File "/usr/lib/python3.10/threading.py", line 953, in run
-    self._target(*self._args, **self._kwargs)
-  File "/home/ubuntu/grade/pydantic-11849/repo/repro/race_11849.py", line 127, in worker
-    results.append(type(C.model_validate({'name': 'test', 'id': 'x'})))
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
-    return cls.__pydantic_validator__.validate_python(
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
-    val_ser = self._attempt_rebuild()
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
-    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
-    return _model_construction.complete_model_class(
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_model_construction.py", line 599, in complete_model_class
-    cls.__pydantic_fields__ = rebuild_model_fields(
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_fields.py", line 430, in rebuild_model_fields
-    ann = _typing_extra.eval_type(
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_typing_extra.py", line 397, in eval_type
-    return eval_type_backport(value, globalns, localns)
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_typing_extra.py", line 429, in eval_type_backport
-    return _eval_type_backport(value, globalns, localns, type_params)
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_typing_extra.py", line 466, in _eval_type_backport
-    return _eval_type(value, globalns, localns, type_params)
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_typing_extra.py", line 500, in _eval_type
-    return typing._eval_type(  # type: ignore
-  File "/usr/lib/python3.10/typing.py", line 327, in _eval_type
-    return t._evaluate(globalns, localns, recursive_guard)
-  File "/usr/lib/python3.10/typing.py", line 694, in _evaluate
-    eval(self.__forward_code__, globalns, localns),
-  File "<string>", line 1, in <module>
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_namespace_utils.py", line 97, in __getitem__
-    return self.data[key]
-  File "/usr/lib/python3.10/functools.py", line 981, in __get__
-    val = self.func(instance)
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_namespace_utils.py", line 91, in data
-    return {k: v for ns in self._namespaces for k, v in ns.items()}
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_namespace_utils.py", line 91, in <dictcomp>
-    return {k: v for ns in self._namespaces for k, v in ns.items()}
-RuntimeError: dictionary changed size during iteration
-Exception in thread Thread-2222 (worker):
-Traceback (most recent call last):
-  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
-    self.run()
-  File "/usr/lib/python3.10/threading.py", line 953, in run
-    self._target(*self._args, **self._kwargs)
-  File "/home/ubuntu/grade/pydantic-11849/repo/repro/race_11849.py", line 127, in worker
-    results.append(type(C.model_validate({'name': 'test', 'id': 'x'})))
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
-    return cls.__pydantic_validator__.validate_python(
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
-    val_ser = self._attempt_rebuild()
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
-    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
-    return _model_construction.complete_model_class(
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_model_construction.py", line 599, in complete_model_class
-    cls.__pydantic_fields__ = rebuild_model_fields(
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_fields.py", line 430, in rebuild_model_fields
-    ann = _typing_extra.eval_type(
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_typing_extra.py", line 397, in eval_type
-    return eval_type_backport(value, globalns, localns)
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_typing_extra.py", line 429, in eval_type_backport
-    return _eval_type_backport(value, globalns, localns, type_params)
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_typing_extra.py", line 466, in _eval_type_backport
-    return _eval_type(value, globalns, localns, type_params)
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_typing_extra.py", line 500, in _eval_type
-    return typing._eval_type(  # type: ignore
-  File "/usr/lib/python3.10/typing.py", line 327, in _eval_type
-    return t._evaluate(globalns, localns, recursive_guard)
-  File "/usr/lib/python3.10/typing.py", line 694, in _evaluate
-    eval(self.__forward_code__, globalns, localns),
-  File "<string>", line 1, in <module>
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_namespace_utils.py", line 97, in __getitem__
-    return self.data[key]
-  File "/usr/lib/python3.10/functools.py", line 981, in __get__
-    val = self.func(instance)
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_namespace_utils.py", line 91, in data
-    return {k: v for ns in self._namespaces for k, v in ns.items()}
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_namespace_utils.py", line 91, in <dictcomp>
-    return {k: v for ns in self._namespaces for k, v in ns.items()}
-RuntimeError: dictionary changed size during iteration
-Exception in thread Thread-2294 (worker):
-Traceback (most recent call last):
-  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
-    self.run()
-  File "/usr/lib/python3.10/threading.py", line 953, in run
-    self._target(*self._args, **self._kwargs)
-  File "/home/ubuntu/grade/pydantic-11849/repo/repro/race_11849.py", line 131, in worker
-    results.append(type(Direct(id='test', description=Translatable(en='ok'))))
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 253, in __init__
-    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
-    val_ser = self._attempt_rebuild()
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
-    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
-    return _model_construction.complete_model_class(
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_model_construction.py", line 599, in complete_model_class
-    cls.__pydantic_fields__ = rebuild_model_fields(
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_fields.py", line 430, in rebuild_model_fields
-    ann = _typing_extra.eval_type(
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_typing_extra.py", line 397, in eval_type
-    return eval_type_backport(value, globalns, localns)
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_typing_extra.py", line 429, in eval_type_backport
-    return _eval_type_backport(value, globalns, localns, type_params)
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_typing_extra.py", line 466, in _eval_type_backport
-    return _eval_type(value, globalns, localns, type_params)
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_typing_extra.py", line 500, in _eval_type
-    return typing._eval_type(  # type: ignore
-  File "/usr/lib/python3.10/typing.py", line 327, in _eval_type
-    return t._evaluate(globalns, localns, recursive_guard)
-  File "/usr/lib/python3.10/typing.py", line 694, in _evaluate
-    eval(self.__forward_code__, globalns, localns),
-  File "<string>", line 1, in <module>
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_namespace_utils.py", line 97, in __getitem__
-    return self.data[key]
-  File "/usr/lib/python3.10/functools.py", line 981, in __get__
-    val = self.func(instance)
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_namespace_utils.py", line 91, in data
-    return {k: v for ns in self._namespaces for k, v in ns.items()}
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_namespace_utils.py", line 91, in <dictcomp>
-    return {k: v for ns in self._namespaces for k, v in ns.items()}
-RuntimeError: dictionary changed size during iteration
-Exception in thread Thread-2335 (worker):
+Exception in thread Thread-2401 (worker):
 Traceback (most recent call last):
   File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
     self.run()
@@ -581,16 +307,21 @@ Traceback (most recent call last):
     delattr(cls, attr)
 AttributeError: __pydantic_core_schema__
 
-===== run 3: exit 0
-.validate_python(data, self_instance=self)
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
-    val_ser = self._attempt_rebuild()
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
-    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 628, in model_rebuild
-    delattr(cls, attr)
-AttributeError: __pydantic_core_schema__
-Exception in thread Thread-498 (worker):
+===== run 3: exit 1
+pydantic 2.11.4 | python 3.10.12
+=== Part 1: deterministic (rebuild paused inside schema generation) ===
+C: "__pydantic_validator__" in __dict__ during rebuild: True
+  concurrent call returned C: C(id='ok1', name='test', forward=None)
+  after rebuild finished: C: C(id='ok1', name='test', forward=None)
+Direct: "__pydantic_validator__" in __dict__ during rebuild: True
+  concurrent call returned Direct: Direct(id='test', description=Translatable(en='ok'))
+  after rebuild finished: Direct: Direct(id='test', description=Translatable(en='ok'))
+
+=== Part 2: unmodified code, 8 threads racing first use, 300 attempts ===
+C validated as B: 0 times; Direct raised "BaseModel cannot be instantiated directly": 1 times
+/home/ubuntu/grade/pydantic-11849/repo/repro/race_11849.py:72: UserWarning: Subclassing `GenerateSchema` is not supported. The API is highly subject to change in minor versions.
+  class SlowGenerateSchema(orig_gen):  # (emits a harmless "Subclassing GenerateSchema" warning)
+Exception in thread Thread-84 (worker):
 Traceback (most recent call last):
   File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
     self.run()
@@ -607,41 +338,7 @@ Traceback (most recent call last):
   File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 628, in model_rebuild
     delattr(cls, attr)
 AttributeError: __pydantic_core_schema__
-Exception in thread Thread-1003 (worker):
-Traceback (most recent call last):
-  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
-    self.run()
-  File "/usr/lib/python3.10/threading.py", line 953, in run
-    self._target(*self._args, **self._kwargs)
-  File "/home/ubuntu/grade/pydantic-11849/repo/repro/race_11849.py", line 131, in worker
-    results.append(type(Direct(id='test', description=Translatable(en='ok'))))
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 253, in __init__
-    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
-    val_ser = self._attempt_rebuild()
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
-    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 628, in model_rebuild
-    delattr(cls, attr)
-AttributeError: __pydantic_core_schema__
-Exception in thread Thread-1154 (worker):
-Traceback (most recent call last):
-  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
-    self.run()
-  File "/usr/lib/python3.10/threading.py", line 953, in run
-    self._target(*self._args, **self._kwargs)
-  File "/home/ubuntu/grade/pydantic-11849/repo/repro/race_11849.py", line 131, in worker
-    results.append(type(Direct(id='test', description=Translatable(en='ok'))))
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 253, in __init__
-    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
-    val_ser = self._attempt_rebuild()
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
-    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 628, in model_rebuild
-    delattr(cls, attr)
-AttributeError: __pydantic_core_schema__
-Exception in thread Thread-1354 (worker):
+Exception in thread Thread-107 (worker):
 Traceback (most recent call last):
   File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
     self.run()
@@ -683,7 +380,7 @@ Traceback (most recent call last):
   File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_namespace_utils.py", line 91, in <dictcomp>
     return {k: v for ns in self._namespaces for k, v in ns.items()}
 RuntimeError: dictionary changed size during iteration
-Exception in thread Thread-1902 (worker):
+Exception in thread Thread-566 (worker):
 Traceback (most recent call last):
   File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
     self.run()
@@ -725,7 +422,7 @@ Traceback (most recent call last):
   File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_namespace_utils.py", line 91, in <dictcomp>
     return {k: v for ns in self._namespaces for k, v in ns.items()}
 RuntimeError: dictionary changed size during iteration
-Exception in thread Thread-1980 (worker):
+Exception in thread Thread-1025 (worker):
 Traceback (most recent call last):
   File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
     self.run()
@@ -742,7 +439,24 @@ Traceback (most recent call last):
   File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 628, in model_rebuild
     delattr(cls, attr)
 AttributeError: __pydantic_core_schema__
-Exception in thread Thread-2022 (worker):
+Exception in thread Thread-1191 (worker):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/race_11849.py", line 131, in worker
+    results.append(type(Direct(id='test', description=Translatable(en='ok'))))
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 253, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 628, in model_rebuild
+    delattr(cls, attr)
+AttributeError: __pydantic_core_schema__
+Exception in thread Thread-1370 (worker):
 Traceback (most recent call last):
   File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
     self.run()
@@ -756,35 +470,27 @@ Traceback (most recent call last):
     val_ser = self._attempt_rebuild()
   File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
     if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
-    return _model_construction.complete_model_class(
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_model_construction.py", line 599, in complete_model_class
-    cls.__pydantic_fields__ = rebuild_model_fields(
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_fields.py", line 430, in rebuild_model_fields
-    ann = _typing_extra.eval_type(
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_typing_extra.py", line 397, in eval_type
-    return eval_type_backport(value, globalns, localns)
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_typing_extra.py", line 429, in eval_type_backport
-    return _eval_type_backport(value, globalns, localns, type_params)
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_typing_extra.py", line 466, in _eval_type_backport
-    return _eval_type(value, globalns, localns, type_params)
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_typing_extra.py", line 500, in _eval_type
-    return typing._eval_type(  # type: ignore
-  File "/usr/lib/python3.10/typing.py", line 327, in _eval_type
-    return t._evaluate(globalns, localns, recursive_guard)
-  File "/usr/lib/python3.10/typing.py", line 694, in _evaluate
-    eval(self.__forward_code__, globalns, localns),
-  File "<string>", line 1, in <module>
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_namespace_utils.py", line 97, in __getitem__
-    return self.data[key]
-  File "/usr/lib/python3.10/functools.py", line 981, in __get__
-    val = self.func(instance)
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_namespace_utils.py", line 91, in data
-    return {k: v for ns in self._namespaces for k, v in ns.items()}
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_namespace_utils.py", line 91, in <dictcomp>
-    return {k: v for ns in self._namespaces for k, v in ns.items()}
-RuntimeError: dictionary changed size during iteration
-Exception in thread Thread-2078 (worker):
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 628, in model_rebuild
+    delattr(cls, attr)
+AttributeError: __pydantic_core_schema__
+Exception in thread Thread-1437 (worker):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/race_11849.py", line 131, in worker
+    results.append(type(Direct(id='test', description=Translatable(en='ok'))))
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 253, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
+    val_ser = self._attempt_rebuild()
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
+    if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 628, in model_rebuild
+    delattr(cls, attr)
+AttributeError: __pydantic_core_schema__
+Exception in thread Thread-1460 (worker):
 Traceback (most recent call last):
   File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
     self.run()
@@ -826,46 +532,21 @@ Traceback (most recent call last):
   File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_namespace_utils.py", line 91, in <dictcomp>
     return {k: v for ns in self._namespaces for k, v in ns.items()}
 RuntimeError: dictionary changed size during iteration
-Exception in thread Thread-2119 (worker):
+Exception in thread Thread-2231 (worker):
 Traceback (most recent call last):
   File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
     self.run()
   File "/usr/lib/python3.10/threading.py", line 953, in run
     self._target(*self._args, **self._kwargs)
-  File "/home/ubuntu/grade/pydantic-11849/repo/repro/race_11849.py", line 127, in worker
-    results.append(type(C.model_validate({'name': 'test', 'id': 'x'})))
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 688, in model_validate
-    return cls.__pydantic_validator__.validate_python(
+  File "/home/ubuntu/grade/pydantic-11849/repo/repro/race_11849.py", line 131, in worker
+    results.append(type(Direct(id='test', description=Translatable(en='ok'))))
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 253, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
   File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 94, in __getattr__
     val_ser = self._attempt_rebuild()
   File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_mock_val_ser.py", line 165, in handler
     if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 643, in model_rebuild
-    return _model_construction.complete_model_class(
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_model_construction.py", line 599, in complete_model_class
-    cls.__pydantic_fields__ = rebuild_model_fields(
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_fields.py", line 430, in rebuild_model_fields
-    ann = _typing_extra.eval_type(
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_typing_extra.py", line 397, in eval_type
-    return eval_type_backport(value, globalns, localns)
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_typing_extra.py", line 429, in eval_type_backport
-    return _eval_type_backport(value, globalns, localns, type_params)
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_typing_extra.py", line 466, in _eval_type_backport
-    return _eval_type(value, globalns, localns, type_params)
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_typing_extra.py", line 500, in _eval_type
-    return typing._eval_type(  # type: ignore
-  File "/usr/lib/python3.10/typing.py", line 327, in _eval_type
-    return t._evaluate(globalns, localns, recursive_guard)
-  File "/usr/lib/python3.10/typing.py", line 694, in _evaluate
-    eval(self.__forward_code__, globalns, localns),
-  File "<string>", line 1, in <module>
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_namespace_utils.py", line 97, in __getitem__
-    return self.data[key]
-  File "/usr/lib/python3.10/functools.py", line 981, in __get__
-    val = self.func(instance)
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_namespace_utils.py", line 91, in data
-    return {k: v for ns in self._namespaces for k, v in ns.items()}
-  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/_internal/_namespace_utils.py", line 91, in <dictcomp>
-    return {k: v for ns in self._namespaces for k, v in ns.items()}
-RuntimeError: dictionary changed size during iteration
+  File "/home/ubuntu/grade/pydantic-11849/repo/pydantic/main.py", line 628, in model_rebuild
+    delattr(cls, attr)
+AttributeError: __pydantic_core_schema__
 

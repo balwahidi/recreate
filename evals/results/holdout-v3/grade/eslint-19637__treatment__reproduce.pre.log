@@ -1,6 +1,6 @@
 ===== run 1: exit 1
 
-up to date, audited 1151 packages in 2s
+up to date, audited 1151 packages in 965ms
 
 222 packages are looking for funding
   run `npm fund` for details

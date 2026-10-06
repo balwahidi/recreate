@@ -18,7 +18,7 @@ Building wheels for collected packages: pydantic
   Building editable for pydantic (pyproject.toml): started
   Building editable for pydantic (pyproject.toml): finished with status 'done'
   Created wheel for pydantic: filename=pydantic-2.11.4-py3-none-any.whl size=14085 sha256=df2230d8159b94ed8a7137ffe0d542b1ade048644f874a05699356ff0d3f4cd5
-  Stored in directory: /tmp/pip-ephem-wheel-cache-_uwsm_2r/wheels/15/61/b5/4cdee1766b16ef464480b0866e63479ca82f2f25092583cc8a
+  Stored in directory: /tmp/pip-ephem-wheel-cache-pnxex27e/wheels/15/61/b5/4cdee1766b16ef464480b0866e63479ca82f2f25092583cc8a
 Successfully built pydantic
 Installing collected packages: pydantic
   Attempting uninstall: pydantic
@@ -29,12 +29,12 @@ Successfully installed pydantic-2.11.4
 pydantic 2.11.4, python 3.10.12, 8 threads x 200 trials
 
 example 2 (C(B(A))): 200/200 trials hit the bug
-    1393  B instance: B(id='ok')
-     207  ok
+    1387  B instance: B(id='ok')
+     213  ok
 
 example 1 (Direct): 200/200 trials hit the bug
-    1387  PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
-     213  ok
+    1382  PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
+     218  ok
 
 ===== run 2: exit 1
 Obtaining file:///home/ubuntu/grade/pydantic-11849/repo
@@ -56,7 +56,7 @@ Building wheels for collected packages: pydantic
   Building editable for pydantic (pyproject.toml): started
   Building editable for pydantic (pyproject.toml): finished with status 'done'
   Created wheel for pydantic: filename=pydantic-2.11.4-py3-none-any.whl size=14085 sha256=df2230d8159b94ed8a7137ffe0d542b1ade048644f874a05699356ff0d3f4cd5
-  Stored in directory: /tmp/pip-ephem-wheel-cache-xcv7b5nm/wheels/15/61/b5/4cdee1766b16ef464480b0866e63479ca82f2f25092583cc8a
+  Stored in directory: /tmp/pip-ephem-wheel-cache-uc2vjzes/wheels/15/61/b5/4cdee1766b16ef464480b0866e63479ca82f2f25092583cc8a
 Successfully built pydantic
 Installing collected packages: pydantic
   Attempting uninstall: pydantic
@@ -67,12 +67,12 @@ Successfully installed pydantic-2.11.4
 pydantic 2.11.4, python 3.10.12, 8 threads x 200 trials
 
 example 2 (C(B(A))): 200/200 trials hit the bug
-    1395  B instance: B(id='ok')
-     205  ok
+    1390  B instance: B(id='ok')
+     210  ok
 
 example 1 (Direct): 200/200 trials hit the bug
-    1383  PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
-     217  ok
+    1389  PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
+     211  ok
 
 ===== run 3: exit 1
 Obtaining file:///home/ubuntu/grade/pydantic-11849/repo
@@ -94,7 +94,7 @@ Building wheels for collected packages: pydantic
   Building editable for pydantic (pyproject.toml): started
   Building editable for pydantic (pyproject.toml): finished with status 'done'
   Created wheel for pydantic: filename=pydantic-2.11.4-py3-none-any.whl size=14085 sha256=df2230d8159b94ed8a7137ffe0d542b1ade048644f874a05699356ff0d3f4cd5
-  Stored in directory: /tmp/pip-ephem-wheel-cache-nko4ebjj/wheels/15/61/b5/4cdee1766b16ef464480b0866e63479ca82f2f25092583cc8a
+  Stored in directory: /tmp/pip-ephem-wheel-cache-2emblfh9/wheels/15/61/b5/4cdee1766b16ef464480b0866e63479ca82f2f25092583cc8a
 Successfully built pydantic
 Installing collected packages: pydantic
   Attempting uninstall: pydantic
@@ -104,11 +104,11 @@ Installing collected packages: pydantic
 Successfully installed pydantic-2.11.4
 pydantic 2.11.4, python 3.10.12, 8 threads x 200 trials
 
-example 2 (C(B(A))): 199/200 trials hit the bug
-    1386  B instance: B(id='ok')
-     214  ok
+example 2 (C(B(A))): 200/200 trials hit the bug
+    1389  B instance: B(id='ok')
+     211  ok
 
 example 1 (Direct): 200/200 trials hit the bug
-    1372  PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
-     228  ok
+    1379  PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
+     221  ok
 

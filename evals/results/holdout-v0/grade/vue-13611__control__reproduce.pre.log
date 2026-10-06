@@ -5,15 +5,15 @@
 stdout | packages/vue/__tests__/underscoreSlotRepro.spec.ts > underscore-prefixed slot name (report repro) > bug: conditional sibling slot -> `_duration` should still render provided content
 [repro] rendered HTML: <div><p>random</p><span>title PROVIDED</span><span>_duration FALLBACK</span></div>
 
- ❯ |unit| packages/vue/__tests__/underscoreSlotRepro.spec.ts (2 tests | 1 failed) 26ms
-   ✓ underscore-prefixed slot name (report repro) > control: no conditional sibling slot -> provided content renders 17ms
-   × underscore-prefixed slot name (report repro) > bug: conditional sibling slot -> `_duration` should still render provided content 9ms
+ ❯ |unit| packages/vue/__tests__/underscoreSlotRepro.spec.ts (2 tests | 1 failed) 27ms
+   ✓ underscore-prefixed slot name (report repro) > control: no conditional sibling slot -> provided content renders 18ms
+   × underscore-prefixed slot name (report repro) > bug: conditional sibling slot -> `_duration` should still render provided content 8ms
      → expected '<div><p>random</p><span>title PROVIDE…' not to contain '_duration FALLBACK'
 
  Test Files  1 failed (1)
       Tests  1 failed | 1 passed (2)
-   Start at  19:48:01
-   Duration  1.39s (transform 658ms, setup 9ms, collect 831ms, tests 26ms, environment 339ms, prepare 40ms)
+   Start at  00:05:05
+   Duration  1.20s (transform 615ms, setup 9ms, collect 780ms, tests 27ms, environment 197ms, prepare 40ms)
 
  Vitest  "environmentMatchGlobs" is deprecated. Use "workspace" to define different configurations instead.
  Vitest  "environmentMatchGlobs" is deprecated. Use "workspace" to define different configurations instead.

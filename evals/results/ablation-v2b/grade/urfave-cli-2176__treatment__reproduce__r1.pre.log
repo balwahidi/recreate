@@ -3,7 +3,7 @@
     --- FAIL: TestIssue2176ParallelHelpFlag/hello_world (0.00s)
         issue2176_parallel_help_flag_test.go:52: unexpected panic - 'runtime error: invalid memory address or nil pointer dereference' passing []
 FAIL
-FAIL	github.com/urfave/cli/v3	0.066s
+FAIL	github.com/urfave/cli/v3	0.067s
 FAIL
 
 ===== run 2: exit 1
@@ -11,7 +11,7 @@ FAIL
     --- FAIL: TestIssue2176ParallelHelpFlag/hello_world (0.00s)
         issue2176_parallel_help_flag_test.go:52: unexpected panic - 'runtime error: invalid memory address or nil pointer dereference' passing []
 FAIL
-FAIL	github.com/urfave/cli/v3	0.364s
+FAIL	github.com/urfave/cli/v3	0.027s
 FAIL
 
 ===== run 3: exit 1
@@ -19,6 +19,6 @@ FAIL
     --- FAIL: TestIssue2176ParallelHelpFlag/hello_world (0.00s)
         issue2176_parallel_help_flag_test.go:52: unexpected panic - 'runtime error: invalid memory address or nil pointer dereference' passing []
 FAIL
-FAIL	github.com/urfave/cli/v3	0.252s
+FAIL	github.com/urfave/cli/v3	0.004s
 FAIL
 

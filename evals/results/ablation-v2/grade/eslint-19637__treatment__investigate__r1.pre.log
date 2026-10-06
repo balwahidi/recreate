@@ -1,0 +1,9 @@
+===== run 1: exit 1
+ecmaVersion=3: [
+  '1:1 Expected an assignment or function call and instead saw an expression.',
+  '2:16 Expected an assignment or function call and instead saw an expression.'
+]
+ecmaVersion=5: no errors
+ecmaVersion=latest: no errors
+BUG: directives reported as unused expressions
+

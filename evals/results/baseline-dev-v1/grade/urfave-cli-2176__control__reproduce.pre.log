@@ -1,21 +1,23 @@
 ===== run 1: exit 1
 panic: runtime error: invalid memory address or nil pointer dereference
-[signal SIGSEGV: segmentation violation code=0x1 addr=0x18 pc=0x7c90a8]
+[signal SIGSEGV: segmentation violation code=0x1 addr=0x0 pc=0x6f1b20]
 
-goroutine 45 [running]:
+goroutine 8 [running]:
+github.com/urfave/cli/v3.(*boolValue).Get(0x1?)
+	/home/ubuntu/grade/urfave-cli-2176/repo/flag_bool.go:71
 github.com/urfave/cli/v3.(*FlagBase[...]).Get(...)
 	/home/ubuntu/grade/urfave-cli-2176/repo/flag_impl.go:192
-github.com/urfave/cli/v3.(*Command).Value(0xc0000fe848, {0xc0e6c0, 0x1})
+github.com/urfave/cli/v3.(*Command).Value(0xc0002262c8, {0xc0006052e8, 0x4})
 	/home/ubuntu/grade/urfave-cli-2176/repo/command.go:533 +0xb5
-github.com/urfave/cli/v3.(*Command).Bool(0xc0000fe848, {0xc0e6c0, 0x1})
+github.com/urfave/cli/v3.(*Command).Bool(0xc0002262c8, {0xc0006052e8, 0x4})
 	/home/ubuntu/grade/urfave-cli-2176/repo/flag_bool.go:28 +0x34
 slices.IndexFunc[...](...)
 	/home/ubuntu/.local/go1.23.8/src/slices/slices.go:109
-slices.ContainsFunc[...]({0xc000078e80?, 0x2, 0xc0000eb8d0}, 0xc0001adb40?)
+slices.ContainsFunc[...]({0xc0000db480?, 0x2, 0xc000223790}, 0xc000148b40?)
 	/home/ubuntu/.local/go1.23.8/src/slices/slices.go:124 +0x5f
-github.com/urfave/cli/v3.(*Command).checkHelp(0xc0000fe848)
+github.com/urfave/cli/v3.(*Command).checkHelp(0xc0002262c8)
 	/home/ubuntu/grade/urfave-cli-2176/repo/command.go:186 +0xa8
-github.com/urfave/cli/v3.(*Command).run(0xc0000fe848, {0x9480b0, 0xc000473da0}, {0xc0000eb620, 0x1, 0x1})
+github.com/urfave/cli/v3.(*Command).run(0xc0002262c8, {0x9480b0, 0xc00021b2f0}, {0xc0002234e0, 0x1, 0x1})
 	/home/ubuntu/grade/urfave-cli-2176/repo/command_run.go:198 +0x1127
 github.com/urfave/cli/v3.(*Command).Run(...)
 	/home/ubuntu/grade/urfave-cli-2176/repo/command_run.go:94
@@ -23,29 +25,29 @@ github.com/urfave/cli/v3.TestHelpFlagParallelNilDeref.func1()
 	/home/ubuntu/grade/urfave-cli-2176/repo/helpflag_parallel_test.go:26 +0x9a
 github.com/urfave/cli/v3.TestHelpFlagParallelNilDeref.func2()
 	/home/ubuntu/grade/urfave-cli-2176/repo/helpflag_parallel_test.go:35 +0x59
-created by github.com/urfave/cli/v3.TestHelpFlagParallelNilDeref in goroutine 41
+created by github.com/urfave/cli/v3.TestHelpFlagParallelNilDeref in goroutine 5
 	/home/ubuntu/grade/urfave-cli-2176/repo/helpflag_parallel_test.go:32 +0x45
-FAIL	github.com/urfave/cli/v3	0.008s
+FAIL	github.com/urfave/cli/v3	0.009s
 FAIL
 
 ===== run 2: exit 1
 panic: runtime error: invalid memory address or nil pointer dereference
 [signal SIGSEGV: segmentation violation code=0x1 addr=0x18 pc=0x7c90a8]
 
-goroutine 34 [running]:
+goroutine 87 [running]:
 github.com/urfave/cli/v3.(*FlagBase[...]).Get(...)
 	/home/ubuntu/grade/urfave-cli-2176/repo/flag_impl.go:192
-github.com/urfave/cli/v3.(*Command).Value(0xc00029d088, {0xc0e6c0, 0x1})
+github.com/urfave/cli/v3.(*Command).Value(0xc000253088, {0xc000248670, 0x4})
 	/home/ubuntu/grade/urfave-cli-2176/repo/command.go:533 +0xb5
-github.com/urfave/cli/v3.(*Command).Bool(0xc00029d088, {0xc0e6c0, 0x1})
+github.com/urfave/cli/v3.(*Command).Bool(0xc000253088, {0xc000248670, 0x4})
 	/home/ubuntu/grade/urfave-cli-2176/repo/flag_bool.go:28 +0x34
 slices.IndexFunc[...](...)
 	/home/ubuntu/.local/go1.23.8/src/slices/slices.go:109
-slices.ContainsFunc[...]({0xc000079240?, 0x2, 0xc00029aef0}, 0xc00006db40?)
+slices.ContainsFunc[...]({0xc000240b00?, 0x2, 0xc00024fc20}, 0xc00031ab40?)
 	/home/ubuntu/.local/go1.23.8/src/slices/slices.go:124 +0x5f
-github.com/urfave/cli/v3.(*Command).checkHelp(0xc00029d088)
+github.com/urfave/cli/v3.(*Command).checkHelp(0xc000253088)
 	/home/ubuntu/grade/urfave-cli-2176/repo/command.go:186 +0xa8
-github.com/urfave/cli/v3.(*Command).run(0xc00029d088, {0x9480b0, 0xc00029e0c0}, {0xc00029ac40, 0x1, 0x1})
+github.com/urfave/cli/v3.(*Command).run(0xc000253088, {0x9480b0, 0xc000250840}, {0xc00024f970, 0x1, 0x1})
 	/home/ubuntu/grade/urfave-cli-2176/repo/command_run.go:198 +0x1127
 github.com/urfave/cli/v3.(*Command).Run(...)
 	/home/ubuntu/grade/urfave-cli-2176/repo/command_run.go:94
@@ -53,29 +55,29 @@ github.com/urfave/cli/v3.TestHelpFlagParallelNilDeref.func1()
 	/home/ubuntu/grade/urfave-cli-2176/repo/helpflag_parallel_test.go:26 +0x9a
 github.com/urfave/cli/v3.TestHelpFlagParallelNilDeref.func2()
 	/home/ubuntu/grade/urfave-cli-2176/repo/helpflag_parallel_test.go:35 +0x59
-created by github.com/urfave/cli/v3.TestHelpFlagParallelNilDeref in goroutine 20
+created by github.com/urfave/cli/v3.TestHelpFlagParallelNilDeref in goroutine 66
 	/home/ubuntu/grade/urfave-cli-2176/repo/helpflag_parallel_test.go:32 +0x45
-FAIL	github.com/urfave/cli/v3	0.006s
+FAIL	github.com/urfave/cli/v3	0.008s
 FAIL
 
 ===== run 3: exit 1
 panic: runtime error: invalid memory address or nil pointer dereference
 [signal SIGSEGV: segmentation violation code=0x1 addr=0x18 pc=0x7c90a8]
 
-goroutine 123 [running]:
+goroutine 12 [running]:
 github.com/urfave/cli/v3.(*FlagBase[...]).Get(...)
 	/home/ubuntu/grade/urfave-cli-2176/repo/flag_impl.go:192
-github.com/urfave/cli/v3.(*Command).Value(0xc000381b88, {0xc00041d780, 0x4})
+github.com/urfave/cli/v3.(*Command).Value(0xc00019edc8, {0xc0e6c0, 0x1})
 	/home/ubuntu/grade/urfave-cli-2176/repo/command.go:533 +0xb5
-github.com/urfave/cli/v3.(*Command).Bool(0xc000381b88, {0xc00041d780, 0x4})
+github.com/urfave/cli/v3.(*Command).Bool(0xc00019edc8, {0xc0e6c0, 0x1})
 	/home/ubuntu/grade/urfave-cli-2176/repo/flag_bool.go:28 +0x34
 slices.IndexFunc[...](...)
 	/home/ubuntu/.local/go1.23.8/src/slices/slices.go:109
-slices.ContainsFunc[...]({0xc0003514a0?, 0x2, 0xc00037b980}, 0xc0000b3b40?)
+slices.ContainsFunc[...]({0xc00018c6e0?, 0x2, 0xc00019cb20}, 0xc000068b40?)
 	/home/ubuntu/.local/go1.23.8/src/slices/slices.go:124 +0x5f
-github.com/urfave/cli/v3.(*Command).checkHelp(0xc000381b88)
+github.com/urfave/cli/v3.(*Command).checkHelp(0xc00019edc8)
 	/home/ubuntu/grade/urfave-cli-2176/repo/command.go:186 +0xa8
-github.com/urfave/cli/v3.(*Command).run(0xc000381b88, {0x9480b0, 0xc00035dd40}, {0xc00037b6d0, 0x1, 0x1})
+github.com/urfave/cli/v3.(*Command).run(0xc00019edc8, {0x9480b0, 0xc000188c90}, {0xc00019c870, 0x1, 0x1})
 	/home/ubuntu/grade/urfave-cli-2176/repo/command_run.go:198 +0x1127
 github.com/urfave/cli/v3.(*Command).Run(...)
 	/home/ubuntu/grade/urfave-cli-2176/repo/command_run.go:94
@@ -83,8 +85,8 @@ github.com/urfave/cli/v3.TestHelpFlagParallelNilDeref.func1()
 	/home/ubuntu/grade/urfave-cli-2176/repo/helpflag_parallel_test.go:26 +0x9a
 github.com/urfave/cli/v3.TestHelpFlagParallelNilDeref.func2()
 	/home/ubuntu/grade/urfave-cli-2176/repo/helpflag_parallel_test.go:35 +0x59
-created by github.com/urfave/cli/v3.TestHelpFlagParallelNilDeref in goroutine 41
+created by github.com/urfave/cli/v3.TestHelpFlagParallelNilDeref in goroutine 7
 	/home/ubuntu/grade/urfave-cli-2176/repo/helpflag_parallel_test.go:32 +0x45
-FAIL	github.com/urfave/cli/v3	0.009s
+FAIL	github.com/urfave/cli/v3	0.006s
 FAIL
 

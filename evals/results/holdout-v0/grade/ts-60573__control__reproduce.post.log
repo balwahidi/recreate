@@ -4,18 +4,18 @@ Starting lib
 Starting generate-diagnostics
 > /home/ubuntu/.nvm/versions/node/v24.19.0/bin/node scripts/processDiagnosticMessages.mjs src/compiler/diagnosticMessages.json
 Reading diagnostics from src/compiler/diagnosticMessages.json
-Finished lib in 42ms
-Finished generate-diagnostics in 58ms
+Finished lib in 49ms
+Finished generate-diagnostics in 56ms
 Starting bundle-tests
 Starting build-tests
 Starting build-services
-Finished build-tests in 307ms
-Finished build-services in 307ms
+Finished build-tests in 287ms
+Finished build-services in 287ms
 Starting dts-services
 Finished dts-services in 1ms
 Starting dts-lssl
 Finished dts-lssl in 1ms
-Finished bundle-tests in 326ms
+Finished bundle-tests in 303ms
 Starting runtests
 Running tests with config: {"test":["mappedTypeOverInlineTypeAssertionDisplay|quickInfoMappedTypeOverInlineTypeAssertion"],"light":true,"noColor":false,"timeout":40000,"keepFailed":false}
 > /home/ubuntu/.nvm/versions/node/v24.19.0/bin/node /home/ubuntu/grade/ts-60573/repo/node_modules/mocha/bin/_mocha -R /home/ubuntu/grade/ts-60573/repo/scripts/failed-tests.cjs -O "reporter=mocha-fivemat-progress-reporter" -g "mappedTypeOverInlineTypeAssertionDisplay|quickInfoMappedTypeOverInlineTypeAssertion" --colors -t 40000 ./built/local/run.js

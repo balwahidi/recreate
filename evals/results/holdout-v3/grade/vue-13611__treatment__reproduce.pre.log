@@ -9,19 +9,19 @@ Already up to date
 . postinstall: [INFO] Successfully set the commit-msg with command: node scripts/verify-commit.js
 . postinstall: [INFO] Successfully set all git hooks
 . postinstall: Done
-Done in 899ms using pnpm v10.13.1
+Done in 895ms using pnpm v10.13.1
 
  RUN  v3.1.4 /home/ubuntu/grade/vue-13611/repo
 
- ❯ |unit| packages/vue/__tests__/underscoreSlotRepro.spec.ts (2 tests | 1 failed) 27ms
-   × underscore-prefixed slot names > reported case: sibling slot of parent is conditional (v-if) 24ms
+ ❯ |unit| packages/vue/__tests__/underscoreSlotRepro.spec.ts (2 tests | 1 failed) 28ms
+   × underscore-prefixed slot names > reported case: sibling slot of parent is conditional (v-if) 23ms
      → expected 'conditionaltitle provided_duration fa…' to contain '_duration provided'
-   ✓ underscore-prefixed slot names > control: sibling slot not conditional 3ms
+   ✓ underscore-prefixed slot names > control: sibling slot not conditional 5ms
 
  Test Files  1 failed (1)
       Tests  1 failed | 1 passed (2)
-   Start at  20:10:58
-   Duration  1.24s (transform 639ms, setup 8ms, collect 816ms, tests 27ms, environment 192ms, prepare 39ms)
+   Start at  00:09:11
+   Duration  1.18s (transform 604ms, setup 8ms, collect 765ms, tests 28ms, environment 203ms, prepare 41ms)
 
  Vitest  "environmentMatchGlobs" is deprecated. Use "workspace" to define different configurations instead.
  Vitest  "environmentMatchGlobs" is deprecated. Use "workspace" to define different configurations instead.

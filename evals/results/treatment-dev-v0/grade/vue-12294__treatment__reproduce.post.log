@@ -6,8 +6,8 @@
 
  Test Files  1 passed (1)
       Tests  3 passed (3)
-   Start at  19:31:54
-   Duration  674ms (transform 395ms, setup 7ms, collect 484ms, tests 8ms, environment 0ms, prepare 40ms)
+   Start at  00:12:15
+   Duration  642ms (transform 363ms, setup 8ms, collect 453ms, tests 8ms, environment 0ms, prepare 39ms)
 
  Vitest  "environmentMatchGlobs" is deprecated. Use "workspace" to define different configurations instead.
  Vitest  "environmentMatchGlobs" is deprecated. Use "workspace" to define different configurations instead.

@@ -18,7 +18,7 @@ Building wheels for collected packages: pydantic
   Building editable for pydantic (pyproject.toml): started
   Building editable for pydantic (pyproject.toml): finished with status 'done'
   Created wheel for pydantic: filename=pydantic-2.11.4-py3-none-any.whl size=14085 sha256=df2230d8159b94ed8a7137ffe0d542b1ade048644f874a05699356ff0d3f4cd5
-  Stored in directory: /tmp/pip-ephem-wheel-cache-7aj194kq/wheels/15/61/b5/4cdee1766b16ef464480b0866e63479ca82f2f25092583cc8a
+  Stored in directory: /tmp/pip-ephem-wheel-cache-tjejg1ds/wheels/15/61/b5/4cdee1766b16ef464480b0866e63479ca82f2f25092583cc8a
 Successfully built pydantic
 Installing collected packages: pydantic
   Attempting uninstall: pydantic
@@ -28,13 +28,13 @@ Installing collected packages: pydantic
 Successfully installed pydantic-2.11.4
 pydantic 2.11.4, python 3.10.12, 8 threads x 200 trials
 
-example 2 (C(B(A))): 3/200 trials hit the bug
-    1597  ok
-       3  AttributeError: __pydantic_core_schema__
-
-example 1 (Direct): 3/200 trials hit the bug
-    1597  ok
+example 2 (C(B(A))): 4/200 trials hit the bug
+    1596  ok
+       2  AttributeError: __pydantic_core_schema__
        2  RuntimeError: dictionary changed size during iteration
+
+example 1 (Direct): 1/200 trials hit the bug
+    1599  ok
        1  PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
 
 ===== run 2: exit 1
@@ -57,7 +57,7 @@ Building wheels for collected packages: pydantic
   Building editable for pydantic (pyproject.toml): started
   Building editable for pydantic (pyproject.toml): finished with status 'done'
   Created wheel for pydantic: filename=pydantic-2.11.4-py3-none-any.whl size=14085 sha256=df2230d8159b94ed8a7137ffe0d542b1ade048644f874a05699356ff0d3f4cd5
-  Stored in directory: /tmp/pip-ephem-wheel-cache-j9yk_nji/wheels/15/61/b5/4cdee1766b16ef464480b0866e63479ca82f2f25092583cc8a
+  Stored in directory: /tmp/pip-ephem-wheel-cache-x4g1r_v7/wheels/15/61/b5/4cdee1766b16ef464480b0866e63479ca82f2f25092583cc8a
 Successfully built pydantic
 Installing collected packages: pydantic
   Attempting uninstall: pydantic
@@ -71,9 +71,9 @@ example 2 (C(B(A))): 2/200 trials hit the bug
     1598  ok
        2  RuntimeError: dictionary changed size during iteration
 
-example 1 (Direct): 1/200 trials hit the bug
-    1599  ok
-       1  RuntimeError: dictionary changed size during iteration
+example 1 (Direct): 2/200 trials hit the bug
+    1598  ok
+       2  RuntimeError: dictionary changed size during iteration
 
 ===== run 3: exit 1
 Obtaining file:///home/ubuntu/grade/pydantic-11849/repo
@@ -95,7 +95,7 @@ Building wheels for collected packages: pydantic
   Building editable for pydantic (pyproject.toml): started
   Building editable for pydantic (pyproject.toml): finished with status 'done'
   Created wheel for pydantic: filename=pydantic-2.11.4-py3-none-any.whl size=14085 sha256=df2230d8159b94ed8a7137ffe0d542b1ade048644f874a05699356ff0d3f4cd5
-  Stored in directory: /tmp/pip-ephem-wheel-cache-1dr9wfsc/wheels/15/61/b5/4cdee1766b16ef464480b0866e63479ca82f2f25092583cc8a
+  Stored in directory: /tmp/pip-ephem-wheel-cache-iwcgvppv/wheels/15/61/b5/4cdee1766b16ef464480b0866e63479ca82f2f25092583cc8a
 Successfully built pydantic
 Installing collected packages: pydantic
   Attempting uninstall: pydantic
@@ -105,11 +105,13 @@ Installing collected packages: pydantic
 Successfully installed pydantic-2.11.4
 pydantic 2.11.4, python 3.10.12, 8 threads x 200 trials
 
-example 2 (C(B(A))): 1/200 trials hit the bug
-    1599  ok
+example 2 (C(B(A))): 2/200 trials hit the bug
+    1598  ok
        1  RuntimeError: dictionary changed size during iteration
+       1  AttributeError: __pydantic_core_schema__
 
-example 1 (Direct): 1/200 trials hit the bug
-    1599  ok
-       1  RuntimeError: dictionary changed size during iteration
+example 1 (Direct): 4/200 trials hit the bug
+    1596  ok
+       3  RuntimeError: dictionary changed size during iteration
+       1  AttributeError: __pydantic_core_schema__
 

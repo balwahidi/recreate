@@ -1,6 +1,6 @@
 ===== run 1: exit 1
 
-up to date, audited 1128 packages in 901ms
+up to date, audited 1128 packages in 918ms
 
 224 packages are looking for funding
   run `npm fund` for details
@@ -33,7 +33,7 @@ Run `npm audit` for details.
       ✔ const w = 9e3
 
 
-  9 passing (34ms)
+  9 passing (38ms)
   1 failing
 
   1) no-loss-of-precision (repro #19957)

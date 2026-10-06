@@ -138,8 +138,8 @@
       ✔ const x = 0b100_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_001;
 
 
-  122 passing (135ms)
+  122 passing (142ms)
 
-(node:272015) ESLintIgnoreWarning: The ".eslintignore" file is no longer supported. Switch to using the "ignores" property in "eslint.config.js": https://eslint.org/docs/latest/use/configure/migration-guide#ignoring-files
+(node:459910) ESLintIgnoreWarning: The ".eslintignore" file is no longer supported. Switch to using the "ignores" property in "eslint.config.js": https://eslint.org/docs/latest/use/configure/migration-guide#ignoring-files
 (Use `node --trace-warnings ...` to show where the warning was created)
 

@@ -2,15 +2,15 @@
 
  RUN  v3.1.4 /home/ubuntu/grade/vue-13611/repo
 
- ❯ |unit| packages/vue/__tests__/slotUnderscoreName.spec.ts (2 tests | 1 failed) 26ms
+ ❯ |unit| packages/vue/__tests__/slotUnderscoreName.spec.ts (2 tests | 1 failed) 24ms
    ✓ slot whose name starts with an underscore > renders provided _duration slot (no v-if sibling slot) 16ms
-   × slot whose name starts with an underscore > renders provided _duration slot when sibling of v-if slot 9ms
+   × slot whose name starts with an underscore > renders provided _duration slot when sibling of v-if slot 8ms
      → expected '<div><p>conditional</p><span>provided…' to contain 'provided _duration'
 
  Test Files  1 failed (1)
       Tests  1 failed | 1 passed (2)
-   Start at  19:48:05
-   Duration  1.20s (transform 614ms, setup 9ms, collect 781ms, tests 26ms, environment 208ms, prepare 40ms)
+   Start at  00:05:16
+   Duration  1.18s (transform 614ms, setup 8ms, collect 780ms, tests 24ms, environment 192ms, prepare 41ms)
 
  Vitest  "environmentMatchGlobs" is deprecated. Use "workspace" to define different configurations instead.
  Vitest  "environmentMatchGlobs" is deprecated. Use "workspace" to define different configurations instead.

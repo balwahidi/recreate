@@ -1,6 +1,6 @@
 ===== run 1: exit 1
 Scope: all 241 workspace projects
-Progress: resolved 0, reused 1, downloaded 0, added 0
+Progress: resolved 1, reused 0, downloaded 0, added 0
 Progress: resolved 1383, reused 1213, downloaded 0, added 0
 Packages: +96
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -15,7 +15,7 @@ playground/external
   └─┬ @vue/server-renderer 3.4.38
     └── ✕ unmet peer vue@3.4.38: found 3.5.22
 
-Done in 2.1s using pnpm v10.17.1
+Done in 2s using pnpm v10.17.1
 
  RUN  v3.2.4 /home/ubuntu/grade/vite-20705/repo
 
@@ -25,15 +25,15 @@ export const marker = 'contents of test.js'
 
 //# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInRlc3QiXSwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGNvbnN0IG1hcmtlciA9ICdjb250ZW50cyBvZiB0ZXN0LmpzJ1xuIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLE1BQU0sQ0FBQyxLQUFLLENBQUMsTUFBTSxDQUFDLENBQUMsQ0FBQyxDQUFDLFFBQVEsQ0FBQyxFQUFFLENBQUMsSUFBSSxDQUFDLEVBQUU7In0=
 
- ❯ packages/vite/src/node/server/__tests__/htmlFallbackSourceFile.spec.ts (2 tests | 1 failed) 64ms
-   ✓ html fallback when url matches a source file basename > sanity: /index.html is served as html 32ms
-   × html fallback when url matches a source file basename > browser navigation to /test serves index.html, not test.js 12ms
+ ❯ packages/vite/src/node/server/__tests__/htmlFallbackSourceFile.spec.ts (2 tests | 1 failed) 65ms
+   ✓ html fallback when url matches a source file basename > sanity: /index.html is served as html 31ms
+   × html fallback when url matches a source file basename > browser navigation to /test serves index.html, not test.js 14ms
      → expected 'text/javascript' to match /text\/html/html
 
  Test Files  1 failed (1)
       Tests  1 failed | 1 passed (2)
-   Start at  20:18:31
-   Duration  1.24s (transform 609ms, setup 0ms, collect 977ms, tests 64ms, environment 0ms, prepare 48ms)
+   Start at  00:10:49
+   Duration  1.17s (transform 580ms, setup 0ms, collect 910ms, tests 65ms, environment 0ms, prepare 47ms)
 
 
 ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯

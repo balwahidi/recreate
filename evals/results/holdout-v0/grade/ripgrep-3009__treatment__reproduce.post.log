@@ -7,11 +7,11 @@ failures:
 
 ---- walk::tests::panic_in_parallel stdout ----
 
-thread '<unnamed>' (128671) panicked at crates/ignore/src/walk.rs:2504:34:
+thread '<unnamed>' (532055) panicked at crates/ignore/src/walk.rs:2504:34:
 oops!
 note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 
-thread 'walk::tests::panic_in_parallel' (128670) panicked at crates/ignore/src/walk.rs:1473:31:
+thread 'walk::tests::panic_in_parallel' (532054) panicked at crates/ignore/src/walk.rs:1473:31:
 called `Result::unwrap()` on an `Err` value: Any { .. }
 note: panic did not contain expected string
       panic message: "called `Result::unwrap()` on an `Err` value: Any { .. }"
@@ -20,7 +20,7 @@ note: panic did not contain expected string
 failures:
     walk::tests::panic_in_parallel
 
-test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 147 filtered out; finished in 0.01s
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 147 filtered out; finished in 0.00s
 
 exit=101
 error: test failed, to rerun pass `--lib`
@@ -34,11 +34,11 @@ failures:
 
 ---- walk::tests::panic_in_parallel stdout ----
 
-thread '<unnamed>' (128743) panicked at crates/ignore/src/walk.rs:2504:34:
+thread '<unnamed>' (532125) panicked at crates/ignore/src/walk.rs:2504:34:
 oops!
 note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 
-thread 'walk::tests::panic_in_parallel' (128740) panicked at crates/ignore/src/walk.rs:1473:31:
+thread 'walk::tests::panic_in_parallel' (532124) panicked at crates/ignore/src/walk.rs:1473:31:
 called `Result::unwrap()` on an `Err` value: Any { .. }
 note: panic did not contain expected string
       panic message: "called `Result::unwrap()` on an `Err` value: Any { .. }"
@@ -47,7 +47,7 @@ note: panic did not contain expected string
 failures:
     walk::tests::panic_in_parallel
 
-test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 147 filtered out; finished in 0.01s
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 147 filtered out; finished in 0.00s
 
 exit=101
 error: test failed, to rerun pass `--lib`
@@ -61,11 +61,11 @@ failures:
 
 ---- walk::tests::panic_in_parallel stdout ----
 
-thread '<unnamed>' (128811) panicked at crates/ignore/src/walk.rs:2504:34:
+thread '<unnamed>' (532197) panicked at crates/ignore/src/walk.rs:2504:34:
 oops!
 note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 
-thread 'walk::tests::panic_in_parallel' (128810) panicked at crates/ignore/src/walk.rs:1473:31:
+thread 'walk::tests::panic_in_parallel' (532196) panicked at crates/ignore/src/walk.rs:1473:31:
 called `Result::unwrap()` on an `Err` value: Any { .. }
 note: panic did not contain expected string
       panic message: "called `Result::unwrap()` on an `Err` value: Any { .. }"

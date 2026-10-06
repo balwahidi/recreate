@@ -62,6 +62,10 @@ def sh(cmd, cwd, timeout):
             pass
         stdout, stderr = p.communicate()
         return "timeout", (stdout + stderr)[-20000:]
+    try:
+        os.killpg(p.pid, signal.SIGKILL)
+    except ProcessLookupError:
+        pass
     return p.returncode, (stdout + stderr)[-20000:]
 
 
@@ -109,6 +113,28 @@ def clear_grade_files(out_dir, label):
     (out_dir / f"{label}.json").unlink(missing_ok=True)
     for path in out_dir.glob(f"{label}.*.log"):
         path.unlink()
+
+
+def purge_orphaned_grade_files(res_dir, out_dir, filters):
+    if filters:
+        return
+    result_labels = {
+        path.stem for path in res_dir.glob("*.json")
+        if path.is_file() and len(path.stem.split("__")) in (3, 4)
+    }
+    orphan_labels = set()
+    for path in out_dir.iterdir():
+        if not path.is_file():
+            continue
+        label = path.name.split(".", 1)[0]
+        if not label:
+            continue
+        is_grade_json = path.name == f"{label}.json"
+        is_grade_log = path.name.startswith(f"{label}.") and path.name.endswith(".log")
+        if (is_grade_json or is_grade_log) and label not in result_labels:
+            orphan_labels.add(label)
+    for label in sorted(orphan_labels):
+        clear_grade_files(out_dir, label)
 
 
 def grade(case, label, result, out_dir):
@@ -159,6 +185,7 @@ def main():
     res_dir = ROOT / "evals/results" / run
     out_dir = res_dir / "grade"
     out_dir.mkdir(exist_ok=True)
+    purge_orphaned_grade_files(res_dir, out_dir, filters)
     for path in sorted(res_dir.glob("*.json")):
         label = path.stem
         if label.split("__")[0] not in cases or (filters and not any(f in label for f in filters)):

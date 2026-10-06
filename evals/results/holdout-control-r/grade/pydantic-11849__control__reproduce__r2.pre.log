@@ -12,7 +12,7 @@ For further information visit https://errors.pydantic.dev/2.11/u/base-model-inst
   after rebuild finished: Direct: Direct(id='test', description=Translatable(en='ok'))
 
 === Part 2: unmodified code, 8 threads racing first use, 300 attempts ===
-C validated as B: 2087 times; Direct raised "BaseModel cannot be instantiated directly": 1910 times
+C validated as B: 2081 times; Direct raised "BaseModel cannot be instantiated directly": 1868 times
 /home/ubuntu/grade/pydantic-11849/repo/repro/race_11849.py:72: UserWarning: Subclassing `GenerateSchema` is not supported. The API is highly subject to change in minor versions.
   class SlowGenerateSchema(orig_gen):  # (emits a harmless "Subclassing GenerateSchema" warning)
 
@@ -30,7 +30,7 @@ For further information visit https://errors.pydantic.dev/2.11/u/base-model-inst
   after rebuild finished: Direct: Direct(id='test', description=Translatable(en='ok'))
 
 === Part 2: unmodified code, 8 threads racing first use, 300 attempts ===
-C validated as B: 2079 times; Direct raised "BaseModel cannot be instantiated directly": 1909 times
+C validated as B: 2077 times; Direct raised "BaseModel cannot be instantiated directly": 1889 times
 /home/ubuntu/grade/pydantic-11849/repo/repro/race_11849.py:72: UserWarning: Subclassing `GenerateSchema` is not supported. The API is highly subject to change in minor versions.
   class SlowGenerateSchema(orig_gen):  # (emits a harmless "Subclassing GenerateSchema" warning)
 
@@ -48,7 +48,7 @@ For further information visit https://errors.pydantic.dev/2.11/u/base-model-inst
   after rebuild finished: Direct: Direct(id='test', description=Translatable(en='ok'))
 
 === Part 2: unmodified code, 8 threads racing first use, 300 attempts ===
-C validated as B: 2083 times; Direct raised "BaseModel cannot be instantiated directly": 1893 times
+C validated as B: 2072 times; Direct raised "BaseModel cannot be instantiated directly": 1885 times
 /home/ubuntu/grade/pydantic-11849/repo/repro/race_11849.py:72: UserWarning: Subclassing `GenerateSchema` is not supported. The API is highly subject to change in minor versions.
   class SlowGenerateSchema(orig_gen):  # (emits a harmless "Subclassing GenerateSchema" warning)
 

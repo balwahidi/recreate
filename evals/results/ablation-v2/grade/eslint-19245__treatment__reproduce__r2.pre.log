@@ -40,7 +40,7 @@
         }
 
 
-  1 passing (36ms)
+  1 passing (35ms)
   2 failing
 
   1) no-useless-assignment (eslint#19245)

@@ -2,7 +2,7 @@
 Generating 1025 files in tmp/emfile-fix-check...
 Running ESLint with --fix...
 ESLint exit code: 2; files fixed: 1003/1025
-(node:48818) ESLintIgnoreWarning: The ".eslintignore" file is no longer supported. Switch to using the "ignores" property in "eslint.config.js": https://eslint.org/docs/latest/use/configure/migration-guide#ignoring-files
+(node:566995) ESLintIgnoreWarning: The ".eslintignore" file is no longer supported. Switch to using the "ignores" property in "eslint.config.js": https://eslint.org/docs/latest/use/configure/migration-guide#ignoring-files
 (Use `node --trace-warnings ...` to show where the warning was created)
 
 Oops! Something went wrong! :(

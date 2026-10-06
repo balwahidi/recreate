@@ -368,7 +368,7 @@ INTERNALERROR>   File "/home/ubuntu/grade/pytest-13312/repo/src/_pytest/fixtures
 INTERNALERROR>     other_scoped_items_by_argkey[argkey].move_to_end(
 INTERNALERROR> KeyError: <Function test_68[1-2]>
 
-320 tests collected in 0.11s
+320 tests collected in 0.13s
   WARNING: The scripts py.test and pytest are installed in '/home/ubuntu/.local/pypy3.9-v7.3.16/bin' which is not on PATH.
   Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
 
@@ -1122,7 +1122,7 @@ INTERNALERROR>   File "/home/ubuntu/grade/pytest-13312/repo/src/_pytest/fixtures
 INTERNALERROR>     other_scoped_items_by_argkey[argkey].move_to_end(
 INTERNALERROR> KeyError: <Function test_68[1-2]>
 
-320 tests collected in 0.11s
+320 tests collected in 0.12s
   WARNING: The scripts py.test and pytest are installed in '/home/ubuntu/.local/pypy3.9-v7.3.16/bin' which is not on PATH.
   Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
 

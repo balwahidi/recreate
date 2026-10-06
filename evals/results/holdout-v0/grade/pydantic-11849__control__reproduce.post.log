@@ -1,36 +1,37 @@
 ===== run 1: exit 1
-[deterministic] C: during rebuild, '__pydantic_validator__' in C.__dict__ = True; C.__pydantic_validator__ resolves to <pydantic._internal._mock_val_ser.MockValSer object at 0x7e10533aa8c0>
+[deterministic] C: during rebuild, '__pydantic_validator__' in C.__dict__ = True; C.__pydantic_validator__ resolves to <pydantic._internal._mock_val_ser.MockValSer object at 0x7099497a68c0>
   concurrent -> ok
   rebuilder  -> ok
-[deterministic] Direct: during rebuild, '__pydantic_validator__' in Direct.__dict__ = True; Direct.__pydantic_validator__ resolves to <pydantic._internal._mock_val_ser.MockValSer object at 0x7e10533ab540>
+[deterministic] Direct: during rebuild, '__pydantic_validator__' in Direct.__dict__ = True; Direct.__pydantic_validator__ resolves to <pydantic._internal._mock_val_ser.MockValSer object at 0x7099497a74c0>
+  concurrent -> ok
+  rebuilder  -> ok
+[race] 300 iterations x 8 threads, wrong results:
+      3x  WRONG CLASS: got B (B(id='ok1')) instead of C
+      2x  RuntimeError: dictionary changed size during iteration
+      1x  AttributeError: __pydantic_core_schema__
+BUG REPRODUCED
+
+===== run 2: exit 1
+[deterministic] C: during rebuild, '__pydantic_validator__' in C.__dict__ = True; C.__pydantic_validator__ resolves to <pydantic._internal._mock_val_ser.MockValSer object at 0x7a951c6b28c0>
+  concurrent -> ok
+  rebuilder  -> ok
+[deterministic] Direct: during rebuild, '__pydantic_validator__' in Direct.__dict__ = True; Direct.__pydantic_validator__ resolves to <pydantic._internal._mock_val_ser.MockValSer object at 0x7a951c6b3540>
   concurrent -> ok
   rebuilder  -> ok
 [race] 300 iterations x 8 threads, wrong results:
       4x  RuntimeError: dictionary changed size during iteration
-      2x  AttributeError: __pydantic_core_schema__
-BUG REPRODUCED
-
-===== run 2: exit 1
-[deterministic] C: during rebuild, '__pydantic_validator__' in C.__dict__ = True; C.__pydantic_validator__ resolves to <pydantic._internal._mock_val_ser.MockValSer object at 0x72068952a700>
-  concurrent -> ok
-  rebuilder  -> ok
-[deterministic] Direct: during rebuild, '__pydantic_validator__' in Direct.__dict__ = True; Direct.__pydantic_validator__ resolves to <pydantic._internal._mock_val_ser.MockValSer object at 0x72068952b380>
-  concurrent -> ok
-  rebuilder  -> ok
-[race] 300 iterations x 8 threads, wrong results:
-      7x  RuntimeError: dictionary changed size during iteration
+      3x  AttributeError: __pydantic_core_schema__
 BUG REPRODUCED
 
 ===== run 3: exit 1
-[deterministic] C: during rebuild, '__pydantic_validator__' in C.__dict__ = True; C.__pydantic_validator__ resolves to <pydantic._internal._mock_val_ser.MockValSer object at 0x74c376db6980>
+[deterministic] C: during rebuild, '__pydantic_validator__' in C.__dict__ = True; C.__pydantic_validator__ resolves to <pydantic._internal._mock_val_ser.MockValSer object at 0x79c257f06780>
   concurrent -> ok
   rebuilder  -> ok
-[deterministic] Direct: during rebuild, '__pydantic_validator__' in Direct.__dict__ = True; Direct.__pydantic_validator__ resolves to <pydantic._internal._mock_val_ser.MockValSer object at 0x74c376db7580>
+[deterministic] Direct: during rebuild, '__pydantic_validator__' in Direct.__dict__ = True; Direct.__pydantic_validator__ resolves to <pydantic._internal._mock_val_ser.MockValSer object at 0x79c257f07400>
   concurrent -> ok
   rebuilder  -> ok
 [race] 300 iterations x 8 threads, wrong results:
-      3x  AttributeError: __pydantic_core_schema__
-      2x  RuntimeError: dictionary changed size during iteration
-      1x  WRONG CLASS: got B (B(id='ok1')) instead of C
+      3x  RuntimeError: dictionary changed size during iteration
+      1x  AttributeError: __pydantic_core_schema__
 BUG REPRODUCED
 

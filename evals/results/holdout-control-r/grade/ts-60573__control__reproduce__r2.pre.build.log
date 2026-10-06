@@ -9,14 +9,14 @@ Starting shim-compile-cache-typings-installer
 Starting bundle-watch-guard
 Starting build-watch-guard
 Starting generate-types-map
-Finished shim-compile-cache-tsc in 7ms
-Finished shim-compile-cache-typings-installer in 7ms
-Finished shim-compile-cache-tsserver in 8ms
-Finished generate-types-map in 8ms
-Finished bundle-watch-guard in 10ms
+Finished shim-compile-cache-typings-installer in 6ms
+Finished shim-compile-cache-tsc in 6ms
+Finished shim-compile-cache-tsserver in 7ms
+Finished generate-types-map in 7ms
+Finished bundle-watch-guard in 9ms
 Reading diagnostics from src/compiler/diagnosticMessages.json
-Finished lib in 52ms
-Finished generate-diagnostics in 67ms
+Finished lib in 49ms
+Finished generate-diagnostics in 58ms
 Starting localize
 Starting bundle-tsc
 Starting build-tsc
@@ -29,11 +29,11 @@ Starting build-typings-installer
 Starting copy-built-local-diagnostic-messages
 Finished localize in 1ms
 Finished copy-built-local-diagnostic-messages in 3ms
-Finished bundle-typings-installer in 31ms
-Finished bundle-tsserver in 31ms
-Finished bundle-tsc in 296ms
-Finished bundle-services in 373ms
-Finished build-watch-guard in 1.6s
+Finished bundle-tsserver in 25ms
+Finished bundle-typings-installer in 26ms
+Finished bundle-tsc in 251ms
+Finished bundle-services in 360ms
+Finished build-watch-guard in 1.7s
 Finished build-tsc in 1.6s
 Finished build-services in 1.6s
 Finished build-tsserver in 1.6s
