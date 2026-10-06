@@ -34,6 +34,11 @@ def units():
     cases = json.loads((ROOT / "cases/cases.json").read_text())["cases"]
     skills = {arm: (ROOT / path).read_text() for arm, path in SKILLS.items() if arm in RUN["arms"]}
     for split, ids, tasks in RUN["plan"]:
+        if ids is not None:
+            split_case_ids = {case["id"] for case in cases if case["split"] == split}
+            missing = sorted(set(ids) - split_case_ids)
+            if missing:
+                raise ValueError(f"unknown case ids for split {split!r}: {', '.join(missing)}")
         for case in cases:
             if case["split"] != split or (ids is not None and case["id"] not in ids):
                 continue

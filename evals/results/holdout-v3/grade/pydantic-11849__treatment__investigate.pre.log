@@ -9,10 +9,10 @@ first use of Direct (triggers automatic model_rebuild):
   this thread: Direct(id='test', description=Translatable(en='ok'))
 BUG REPRODUCED
 300 trials x 8 threads, switchinterval=0.0005
-    10  C.model_validate -> B
-  1190  C.model_validate -> C
-  1199  Direct -> Direct
-     1  Direct raised PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
+     3  C.model_validate -> B
+  1197  C.model_validate -> C
+  1197  Direct -> Direct
+     3  Direct raised PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
 BUG REPRODUCED
 
 ===== run 2: exit 1
@@ -26,12 +26,13 @@ first use of Direct (triggers automatic model_rebuild):
   this thread: Direct(id='test', description=Translatable(en='ok'))
 BUG REPRODUCED
 300 trials x 8 threads, switchinterval=0.0005
-     5  C.model_validate -> B
-  1195  C.model_validate -> C
-  1200  Direct -> Direct
+     6  C.model_validate -> B
+  1194  C.model_validate -> C
+  1195  Direct -> Direct
+     5  Direct raised PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
 BUG REPRODUCED
 
-===== run 3: exit 1
+===== run 3: exit 0
 first use of C (triggers automatic model_rebuild):
   C.__pydantic_validator__ in C.__dict__ during rebuild: False
   "other thread": C.model_validate(...) -> B(id='ok1')
@@ -42,9 +43,7 @@ first use of Direct (triggers automatic model_rebuild):
   this thread: Direct(id='test', description=Translatable(en='ok'))
 BUG REPRODUCED
 300 trials x 8 threads, switchinterval=0.0005
-    12  C.model_validate -> B
-  1188  C.model_validate -> C
-  1191  Direct -> Direct
-     9  Direct raised PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
-BUG REPRODUCED
+  1200  C.model_validate -> C
+  1200  Direct -> Direct
+no wrong-class results
 

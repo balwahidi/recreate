@@ -45,13 +45,12 @@ POST_EXTRA = {"urfave-cli-2176": "upstream_test.patch"}
 
 
 def sh(cmd, cwd, timeout):
-    with tempfile.TemporaryFile(mode="w+t") as output:
+    with tempfile.TemporaryFile(mode="w+b") as output:
         p = subprocess.Popen(
             ["bash", "-lc", cmd],
             cwd=cwd,
             stdout=output,
             stderr=subprocess.STDOUT,
-            text=True,
             start_new_session=True,
         )
         try:
@@ -62,14 +61,19 @@ def sh(cmd, cwd, timeout):
             except ProcessLookupError:
                 pass
             p.wait()
-            output.seek(0)
-            return "timeout", output.read()[-20000:]
-        try:
-            os.killpg(p.pid, signal.SIGKILL)
-        except ProcessLookupError:
-            pass
+            code = "timeout"
+        else:
+            try:
+                os.killpg(p.pid, signal.SIGKILL)
+            except ProcessLookupError:
+                pass
+            code = p.returncode
         output.seek(0)
-        return p.returncode, output.read()[-20000:]
+        text = output.read().decode("utf-8", errors="replace")
+        if len(text) > 40000:
+            omitted = len(text) - 40000
+            text = f"{text[:20000]}\n[... {omitted} chars truncated ...]\n{text[-20000:]}"
+        return code, text
 
 
 def reset(repo, checkout):
