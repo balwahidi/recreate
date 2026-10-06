@@ -13,7 +13,7 @@ plus pre/post logs. Symptom match is judged by hand from the logs.
 
 usage: python3 evals/grade.py <run-name> [label-substring ...]
 """
-import json, os, pathlib, signal, subprocess, sys
+import json, os, pathlib, signal, subprocess, sys, tempfile
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 GRADE = pathlib.Path.home() / "grade"
@@ -45,28 +45,31 @@ POST_EXTRA = {"urfave-cli-2176": "upstream_test.patch"}
 
 
 def sh(cmd, cwd, timeout):
-    p = subprocess.Popen(
-        ["bash", "-lc", cmd],
-        cwd=cwd,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
-        text=True,
-        start_new_session=True,
-    )
-    try:
-        stdout, stderr = p.communicate(timeout=timeout)
-    except subprocess.TimeoutExpired:
+    with tempfile.TemporaryFile(mode="w+t") as output:
+        p = subprocess.Popen(
+            ["bash", "-lc", cmd],
+            cwd=cwd,
+            stdout=output,
+            stderr=subprocess.STDOUT,
+            text=True,
+            start_new_session=True,
+        )
+        try:
+            p.wait(timeout=timeout)
+        except subprocess.TimeoutExpired:
+            try:
+                os.killpg(p.pid, signal.SIGKILL)
+            except ProcessLookupError:
+                pass
+            p.wait()
+            output.seek(0)
+            return "timeout", output.read()[-20000:]
         try:
             os.killpg(p.pid, signal.SIGKILL)
         except ProcessLookupError:
             pass
-        stdout, stderr = p.communicate()
-        return "timeout", (stdout + stderr)[-20000:]
-    try:
-        os.killpg(p.pid, signal.SIGKILL)
-    except ProcessLookupError:
-        pass
-    return p.returncode, (stdout + stderr)[-20000:]
+        output.seek(0)
+        return p.returncode, output.read()[-20000:]
 
 
 def reset(repo, checkout):
