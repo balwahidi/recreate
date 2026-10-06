@@ -9,7 +9,7 @@ Existing result-shaped labels outside the current work are rejected before
 sessions start; metadata JSON files are ignored. Duplicate labels are rejected
 before workflow registration.
 """
-import asyncio, json, pathlib, re, sys
+import asyncio, hashlib, json, pathlib, re, sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent if "__file__" in globals() else pathlib.Path.cwd()
 sys.path.insert(0, str(ROOT / "evals"))
@@ -74,9 +74,10 @@ def mark_duplicate_sessions(out_dir, labels):
         if session_id is not None:
             by_session.setdefault(session_id, []).append(label)
     for session_id, duplicates in by_session.items():
+        duplicates = sorted(set(duplicates))
         if len(duplicates) < 2:
             continue
-        for label in duplicates:
+        for label in duplicates[1:]:
             result_path = out_dir / f"{label}.json"
             result_path.write_text(json.dumps(
                 {"error": f"duplicate session {session_id}"}, indent=2, sort_keys=True
@@ -84,20 +85,45 @@ def mark_duplicate_sessions(out_dir, labels):
             log(f"{label}: duplicate session {session_id}")
 
 
-def reject_stale_outputs(out_dir, work_labels, case_ids):
+def result_json_labels(out_dir, case_ids):
     if not out_dir.exists():
-        return
-    stale = []
+        return set()
+    labels = set()
     for path in out_dir.glob("*.json"):
         if not path.is_file():
             continue
         parts = path.stem.split("__")
-        result_shaped = len(parts) in (3, 4) and parts[0] in case_ids
-        if result_shaped and path.stem not in work_labels:
-            stale.append(path.stem)
-    stale.sort()
+        if len(parts) in (3, 4) and parts[0] in case_ids:
+            labels.add(path.stem)
+    return labels
+
+
+def reject_stale_outputs(out_dir, work_labels, case_ids):
+    stale = sorted(result_json_labels(out_dir, case_ids) - work_labels)
     if stale:
         raise ValueError(f"stale result labels in {out_dir}: {', '.join(stale)}")
+
+
+def validate_prompt_manifest(out_dir, prompt_hashes, case_ids):
+    manifest_path = out_dir / "prompts.json"
+    result_labels = result_json_labels(out_dir, case_ids)
+    if manifest_path.exists():
+        previous = json.loads(manifest_path.read_text())
+        changed = sorted(
+            label for label, prompt_hash in prompt_hashes.items()
+            if label in previous and previous[label] != prompt_hash
+        )
+        if changed:
+            raise ValueError(f"prompt hashes changed for labels: {', '.join(changed)}")
+    elif result_labels:
+        raise ValueError(
+            f"legacy run directory {out_dir} has result JSONs but no prompts.json; use a new run name"
+        )
+    return manifest_path
+
+
+def write_prompt_manifest(manifest_path, prompt_hashes):
+    manifest_path.write_text(json.dumps(prompt_hashes, indent=2, sort_keys=True) + "\n")
 
 
 def reject_duplicate_labels(work):
@@ -114,16 +140,22 @@ async def main():
     work = list(units())
     labels = reject_duplicate_labels(work)
     out_dir = ROOT / "evals/results" / RUN["name"]
+    out_dir.mkdir(parents=True, exist_ok=True)
     cases_path = ROOT / "cases/cases.json"
     case_ids = {case["id"] for case in json.loads(cases_path.read_text())["cases"]}
-    reject_stale_outputs(out_dir, {label for label, _ in work}, case_ids)
+    prompt_hashes = {
+        label: hashlib.sha256(prompt.encode("utf-8")).hexdigest()
+        for label, prompt in work
+    }
+    manifest_path = validate_prompt_manifest(out_dir, prompt_hashes, case_ids)
+    reject_stale_outputs(out_dir, set(labels), case_ids)
+    write_prompt_manifest(manifest_path, prompt_hashes)
     await register_workflow({
         "name": RUN["name"],
         "description": "Recreate eval: evaluated agents attempt bug reproduction from historical issues",
         "phases": [{"title": "evaluate", "detail": "one agent per case x arm x task",
                     "labels": labels}],
     })
-    out_dir.mkdir(parents=True, exist_ok=True)
     await asyncio.gather(*(run_one(label, prompt, out_dir) for label, prompt in work))
     mark_duplicate_sessions(out_dir, labels)
 
