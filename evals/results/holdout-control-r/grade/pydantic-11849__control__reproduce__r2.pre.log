@@ -1,0 +1,54 @@
+===== run 1: exit 1
+pydantic 2.11.4 | python 3.10.12
+=== Part 1: deterministic (rebuild paused inside schema generation) ===
+C: "__pydantic_validator__" in __dict__ during rebuild: False
+  concurrent call returned B: B(id='ok1')
+  BUG: expected C, got B; hasattr(obj, "name") = False
+  after rebuild finished: C: C(id='ok1', name='test', forward=None)
+Direct: "__pydantic_validator__" in __dict__ during rebuild: False
+  BUG: concurrent call raised PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
+
+For further information visit https://errors.pydantic.dev/2.11/u/base-model-instantiated
+  after rebuild finished: Direct: Direct(id='test', description=Translatable(en='ok'))
+
+=== Part 2: unmodified code, 8 threads racing first use, 300 attempts ===
+C validated as B: 2081 times; Direct raised "BaseModel cannot be instantiated directly": 1868 times
+/home/ubuntu/grade/pydantic-11849/repo/repro/race_11849.py:72: UserWarning: Subclassing `GenerateSchema` is not supported. The API is highly subject to change in minor versions.
+  class SlowGenerateSchema(orig_gen):  # (emits a harmless "Subclassing GenerateSchema" warning)
+
+===== run 2: exit 1
+pydantic 2.11.4 | python 3.10.12
+=== Part 1: deterministic (rebuild paused inside schema generation) ===
+C: "__pydantic_validator__" in __dict__ during rebuild: False
+  concurrent call returned B: B(id='ok1')
+  BUG: expected C, got B; hasattr(obj, "name") = False
+  after rebuild finished: C: C(id='ok1', name='test', forward=None)
+Direct: "__pydantic_validator__" in __dict__ during rebuild: False
+  BUG: concurrent call raised PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
+
+For further information visit https://errors.pydantic.dev/2.11/u/base-model-instantiated
+  after rebuild finished: Direct: Direct(id='test', description=Translatable(en='ok'))
+
+=== Part 2: unmodified code, 8 threads racing first use, 300 attempts ===
+C validated as B: 2077 times; Direct raised "BaseModel cannot be instantiated directly": 1889 times
+/home/ubuntu/grade/pydantic-11849/repo/repro/race_11849.py:72: UserWarning: Subclassing `GenerateSchema` is not supported. The API is highly subject to change in minor versions.
+  class SlowGenerateSchema(orig_gen):  # (emits a harmless "Subclassing GenerateSchema" warning)
+
+===== run 3: exit 1
+pydantic 2.11.4 | python 3.10.12
+=== Part 1: deterministic (rebuild paused inside schema generation) ===
+C: "__pydantic_validator__" in __dict__ during rebuild: False
+  concurrent call returned B: B(id='ok1')
+  BUG: expected C, got B; hasattr(obj, "name") = False
+  after rebuild finished: C: C(id='ok1', name='test', forward=None)
+Direct: "__pydantic_validator__" in __dict__ during rebuild: False
+  BUG: concurrent call raised PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
+
+For further information visit https://errors.pydantic.dev/2.11/u/base-model-instantiated
+  after rebuild finished: Direct: Direct(id='test', description=Translatable(en='ok'))
+
+=== Part 2: unmodified code, 8 threads racing first use, 300 attempts ===
+C validated as B: 2072 times; Direct raised "BaseModel cannot be instantiated directly": 1885 times
+/home/ubuntu/grade/pydantic-11849/repo/repro/race_11849.py:72: UserWarning: Subclassing `GenerateSchema` is not supported. The API is highly subject to change in minor versions.
+  class SlowGenerateSchema(orig_gen):  # (emits a harmless "Subclassing GenerateSchema" warning)
+

@@ -1,0 +1,10 @@
+{
+  "label": "eslint-19245__control__investigate",
+  "case": "eslint-19245",
+  "runs_per_side": 1,
+  "verdict": "fix_conflicts_with_patch",
+  "error": "fix.patch: error: patch failed: lib/rules/no-useless-assignment.js:151\nerror: lib/rules/no-useless-assignment.js: patch does not apply\n",
+  "pre": [
+    0
+  ]
+}

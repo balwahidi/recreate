@@ -1,0 +1,78 @@
+===== run 1: exit 1
+
+
+  no-useless-assignment (issue repro)
+    valid
+      1) async function fn() {
+          let intermediaryValue;
+          try {
+            intermediaryValue = 42;
+            unsafeFn();
+            return { error: undefined };
+          } catch {
+            return { intermediaryValue };
+          }
+        }
+
+        function unsafeFn() {
+          throw new Error();
+        }
+      ✔ async function fn() {
+          let intermediaryValue;
+          try {
+            intermediaryValue = 42;
+            unsafeFn();
+          } catch {
+            return { intermediaryValue };
+          }
+        }
+
+
+  1 passing (31ms)
+  1 failing
+
+  1) no-useless-assignment (issue repro)
+       valid
+         async function fn() {
+          let intermediaryValue;
+          try {
+            intermediaryValue = 42;
+            unsafeFn();
+            return { error: undefined };
+          } catch {
+            return { intermediaryValue };
+          }
+        }
+
+        function unsafeFn() {
+          throw new Error();
+        }:
+
+      AssertionError [ERR_ASSERTION]: Should have no errors but had 1: [
+  {
+    ruleId: 'rule-to-test/no-useless-assignment (issue repro)',
+    severity: 1,
+    message: 'This assigned value is not used in subsequent statements.',
+    line: 4,
+    column: 13,
+    nodeType: 'Identifier',
+    messageId: 'unnecessaryAssignment',
+    endLine: 4,
+    endColumn: 30
+  }
+]
+
+1 !== 0
+
+      + expected - actual
+
+      -1
+      +0
+      
+      at testValidTemplate (lib/rule-tester/rule-tester.js:924:20)
+      at Context.<anonymous> (lib/rule-tester/rule-tester.js:1273:37)
+      at process.processImmediate (node:internal/timers:534:21)
+
+
+
+

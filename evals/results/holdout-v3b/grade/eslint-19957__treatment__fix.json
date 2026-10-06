@@ -1,0 +1,12 @@
+{
+  "label": "eslint-19957__treatment__fix",
+  "case": "eslint-19957",
+  "runs_per_side": 1,
+  "verdict": "passes_pre",
+  "pre": [
+    0
+  ],
+  "post": [
+    0
+  ]
+}

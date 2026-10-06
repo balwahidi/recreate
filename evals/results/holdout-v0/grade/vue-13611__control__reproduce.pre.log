@@ -1,0 +1,40 @@
+===== run 1: exit 1
+
+ RUN  v3.1.4 /home/ubuntu/grade/vue-13611/repo
+
+stdout | packages/vue/__tests__/underscoreSlotRepro.spec.ts > underscore-prefixed slot name (report repro) > bug: conditional sibling slot -> `_duration` should still render provided content
+[repro] rendered HTML: <div><p>random</p><span>title PROVIDED</span><span>_duration FALLBACK</span></div>
+
+ ❯ |unit| packages/vue/__tests__/underscoreSlotRepro.spec.ts (2 tests | 1 failed) 27ms
+   ✓ underscore-prefixed slot name (report repro) > control: no conditional sibling slot -> provided content renders 18ms
+   × underscore-prefixed slot name (report repro) > bug: conditional sibling slot -> `_duration` should still render provided content 8ms
+     → expected '<div><p>random</p><span>title PROVIDE…' not to contain '_duration FALLBACK'
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 passed (2)
+   Start at  00:05:05
+   Duration  1.20s (transform 615ms, setup 9ms, collect 780ms, tests 27ms, environment 197ms, prepare 40ms)
+
+ Vitest  "environmentMatchGlobs" is deprecated. Use "workspace" to define different configurations instead.
+ Vitest  "environmentMatchGlobs" is deprecated. Use "workspace" to define different configurations instead.
+ Vitest  "environmentMatchGlobs" is deprecated. Use "workspace" to define different configurations instead.
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| packages/vue/__tests__/underscoreSlotRepro.spec.ts > underscore-prefixed slot name (report repro) > bug: conditional sibling slot -> `_duration` should still render provided content
+AssertionError: expected '<div><p>random</p><span>title PROVIDE…' not to contain '_duration FALLBACK'
+
+Expected: [32m"_duration FALLBACK"[39m
+Received: [31m"[7m<div><p>random</p><span>title PROVIDED</span><span>[27m_duration FALLBACK[7m</span></div>[27m"[39m
+
+ ❯ packages/vue/__tests__/underscoreSlotRepro.spec.ts:49:22
+     47|     console.log('[repro] rendered HTML:', html)
+     48|     expect(html).toContain('title PROVIDED')
+     49|     expect(html).not.toContain('_duration FALLBACK')
+       |                      ^
+     50|     expect(html).toContain('_duration PROVIDED')
+     51|   })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+

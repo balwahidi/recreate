@@ -1,0 +1,18 @@
+===== run 1: exit 0
+
+ RUN  v3.1.4 /home/ubuntu/grade/vue-13611/repo
+
+stdout | packages/vue/__tests__/underscoreSlotRepro.spec.ts > underscore-prefixed slot name (report repro) > bug: conditional sibling slot -> `_duration` should still render provided content
+[repro] rendered HTML: <div><p>random</p><span>title PROVIDED</span><span>_duration PROVIDED</span></div>
+
+ ✓ |unit| packages/vue/__tests__/underscoreSlotRepro.spec.ts (2 tests) 24ms
+
+ Test Files  1 passed (1)
+      Tests  2 passed (2)
+   Start at  00:05:09
+   Duration  1.17s (transform 594ms, setup 8ms, collect 759ms, tests 24ms, environment 192ms, prepare 46ms)
+
+ Vitest  "environmentMatchGlobs" is deprecated. Use "workspace" to define different configurations instead.
+ Vitest  "environmentMatchGlobs" is deprecated. Use "workspace" to define different configurations instead.
+ Vitest  "environmentMatchGlobs" is deprecated. Use "workspace" to define different configurations instead.
+

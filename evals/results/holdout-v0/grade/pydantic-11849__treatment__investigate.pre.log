@@ -1,0 +1,42 @@
+===== run 1: exit 0
+example 2 (C.model_validate): 199/200 trials produced a wrong result
+     197x  B instance: B(id='ok3')
+     195x  B instance: B(id='ok0')
+     197x  B instance: B(id='ok2')
+     199x  B instance: B(id='ok6')
+     196x  B instance: B(id='ok1')
+     199x  B instance: B(id='ok5')
+     199x  B instance: B(id='ok4')
+       1x  B instance: B(id='ok7')
+    afterwards C.model_validate: C(id='x', name=None, forward=None)
+example 1 (Direct(...)): 200/200 trials produced a wrong result
+    1393x  PydanticUserError('Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly')
+
+===== run 2: exit 0
+example 2 (C.model_validate): 200/200 trials produced a wrong result
+     200x  B instance: B(id='ok0')
+     199x  B instance: B(id='ok6')
+     200x  B instance: B(id='ok1')
+     200x  B instance: B(id='ok3')
+     200x  B instance: B(id='ok2')
+     198x  B instance: B(id='ok5')
+     200x  B instance: B(id='ok4')
+       1x  B instance: B(id='ok7')
+    afterwards C.model_validate: C(id='x', name=None, forward=None)
+example 1 (Direct(...)): 200/200 trials produced a wrong result
+    1384x  PydanticUserError('Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly')
+
+===== run 3: exit 0
+example 2 (C.model_validate): 199/200 trials produced a wrong result
+     196x  B instance: B(id='ok6')
+     198x  B instance: B(id='ok3')
+     198x  B instance: B(id='ok0')
+     198x  B instance: B(id='ok4')
+     199x  B instance: B(id='ok5')
+     197x  B instance: B(id='ok1')
+     198x  B instance: B(id='ok2')
+       2x  B instance: B(id='ok7')
+    afterwards C.model_validate: C(id='x', name=None, forward=None)
+example 1 (Direct(...)): 200/200 trials produced a wrong result
+    1383x  PydanticUserError('Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly')
+

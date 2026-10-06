@@ -1,0 +1,15 @@
+===== run 1: exit 1
+ecmaVersion=3 sourceType=script: 2 problem(s) [
+  '1:1 no-unused-expressions Expected an assignment or function call and instead saw an expression.',
+  '2:16 no-unused-expressions Expected an assignment or function call and instead saw an expression.'
+]
+ecmaVersion=3 sourceType=commonjs: 2 problem(s) [
+  '1:1 no-unused-expressions Expected an assignment or function call and instead saw an expression.',
+  '2:16 no-unused-expressions Expected an assignment or function call and instead saw an expression.'
+]
+ecmaVersion=5 sourceType=script: 0 problem(s) []
+ecmaVersion=5 sourceType=commonjs: 0 problem(s) []
+ecmaVersion=latest sourceType=script: 0 problem(s) []
+ecmaVersion=latest sourceType=commonjs: 0 problem(s) []
+espree ecmaVersion 3, first statement .directive = undefined
+

@@ -1,0 +1,10 @@
+{
+  "label": "eslint-19924__control__investigate",
+  "case": "eslint-19924",
+  "runs_per_side": 1,
+  "verdict": "fix_conflicts_with_patch",
+  "error": "fix.patch: error: patch failed: lib/eslint/eslint.js:530\nerror: lib/eslint/eslint.js: patch does not apply\n",
+  "pre": [
+    0
+  ]
+}

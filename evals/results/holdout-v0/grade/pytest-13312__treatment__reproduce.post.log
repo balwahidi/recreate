@@ -1,0 +1,36 @@
+===== run 1: exit 0
+============================= test session starts ==============================
+platform linux -- Python 3.9.19[pypy-7.3.16-final], pytest-8.4.0.dev0, pluggy-1.6.0
+rootdir: /home/ubuntu/grade/pytest-13312/repo
+configfile: pyproject.toml
+plugins: hypothesis-6.141.1
+collected 205 items / 204 deselected / 1 selected
+
+testing/python/fixtures.py .                                             [100%]
+
+====================== 1 passed, 204 deselected in 0.95s =======================
+
+===== run 2: exit 0
+============================= test session starts ==============================
+platform linux -- Python 3.9.19[pypy-7.3.16-final], pytest-8.4.0.dev0, pluggy-1.6.0
+rootdir: /home/ubuntu/grade/pytest-13312/repo
+configfile: pyproject.toml
+plugins: hypothesis-6.141.1
+collected 205 items / 204 deselected / 1 selected
+
+testing/python/fixtures.py .                                             [100%]
+
+====================== 1 passed, 204 deselected in 0.85s =======================
+
+===== run 3: exit 0
+============================= test session starts ==============================
+platform linux -- Python 3.9.19[pypy-7.3.16-final], pytest-8.4.0.dev0, pluggy-1.6.0
+rootdir: /home/ubuntu/grade/pytest-13312/repo
+configfile: pyproject.toml
+plugins: hypothesis-6.141.1
+collected 205 items / 204 deselected / 1 selected
+
+testing/python/fixtures.py .                                             [100%]
+
+====================== 1 passed, 204 deselected in 0.57s =======================
+

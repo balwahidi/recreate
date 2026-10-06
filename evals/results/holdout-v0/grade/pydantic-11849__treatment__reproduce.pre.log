@@ -1,0 +1,114 @@
+===== run 1: exit 1
+Obtaining file:///home/ubuntu/grade/pydantic-11849/repo
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Installing backend dependencies: started
+  Installing backend dependencies: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: annotated-types>=0.6.0 in /home/ubuntu/grade/pydantic-11849/replay-venv/lib/python3.10/site-packages (from pydantic==2.11.4) (0.8.0)
+Requirement already satisfied: pydantic-core==2.34.1 in /home/ubuntu/grade/pydantic-11849/replay-venv/lib/python3.10/site-packages (from pydantic==2.11.4) (2.34.1)
+Requirement already satisfied: typing-extensions>=4.12.2 in /home/ubuntu/grade/pydantic-11849/replay-venv/lib/python3.10/site-packages (from pydantic==2.11.4) (4.16.0)
+Requirement already satisfied: typing-inspection>=0.4.0 in /home/ubuntu/grade/pydantic-11849/replay-venv/lib/python3.10/site-packages (from pydantic==2.11.4) (0.4.4)
+Building wheels for collected packages: pydantic
+  Building editable for pydantic (pyproject.toml): started
+  Building editable for pydantic (pyproject.toml): finished with status 'done'
+  Created wheel for pydantic: filename=pydantic-2.11.4-py3-none-any.whl size=14085 sha256=df2230d8159b94ed8a7137ffe0d542b1ade048644f874a05699356ff0d3f4cd5
+  Stored in directory: /tmp/pip-ephem-wheel-cache-pnxex27e/wheels/15/61/b5/4cdee1766b16ef464480b0866e63479ca82f2f25092583cc8a
+Successfully built pydantic
+Installing collected packages: pydantic
+  Attempting uninstall: pydantic
+    Found existing installation: pydantic 2.11.4
+    Uninstalling pydantic-2.11.4:
+      Successfully uninstalled pydantic-2.11.4
+Successfully installed pydantic-2.11.4
+pydantic 2.11.4, python 3.10.12, 8 threads x 200 trials
+
+example 2 (C(B(A))): 200/200 trials hit the bug
+    1387  B instance: B(id='ok')
+     213  ok
+
+example 1 (Direct): 200/200 trials hit the bug
+    1382  PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
+     218  ok
+
+===== run 2: exit 1
+Obtaining file:///home/ubuntu/grade/pydantic-11849/repo
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Installing backend dependencies: started
+  Installing backend dependencies: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: annotated-types>=0.6.0 in /home/ubuntu/grade/pydantic-11849/replay-venv/lib/python3.10/site-packages (from pydantic==2.11.4) (0.8.0)
+Requirement already satisfied: pydantic-core==2.34.1 in /home/ubuntu/grade/pydantic-11849/replay-venv/lib/python3.10/site-packages (from pydantic==2.11.4) (2.34.1)
+Requirement already satisfied: typing-extensions>=4.12.2 in /home/ubuntu/grade/pydantic-11849/replay-venv/lib/python3.10/site-packages (from pydantic==2.11.4) (4.16.0)
+Requirement already satisfied: typing-inspection>=0.4.0 in /home/ubuntu/grade/pydantic-11849/replay-venv/lib/python3.10/site-packages (from pydantic==2.11.4) (0.4.4)
+Building wheels for collected packages: pydantic
+  Building editable for pydantic (pyproject.toml): started
+  Building editable for pydantic (pyproject.toml): finished with status 'done'
+  Created wheel for pydantic: filename=pydantic-2.11.4-py3-none-any.whl size=14085 sha256=df2230d8159b94ed8a7137ffe0d542b1ade048644f874a05699356ff0d3f4cd5
+  Stored in directory: /tmp/pip-ephem-wheel-cache-uc2vjzes/wheels/15/61/b5/4cdee1766b16ef464480b0866e63479ca82f2f25092583cc8a
+Successfully built pydantic
+Installing collected packages: pydantic
+  Attempting uninstall: pydantic
+    Found existing installation: pydantic 2.11.4
+    Uninstalling pydantic-2.11.4:
+      Successfully uninstalled pydantic-2.11.4
+Successfully installed pydantic-2.11.4
+pydantic 2.11.4, python 3.10.12, 8 threads x 200 trials
+
+example 2 (C(B(A))): 200/200 trials hit the bug
+    1390  B instance: B(id='ok')
+     210  ok
+
+example 1 (Direct): 200/200 trials hit the bug
+    1389  PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
+     211  ok
+
+===== run 3: exit 1
+Obtaining file:///home/ubuntu/grade/pydantic-11849/repo
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Installing backend dependencies: started
+  Installing backend dependencies: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: annotated-types>=0.6.0 in /home/ubuntu/grade/pydantic-11849/replay-venv/lib/python3.10/site-packages (from pydantic==2.11.4) (0.8.0)
+Requirement already satisfied: pydantic-core==2.34.1 in /home/ubuntu/grade/pydantic-11849/replay-venv/lib/python3.10/site-packages (from pydantic==2.11.4) (2.34.1)
+Requirement already satisfied: typing-extensions>=4.12.2 in /home/ubuntu/grade/pydantic-11849/replay-venv/lib/python3.10/site-packages (from pydantic==2.11.4) (4.16.0)
+Requirement already satisfied: typing-inspection>=0.4.0 in /home/ubuntu/grade/pydantic-11849/replay-venv/lib/python3.10/site-packages (from pydantic==2.11.4) (0.4.4)
+Building wheels for collected packages: pydantic
+  Building editable for pydantic (pyproject.toml): started
+  Building editable for pydantic (pyproject.toml): finished with status 'done'
+  Created wheel for pydantic: filename=pydantic-2.11.4-py3-none-any.whl size=14085 sha256=df2230d8159b94ed8a7137ffe0d542b1ade048644f874a05699356ff0d3f4cd5
+  Stored in directory: /tmp/pip-ephem-wheel-cache-2emblfh9/wheels/15/61/b5/4cdee1766b16ef464480b0866e63479ca82f2f25092583cc8a
+Successfully built pydantic
+Installing collected packages: pydantic
+  Attempting uninstall: pydantic
+    Found existing installation: pydantic 2.11.4
+    Uninstalling pydantic-2.11.4:
+      Successfully uninstalled pydantic-2.11.4
+Successfully installed pydantic-2.11.4
+pydantic 2.11.4, python 3.10.12, 8 threads x 200 trials
+
+example 2 (C(B(A))): 200/200 trials hit the bug
+    1389  B instance: B(id='ok')
+     211  ok
+
+example 1 (Direct): 200/200 trials hit the bug
+    1379  PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
+     221  ok
+

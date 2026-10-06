@@ -1,0 +1,37 @@
+===== run 1: exit 0
+
+> eslint@9.30.1 test:emfile
+> node tools/check-emfile-handling.js
+
+Detected Linux file limit of 1025.
+Generating 1025 files in tmp/emfile-check...
+Running ESLint...
+✅ No errors encountered running ESLint.
+Running ESLint with --fix...
+✅ No errors encountered running ESLint with --fix.
+Checking that this number of files would cause an EMFILE error...
+✅ EMFILE error encountered: EMFILE: too many open files, open 'tmp/emfile-check/file_1003.js'
+
+
+  ESLint
+    outputFixes()
+      ✔ should call fs.writeFile() for each result with output
+      ✔ should call fs.writeFile() for each result with output and not at all for a result without output
+      ✔ should retry fs.writeFile() when it fails with EMFILE or ENFILE
+      ✔ should not retry fs.writeFile() for other errors
+      ✔ should throw if non object array is given to 'results' parameter
+    outputFixes()
+      ✔ should call fs.writeFile() for each result with output
+      ✔ should call fs.writeFile() for each result with output and not at all for a result without output
+      ✔ should retry fs.writeFile() when it fails with EMFILE or ENFILE
+      ✔ should not retry fs.writeFile() for other errors
+      ✔ should throw if non object array is given to 'results' parameter
+
+
+  10 passing (88ms)
+
+(node:434293) ESLintIgnoreWarning: The ".eslintignore" file is no longer supported. Switch to using the "ignores" property in "eslint.config.js": https://eslint.org/docs/latest/use/configure/migration-guide#ignoring-files
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:434305) ESLintIgnoreWarning: The ".eslintignore" file is no longer supported. Switch to using the "ignores" property in "eslint.config.js": https://eslint.org/docs/latest/use/configure/migration-guide#ignoring-files
+(Use `node --trace-warnings ...` to show where the warning was created)
+

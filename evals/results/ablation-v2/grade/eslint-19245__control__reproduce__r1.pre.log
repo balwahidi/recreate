@@ -1,0 +1,9 @@
+===== run 1: exit 1
+--- report (try ends with return) - BUG: 1 message(s)
+  5:5 no-useless-assignment: This assigned value is not used in subsequent statements.
+--- try ends with break - BUG: 1 message(s)
+  6:7 no-useless-assignment: This assigned value is not used in subsequent statements.
+--- control: no return in try - OK: 0 message(s)
+
+BUG REPRODUCED in 2 case(s)
+

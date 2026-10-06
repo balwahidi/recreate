@@ -1,0 +1,16 @@
+{
+  "label": "pydantic-11849__treatment__investigate",
+  "case": "pydantic-11849",
+  "runs_per_side": 3,
+  "verdict": "passes_pre",
+  "pre": [
+    0,
+    0,
+    0
+  ],
+  "post": [
+    0,
+    0,
+    0
+  ]
+}

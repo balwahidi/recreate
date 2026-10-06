@@ -1,0 +1,15 @@
+===== run 1: exit 1
+[reported] 1 report(s)
+  4:5 This assigned value is not used in subsequent statements.
+  FAIL: reported: expected no reports
+
+1 !== 0
+
+[breakInTry] 1 report(s)
+  6:7 This assigned value is not used in subsequent statements.
+  FAIL: breakInTry: expected no reports
+
+1 !== 0
+
+[noReturnInTry] 0 report(s)
+

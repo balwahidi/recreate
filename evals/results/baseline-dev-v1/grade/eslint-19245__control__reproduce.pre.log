@@ -1,0 +1,15 @@
+===== run 1: exit 1
+FAIL  BUG: issue example (return in try, value read in catch)
+      expected no report, got 1
+      5:5 This assigned value is not used in subsequent statements.
+FAIL  BUG: break in try inside a loop, value read in catch
+      expected no report, got 1
+      6:7 This assigned value is not used in subsequent statements.
+PASS  control: same code without return in try (not reported)
+      expected no report, got 0
+PASS  control: genuinely useless assignment (reported)
+      expected a report, got 1
+      4:3 This assigned value is not used in subsequent statements.
+
+2 case(s) show the bug.
+

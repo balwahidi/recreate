@@ -1,0 +1,117 @@
+===== run 1: exit 0
+Obtaining file:///home/ubuntu/grade/pydantic-11849/repo
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Installing backend dependencies: started
+  Installing backend dependencies: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: annotated-types>=0.6.0 in /home/ubuntu/grade/pydantic-11849/replay-venv/lib/python3.10/site-packages (from pydantic==2.11.4) (0.8.0)
+Requirement already satisfied: pydantic-core==2.34.1 in /home/ubuntu/grade/pydantic-11849/replay-venv/lib/python3.10/site-packages (from pydantic==2.11.4) (2.34.1)
+Requirement already satisfied: typing-extensions>=4.12.2 in /home/ubuntu/grade/pydantic-11849/replay-venv/lib/python3.10/site-packages (from pydantic==2.11.4) (4.16.0)
+Requirement already satisfied: typing-inspection>=0.4.0 in /home/ubuntu/grade/pydantic-11849/replay-venv/lib/python3.10/site-packages (from pydantic==2.11.4) (0.4.4)
+Building wheels for collected packages: pydantic
+  Building editable for pydantic (pyproject.toml): started
+  Building editable for pydantic (pyproject.toml): finished with status 'done'
+  Created wheel for pydantic: filename=pydantic-2.11.4-py3-none-any.whl size=14085 sha256=df2230d8159b94ed8a7137ffe0d542b1ade048644f874a05699356ff0d3f4cd5
+  Stored in directory: /tmp/pip-ephem-wheel-cache-sw8tsywc/wheels/15/61/b5/4cdee1766b16ef464480b0866e63479ca82f2f25092583cc8a
+Successfully built pydantic
+Installing collected packages: pydantic
+  Attempting uninstall: pydantic
+    Found existing installation: pydantic 2.11.4
+    Uninstalling pydantic-2.11.4:
+      Successfully uninstalled pydantic-2.11.4
+Successfully installed pydantic-2.11.4
+Example 1 (Direct)
+  thread 1 (did the rebuild): Direct Direct(id='test', description=Translatable(en='ok'))
+  main, during rebuild      : Direct Direct(id='test', description=Translatable(en='ok'))
+  main, after rebuild       : Direct Direct(id='test', description=Translatable(en='ok'))
+Example 2 (C)
+  thread 1 (did the rebuild): C C(id='ok1', name='test', forward=None)
+  main, during rebuild      : C C(id='ok1', name='test', forward=None)
+  main, after rebuild       : C C(id='ok1', name='test', forward=None)
+
+no bug
+
+===== run 2: exit 0
+Obtaining file:///home/ubuntu/grade/pydantic-11849/repo
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Installing backend dependencies: started
+  Installing backend dependencies: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: annotated-types>=0.6.0 in /home/ubuntu/grade/pydantic-11849/replay-venv/lib/python3.10/site-packages (from pydantic==2.11.4) (0.8.0)
+Requirement already satisfied: pydantic-core==2.34.1 in /home/ubuntu/grade/pydantic-11849/replay-venv/lib/python3.10/site-packages (from pydantic==2.11.4) (2.34.1)
+Requirement already satisfied: typing-extensions>=4.12.2 in /home/ubuntu/grade/pydantic-11849/replay-venv/lib/python3.10/site-packages (from pydantic==2.11.4) (4.16.0)
+Requirement already satisfied: typing-inspection>=0.4.0 in /home/ubuntu/grade/pydantic-11849/replay-venv/lib/python3.10/site-packages (from pydantic==2.11.4) (0.4.4)
+Building wheels for collected packages: pydantic
+  Building editable for pydantic (pyproject.toml): started
+  Building editable for pydantic (pyproject.toml): finished with status 'done'
+  Created wheel for pydantic: filename=pydantic-2.11.4-py3-none-any.whl size=14085 sha256=df2230d8159b94ed8a7137ffe0d542b1ade048644f874a05699356ff0d3f4cd5
+  Stored in directory: /tmp/pip-ephem-wheel-cache-6s4mh_25/wheels/15/61/b5/4cdee1766b16ef464480b0866e63479ca82f2f25092583cc8a
+Successfully built pydantic
+Installing collected packages: pydantic
+  Attempting uninstall: pydantic
+    Found existing installation: pydantic 2.11.4
+    Uninstalling pydantic-2.11.4:
+      Successfully uninstalled pydantic-2.11.4
+Successfully installed pydantic-2.11.4
+Example 1 (Direct)
+  thread 1 (did the rebuild): Direct Direct(id='test', description=Translatable(en='ok'))
+  main, during rebuild      : Direct Direct(id='test', description=Translatable(en='ok'))
+  main, after rebuild       : Direct Direct(id='test', description=Translatable(en='ok'))
+Example 2 (C)
+  thread 1 (did the rebuild): C C(id='ok1', name='test', forward=None)
+  main, during rebuild      : C C(id='ok1', name='test', forward=None)
+  main, after rebuild       : C C(id='ok1', name='test', forward=None)
+
+no bug
+
+===== run 3: exit 0
+Obtaining file:///home/ubuntu/grade/pydantic-11849/repo
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Installing backend dependencies: started
+  Installing backend dependencies: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: annotated-types>=0.6.0 in /home/ubuntu/grade/pydantic-11849/replay-venv/lib/python3.10/site-packages (from pydantic==2.11.4) (0.8.0)
+Requirement already satisfied: pydantic-core==2.34.1 in /home/ubuntu/grade/pydantic-11849/replay-venv/lib/python3.10/site-packages (from pydantic==2.11.4) (2.34.1)
+Requirement already satisfied: typing-extensions>=4.12.2 in /home/ubuntu/grade/pydantic-11849/replay-venv/lib/python3.10/site-packages (from pydantic==2.11.4) (4.16.0)
+Requirement already satisfied: typing-inspection>=0.4.0 in /home/ubuntu/grade/pydantic-11849/replay-venv/lib/python3.10/site-packages (from pydantic==2.11.4) (0.4.4)
+Building wheels for collected packages: pydantic
+  Building editable for pydantic (pyproject.toml): started
+  Building editable for pydantic (pyproject.toml): finished with status 'done'
+  Created wheel for pydantic: filename=pydantic-2.11.4-py3-none-any.whl size=14085 sha256=df2230d8159b94ed8a7137ffe0d542b1ade048644f874a05699356ff0d3f4cd5
+  Stored in directory: /tmp/pip-ephem-wheel-cache-zhcvh3wn/wheels/15/61/b5/4cdee1766b16ef464480b0866e63479ca82f2f25092583cc8a
+Successfully built pydantic
+Installing collected packages: pydantic
+  Attempting uninstall: pydantic
+    Found existing installation: pydantic 2.11.4
+    Uninstalling pydantic-2.11.4:
+      Successfully uninstalled pydantic-2.11.4
+Successfully installed pydantic-2.11.4
+Example 1 (Direct)
+  thread 1 (did the rebuild): Direct Direct(id='test', description=Translatable(en='ok'))
+  main, during rebuild      : Direct Direct(id='test', description=Translatable(en='ok'))
+  main, after rebuild       : Direct Direct(id='test', description=Translatable(en='ok'))
+Example 2 (C)
+  thread 1 (did the rebuild): C C(id='ok1', name='test', forward=None)
+  main, during rebuild      : C C(id='ok1', name='test', forward=None)
+  main, after rebuild       : C C(id='ok1', name='test', forward=None)
+
+no bug
+

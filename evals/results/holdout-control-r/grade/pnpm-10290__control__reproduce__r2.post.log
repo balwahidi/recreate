@@ -1,0 +1,9 @@
+===== run 1: exit 0
+pnpm version: 11.0.0-alpha.3
+[workspace root]      config get store-dir: ../.pnpm-store
+[workspace root]      store path:           /tmp/tmp.1RJBXPqlGc/project/.pnpm-store/v11
+[apps/website]        config get store-dir: ../.pnpm-store
+[apps/website]        store path:           /tmp/tmp.1RJBXPqlGc/project/.pnpm-store/v11
+expected (relative to pnpm-workspace.yaml): /tmp/tmp.1RJBXPqlGc/project/.pnpm-store/v*
+OK: store path is the same from both directories
+

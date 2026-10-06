@@ -1,0 +1,6 @@
+===== run 1: exit 1
+pnpm version: 11.0.0-alpha.3
+workspace root   : config get store-dir=../.pnpm-store  store path=/tmp/tmp.Oo4TsSYQmt/project/.pnpm-store/v11
+apps/website     : config get store-dir=../.pnpm-store  store path=/tmp/tmp.Oo4TsSYQmt/project/web/apps/.pnpm-store/v11
+BUG REPRODUCED: store path differs depending on cwd
+

@@ -1,0 +1,24 @@
+===== run 1: exit 0
+[PyPy 7.3.17 with GCC 10.2.1 20210130 (Red Hat 10.2.1-11)]
+== OrderedDict alone (PyPy):
+pypy: KeyError(125) in move_to_end; len(d)=127, iterated keys=127, distinct=126
+== pytest --collect-only (PyPy, this checkout):
+138 tests collected in 0.03s
+no KeyError
+
+===== run 2: exit 0
+[PyPy 7.3.17 with GCC 10.2.1 20210130 (Red Hat 10.2.1-11)]
+== OrderedDict alone (PyPy):
+pypy: KeyError(125) in move_to_end; len(d)=127, iterated keys=127, distinct=126
+== pytest --collect-only (PyPy, this checkout):
+138 tests collected in 0.03s
+no KeyError
+
+===== run 3: exit 0
+[PyPy 7.3.17 with GCC 10.2.1 20210130 (Red Hat 10.2.1-11)]
+== OrderedDict alone (PyPy):
+pypy: KeyError(125) in move_to_end; len(d)=127, iterated keys=127, distinct=126
+== pytest --collect-only (PyPy, this checkout):
+138 tests collected in 0.03s
+no KeyError
+

@@ -1,0 +1,39 @@
+===== run 1: exit 1
+[deterministic] C: during rebuild, '__pydantic_validator__' in C.__dict__ = False; C.__pydantic_validator__ resolves to SchemaValidator(title="B", validator=FunctionAfter(
+    FunctionAfterValidator {
+  concurrent -> WRONG CLASS: got B (B(id='ok1')) instead of C
+  rebuilder  -> ok
+[deterministic] Direct: during rebuild, '__pydantic_validator__' in Direct.__dict__ = False; Direct.__pydantic_validator__ resolves to <pydantic._internal._mock_val_ser.MockValSer object at 0x7b3ba4d48600>
+  concurrent -> PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
+  rebuilder  -> ok
+[race] 300 iterations x 8 threads, wrong results:
+   2092x  PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
+   2084x  WRONG CLASS: got B (B(id='ok1')) instead of C
+BUG REPRODUCED
+
+===== run 2: exit 1
+[deterministic] C: during rebuild, '__pydantic_validator__' in C.__dict__ = False; C.__pydantic_validator__ resolves to SchemaValidator(title="B", validator=FunctionAfter(
+    FunctionAfterValidator {
+  concurrent -> WRONG CLASS: got B (B(id='ok1')) instead of C
+  rebuilder  -> ok
+[deterministic] Direct: during rebuild, '__pydantic_validator__' in Direct.__dict__ = False; Direct.__pydantic_validator__ resolves to <pydantic._internal._mock_val_ser.MockValSer object at 0x75ee39e48a80>
+  concurrent -> PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
+  rebuilder  -> ok
+[race] 300 iterations x 8 threads, wrong results:
+   2079x  PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
+   2077x  WRONG CLASS: got B (B(id='ok1')) instead of C
+BUG REPRODUCED
+
+===== run 3: exit 1
+[deterministic] C: during rebuild, '__pydantic_validator__' in C.__dict__ = False; C.__pydantic_validator__ resolves to SchemaValidator(title="B", validator=FunctionAfter(
+    FunctionAfterValidator {
+  concurrent -> WRONG CLASS: got B (B(id='ok1')) instead of C
+  rebuilder  -> ok
+[deterministic] Direct: during rebuild, '__pydantic_validator__' in Direct.__dict__ = False; Direct.__pydantic_validator__ resolves to <pydantic._internal._mock_val_ser.MockValSer object at 0x74f9526a0ac0>
+  concurrent -> PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
+  rebuilder  -> ok
+[race] 300 iterations x 8 threads, wrong results:
+   2089x  PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
+   2084x  WRONG CLASS: got B (B(id='ok1')) instead of C
+BUG REPRODUCED
+

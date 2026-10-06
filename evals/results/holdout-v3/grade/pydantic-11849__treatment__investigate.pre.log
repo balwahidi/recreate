@@ -1,0 +1,49 @@
+===== run 1: exit 1
+first use of C (triggers automatic model_rebuild):
+  C.__pydantic_validator__ in C.__dict__ during rebuild: False
+  "other thread": C.model_validate(...) -> B(id='ok1')
+  c1.name -> AttributeError: 'B' object has no attribute 'name'
+  this thread: C(id='ok2', name='test', forward=None)
+first use of Direct (triggers automatic model_rebuild):
+  "other thread": Direct(...) -> PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
+  this thread: Direct(id='test', description=Translatable(en='ok'))
+BUG REPRODUCED
+300 trials x 8 threads, switchinterval=0.0005
+     3  C.model_validate -> B
+  1197  C.model_validate -> C
+  1197  Direct -> Direct
+     3  Direct raised PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
+BUG REPRODUCED
+
+===== run 2: exit 1
+first use of C (triggers automatic model_rebuild):
+  C.__pydantic_validator__ in C.__dict__ during rebuild: False
+  "other thread": C.model_validate(...) -> B(id='ok1')
+  c1.name -> AttributeError: 'B' object has no attribute 'name'
+  this thread: C(id='ok2', name='test', forward=None)
+first use of Direct (triggers automatic model_rebuild):
+  "other thread": Direct(...) -> PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
+  this thread: Direct(id='test', description=Translatable(en='ok'))
+BUG REPRODUCED
+300 trials x 8 threads, switchinterval=0.0005
+     6  C.model_validate -> B
+  1194  C.model_validate -> C
+  1195  Direct -> Direct
+     5  Direct raised PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
+BUG REPRODUCED
+
+===== run 3: exit 0
+first use of C (triggers automatic model_rebuild):
+  C.__pydantic_validator__ in C.__dict__ during rebuild: False
+  "other thread": C.model_validate(...) -> B(id='ok1')
+  c1.name -> AttributeError: 'B' object has no attribute 'name'
+  this thread: C(id='ok2', name='test', forward=None)
+first use of Direct (triggers automatic model_rebuild):
+  "other thread": Direct(...) -> PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
+  this thread: Direct(id='test', description=Translatable(en='ok'))
+BUG REPRODUCED
+300 trials x 8 threads, switchinterval=0.0005
+  1200  C.model_validate -> C
+  1200  Direct -> Direct
+no wrong-class results
+

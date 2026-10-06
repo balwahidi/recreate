@@ -1,0 +1,50 @@
+===== run 1: exit 0
+Scope: all 241 workspace projects
+Lockfile is up to date, resolution step is skipped
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Packages: +90
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Progress: resolved 90, reused 90, downloaded 0, added 90, done
+
+. postinstall$ simple-git-hooks
+. postinstall: [INFO] Successfully set the pre-commit with command: pnpm exec lint-staged --concurrent false
+. postinstall: [INFO] Successfully set all git hooks
+. postinstall: Done
+Done in 1s using pnpm v10.17.1
+
+ RUN  v3.2.4 /home/ubuntu/grade/vite-20705/repo
+
+stdout | packages/vite/src/node/server/__tests__/htmlFallbackSourceFile.spec.ts > SPA navigation to a path matching a source file basename > navigating to /test serves index.html (fresh server)
+[fresh] GET /test -> 200 content-type=text/html
+<!doctype html>
+<html>
+<script type="module" src="/@vite/client"></script>
+
+  <body>
+    <div id="app">INDEX_HTML</div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
+
+
+stdout | packages/vite/src/node/server/__tests__/htmlFallbackSourceFile.spec.ts > SPA navigation to a path matching a source file basename > navigating to /test serves index.html after the app has loaded test.js
+[warm] GET /test -> 200 content-type=text/html
+<!doctype html>
+<html>
+<script type="module" src="/@vite/client"></script>
+
+  <body>
+    <div id="app">INDEX_HTML</div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
+
+
+ ✓ packages/vite/src/node/server/__tests__/htmlFallbackSourceFile.spec.ts (2 tests) 98ms
+
+ Test Files  1 passed (1)
+      Tests  2 passed (2)
+   Start at  00:04:44
+   Duration  1.24s (transform 599ms, setup 0ms, collect 959ms, tests 98ms, environment 0ms, prepare 43ms)
+
+

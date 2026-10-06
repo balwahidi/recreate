@@ -1,0 +1,10 @@
+===== run 1: exit 1
+ecmaVersion=3 sourceType=script: 1:1 no-unused-expressions: Expected an assignment or function call and instead saw an expression. | 2:16 no-unused-expressions: Expected an assignment or function call and instead saw an expression.
+ecmaVersion=3 sourceType=commonjs: 1:1 no-unused-expressions: Expected an assignment or function call and instead saw an expression. | 2:16 no-unused-expressions: Expected an assignment or function call and instead saw an expression.
+ecmaVersion=5 sourceType=script: no errors
+ecmaVersion=5 sourceType=commonjs: no errors
+ecmaVersion=2015 sourceType=script: no errors
+ecmaVersion=2015 sourceType=commonjs: no errors
+ecmaVersion=latest sourceType=script: no errors
+ecmaVersion=latest sourceType=commonjs: no errors
+

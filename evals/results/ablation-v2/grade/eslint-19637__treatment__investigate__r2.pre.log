@@ -1,0 +1,74 @@
+===== run 1: exit 2
+
+
+  no-unused-expressions (ecmaVersion 3 directives)
+    valid
+      ✔ 'use strict';
+      1) 'use strict';
+      2) function f() { 'use strict'; return 1; }
+
+
+  1 passing (32ms)
+  2 failing
+
+  1) no-unused-expressions (ecmaVersion 3 directives)
+       valid
+         'use strict';:
+
+      AssertionError [ERR_ASSERTION]: Should have no errors but had 1: [
+  {
+    ruleId: 'rule-to-test/no-unused-expressions (ecmaVersion 3 directives)',
+    severity: 1,
+    message: 'Expected an assignment or function call and instead saw an expression.',
+    line: 1,
+    column: 1,
+    nodeType: 'ExpressionStatement',
+    messageId: 'unusedExpression',
+    endLine: 1,
+    endColumn: 14
+  }
+]
+
+1 !== 0
+
+      + expected - actual
+
+      -1
+      +0
+      
+      at testValidTemplate (lib/rule-tester/rule-tester.js:992:11)
+      at Context.<anonymous> (lib/rule-tester/rule-tester.js:1536:10)
+      at process.processImmediate (node:internal/timers:534:21)
+
+  2) no-unused-expressions (ecmaVersion 3 directives)
+       valid
+         function f() { 'use strict'; return 1; }:
+
+      AssertionError [ERR_ASSERTION]: Should have no errors but had 1: [
+  {
+    ruleId: 'rule-to-test/no-unused-expressions (ecmaVersion 3 directives)',
+    severity: 1,
+    message: 'Expected an assignment or function call and instead saw an expression.',
+    line: 1,
+    column: 16,
+    nodeType: 'ExpressionStatement',
+    messageId: 'unusedExpression',
+    endLine: 1,
+    endColumn: 29
+  }
+]
+
+1 !== 0
+
+      + expected - actual
+
+      -1
+      +0
+      
+      at testValidTemplate (lib/rule-tester/rule-tester.js:992:11)
+      at Context.<anonymous> (lib/rule-tester/rule-tester.js:1536:10)
+      at process.processImmediate (node:internal/timers:534:21)
+
+
+
+

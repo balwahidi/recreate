@@ -1,0 +1,115 @@
+===== run 1: exit 1
+Using ~/grade/ts-60573/repo/Herebyfile.mjs to run runtests
+Starting lib
+Starting generate-diagnostics
+> /home/ubuntu/.nvm/versions/node/v24.19.0/bin/node scripts/processDiagnosticMessages.mjs src/compiler/diagnosticMessages.json
+Reading diagnostics from src/compiler/diagnosticMessages.json
+Finished lib in 49ms
+Finished generate-diagnostics in 56ms
+Starting bundle-tests
+Starting build-tests
+Starting build-services
+Finished build-tests in 287ms
+Finished build-services in 287ms
+Starting dts-services
+Finished dts-services in 1ms
+Starting dts-lssl
+Finished dts-lssl in 1ms
+Finished bundle-tests in 303ms
+Starting runtests
+Running tests with config: {"test":["mappedTypeOverInlineTypeAssertionDisplay|quickInfoMappedTypeOverInlineTypeAssertion"],"light":true,"noColor":false,"timeout":40000,"keepFailed":false}
+> /home/ubuntu/.nvm/versions/node/v24.19.0/bin/node /home/ubuntu/grade/ts-60573/repo/node_modules/mocha/bin/_mocha -R /home/ubuntu/grade/ts-60573/repo/scripts/failed-tests.cjs -O "reporter=mocha-fivemat-progress-reporter" -g "mappedTypeOverInlineTypeAssertionDisplay|quickInfoMappedTypeOverInlineTypeAssertion" --colors -t 40000 ./built/local/run.js
+
+    [0mcompiler tests[0m
+[J[90m  [[0m[36m[0m...................................[90m][0m[31m
+Test failure:
+Correct JS output for tests/cases/compiler/mappedTypeOverInlineTypeAssertionDisplay.ts
+[0m[31m
+Test failure:
+Correct type/symbol baselines for tests/cases/compiler/mappedTypeOverInlineTypeAssertionDisplay.ts
+[0m
+completed: 6 tests
+passed:	[32m4[0m
+failed:	[31m2[0m
+
+
+    [0mfourslash tests[0m
+[J[90m  [[0m[36m[0m...................................[90m][0m
+
+[92m [0m[32m 5 passing[0m[90m (1s)[0m
+[31m  2 failing[0m
+
+[0m  1) compiler tests
+       compiler tests for tests/cases/compiler/mappedTypeOverInlineTypeAssertionDisplay.ts
+         Correct JS output for tests/cases/compiler/mappedTypeOverInlineTypeAssertionDisplay.ts:
+[0m[31m     Error: New baseline created at tests/baselines/local/mappedTypeOverInlineTypeAssertionDisplay.js[0m[90m
+      at writeComparison (src/harness/harnessIO.ts:1546:27)
+      at Object.runBaseline2 [as runBaseline] (src/harness/harnessIO.ts:1565:9)
+      at Object.doJsEmitBaseline (src/harness/harnessIO.ts:1034:18)
+      at _CompilerTest.verifyJavaScriptOutput (src/testRunner/compilerRunner.ts:298:22)
+      at Context.<anonymous> (src/testRunner/compilerRunner.ts:102:82)
+      at processImmediate (node:internal/timers:534:21)
+[0m
+[0m  2) compiler tests
+       compiler tests for tests/cases/compiler/mappedTypeOverInlineTypeAssertionDisplay.ts
+         Correct type/symbol baselines for tests/cases/compiler/mappedTypeOverInlineTypeAssertionDisplay.ts:
+[0m[31m     Error: New baseline created at tests/baselines/local/mappedTypeOverInlineTypeAssertionDisplay.types
+    at writeComparison (/home/ubuntu/grade/ts-60573/repo/src/harness/harnessIO.ts:1546:27)
+    at Object.runBaseline2 [as runBaseline] (/home/ubuntu/grade/ts-60573/repo/src/harness/harnessIO.ts:1565:9)
+    at checkBaseLines (/home/ubuntu/grade/ts-60573/repo/src/harness/harnessIO.ts:788:26)
+    at Object.doTypeAndSymbolBaseline (/home/ubuntu/grade/ts-60573/repo/src/harness/harnessIO.ts:751:13)
+    at _CompilerTest.verifyTypesAndSymbols (/home/ubuntu/grade/ts-60573/repo/src/testRunner/compilerRunner.ts:327:18)
+    at Context.<anonymous> (/home/ubuntu/grade/ts-60573/repo/src/testRunner/compilerRunner.ts:104:80)
+    at callFn (/home/ubuntu/grade/ts-60573/repo/node_modules/mocha/lib/runnable.js:364:21)
+    at Test.Runnable.run (/home/ubuntu/grade/ts-60573/repo/node_modules/mocha/lib/runnable.js:352:5)
+    at Runner.runTest (/home/ubuntu/grade/ts-60573/repo/node_modules/mocha/lib/runner.js:677:10)
+    at /home/ubuntu/grade/ts-60573/repo/node_modules/mocha/lib/runner.js:800:12
+    at next (/home/ubuntu/grade/ts-60573/repo/node_modules/mocha/lib/runner.js:592:14)
+    at /home/ubuntu/grade/ts-60573/repo/node_modules/mocha/lib/runner.js:602:7
+    at next (/home/ubuntu/grade/ts-60573/repo/node_modules/mocha/lib/runner.js:485:14)
+    at Immediate._onImmediate (/home/ubuntu/grade/ts-60573/repo/node_modules/mocha/lib/runner.js:570:5)
+    at processImmediate (node:internal/timers:534:21)
+Error: New baseline created at tests/baselines/local/mappedTypeOverInlineTypeAssertionDisplay.symbols
+    at writeComparison (/home/ubuntu/grade/ts-60573/repo/src/harness/harnessIO.ts:1546:27)
+    at Object.runBaseline2 [as runBaseline] (/home/ubuntu/grade/ts-60573/repo/src/harness/harnessIO.ts:1565:9)
+    at checkBaseLines (/home/ubuntu/grade/ts-60573/repo/src/harness/harnessIO.ts:788:26)
+    at Object.doTypeAndSymbolBaseline (/home/ubuntu/grade/ts-60573/repo/src/harness/harnessIO.ts:758:13)
+    at _CompilerTest.verifyTypesAndSymbols (/home/ubuntu/grade/ts-60573/repo/src/testRunner/compilerRunner.ts:327:18)
+    at Context.<anonymous> (/home/ubuntu/grade/ts-60573/repo/src/testRunner/compilerRunner.ts:104:80)
+    at callFn (/home/ubuntu/grade/ts-60573/repo/node_modules/mocha/lib/runnable.js:364:21)
+    at Test.Runnable.run (/home/ubuntu/grade/ts-60573/repo/node_modules/mocha/lib/runnable.js:352:5)
+    at Runner.runTest (/home/ubuntu/grade/ts-60573/repo/node_modules/mocha/lib/runner.js:677:10)
+    at /home/ubuntu/grade/ts-60573/repo/node_modules/mocha/lib/runner.js:800:12
+    at next (/home/ubuntu/grade/ts-60573/repo/node_modules/mocha/lib/runner.js:592:14)
+    at /home/ubuntu/grade/ts-60573/repo/node_modules/mocha/lib/runner.js:602:7
+    at next (/home/ubuntu/grade/ts-60573/repo/node_modules/mocha/lib/runner.js:485:14)
+    at Immediate._onImmediate (/home/ubuntu/grade/ts-60573/repo/node_modules/mocha/lib/runner.js:570:5)
+    at processImmediate (node:internal/timers:534:21)[0m[90m
+  Error: Error: New baseline created at tests/baselines/local/mappedTypeOverInlineTypeAssertionDisplay.types
+      at writeComparison (src/harness/harnessIO.ts:1546:27)
+      at Object.runBaseline2 [as runBaseline] (src/harness/harnessIO.ts:1565:9)
+      at checkBaseLines (src/harness/harnessIO.ts:788:26)
+      at Object.doTypeAndSymbolBaseline (src/harness/harnessIO.ts:751:13)
+      at _CompilerTest.verifyTypesAndSymbols (src/testRunner/compilerRunner.ts:327:18)
+      at Context.<anonymous> (src/testRunner/compilerRunner.ts:104:80)
+      at processImmediate (node:internal/timers:534:21)
+  
+  Error: New baseline created at tests/baselines/local/mappedTypeOverInlineTypeAssertionDisplay.symbols
+      at writeComparison (src/harness/harnessIO.ts:1546:27)
+      at Object.runBaseline2 [as runBaseline] (src/harness/harnessIO.ts:1565:9)
+      at checkBaseLines (src/harness/harnessIO.ts:788:26)
+      at Object.doTypeAndSymbolBaseline (src/harness/harnessIO.ts:758:13)
+      at _CompilerTest.verifyTypesAndSymbols (src/testRunner/compilerRunner.ts:327:18)
+      at Context.<anonymous> (src/testRunner/compilerRunner.ts:104:80)
+      at processImmediate (node:internal/timers:534:21)
+      at Object.doTypeAndSymbolBaseline (src/harness/harnessIO.ts:765:19)
+      at _CompilerTest.verifyTypesAndSymbols (src/testRunner/compilerRunner.ts:327:18)
+      at Context.<anonymous> (src/testRunner/compilerRunner.ts:104:80)
+      at processImmediate (node:internal/timers:534:21)
+[0m
+
+
+Completed runtests with errors in 3s
+Error in runtests in 2.6s
+Error: Process exited with code: 2
+

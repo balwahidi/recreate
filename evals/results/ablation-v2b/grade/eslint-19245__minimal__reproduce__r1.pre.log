@@ -1,0 +1,55 @@
+===== run 1: exit 1
+reported code: ["4:5 This assigned value is not used in subsequent statements."]
+control (no return in try): []
+node:assert:152
+  throw new AssertionError(obj);
+  ^
+
+AssertionError [ERR_ASSERTION]: BUG #19245: `intermediaryValue = 42` flagged although it is read in catch
++ actual - expected
+
++ [
++   {
++     column: 5,
++     endColumn: 22,
++     endLine: 4,
++     line: 4,
++     message: 'This assigned value is not used in subsequent statements.',
++     messageId: 'unnecessaryAssignment',
++     nodeType: 'Identifier',
++     ruleId: 'no-useless-assignment',
++     severity: 1
++   }
++ ]
+- []
+
+    at Object.<anonymous> (/home/ubuntu/grade/eslint-19245/repo/repro-19245/repro.js:23:8)
+    at Module._compile (node:internal/modules/cjs/loader:1872:14)
+    at Object..js (node:internal/modules/cjs/loader:2003:10)
+    at Module.load (node:internal/modules/cjs/loader:1594:32)
+    at Module._load (node:internal/modules/cjs/loader:1396:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: [
+    {
+      ruleId: 'no-useless-assignment',
+      severity: 1,
+      message: 'This assigned value is not used in subsequent statements.',
+      line: 4,
+      column: 5,
+      nodeType: 'Identifier',
+      messageId: 'unnecessaryAssignment',
+      endLine: 4,
+      endColumn: 22
+    }
+  ],
+  expected: [],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.19.0
+

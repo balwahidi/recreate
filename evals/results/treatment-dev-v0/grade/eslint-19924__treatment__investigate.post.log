@@ -1,0 +1,6 @@
+===== run 1: exit 0
+Running eslint --fix on 1124 files with ulimit -n 1024...
+eslint exit code: 0
+files left unfixed: 0/1124
+✅ All files fixed, no EMFILE error.
+

@@ -1,0 +1,13 @@
+===== run 1: exit 0
+PASS  BUG: issue example (return in try, value read in catch)
+      expected no report, got 0
+PASS  BUG: break in try inside a loop, value read in catch
+      expected no report, got 0
+PASS  control: same code without return in try (not reported)
+      expected no report, got 0
+PASS  control: genuinely useless assignment (reported)
+      expected a report, got 1
+      4:3 This assigned value is not used in subsequent statements.
+
+No bug observed.
+

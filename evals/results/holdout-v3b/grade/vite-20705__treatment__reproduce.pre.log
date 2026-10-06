@@ -1,0 +1,60 @@
+===== run 1: exit 1
+Scope: all 241 workspace projects
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Progress: resolved 1383, reused 1213, downloaded 0, added 0
+Packages: +96
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Progress: resolved 1383, reused 1213, downloaded 0, added 90, done
+. postinstall$ simple-git-hooks
+. postinstall: [INFO] Successfully set the pre-commit with command: pnpm exec lint-staged --concurrent false
+. postinstall: [INFO] Successfully set all git hooks
+. postinstall: Done
+ WARN  Issues with peer dependencies found
+playground/external
+└─┬ vue 3.4.38
+  └─┬ @vue/server-renderer 3.4.38
+    └── ✕ unmet peer vue@3.4.38: found 3.5.22
+
+Done in 2s using pnpm v10.17.1
+
+ RUN  v3.2.4 /home/ubuntu/grade/vite-20705/repo
+
+stdout | packages/vite/src/node/server/__tests__/htmlFallbackSourceFile.spec.ts > html fallback when url matches a source file basename > browser navigation to /test serves index.html, not test.js
+GET /test -> 200 text/javascript
+export const marker = 'contents of test.js'
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInRlc3QiXSwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGNvbnN0IG1hcmtlciA9ICdjb250ZW50cyBvZiB0ZXN0LmpzJ1xuIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLE1BQU0sQ0FBQyxLQUFLLENBQUMsTUFBTSxDQUFDLENBQUMsQ0FBQyxDQUFDLFFBQVEsQ0FBQyxFQUFFLENBQUMsSUFBSSxDQUFDLEVBQUU7In0=
+
+ ❯ packages/vite/src/node/server/__tests__/htmlFallbackSourceFile.spec.ts (2 tests | 1 failed) 65ms
+   ✓ html fallback when url matches a source file basename > sanity: /index.html is served as html 31ms
+   × html fallback when url matches a source file basename > browser navigation to /test serves index.html, not test.js 14ms
+     → expected 'text/javascript' to match /text\/html/html
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 passed (2)
+   Start at  00:10:49
+   Duration  1.17s (transform 580ms, setup 0ms, collect 910ms, tests 65ms, environment 0ms, prepare 47ms)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/vite/src/node/server/__tests__/htmlFallbackSourceFile.spec.ts > html fallback when url matches a source file basename > browser navigation to /test serves index.html, not test.js
+AssertionError: expected 'text/javascript' to match /text\/html/html
+
+[32m- Expected:[39m 
+/text\/html/
+
+[31m+ Received:[39m 
+"text/javascript"
+
+ ❯ packages/vite/src/node/server/__tests__/htmlFallbackSourceFile.spec.ts:52:45
+     50|       `GET /test -> ${res.status} ${res.headers.get('content-type')}\n…
+     51|     )
+     52|     expect(res.headers.get('content-type')).toMatch(/text\/html/)
+       |                                             ^
+     53|     expect(body).toContain('<div id="app">index.html</div>')
+     54|     expect(body).not.toContain('contents of test.js')
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+

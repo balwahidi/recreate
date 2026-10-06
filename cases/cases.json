@@ -1,0 +1,298 @@
+{
+ "_doc": "Case inventory. checkout = revision given to the agent. fix = upstream commit whose production-file changes the grader applies to check fail-to-pass (null when the report was closed as not planned). fix_prod_files = files from the fix commit that count as production code; test/fixture/docs files from the fix are never applied. snapshot_before = ISO timestamp; issue comments created at or after it are withheld from the agent (fix PR creation or the first maintainer diagnosis). expected = reproduced | not_reproduced | reproduced_on_reported_version_only | behaves_as_designed.",
+ "cases": [
+  {
+   "id": "eslint-19245",
+   "split": "dev",
+   "kind": [
+    "deterministic",
+    "repo-native-test"
+   ],
+   "repo": "eslint/eslint",
+   "issue": 19245,
+   "checkout": "cd83eaa761b4acd9a43fd3888a12ea08483c3366",
+   "fix": "cc3bd00795708c4d7c06a6103983245cc9d9845b",
+   "fix_prod_files": [
+    "lib/rules/no-useless-assignment.js"
+   ],
+   "snapshot_before": "FIRST_NON_REPORTER_COMMENT",
+   "expected": "reproduced"
+  },
+  {
+   "id": "vue-12294",
+   "split": "dev",
+   "kind": [
+    "deterministic",
+    "playground-only-report"
+   ],
+   "repo": "vuejs/core",
+   "issue": 12294,
+   "checkout": "1a664749d4d65a345589a6d78106ede7574cb2e1",
+   "fix": "c69c4bb59c114f2b5e03733b55ef9ace3087b5c3",
+   "fix_prod_files": [
+    "packages/reactivity/src/watch.ts"
+   ],
+   "snapshot_before": "FIX_PR_CREATED",
+   "expected": "reproduced"
+  },
+  {
+   "id": "eslint-19924",
+   "split": "dev",
+   "kind": [
+    "environment-specific"
+   ],
+   "repo": "eslint/eslint",
+   "issue": 19924,
+   "checkout": "35cf44c22e36b1554486e7a75c870e86c10b83f8",
+   "fix": "07fac6cafa0426b4d1ea12d9001f3955f19b286d",
+   "fix_prod_files": [
+    "lib/eslint/eslint.js"
+   ],
+   "snapshot_before": "FIRST_NON_REPORTER_COMMENT",
+   "expected": "reproduced"
+  },
+  {
+   "id": "urfave-cli-2176",
+   "split": "dev",
+   "kind": [
+    "flaky",
+    "concurrency"
+   ],
+   "repo": "urfave/cli",
+   "issue": 2176,
+   "checkout": "495e1d30c76923fbefbc095c0b01f9398529bb67",
+   "fix": "9dad0d4550e060c3cc9b989395424a2ce0d44fe2",
+   "fix_prod_files": "ALL_NON_TEST",
+   "snapshot_before": "FIX_PR_CREATED",
+   "expected": "reproduced"
+  },
+  {
+   "id": "eslint-19818",
+   "split": "dev",
+   "kind": [
+    "incorrect-reporter-assumption"
+   ],
+   "repo": "eslint/eslint",
+   "issue": 19818,
+   "checkout": "f341f21e024388e602cfccee06e11b9113a2d298",
+   "fix": null,
+   "fix_prod_files": [],
+   "snapshot_before": "FIRST_NON_REPORTER_COMMENT",
+   "expected": "behaves_as_designed"
+  },
+  {
+   "id": "eslint-18575-windows",
+   "split": "dev",
+   "kind": [
+    "environment-specific",
+    "cannot-reproduce-here"
+   ],
+   "repo": "eslint/eslint",
+   "issue": 18575,
+   "checkout": "4f08332ac03e51002f8de6da5c5a362608205437",
+   "fix": null,
+   "fix_prod_files": [],
+   "snapshot_before": "FIRST_NON_REPORTER_COMMENT",
+   "expected": "not_reproduced"
+  },
+  {
+   "id": "eslint-20209-fixed",
+   "split": "dev",
+   "kind": [
+    "already-fixed"
+   ],
+   "repo": "eslint/eslint",
+   "issue": 20209,
+   "checkout": "a438ec39512c3381f4785a1f3058982ce9845970",
+   "fix": null,
+   "fix_prod_files": [],
+   "snapshot_before": "FIRST_NON_REPORTER_COMMENT",
+   "expected": "reproduced_on_reported_version_only"
+  },
+  {
+   "id": "eslint-19957",
+   "split": "holdout",
+   "kind": [
+    "deterministic",
+    "noisy-report"
+   ],
+   "repo": "eslint/eslint",
+   "issue": 19957,
+   "checkout": "327c67256fbeaf9d5e365802c2a11f5d32a16522",
+   "fix": "676f4acaaed6e4f6ffe0c2e21272d4702b311a7b",
+   "fix_prod_files": [
+    "lib/rules/no-loss-of-precision.js"
+   ],
+   "snapshot_before": "FIX_PR_CREATED",
+   "expected": "reproduced"
+  },
+  {
+   "id": "eslint-19637",
+   "split": "holdout",
+   "kind": [
+    "regression",
+    "incomplete-report"
+   ],
+   "repo": "eslint/eslint",
+   "issue": 19637,
+   "checkout": "e62e26761561e1d78c6466a2d74dbf946012fddc",
+   "fix": "cdc8e8c950ddfe1f9d462ea138ad7866da0394da",
+   "fix_prod_files": [
+    "lib/rules/no-unused-expressions.js",
+    "lib/rules/utils/ast-utils.js"
+   ],
+   "snapshot_before": "FIRST_NON_REPORTER_COMMENT",
+   "expected": "reproduced"
+  },
+  {
+   "id": "vue-13611",
+   "split": "holdout",
+   "kind": [
+    "regression",
+    "playground-only-report"
+   ],
+   "repo": "vuejs/core",
+   "issue": 13611,
+   "checkout": "a9269c642bf944560bc29adb5dae471c11cd9ee8",
+   "fix": "c5f7db11542bb2246363aef78c88a8e6cef0ee93",
+   "fix_prod_files": [
+    "packages/runtime-core/src/componentSlots.ts"
+   ],
+   "snapshot_before": "FIX_PR_CREATED",
+   "expected": "reproduced"
+  },
+  {
+   "id": "vite-20705",
+   "split": "holdout",
+   "kind": [
+    "regression",
+    "repo-native-integration"
+   ],
+   "repo": "vitejs/vite",
+   "issue": 20705,
+   "checkout": "c1caacdfae2917e91d26d3cb4d3a80d9fa11634f",
+   "fix": "6bc6c4dbc23501577d3919dc841454eb2eb14a54",
+   "fix_prod_files": [
+    "packages/vite/src/node/server/middlewares/transform.ts"
+   ],
+   "snapshot_before": "FIRST_NON_REPORTER_COMMENT",
+   "expected": "reproduced"
+  },
+  {
+   "id": "pnpm-10290",
+   "split": "holdout",
+   "kind": [
+    "config",
+    "repo-native-integration"
+   ],
+   "repo": "pnpm/pnpm",
+   "issue": 10290,
+   "checkout": "559f903a9094227f560b702643ca1c742fe56cd6",
+   "fix": "5f5f1db2b87a0524a792b786bf5f41990f2823fa",
+   "fix_prod_files": [
+    "store/plugin-commands-store/src/store.ts"
+   ],
+   "snapshot_before": "FIX_PR_CREATED",
+   "expected": "reproduced"
+  },
+  {
+   "id": "ts-60573",
+   "split": "holdout",
+   "kind": [
+    "regression",
+    "fixture-construction"
+   ],
+   "repo": "microsoft/TypeScript",
+   "issue": 60573,
+   "checkout": "6b1ea96b9404ccfc8e66e22fa2a7b645781255c3",
+   "fix": "676d32994813badf283a0b1601665c901dd697f2",
+   "fix_prod_files": [
+    "src/compiler/expressionToTypeNode.ts"
+   ],
+   "snapshot_before": "FIRST_NON_REPORTER_COMMENT",
+   "expected": "reproduced"
+  },
+  {
+   "id": "ripgrep-3009",
+   "split": "holdout",
+   "kind": [
+    "flaky",
+    "concurrency"
+   ],
+   "repo": "BurntSushi/ripgrep",
+   "issue": 3009,
+   "checkout": "5e16a5c9e57e81f6031a23faa2ace52205fa8242",
+   "fix": "0d7054d8e466d6aa0a6bb6cf121e87225d26df44",
+   "fix_prod_files": [
+    "crates/ignore/src/walk.rs"
+   ],
+   "snapshot_before": "2025-03-07T00:00:00Z",
+   "expected": "reproduced"
+  },
+  {
+   "id": "pydantic-11849",
+   "split": "holdout",
+   "kind": [
+    "flaky",
+    "concurrency",
+    "incomplete-report"
+   ],
+   "repo": "pydantic/pydantic",
+   "issue": 11849,
+   "checkout": "e92ad791031e60b791d9c724be688f7adc3b336a",
+   "fix": "0a21ab14ecc200923102e3f831cb26b0282899e9",
+   "fix_prod_files": [
+    "pydantic/main.py"
+   ],
+   "snapshot_before": "FIRST_NON_REPORTER_COMMENT",
+   "expected": "reproduced"
+  },
+  {
+   "id": "pytest-13312",
+   "split": "holdout",
+   "kind": [
+    "environment-specific",
+    "flaky",
+    "incorrect-reporter-assumption"
+   ],
+   "repo": "pytest-dev/pytest",
+   "issue": 13312,
+   "checkout": "c7aabccde27f668eca901efa24539c170eb8ab42",
+   "fix": "f59e1ad661832f18bce28a9522be2c6d37485d09",
+   "fix_prod_files": [
+    "src/_pytest/fixtures.py"
+   ],
+   "snapshot_before": "FIRST_NON_REPORTER_COMMENT",
+   "expected": "reproduced"
+  },
+  {
+   "id": "eslint-19033-fixed",
+   "split": "holdout",
+   "kind": [
+    "already-fixed"
+   ],
+   "repo": "eslint/eslint",
+   "issue": 19033,
+   "checkout": "6f37b0747a14dfa9a9e3bdebc5caed1f39b6b0e2",
+   "fix": null,
+   "fix_prod_files": [],
+   "snapshot_before": "FIRST_NON_REPORTER_COMMENT",
+   "expected": "reproduced_on_reported_version_only"
+  },
+  {
+   "id": "pnpm-10216-windows",
+   "split": "holdout",
+   "kind": [
+    "environment-specific",
+    "cannot-reproduce-here"
+   ],
+   "repo": "pnpm/pnpm",
+   "issue": 10216,
+   "checkout": "58c313eb338052dcc3d6e46d6ccb70e2c0c4a389",
+   "fix": null,
+   "fix_prod_files": [],
+   "snapshot_before": "FIRST_NON_REPORTER_COMMENT",
+   "expected": "not_reproduced"
+  }
+ ]
+}

@@ -1,0 +1,6 @@
+===== run 1: exit 1
+pnpm 11.0.0-alpha.3; storeDir: ../.pnpm-store in /tmp/tmp.pUqTRz75BF/project/web/pnpm-workspace.yaml
+workspace root   : store path = /tmp/tmp.pUqTRz75BF/project/.pnpm-store/v11
+apps/website     : config get store-dir = ../.pnpm-store, store path = /tmp/tmp.pUqTRz75BF/project/web/apps/.pnpm-store/v11
+BUG REPRODUCED: store path differs between workspace root and subpackage
+

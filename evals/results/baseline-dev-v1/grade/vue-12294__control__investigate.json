@@ -1,0 +1,10 @@
+{
+  "label": "vue-12294__control__investigate",
+  "case": "vue-12294",
+  "runs_per_side": 1,
+  "verdict": "fix_conflicts_with_patch",
+  "error": "fix.patch: error: patch failed: packages/reactivity/src/watch.ts:264\nerror: packages/reactivity/src/watch.ts: patch does not apply\n",
+  "pre": [
+    0
+  ]
+}

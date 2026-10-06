@@ -1,0 +1,46 @@
+===== run 1: exit 0
+
+
+  no-useless-assignment (try/catch, #19245)
+    valid
+      ✔ async function fn() {
+            let intermediaryValue;
+            try {
+                intermediaryValue = 42;
+                unsafeFn();
+                return { error: undefined };
+            } catch {
+                return { intermediaryValue };
+            }
+        }
+        function unsafeFn() { throw new Error(); }
+        fn();
+      ✔ function fn() {
+            let v;
+            while (cond()) {
+                try {
+                    v = 42;
+                    unsafeFn();
+                    break;
+                } catch {
+                    console.log(v);
+                }
+            }
+        }
+        fn();
+      ✔ function fn() {
+            let v;
+            try {
+                v = 42;
+                unsafeFn();
+            } catch {
+                return { v };
+            }
+            return {};
+        }
+        fn();
+
+
+  3 passing (39ms)
+
+

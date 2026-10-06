@@ -1,0 +1,27 @@
+exit 0
+
+> vite@7.1.7 build-bundle /home/ubuntu/grade/vite-20705/repo/packages/vite
+> rolldown --config rolldown.config.ts
+
+shimmed: postcss-import/index.js
+shimmed: postcss-load-config/src/req.js
+shimmed: postcss-import/lib/parse-styles.js
+<DIR>/client/env.mjs  chunk │ size: 0.61 kB
+<DIR>/client/client.mjs  chunk │ size: 33.39 kB
+<DIR>/node/chunks/dep-qe6qgDlX.js  chunk │ size:     0.12 kB
+<DIR>/node/chunks/dep-Bwho5cFQ.js  chunk │ size:     0.21 kB
+<DIR>/node/chunks/dep-BE9vdNJC.js  chunk │ size:     0.27 kB
+<DIR>/node/chunks/dep-8Jc1Oguu.js  chunk │ size:     0.53 kB
+<DIR>/node/chunks/dep-DY6jUl0r.js  chunk │ size:     0.60 kB
+<DIR>/node/chunks/dep-lCKrEJQm.js  chunk │ size:     1.38 kB
+<DIR>/node/index.js                chunk │ size:     3.39 kB
+<DIR>/node/chunks/dep-SmwnYDP9.js  chunk │ size:    11.51 kB
+<DIR>/node/chunks/dep-BuoK8Wda.js  chunk │ size:    12.24 kB
+<DIR>/node/chunks/dep-CwrJo3zV.js  chunk │ size:    19.60 kB
+<DIR>/node/cli.js                  chunk │ size:    26.86 kB
+<DIR>/node/chunks/dep-DrqJEUj9.js  chunk │ size:   213.90 kB
+<DIR>/node/chunks/dep-CCSnTAeo.js  chunk │ size:   241.06 kB
+<DIR>/node/chunks/dep-DQ-J0yX1.js  chunk │ size: 1,346.61 kB
+<DIR>/node/module-runner.js  chunk │ size: 48.73 kB
+
+✔ rolldown v1.0.0-beta.41 Finished in 483.53 ms

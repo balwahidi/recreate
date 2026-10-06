@@ -1,0 +1,18 @@
+{
+ "eslint-19033-fixed__treatment__investigate": 2.8,
+ "eslint-19033-fixed__treatment__reproduce": 3.2,
+ "eslint-19637__treatment__investigate": 1.5,
+ "eslint-19637__treatment__reproduce": 1.7,
+ "eslint-19957__treatment__fix": 2.0,
+ "eslint-19957__treatment__reproduce": 1.6,
+ "pnpm-10216-windows__treatment__reproduce": 4.2,
+ "pnpm-10290__treatment__reproduce": 2.4,
+ "pydantic-11849__treatment__investigate": 4.0,
+ "pydantic-11849__treatment__reproduce": 2.7,
+ "pytest-13312__treatment__reproduce": 11.4,
+ "ripgrep-3009__treatment__reproduce": 9.7,
+ "ts-60573__treatment__reproduce": 4.1,
+ "vite-20705__treatment__reproduce": 2.6,
+ "vue-13611__treatment__fix": 4.4,
+ "vue-13611__treatment__reproduce": 2.3
+}

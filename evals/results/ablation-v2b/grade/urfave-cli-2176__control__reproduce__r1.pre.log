@@ -1,0 +1,112 @@
+===== run 1: exit 1
+--- FAIL: TestIssue2176ParallelRunHelpFlagPanic (0.03s)
+    issue2176_repro_test.go:49: 28 panics during parallel Command.Run, first: runtime error: invalid memory address or nil pointer dereference
+        goroutine 9 [running]:
+        runtime/debug.Stack()
+        	/home/ubuntu/.local/go1.23.8/src/runtime/debug/stack.go:26 +0x5e
+        github.com/urfave/cli/v3_test.TestIssue2176ParallelRunHelpFlagPanic.func1.1.1()
+        	/home/ubuntu/grade/urfave-cli-2176/repo/issue2176_repro_test.go:32 +0x7d
+        panic({0x81d9c0?, 0xc30ec0?})
+        	/home/ubuntu/.local/go1.23.8/src/runtime/panic.go:791 +0x132
+        github.com/urfave/cli/v3.(*boolValue).Get(0x1?)
+        	/home/ubuntu/grade/urfave-cli-2176/repo/flag_bool.go:71
+        github.com/urfave/cli/v3.(*FlagBase[...]).Get(...)
+        	/home/ubuntu/grade/urfave-cli-2176/repo/flag_impl.go:192
+        github.com/urfave/cli/v3.(*Command).Value(0xc000345088, {0xc000325188, 0x4})
+        	/home/ubuntu/grade/urfave-cli-2176/repo/command.go:533 +0xb5
+        github.com/urfave/cli/v3.(*Command).Bool(0xc000345088, {0xc000325188, 0x4})
+        	/home/ubuntu/grade/urfave-cli-2176/repo/flag_bool.go:28 +0x34
+        slices.IndexFunc[...](...)
+        	/home/ubuntu/.local/go1.23.8/src/slices/slices.go:109
+        slices.ContainsFunc[...]({0xc000327220?, 0x2, 0xc000342eb0}, 0xc00031ab00?)
+        	/home/ubuntu/.local/go1.23.8/src/slices/slices.go:124 +0x5f
+        github.com/urfave/cli/v3.(*Command).checkHelp(0xc000345088)
+        	/home/ubuntu/grade/urfave-cli-2176/repo/command.go:186 +0xa8
+        github.com/urfave/cli/v3.(*Command).run(0xc000345088, {0x948290, 0xc0003460c0}, {0xc000342c00, 0x1, 0x1})
+        	/home/ubuntu/grade/urfave-cli-2176/repo/command_run.go:198 +0x1127
+        github.com/urfave/cli/v3.(*Command).Run(...)
+        	/home/ubuntu/grade/urfave-cli-2176/repo/command_run.go:94
+        github.com/urfave/cli/v3_test.TestIssue2176ParallelRunHelpFlagPanic.func1.1(0x0?, 0x0?)
+        	/home/ubuntu/grade/urfave-cli-2176/repo/issue2176_repro_test.go:41 +0xd1
+        github.com/urfave/cli/v3_test.TestIssue2176ParallelRunHelpFlagPanic.func1()
+        	/home/ubuntu/grade/urfave-cli-2176/repo/issue2176_repro_test.go:42 +0x65
+        created by github.com/urfave/cli/v3_test.TestIssue2176ParallelRunHelpFlagPanic in goroutine 7
+        	/home/ubuntu/grade/urfave-cli-2176/repo/issue2176_repro_test.go:25 +0x69
+FAIL
+FAIL	github.com/urfave/cli/v3	0.036s
+FAIL
+
+===== run 2: exit 1
+--- FAIL: TestIssue2176ParallelRunHelpFlagPanic (0.03s)
+    issue2176_repro_test.go:49: 24 panics during parallel Command.Run, first: runtime error: invalid memory address or nil pointer dereference
+        goroutine 22 [running]:
+        runtime/debug.Stack()
+        	/home/ubuntu/.local/go1.23.8/src/runtime/debug/stack.go:26 +0x5e
+        github.com/urfave/cli/v3_test.TestIssue2176ParallelRunHelpFlagPanic.func1.1.1()
+        	/home/ubuntu/grade/urfave-cli-2176/repo/issue2176_repro_test.go:32 +0x7d
+        panic({0x81d9c0?, 0xc30ec0?})
+        	/home/ubuntu/.local/go1.23.8/src/runtime/panic.go:791 +0x132
+        github.com/urfave/cli/v3.(*FlagBase[...]).Get(...)
+        	/home/ubuntu/grade/urfave-cli-2176/repo/flag_impl.go:192
+        github.com/urfave/cli/v3.(*Command).Value(0xc000781348, {0xc0f6c0, 0x1})
+        	/home/ubuntu/grade/urfave-cli-2176/repo/command.go:533 +0xb5
+        github.com/urfave/cli/v3.(*Command).Bool(0xc000781348, {0xc0f6c0, 0x1})
+        	/home/ubuntu/grade/urfave-cli-2176/repo/flag_bool.go:28 +0x34
+        slices.IndexFunc[...](...)
+        	/home/ubuntu/.local/go1.23.8/src/slices/slices.go:109
+        slices.ContainsFunc[...]({0xc000429660?, 0x2, 0x0}, 0xc000687b00?)
+        	/home/ubuntu/.local/go1.23.8/src/slices/slices.go:124 +0x5f
+        github.com/urfave/cli/v3.(*Command).checkHelp(0xc000781348)
+        	/home/ubuntu/grade/urfave-cli-2176/repo/command.go:186 +0xa8
+        github.com/urfave/cli/v3.(*Command).run(0xc000781348, {0x948290, 0xc000450cc0}, {0xc000782450, 0x1, 0x1})
+        	/home/ubuntu/grade/urfave-cli-2176/repo/command_run.go:198 +0x1127
+        github.com/urfave/cli/v3.(*Command).Run(...)
+        	/home/ubuntu/grade/urfave-cli-2176/repo/command_run.go:94
+        github.com/urfave/cli/v3_test.TestIssue2176ParallelRunHelpFlagPanic.func1.1(0x0?, 0x0?)
+        	/home/ubuntu/grade/urfave-cli-2176/repo/issue2176_repro_test.go:41 +0xd1
+        github.com/urfave/cli/v3_test.TestIssue2176ParallelRunHelpFlagPanic.func1()
+        	/home/ubuntu/grade/urfave-cli-2176/repo/issue2176_repro_test.go:42 +0x65
+        created by github.com/urfave/cli/v3_test.TestIssue2176ParallelRunHelpFlagPanic in goroutine 20
+        	/home/ubuntu/grade/urfave-cli-2176/repo/issue2176_repro_test.go:25 +0x69
+FAIL
+FAIL	github.com/urfave/cli/v3	0.028s
+FAIL
+
+===== run 3: exit 1
+--- FAIL: TestIssue2176ParallelRunHelpFlagPanic (0.02s)
+    issue2176_repro_test.go:49: 14 panics during parallel Command.Run, first: runtime error: invalid memory address or nil pointer dereference
+        goroutine 9 [running]:
+        runtime/debug.Stack()
+        	/home/ubuntu/.local/go1.23.8/src/runtime/debug/stack.go:26 +0x5e
+        github.com/urfave/cli/v3_test.TestIssue2176ParallelRunHelpFlagPanic.func1.1.1()
+        	/home/ubuntu/grade/urfave-cli-2176/repo/issue2176_repro_test.go:32 +0x7d
+        panic({0x81d9c0?, 0xc30ec0?})
+        	/home/ubuntu/.local/go1.23.8/src/runtime/panic.go:791 +0x132
+        github.com/urfave/cli/v3.(*boolValue).Get(0x7c1a75e6ef01?)
+        	/home/ubuntu/grade/urfave-cli-2176/repo/flag_bool.go:71
+        github.com/urfave/cli/v3.(*FlagBase[...]).Get(...)
+        	/home/ubuntu/grade/urfave-cli-2176/repo/flag_impl.go:192
+        github.com/urfave/cli/v3.(*Command).Value(0xc00027c588, {0xc0f6c0, 0x1})
+        	/home/ubuntu/grade/urfave-cli-2176/repo/command.go:533 +0xb5
+        github.com/urfave/cli/v3.(*Command).Bool(0xc00027c588, {0xc0f6c0, 0x1})
+        	/home/ubuntu/grade/urfave-cli-2176/repo/flag_bool.go:28 +0x34
+        slices.IndexFunc[...](...)
+        	/home/ubuntu/.local/go1.23.8/src/slices/slices.go:109
+        slices.ContainsFunc[...]({0xc00027e0e0?, 0x2, 0xc000274930}, 0xc00013bb00?)
+        	/home/ubuntu/.local/go1.23.8/src/slices/slices.go:124 +0x5f
+        github.com/urfave/cli/v3.(*Command).checkHelp(0xc00027c588)
+        	/home/ubuntu/grade/urfave-cli-2176/repo/command.go:186 +0xa8
+        github.com/urfave/cli/v3.(*Command).run(0xc00027c588, {0x948290, 0xc0002711d0}, {0xc000279eb0, 0x1, 0x1})
+        	/home/ubuntu/grade/urfave-cli-2176/repo/command_run.go:198 +0x1127
+        github.com/urfave/cli/v3.(*Command).Run(...)
+        	/home/ubuntu/grade/urfave-cli-2176/repo/command_run.go:94
+        github.com/urfave/cli/v3_test.TestIssue2176ParallelRunHelpFlagPanic.func1.1(0x0?, 0x0?)
+        	/home/ubuntu/grade/urfave-cli-2176/repo/issue2176_repro_test.go:41 +0xd1
+        github.com/urfave/cli/v3_test.TestIssue2176ParallelRunHelpFlagPanic.func1()
+        	/home/ubuntu/grade/urfave-cli-2176/repo/issue2176_repro_test.go:42 +0x65
+        created by github.com/urfave/cli/v3_test.TestIssue2176ParallelRunHelpFlagPanic in goroutine 7
+        	/home/ubuntu/grade/urfave-cli-2176/repo/issue2176_repro_test.go:25 +0x69
+FAIL
+FAIL	github.com/urfave/cli/v3	0.027s
+FAIL
+

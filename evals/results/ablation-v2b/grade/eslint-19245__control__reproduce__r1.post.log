@@ -1,0 +1,10 @@
+===== run 1: exit 0
+--- report: return in try, value read in catch
+    no problems (correct)
+--- break in try, value read in catch
+    no problems (correct)
+--- control: no return in try (expected to pass)
+    no problems (correct)
+
+No false positives
+

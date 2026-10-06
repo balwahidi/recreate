@@ -1,0 +1,59 @@
+===== run 1: exit 1
+Using ~/grade/ts-60573/repo/Herebyfile.mjs to run runtests
+Starting lib
+Starting generate-diagnostics
+> /home/ubuntu/.nvm/versions/node/v24.19.0/bin/node scripts/processDiagnosticMessages.mjs src/compiler/diagnosticMessages.json
+Reading diagnostics from src/compiler/diagnosticMessages.json
+Finished lib in 43ms
+Finished generate-diagnostics in 58ms
+Starting bundle-tests
+Starting build-tests
+Starting build-services
+Finished bundle-tests in 304ms
+Finished build-tests in 315ms
+Finished build-services in 315ms
+Starting dts-services
+Finished dts-services in 1ms
+Starting dts-lssl
+Finished dts-lssl in 1ms
+Starting runtests
+Running tests with config: {"test":["quickInfoMappedTypeOverAssertionTypeReuse"],"light":true,"noColor":false,"timeout":40000,"keepFailed":false}
+> /home/ubuntu/.nvm/versions/node/v24.19.0/bin/node /home/ubuntu/grade/ts-60573/repo/node_modules/mocha/bin/_mocha -R /home/ubuntu/grade/ts-60573/repo/scripts/failed-tests.cjs -O "reporter=mocha-fivemat-progress-reporter" -g "quickInfoMappedTypeOverAssertionTypeReuse" --colors -t 40000 ./built/local/run.js
+
+    [0mfourslash tests[0m
+[31m
+Test failure:
+fourslash test quickInfoMappedTypeOverAssertionTypeReuse.ts runs correctly
+[0m[J[90m  [[0m[31m[0m...................................[90m][0m
+
+[92m [0m[32m 0 passing[0m[90m (1s)[0m
+[31m  1 failing[0m
+
+[0m  1) fourslash tests
+       tests/cases/fourslash/quickInfoMappedTypeOverAssertionTypeReuse.ts
+         fourslash test quickInfoMappedTypeOverAssertionTypeReuse.ts runs correctly:
+
+      [31mAssertionError: At marker '1': quick info text: expected 'type Test = {\n    prop1: Wrapper<"he…' to equal 'type Test = {\n    prop1: "hello";\n}'[0m
+      [32m+ expected[0m [31m- actual[0m
+
+       type Test = {
+      [31m-    prop1: Wrapper<"hello">;[0m
+      [32m+    prop1: "hello";[0m
+       }
+      [0m[90m
+      at _TestState.verifyQuickInfoString (src/harness/fourslashImpl.ts:1942:16)
+      at _TestState.verifyQuickInfoAt (src/harness/fourslashImpl.ts:1914:14)
+      at Verify.quickInfoAt (src/harness/fourslashInterfaceImpl.ts:300:20)
+      at eval (quickInfoMappedTypeOverAssertionTypeReuse.js:33:8)
+      at runCode (src/harness/fourslashImpl.ts:4747:9)
+      at runFourSlashTestContent (src/harness/fourslashImpl.ts:4718:5)
+      at runFourSlashTest (src/harness/fourslashImpl.ts:4701:5)
+      at Context.<anonymous> (src/testRunner/fourslashRunner.ts:59:39)
+      at processImmediate (node:internal/timers:534:21)
+[0m
+
+
+Completed runtests with errors in 2.8s
+Error in runtests in 2.4s
+Error: Process exited with code: 1
+

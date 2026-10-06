@@ -1,0 +1,12 @@
+{
+  "label": "vue-13611__treatment__fix",
+  "case": "vue-13611",
+  "runs_per_side": 1,
+  "verdict": "passes_pre",
+  "pre": [
+    0
+  ],
+  "post": [
+    0
+  ]
+}

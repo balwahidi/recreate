@@ -1,0 +1,36 @@
+===== run 1: exit 1
+
+ RUN  v3.1.4 /home/ubuntu/grade/vue-13611/repo
+
+ ❯ |unit| packages/vue/__tests__/underscoreSlotRepro.spec.ts (2 tests | 1 failed) 24ms
+   × #13611 underscore-prefixed slot name > renders provided _duration slot when sibling of v-if slot template 21ms
+     → expected '<div><p>random</p><div>provided title…' to contain 'provided _duration'
+   ✓ #13611 underscore-prefixed slot name > control: without v-if on the parent slot template 2ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 passed (2)
+   Start at  00:11:06
+   Duration  1.17s (transform 600ms, setup 8ms, collect 763ms, tests 24ms, environment 193ms, prepare 40ms)
+
+ Vitest  "environmentMatchGlobs" is deprecated. Use "workspace" to define different configurations instead.
+ Vitest  "environmentMatchGlobs" is deprecated. Use "workspace" to define different configurations instead.
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| packages/vue/__tests__/underscoreSlotRepro.spec.ts > #13611 underscore-prefixed slot name > renders provided _duration slot when sibling of v-if slot template
+AssertionError: expected '<div><p>random</p><div>provided title…' to contain 'provided _duration'
+
+Expected: [32m"provided _duration"[39m
+Received: [31m"<div><p>random</p><div>provided title</div><div>default _duration</div></div>"[39m
+
+ ❯ packages/vue/__tests__/underscoreSlotRepro.spec.ts:39:18
+     37|     const html = mount(true)
+     38|     expect(html).toContain('provided title')
+     39|     expect(html).toContain('provided _duration')
+       |                  ^
+     40|     expect(html).not.toContain('default _duration')
+     41|   })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+

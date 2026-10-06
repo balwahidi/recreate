@@ -1,0 +1,15 @@
+===== run 1: exit 0
+
+ RUN  v3.1.3 /home/ubuntu/grade/vue-12294/repo
+
+ ✓ |unit| packages/reactivity/__tests__/syncWatchSelfMutation.spec.ts (2 tests) 3ms
+
+ Test Files  1 passed (1)
+      Tests  2 passed (2)
+   Start at  23:58:26
+   Duration  310ms (transform 105ms, setup 7ms, collect 120ms, tests 3ms, environment 0ms, prepare 39ms)
+
+ Vitest  "environmentMatchGlobs" is deprecated. Use "workspace" to define different configurations instead.
+ Vitest  "environmentMatchGlobs" is deprecated. Use "workspace" to define different configurations instead.
+ Vitest  "environmentMatchGlobs" is deprecated. Use "workspace" to define different configurations instead.
+

@@ -1,0 +1,6 @@
+===== run 1: exit 0
+pnpm 11.0.0-alpha.3; storeDir: ../.pnpm-store in /tmp/tmp.vXHpOTbUFJ/project/web/pnpm-workspace.yaml
+workspace root   : store path = /tmp/tmp.vXHpOTbUFJ/project/.pnpm-store/v11
+apps/website     : config get store-dir = ../.pnpm-store, store path = /tmp/tmp.vXHpOTbUFJ/project/.pnpm-store/v11
+OK: same store path
+

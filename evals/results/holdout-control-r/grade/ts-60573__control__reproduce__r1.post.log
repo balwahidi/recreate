@@ -1,0 +1,30 @@
+===== run 1: exit 0
+Using ~/grade/ts-60573/repo/Herebyfile.mjs to run runtests
+Starting lib
+Starting generate-diagnostics
+> /home/ubuntu/.nvm/versions/node/v24.19.0/bin/node scripts/processDiagnosticMessages.mjs src/compiler/diagnosticMessages.json
+Reading diagnostics from src/compiler/diagnosticMessages.json
+Finished lib in 42ms
+Finished generate-diagnostics in 56ms
+Starting bundle-tests
+Starting build-tests
+Starting build-services
+Finished build-tests in 310ms
+Finished build-services in 310ms
+Starting dts-services
+Finished dts-services in 1ms
+Starting dts-lssl
+Finished dts-lssl in 1ms
+Finished bundle-tests in 344ms
+Starting runtests
+Running tests with config: {"test":["quickInfoMappedTypeOverAssertionTypeReuse"],"light":true,"noColor":false,"timeout":40000,"keepFailed":false}
+> /home/ubuntu/.nvm/versions/node/v24.19.0/bin/node /home/ubuntu/grade/ts-60573/repo/node_modules/mocha/bin/_mocha -R /home/ubuntu/grade/ts-60573/repo/scripts/failed-tests.cjs -O "reporter=mocha-fivemat-progress-reporter" -g "quickInfoMappedTypeOverAssertionTypeReuse" --colors -t 40000 ./built/local/run.js
+
+    [0mfourslash tests[0m
+[J[90m  [[0m[36m[0m...................................[90m][0m
+
+[92m [0m[32m 1 passing[0m[90m (288ms)[0m
+
+Finished runtests in 1.5s
+Completed runtests in 1.9s
+

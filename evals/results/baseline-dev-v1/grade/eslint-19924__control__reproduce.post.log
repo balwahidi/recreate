@@ -1,0 +1,10 @@
+===== run 1: exit 0
+Node v24.19.0, 5000 files, open-file limit 1024
+[control] lint without --fix: exit 1, 5000 files linted, 5000 fixable, EMFILE in stderr: false
+[--fix] exit 0, files fixed on disk: 5000/5000
+[--fix] stderr:
+(node:434499) ESLintIgnoreWarning: The ".eslintignore" file is no longer supported. Switch to using the "ignores" property in "eslint.config.js": https://eslint.org/docs/latest/use/configure/migration-guide#ignoring-files
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+Bug not reproduced
+

@@ -1,0 +1,240 @@
+===== run 1: exit 0
+
+
+  no-unused-expressions
+    valid
+      ✔ function f(){}
+      ✔ a = b
+      ✔ new a
+      ✔ {}
+      ✔ f(); g()
+      ✔ i++
+      ✔ a()
+      ✔ a && a()
+      ✔ a() || (b = c)
+      ✔ a ? b() : c()
+      ✔ a ? b() || (c = d) : e()
+      ✔ delete foo.bar
+      ✔ void new C
+      ✔ "use strict";
+      ✔ "directive one"; "directive two"; f();
+      ✔ function foo() {"use strict"; return true; }
+      ✔ var foo = () => {"use strict"; return true; }
+      ✔ function foo() {"directive one"; "directive two"; f(); }
+      ✔ function foo() { var foo = "use strict"; return true; }
+      ✔ function* foo(){ yield 0; }
+      ✔ async function foo() { await 5; }
+      ✔ async function foo() { await foo.bar; }
+      ✔ async function foo() { bar && await baz; }
+      ✔ async function foo() { foo ? await bar : await baz; }
+      ✔ tag`tagged template literal`
+      ✔ shouldNotBeAffectedByAllowTemplateTagsOption()
+      ✔ import("foo")
+      ✔ func?.("foo")
+      ✔ obj?.foo("bar")
+      ✔ <div />
+      ✔ <></>
+      ✔ var partial = <div />
+      ✔ var partial = <div />
+      ✔ var partial = <></>
+      ✔ "use strict";
+      ✔ "directive one"; "directive two"; f();
+      ✔ function foo() {"use strict"; return true; }
+      ✔ function foo() { "a"; "b"; return 1; }
+    invalid
+      ✔ 0
+      ✔ a
+      ✔ f(), 0
+      ✔ {0}
+      ✔ []
+      ✔ a && b();
+      ✔ a() || false
+      ✔ a || (b = c)
+      ✔ a ? b() || (c = d) : e
+      ✔ `untagged template literal`
+      ✔ tag`tagged template literal`
+      ✔ a && b()
+      ✔ a ? b() : c()
+      ✔ a || b
+      ✔ a() && b
+      ✔ a ? b : 0
+      ✔ a ? b : c()
+      ✔ foo.bar;
+      ✔ !a
+      ✔ +a
+      ✔ "directive one"; f(); "directive two";
+      ✔ function foo() {"directive one"; f(); "directive two"; }
+      ✔ if (0) { "not a directive"; f(); }
+      ✔ function foo() { var foo = true; "use strict"; }
+      ✔ var foo = () => { var foo = true; "use strict"; }
+      ✔ `untagged template literal`
+      ✔ `untagged template literal`
+      ✔ tag`tagged template literal`
+      ✔ obj?.foo
+      ✔ obj?.foo.bar
+      ✔ obj?.foo().bar
+      ✔ <div />
+      ✔ <></>
+      ✔ class C { static { 'use strict'; } }
+      ✔ class C { static { 
+'foo'
+'bar'
+ } }
+      ✔ ("use strict");
+      ✔ f(); "use strict";
+      ✔ function foo() { var foo = true; "use strict"; }
+      ✔ ("use strict");
+      ✔ "use strict"; ("not directive"); "also not";
+      ✔ { "use strict"; }
+
+  no-unused-expressions
+    valid
+      ✔ 
+\u0009\u0009test.age?.toLocaleString();
+\u0009  
+      ✔ 
+\u0009\u0009let a = (a?.b).c;
+\u0009  
+      ✔ 
+\u0009\u0009let b = a?.['b'];
+\u0009  
+      ✔ 
+\u0009\u0009let c = one[2]?.[3][4];
+\u0009  
+      ✔ 
+\u0009\u0009one[2]?.[3][4]?.();
+\u0009  
+      ✔ 
+\u0009\u0009a?.['b']?.c();
+\u0009  
+      ✔ 
+\u0009\u0009module Foo {
+\u0009\u0009  'use strict';
+\u0009\u0009}
+\u0009  
+      ✔ 
+\u0009\u0009namespace Foo {
+\u0009\u0009  'use strict';
+  
+\u0009\u0009  export class Foo {}
+\u0009\u0009  export class Bar {}
+\u0009\u0009}
+\u0009  
+      ✔ 
+\u0009\u0009function foo() {
+\u0009\u0009  'use strict';
+  
+\u0009\u0009  return null;
+\u0009\u0009}
+\u0009  
+      ✔ 
+\u0009\u0009import('./foo');
+\u0009  
+      ✔ 
+\u0009\u0009import('./foo').then(() => {});
+\u0009  
+      ✔ 
+\u0009\u0009class Foo<T> {}
+\u0009\u0009new Foo<string>();
+\u0009  
+      ✔ foo && foo?.();
+      ✔ foo && import('./foo');
+      ✔ foo ? import('./foo') : import('./bar');
+      ✔ <div/> as any
+      ✔ foo && foo()!;
+      ✔ 
+\u0009\u0009\u0009\u0009declare const foo:  Function | undefined;
+\u0009\u0009\u0009\u0009<any>(foo && foo()!)
+\u0009\u0009\u0009
+      ✔ 
+\u0009\u0009\u0009\u0009(Foo && Foo())<string, number>;
+\u0009\u0009\u0009
+    invalid
+      ✔ 
+  if (0) 0;
+\u0009\u0009
+      ✔ 
+  f(0), {};
+\u0009\u0009
+      ✔ 
+  a, b();
+\u0009\u0009
+      ✔ 
+  a() &&
+\u0009function namedFunctionInExpressionContext() {
+\u0009  f();
+\u0009};
+\u0009\u0009
+      ✔ 
+  a?.b;
+\u0009\u0009
+      ✔ 
+  (a?.b).c;
+\u0009\u0009
+      ✔ 
+  a?.['b'];
+\u0009\u0009
+      ✔ 
+  (a?.['b']).c;
+\u0009\u0009
+      ✔ 
+  a?.b()?.c;
+\u0009\u0009
+      ✔ 
+  (a?.b()).c;
+\u0009\u0009
+      ✔ 
+  one[2]?.[3][4];
+\u0009\u0009
+      ✔ 
+  one.two?.three.four;
+\u0009\u0009
+      ✔ 
+  module Foo {
+\u0009const foo = true;
+\u0009'use strict';
+  }
+\u0009\u0009
+      ✔ 
+  namespace Foo {
+\u0009export class Foo {}
+\u0009export class Bar {}
+  
+\u0009'use strict';
+  }
+\u0009\u0009
+      ✔ 
+  function foo() {
+\u0009const foo = true;
+  
+\u0009'use strict';
+  }
+\u0009\u0009
+      ✔ foo && foo?.bar;
+      ✔ foo ? foo?.bar : bar.baz;
+      ✔ 
+  class Foo<T> {}
+  Foo<string>;
+\u0009\u0009
+      ✔ Map<string, string>;
+      ✔ 
+  declare const foo: number | undefined;
+  foo;
+\u0009\u0009
+      ✔ 
+  declare const foo: number | undefined;
+  foo as any;
+\u0009\u0009
+      ✔ 
+  declare const foo: number | undefined;
+  <any>foo;
+\u0009\u0009
+      ✔ 
+  declare const foo: number | undefined;
+  foo!;
+\u0009\u0009
+
+
+  121 passing (183ms)
+
+

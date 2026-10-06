@@ -1,0 +1,12 @@
+===== run 1: exit 1
+ESLint 9.22.0
+[
+  {
+    "ruleId": "no-useless-assignment",
+    "line": 4,
+    "column": 5,
+    "message": "This assigned value is not used in subsequent statements."
+  }
+]
+BUG REPRODUCED: `intermediaryValue = 42` flagged although it is read in the catch block.
+

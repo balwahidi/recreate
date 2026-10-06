@@ -1,0 +1,7 @@
+===== run 1: exit 1
+TypeScript 5.8.0-dev
+BUG  type Test = { prop1: Wrapper<"hello">; }   (expected: type Test = { prop1: "hello"; })
+OK   type Test2 = { prop1: "hello"; }
+OK   type Test3 = "hello"
+semantic diagnostics: none
+

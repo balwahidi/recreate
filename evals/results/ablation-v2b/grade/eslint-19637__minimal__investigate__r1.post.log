@@ -1,0 +1,9 @@
+===== run 1: exit 0
+ecmaVersion=3 sourceType=script: 0 problem(s) []
+ecmaVersion=3 sourceType=commonjs: 0 problem(s) []
+ecmaVersion=5 sourceType=script: 0 problem(s) []
+ecmaVersion=5 sourceType=commonjs: 0 problem(s) []
+ecmaVersion=latest sourceType=script: 0 problem(s) []
+ecmaVersion=latest sourceType=commonjs: 0 problem(s) []
+espree ecmaVersion 3, first statement .directive = undefined
+

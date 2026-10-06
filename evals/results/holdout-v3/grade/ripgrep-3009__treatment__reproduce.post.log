@@ -1,0 +1,88 @@
+===== run 1: exit 0
+
+running 1 test
+test walk::tests::panic_in_parallel - should panic ... FAILED
+
+failures:
+
+---- walk::tests::panic_in_parallel stdout ----
+
+thread '<unnamed>' (556339) panicked at crates/ignore/src/walk.rs:2504:34:
+oops!
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+thread 'walk::tests::panic_in_parallel' (556338) panicked at crates/ignore/src/walk.rs:1473:31:
+called `Result::unwrap()` on an `Err` value: Any { .. }
+note: panic did not contain expected string
+      panic message: "called `Result::unwrap()` on an `Err` value: Any { .. }"
+ expected substring: "oops!"
+
+failures:
+    walk::tests::panic_in_parallel
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 147 filtered out; finished in 0.00s
+
+exit=101
+   Compiling ignore v0.4.29 (/home/ubuntu/grade/ripgrep-3009/repo/crates/ignore)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.83s
+     Running unittests src/lib.rs (/home/ubuntu/grade/ripgrep-3009/repo/target/debug/deps/ignore-ae9fc929b29c0c0a)
+error: test failed, to rerun pass `--lib`
+
+===== run 2: exit 0
+
+running 1 test
+test walk::tests::panic_in_parallel - should panic ... FAILED
+
+failures:
+
+---- walk::tests::panic_in_parallel stdout ----
+
+thread '<unnamed>' (556397) panicked at crates/ignore/src/walk.rs:2504:34:
+oops!
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+thread 'walk::tests::panic_in_parallel' (556396) panicked at crates/ignore/src/walk.rs:1473:31:
+called `Result::unwrap()` on an `Err` value: Any { .. }
+note: panic did not contain expected string
+      panic message: "called `Result::unwrap()` on an `Err` value: Any { .. }"
+ expected substring: "oops!"
+
+failures:
+    walk::tests::panic_in_parallel
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 147 filtered out; finished in 0.01s
+
+exit=101
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.01s
+     Running unittests src/lib.rs (/home/ubuntu/grade/ripgrep-3009/repo/target/debug/deps/ignore-ae9fc929b29c0c0a)
+error: test failed, to rerun pass `--lib`
+
+===== run 3: exit 0
+
+running 1 test
+test walk::tests::panic_in_parallel - should panic ... FAILED
+
+failures:
+
+---- walk::tests::panic_in_parallel stdout ----
+
+thread '<unnamed>' (556455) panicked at crates/ignore/src/walk.rs:2504:34:
+oops!
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+thread 'walk::tests::panic_in_parallel' (556454) panicked at crates/ignore/src/walk.rs:1473:31:
+called `Result::unwrap()` on an `Err` value: Any { .. }
+note: panic did not contain expected string
+      panic message: "called `Result::unwrap()` on an `Err` value: Any { .. }"
+ expected substring: "oops!"
+
+failures:
+    walk::tests::panic_in_parallel
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 147 filtered out; finished in 0.01s
+
+exit=101
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.01s
+     Running unittests src/lib.rs (/home/ubuntu/grade/ripgrep-3009/repo/target/debug/deps/ignore-ae9fc929b29c0c0a)
+error: test failed, to rerun pass `--lib`
+

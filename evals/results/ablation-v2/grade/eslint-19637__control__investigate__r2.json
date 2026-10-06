@@ -1,0 +1,10 @@
+{
+  "label": "eslint-19637__control__investigate__r2",
+  "case": "eslint-19637",
+  "runs_per_side": 1,
+  "verdict": "fix_conflicts_with_patch",
+  "error": "fix.patch: error: patch failed: lib/rules/no-unused-expressions.js:83\nerror: lib/rules/no-unused-expressions.js: patch does not apply\n",
+  "pre": [
+    0
+  ]
+}

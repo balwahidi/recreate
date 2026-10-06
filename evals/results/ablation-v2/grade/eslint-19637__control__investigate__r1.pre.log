@@ -1,0 +1,5 @@
+===== run 1: exit 0
+ecmaVersion 3: reported lines [3] (expected [3])
+ecmaVersion 5: reported lines [3] (expected [3])
+ecmaVersion latest: reported lines [3] (expected [3])
+

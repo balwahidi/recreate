@@ -1,0 +1,16 @@
+===== run 1: exit 0
+
+ RUN  v3.1.3 /home/ubuntu/grade/vue-12294/repo
+
+ ✓ |unit| packages/reactivity/__tests__/watch.spec.ts (10 tests | 9 skipped) 3ms
+ ✓ |unit| packages/runtime-core/__tests__/apiWatch.spec.ts (84 tests | 83 skipped) 3ms
+
+ Test Files  2 passed (2)
+      Tests  2 passed | 92 skipped (94)
+   Start at  23:58:20
+   Duration  1.08s (transform 788ms, setup 13ms, collect 1.07s, tests 7ms, environment 0ms, prepare 88ms)
+
+ Vitest  "environmentMatchGlobs" is deprecated. Use "workspace" to define different configurations instead.
+ Vitest  "environmentMatchGlobs" is deprecated. Use "workspace" to define different configurations instead.
+ Vitest  "environmentMatchGlobs" is deprecated. Use "workspace" to define different configurations instead.
+

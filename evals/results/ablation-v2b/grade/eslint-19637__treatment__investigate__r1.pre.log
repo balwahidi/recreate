@@ -1,0 +1,6 @@
+===== run 1: exit 1
+eslint 9.25.0 ecmaVersion=3: 1:1 Expected an assignment or function call and instead saw an expression. | 2:16 Expected an assignment or function call and instead saw an expression.
+eslint 9.25.0 ecmaVersion=5: no errors
+eslint 9.25.0 ecmaVersion=2015: no errors
+eslint 9.25.0 ecmaVersion=latest: no errors
+

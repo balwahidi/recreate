@@ -1,0 +1,15 @@
+===== run 1: exit 0
+
+ RUN  v3.1.4 /home/ubuntu/grade/vue-13611/repo
+
+ ✓ |unit| packages/vue/__tests__/index.spec.ts (18 tests | 17 skipped) 19ms
+
+ Test Files  1 passed (1)
+      Tests  1 passed | 17 skipped (18)
+   Start at  00:11:03
+   Duration  1.17s (transform 611ms, setup 8ms, collect 774ms, tests 19ms, environment 195ms, prepare 39ms)
+
+ Vitest  "environmentMatchGlobs" is deprecated. Use "workspace" to define different configurations instead.
+ Vitest  "environmentMatchGlobs" is deprecated. Use "workspace" to define different configurations instead.
+ Vitest  "environmentMatchGlobs" is deprecated. Use "workspace" to define different configurations instead.
+

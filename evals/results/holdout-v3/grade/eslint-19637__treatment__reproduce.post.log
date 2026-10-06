@@ -1,0 +1,26 @@
+===== run 1: exit 0
+
+up to date, audited 1151 packages in 906ms
+
+222 packages are looking for funding
+  run `npm fund` for details
+
+37 vulnerabilities (7 low, 3 moderate, 24 high, 3 critical)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues possible (including breaking changes), run:
+  npm audit fix --force
+
+Some issues need review, and may require choosing
+a different dependency.
+
+Run `npm audit` for details.
+eslint 9.25.0 ecmaVersion=3      options=core-js: no errors
+eslint 9.25.0 ecmaVersion=3      options=default: no errors
+eslint 9.25.0 ecmaVersion=5      options=core-js: no errors
+eslint 9.25.0 ecmaVersion=5      options=default: no errors
+eslint 9.25.0 ecmaVersion=latest options=core-js: no errors
+eslint 9.25.0 ecmaVersion=latest options=default: no errors
+

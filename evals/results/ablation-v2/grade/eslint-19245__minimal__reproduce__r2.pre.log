@@ -1,0 +1,6 @@
+===== run 1: exit 1
+ESLint 9.22.0
+6:5 no-useless-assignment This assigned value is not used in subsequent statements.
+runtime result: {"intermediaryValue":42}
+BUG REPRODUCED: assignment flagged as useless but read in catch
+

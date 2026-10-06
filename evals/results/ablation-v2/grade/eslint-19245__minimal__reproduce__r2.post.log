@@ -1,0 +1,5 @@
+===== run 1: exit 0
+ESLint 9.22.0
+runtime result: {"intermediaryValue":42}
+not reproduced
+

@@ -1,0 +1,15 @@
+===== run 1: exit 0
+
+ RUN  v3.1.3 /home/ubuntu/grade/vue-12294/repo
+
+ ✓ |unit| packages/runtime-core/__tests__/syncWatcherRepro.spec.ts (4 tests) 8ms
+
+ Test Files  1 passed (1)
+      Tests  4 passed (4)
+   Start at  00:12:09
+   Duration  621ms (transform 357ms, setup 7ms, collect 436ms, tests 8ms, environment 0ms, prepare 40ms)
+
+ Vitest  "environmentMatchGlobs" is deprecated. Use "workspace" to define different configurations instead.
+ Vitest  "environmentMatchGlobs" is deprecated. Use "workspace" to define different configurations instead.
+ Vitest  "environmentMatchGlobs" is deprecated. Use "workspace" to define different configurations instead.
+
