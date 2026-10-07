@@ -11,7 +11,9 @@
     "tests/cases/fourslash/quickInfoMappedTypeTypeAssertionProperty.ts"
   ],
   "test_in_patch": true,
-  "F": false,
-  "applied": false,
-  "codes": []
+  "F": true,
+  "applied": true,
+  "codes": [
+    0
+  ]
 }
