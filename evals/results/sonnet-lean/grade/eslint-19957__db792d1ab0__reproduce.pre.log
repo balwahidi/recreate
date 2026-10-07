@@ -1,0 +1,33 @@
+===== run 1: exit 1
+FAILED 9.000e+3: This number literal will lose precision at runtime.
+FAILED 9.000e3: This number literal will lose precision at runtime.
+FAILED 9.0000e4: This number literal will lose precision at runtime.
+ok     9.000e4
+ok     9.0000e5
+node:assert:150
+  throw new AssertionError(obj);
+  ^
+
+AssertionError [ERR_ASSERTION]: 3 of 5 literals were wrongly reported
+
+3 !== 0
+
+    at Object.<anonymous> (/root/grade/eslint-19957/repo/repro-no-loss-of-precision.js:33:8)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 3,
+  expected: 0,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.22.0
+
