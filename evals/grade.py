@@ -170,7 +170,8 @@ def grade(case, label, result, out_dir):
         # fix_grade.patch: the fix without upstream test hunks that collide with agents' tests
         fix = "fix_grade.patch" if (GRADE / case["id"] / "fix_grade.patch").exists() else "fix.patch"
         for name in [fix] + ([POST_EXTRA[case["id"]]] if case["id"] in POST_EXTRA else []):
-            ok, err = apply(repo, (GRADE / case["id"] / name).read_text())
+            # Bytes, not read_text(): universal newlines would turn a CRLF patch into LF.
+            ok, err = apply(repo, (GRADE / case["id"] / name).read_bytes().decode())
             if not ok:
                 return dict(record, verdict="fix_conflicts_with_patch", error=f"{name}: {err}", pre=pre)
         post_setup_log = out_dir / f"{label}.post.setup.log"
