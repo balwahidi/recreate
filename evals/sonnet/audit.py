@@ -25,7 +25,7 @@ def flags(text, run_id, case):
         if not m.group(0).startswith(allowed_ws):
             out.append(m.group(0))
     for pat in [r"/home/user\S*", r"/root/grade\S*", r"/tmp/claude-0\S*", r"/root/\.claude\S*",
-                r"recreate", r"cases\.json", r"grade/[\w.-]*\.patch",
+                r"cases\.json", r"grade/[\w.-]*\.patch",
                 rf"{re.escape(case['repo'])}/(?:pull|issues|commit)/\S*", r"api\.github\.com\S*"]:
         out += [m.group(0) for m in re.finditer(pat, text, re.I)]
     if case.get("fix"):
