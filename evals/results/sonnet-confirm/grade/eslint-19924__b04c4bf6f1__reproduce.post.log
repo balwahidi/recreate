@@ -1,0 +1,4 @@
+===== run 1: exit 0
+files=3000 open-file-limit=1024 eslint-exit=0 unfixed-files=0
+PASS: all 3000 files were fixed
+
