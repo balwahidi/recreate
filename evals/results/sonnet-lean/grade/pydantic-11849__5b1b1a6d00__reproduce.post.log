@@ -1,0 +1,16 @@
+===== run 1: exit 0
+ok   example 1 (Direct, defer_build): 300 rounds x 8 threads, all got the expected class
+ok   example 1 (Direct, forward ref): 300 rounds x 8 threads, all got the expected class
+ok   example 2 (A -> B -> C, defer_build): 300 rounds x 8 threads, all got the expected class
+
+===== run 2: exit 0
+ok   example 1 (Direct, defer_build): 300 rounds x 8 threads, all got the expected class
+ok   example 1 (Direct, forward ref): 300 rounds x 8 threads, all got the expected class
+ok   example 2 (A -> B -> C, defer_build): 300 rounds x 8 threads, all got the expected class
+
+===== run 3: exit 1
+ok   example 1 (Direct, defer_build): 300 rounds x 8 threads, all got the expected class
+FAIL example 1 (Direct, forward ref): bad outcome after 212 round(s) of 8 threads
+     1x RuntimeError: dictionary changed size during iteration
+ok   example 2 (A -> B -> C, defer_build): 300 rounds x 8 threads, all got the expected class
+

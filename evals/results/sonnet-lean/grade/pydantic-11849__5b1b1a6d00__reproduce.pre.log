@@ -1,0 +1,24 @@
+===== run 1: exit 1
+FAIL example 1 (Direct, defer_build): bad outcome after 8 round(s) of 8 threads
+     6x PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
+FAIL example 1 (Direct, forward ref): bad outcome after 1 round(s) of 8 threads
+     7x PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
+FAIL example 2 (A -> B -> C, defer_build): bad outcome after 5 round(s) of 8 threads
+     7x AttributeError: 'B' object has no attribute 'name'
+
+===== run 2: exit 1
+FAIL example 1 (Direct, defer_build): bad outcome after 79 round(s) of 8 threads
+     7x PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
+FAIL example 1 (Direct, forward ref): bad outcome after 7 round(s) of 8 threads
+     7x PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
+FAIL example 2 (A -> B -> C, defer_build): bad outcome after 2 round(s) of 8 threads
+     5x AttributeError: 'B' object has no attribute 'name'
+
+===== run 3: exit 1
+FAIL example 1 (Direct, defer_build): bad outcome after 10 round(s) of 8 threads
+     1x PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
+FAIL example 1 (Direct, forward ref): bad outcome after 8 round(s) of 8 threads
+     5x PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
+FAIL example 2 (A -> B -> C, defer_build): bad outcome after 11 round(s) of 8 threads
+     6x AttributeError: 'B' object has no attribute 'name'
+
