@@ -1,6 +1,23 @@
 # Results
 
-All runs use one harness and one model: Devin sessions, with identical prompts in both arms (see `methodology.md`). Raw outputs and replay logs are in `evals/results/<run>/`, and decisions are recorded in `evals/notes/baseline-dev-v1.md`. The shipped skill is v3, the 289-word `SKILL.md`.
+The shipped skill is now **v5** (383 words). It was adopted after a Sonnet evaluation; see section 0. Sections 1 to 7 describe the earlier v0 to v3 runs. Those all use one harness and one model, Devin sessions, with identical prompts in both arms (see `methodology.md`). Raw outputs and replay logs are in `evals/results/<run>/`, and decisions are recorded in `evals/notes/baseline-dev-v1.md`.
+
+## 0. Sonnet evaluation of v5 (current)
+
+v5 is v3 plus a "The check" section: one command that exits non-zero while the bug is present and zero once it's fixed, that asserts only the reported behavior, and that has been seen passing once. The evaluated agents were Sonnet Agent-tool subagents. Each graded reproduction was replayed against the real upstream production fix. Full results, every miss and the audit are in `evals/notes/sonnet-v5-results.md`; the protocols were frozen before their runs.
+
+| | No skill | v3 | v5 |
+|---|---|---|---|
+| Fails before the fix, passes after, with the reported symptom (main + confirmatory) | 4/8 | 17/24 | 22/24 |
+| Head-to-head pairs won (v3 vs v5) | | 0 | 5 (19 ties; sign test p = 0.0625) |
+| Production files edited on "Look into this bug report." | 2/2 | 0/2 | 0/2 |
+| Already-fixed report: status says already fixed | 0/1 | 2/2 | 2/2 |
+| Median tokens per run | 64K | 61K | 64 to 68K |
+
+- **Every arm found the bug every time.** The reported symptom was in the pre log and gone from the post log in 56 of 56 graded runs.
+- **Every v3 miss was an exit-status failure:** a print-only script, `tsc` exiting 2 by design, or `; echo`.
+- **v5's only misses were on ripgrep-3009.** The reporter's own `should_panic(expected = "oops!")` doesn't survive the real fix, which re-panics with a different message. Every arm hit that ceiling.
+- **The main run alone was inconclusive under its frozen rule** (net +2). A frozen confirmatory round on eslint-19924 and ts-60573 then gave v5 8/8 vs v3 5/8, which cleared its rule.
 
 Clean runs: `baseline-dev-v1`, `baseline-dev-v2`, `treatment-dev-v0`, `holdout-v0`, `repeat-v0`, `ablation-v2b`, `holdout-v3b`, `simulated-v4`, `holdout-control-r`. `ablation-v2`, `holdout-v3` and `treatment-v1-probe` are excluded because they were contaminated through shared memory (see `methodology.md`).
 

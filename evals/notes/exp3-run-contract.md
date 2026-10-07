@@ -1,5 +1,7 @@
 # Experiment 3: Run contract (frozen, not run)
 
+> **Superseded, 7 October 2026.** The Sonnet evaluation tested a broader version of this idea as v5's "The check" section, and v5 is now `SKILL.md` (see `sonnet-v5-results.md`). To replicate on GPT-6.1 Sol, compare v5 against that model's current baseline, not the 291-word copy below.
+
 The machine-readable plan is `exp3-plan.json`: seed, pair orders, and skill hashes. The protocol was frozen before any outcome existed. Don't edit it after runs start; a change means a new experiment.
 
 ## Failure it targets
