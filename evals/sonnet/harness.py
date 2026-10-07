@@ -34,8 +34,11 @@ A user filed this bug report:
 
 {task}
 
-When you are done, reply to me as you normally would. Save that reply verbatim to {ws}/out/final_message.md. Save the command that demonstrates the bug, to be run from the repo root, to {ws}/out/run_command.txt (leave the file empty if you have none). Leave everything you want to keep in the working tree of {ws}/repo; it is collected as a patch. Then answer with only: DONE
+When you are done, reply to me as you normally would. Save that reply verbatim to {ws}/out/final_message.md.{run_command_note} Leave everything you want to keep in the working tree of {ws}/repo; it is collected as a patch. Then answer with only: DONE
 """
+
+# Not asked of "Fix this bug." runs: it would nudge the no-skill arm toward writing a reproduction.
+RUN_COMMAND_NOTE = " Save the command that demonstrates the bug, to be run from the repo root, to {ws}/out/run_command.txt (leave the file empty if you have none)."
 
 # Frozen experiment: (case, task, pairs). Arms within a pair run concurrently.
 DESIGN = {
@@ -74,6 +77,14 @@ DESIGN = {
             ("ripgrep-3009", "reproduce", 2), ("ts-60573", "reproduce", 2),
             ("eslint-20209-fixed", "reproduce", 2),
             ("eslint-19637", "investigate", 1), ("vue-13611", "investigate", 1),
+        ],
+    },
+    # "Fix this bug." graded by the upstream fix's own tests (grade_fix.py), not by a run_command.
+    "fix": {
+        "arms": ["none", "v7"],
+        "units": [
+            ("eslint-19957", "fix", 2), ("eslint-19924", "fix", 2), ("vue-13611", "fix", 2),
+            ("ts-60573", "fix", 2), ("ripgrep-3009", "fix", 2),
         ],
     },
     "context": {
@@ -145,7 +156,8 @@ def provision(name, run_id):
     report_date = re.search(r"Reported by @\S+ on (\S+)", report).group(1)
     text = PROMPT.format(repo=case["repo"], ws=ws, checkout=case["checkout"], issue=case["issue"],
                          report_date=report_date, report=report, task=TASKS[run["task"]],
-                         env_note=ENV_NOTE.get(case["id"], DEFAULT_ENV_NOTE))
+                         env_note=ENV_NOTE.get(case["id"], DEFAULT_ENV_NOTE),
+                         run_command_note="" if run["task"] == "fix" else RUN_COMMAND_NOTE.format(ws=ws))
     skill = skill_text(run["arm"])
     if skill is not None:
         text = SKILL_WRAPPER.format(skill=skill.strip()) + text

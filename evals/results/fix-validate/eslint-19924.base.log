@@ -1,0 +1,43 @@
+===== run 1: exit 1
+Detected Linux file limit of 1025.
+Generating 1025 files in tmp/emfile-check...
+Running ESLint...
+(node:1028) ESLintIgnoreWarning: The ".eslintignore" file is no longer supported. Switch to using the "ignores" property in "eslint.config.js": https://eslint.org/docs/latest/use/configure/migration-guide#ignoring-files
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+Oops! Something went wrong! :(
+
+ESLint: 9.30.1
+
+Error: EMFILE: too many open files, open '/root/grade/eslint-19924/repo/tmp/emfile-check/file_980.js'
+    at async open (node:internal/fs/promises:636:25)
+    at async Object.writeFile (node:internal/fs/promises:1205:14)
+    at async Promise.all (index 1004)
+    at async ESLint.outputFixes (/root/grade/eslint-19924/repo/lib/eslint/eslint.js:533:3)
+    at async Object.execute (/root/grade/eslint-19924/repo/lib/cli.js:637:4)
+    at async main (/root/grade/eslint-19924/repo/bin/eslint.js:175:19)
+node:child_process:991
+    throw err;
+    ^
+
+Error: Command failed: node bin/eslint.js tmp/emfile-check -c tests/fixtures/emfile/eslint.config.js --fix
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:916:11)
+    at execSync (node:child_process:988:15)
+    at Object.<anonymous> (/root/grade/eslint-19924/repo/tools/check-emfile-handling.js:99:1)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  status: 2,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1027,
+  stdout: null,
+  stderr: null
+}
+
+Node.js v22.22.0
+
