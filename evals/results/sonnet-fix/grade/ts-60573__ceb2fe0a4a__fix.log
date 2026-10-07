@@ -1,0 +1,5 @@
+agent patch does not apply:
+error: patch failed: src/compiler/checker.ts:8682
+error: src/compiler/checker.ts: patch does not apply
+error: patch failed: tests/baselines/reference/mappedTypeRecursiveInference.types:169
+error: tests/baselines/reference/mappedTypeRecursiveInference.types: patch does not apply
