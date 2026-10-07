@@ -1,0 +1,16 @@
+{
+  "label": "urfave-cli-2176__77c38ce53b__reproduce",
+  "case": "urfave-cli-2176",
+  "runs_per_side": 3,
+  "verdict": "fail_to_pass",
+  "pre": [
+    1,
+    1,
+    0
+  ],
+  "post": [
+    0,
+    0,
+    0
+  ]
+}
