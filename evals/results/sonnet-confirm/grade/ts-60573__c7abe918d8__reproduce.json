@@ -1,0 +1,12 @@
+{
+  "label": "ts-60573__c7abe918d8__reproduce",
+  "case": "ts-60573",
+  "runs_per_side": 1,
+  "verdict": "passes_pre",
+  "pre": [
+    0
+  ],
+  "post": [
+    0
+  ]
+}

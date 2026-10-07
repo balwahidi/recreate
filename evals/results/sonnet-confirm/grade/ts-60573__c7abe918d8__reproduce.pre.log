@@ -1,0 +1,8 @@
+===== run 1: exit 0
+TypeScript 5.8.0-dev
+checker.typeToString(Test)    : { prop1: Wrapper<"hello">; }
+typeof Test['prop1'] (checker): "hello"
+quickinfo for Test            : type Test = {
+    prop1: Wrapper<"hello">;
+}
+

@@ -1,0 +1,22 @@
+===== run 1: exit 0
+   Compiling ignore v0.4.29 (/root/grade/ripgrep-3009/repo/crates/ignore)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.81s
+     Running unittests src/lib.rs (target/debug/deps/ignore-ecb739db799020ac)
+
+running 1 test
+exit status: 124 (124 = killed by timeout, i.e. the test hung)
+
+===== run 2: exit 0
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.03s
+     Running unittests src/lib.rs (target/debug/deps/ignore-ecb739db799020ac)
+
+running 1 test
+exit status: 124 (124 = killed by timeout, i.e. the test hung)
+
+===== run 3: exit 0
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+     Running unittests src/lib.rs (target/debug/deps/ignore-ecb739db799020ac)
+
+running 1 test
+exit status: 124 (124 = killed by timeout, i.e. the test hung)
+
