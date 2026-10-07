@@ -1,0 +1,167 @@
+{
+ "name": "fix",
+ "seed": 8857492530574625191,
+ "launch_order": [
+  3,
+  6,
+  2,
+  8,
+  5,
+  4,
+  10,
+  1,
+  7,
+  9
+ ],
+ "skills": {
+  "none": null,
+  "v7": {
+   "path": "evals/variants/SKILL-v7.md",
+   "sha256": "5c454b0c11489bbb76cd48cb84225df017c883378158212baa4be87c53f53f7d",
+   "words": 202
+  }
+ },
+ "model": "sonnet (Agent tool subagent)",
+ "runs": [
+  {
+   "run_id": "235e937f6b",
+   "pair": 1,
+   "case": "eslint-19957",
+   "task": "fix",
+   "arm": "none"
+  },
+  {
+   "run_id": "48a4783998",
+   "pair": 1,
+   "case": "eslint-19957",
+   "task": "fix",
+   "arm": "v7"
+  },
+  {
+   "run_id": "edee1b3bd2",
+   "pair": 2,
+   "case": "eslint-19957",
+   "task": "fix",
+   "arm": "none"
+  },
+  {
+   "run_id": "2e80215287",
+   "pair": 2,
+   "case": "eslint-19957",
+   "task": "fix",
+   "arm": "v7"
+  },
+  {
+   "run_id": "704a75d518",
+   "pair": 3,
+   "case": "eslint-19924",
+   "task": "fix",
+   "arm": "none"
+  },
+  {
+   "run_id": "5935b6688d",
+   "pair": 3,
+   "case": "eslint-19924",
+   "task": "fix",
+   "arm": "v7"
+  },
+  {
+   "run_id": "a1a12c09a0",
+   "pair": 4,
+   "case": "eslint-19924",
+   "task": "fix",
+   "arm": "none"
+  },
+  {
+   "run_id": "7418308938",
+   "pair": 4,
+   "case": "eslint-19924",
+   "task": "fix",
+   "arm": "v7"
+  },
+  {
+   "run_id": "5854fae123",
+   "pair": 5,
+   "case": "vue-13611",
+   "task": "fix",
+   "arm": "none"
+  },
+  {
+   "run_id": "d84dc0bd98",
+   "pair": 5,
+   "case": "vue-13611",
+   "task": "fix",
+   "arm": "v7"
+  },
+  {
+   "run_id": "519f131830",
+   "pair": 6,
+   "case": "vue-13611",
+   "task": "fix",
+   "arm": "none"
+  },
+  {
+   "run_id": "c5fbdcb441",
+   "pair": 6,
+   "case": "vue-13611",
+   "task": "fix",
+   "arm": "v7"
+  },
+  {
+   "run_id": "fb43805788",
+   "pair": 7,
+   "case": "ts-60573",
+   "task": "fix",
+   "arm": "none"
+  },
+  {
+   "run_id": "c35eb898ae",
+   "pair": 7,
+   "case": "ts-60573",
+   "task": "fix",
+   "arm": "v7"
+  },
+  {
+   "run_id": "7156b82f2a",
+   "pair": 8,
+   "case": "ts-60573",
+   "task": "fix",
+   "arm": "none"
+  },
+  {
+   "run_id": "ceb2fe0a4a",
+   "pair": 8,
+   "case": "ts-60573",
+   "task": "fix",
+   "arm": "v7"
+  },
+  {
+   "run_id": "56af1596a8",
+   "pair": 9,
+   "case": "ripgrep-3009",
+   "task": "fix",
+   "arm": "none"
+  },
+  {
+   "run_id": "a0b227ba7e",
+   "pair": 9,
+   "case": "ripgrep-3009",
+   "task": "fix",
+   "arm": "v7"
+  },
+  {
+   "run_id": "d1cfb97e9e",
+   "pair": 10,
+   "case": "ripgrep-3009",
+   "task": "fix",
+   "arm": "none"
+  },
+  {
+   "run_id": "23ffa6d22f",
+   "pair": 10,
+   "case": "ripgrep-3009",
+   "task": "fix",
+   "arm": "v7"
+  }
+ ]
+}

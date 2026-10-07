@@ -1,0 +1,21 @@
+===== run 1: exit timeout
+
+running 149 tests
+....................................................................................... 87/149
+............................................................test walk::tests::hidden_panic_in_parallel has been running for over 60 seconds
+test walk::tests::hidden_panic_in_parallel_builder has been running for over 60 seconds
+
+===== run 2: exit timeout
+
+running 149 tests
+....................................................................................... 87/149
+............................................................test walk::tests::hidden_panic_in_parallel has been running for over 60 seconds
+test walk::tests::hidden_panic_in_parallel_builder has been running for over 60 seconds
+
+===== run 3: exit timeout
+
+running 149 tests
+....................................................................................... 87/149
+............................................................test walk::tests::hidden_panic_in_parallel has been running for over 60 seconds
+test walk::tests::hidden_panic_in_parallel_builder has been running for over 60 seconds
+

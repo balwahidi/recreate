@@ -1,0 +1,95 @@
+===== run 1: exit 1
+Using ~/grade/ts-60573/repo/Herebyfile.mjs to run runtests
+Starting lib
+Starting generate-diagnostics
+> /opt/node22/bin/node scripts/processDiagnosticMessages.mjs src/compiler/diagnosticMessages.json
+Reading diagnostics from src/compiler/diagnosticMessages.json
+Finished generate-diagnostics in 106ms
+Starting bundle-tests
+Starting build-tests
+Starting build-services
+Finished lib in 206ms
+Finished build-tests in 563ms
+Finished build-services in 563ms
+Starting dts-services
+Finished dts-services in 1ms
+Starting dts-lssl
+Finished dts-lssl in 4ms
+Finished bundle-tests in 995ms
+Starting runtests
+Running tests with config: {"test":["AssertionNodeNotReusedWhenTypeNotEquivalent1"],"light":true,"noColor":false,"timeout":40000,"keepFailed":false}
+> /opt/node22/bin/node /root/grade/ts-60573/repo/node_modules/mocha/bin/_mocha -R /root/grade/ts-60573/repo/scripts/failed-tests.cjs -O "reporter=mocha-fivemat-progress-reporter" -g "AssertionNodeNotReusedWhenTypeNotEquivalent1" --colors -t 40000 ./built/local/run.js
+
+    [0mcompiler tests[0m
+[J[90m  [[0m[36m[0m...................................[90m][0m[31m
+Test failure:
+Correct JS output for tests/cases/compiler/declarationAssertionNodeNotReusedWhenTypeNotEquivalent1.ts
+[0m[31m
+Test failure:
+Correct type/symbol baselines for tests/cases/compiler/declarationAssertionNodeNotReusedWhenTypeNotEquivalent1.ts
+[0m
+completed: 6 tests
+passed:	[32m4[0m
+failed:	[31m2[0m
+
+
+    [0mfourslash tests[0m
+[31m
+Test failure:
+fourslash test quickInfoAssertionNodeNotReusedWhenTypeNotEquivalent1.ts runs correctly
+[0m[J[90m  [[0m[31m[0m...................................[90m][0m
+
+[92m [0m[32m 4 passing[0m[90m (4s)[0m
+[31m  3 failing[0m
+
+[0m  1) compiler tests
+       compiler tests for tests/cases/compiler/declarationAssertionNodeNotReusedWhenTypeNotEquivalent1.ts
+         Correct JS output for tests/cases/compiler/declarationAssertionNodeNotReusedWhenTypeNotEquivalent1.ts:
+[0m[31m     Error: New baseline created at tests/baselines/local/declarationAssertionNodeNotReusedWhenTypeNotEquivalent1.js[0m[90m
+      at writeComparison (src/harness/harnessIO.ts:1546:27)
+      at Object.runBaseline2 [as runBaseline] (src/harness/harnessIO.ts:1565:9)
+      at Object.doJsEmitBaseline (src/harness/harnessIO.ts:1034:18)
+      at _CompilerTest.verifyJavaScriptOutput (src/testRunner/compilerRunner.ts:298:22)
+      at Context.<anonymous> (src/testRunner/compilerRunner.ts:102:82)
+      at processImmediate (node:internal/timers:485:21)
+[0m
+[0m  2) compiler tests
+       compiler tests for tests/cases/compiler/declarationAssertionNodeNotReusedWhenTypeNotEquivalent1.ts
+         Correct type/symbol baselines for tests/cases/compiler/declarationAssertionNodeNotReusedWhenTypeNotEquivalent1.ts:
+[0m[31m     Error: New baseline created at tests/baselines/local/declarationAssertionNodeNotReusedWhenTypeNotEquivalent1.types[0m[90m
+      at writeComparison (src/harness/harnessIO.ts:1546:27)
+      at Object.runBaseline2 [as runBaseline] (src/harness/harnessIO.ts:1565:9)
+      at checkBaseLines (src/harness/harnessIO.ts:788:26)
+      at Object.doTypeAndSymbolBaseline (src/harness/harnessIO.ts:751:13)
+      at _CompilerTest.verifyTypesAndSymbols (src/testRunner/compilerRunner.ts:327:18)
+      at Context.<anonymous> (src/testRunner/compilerRunner.ts:104:80)
+      at processImmediate (node:internal/timers:485:21)
+[0m
+[0m  3) fourslash tests
+       tests/cases/fourslash/quickInfoAssertionNodeNotReusedWhenTypeNotEquivalent1.ts
+         fourslash test quickInfoAssertionNodeNotReusedWhenTypeNotEquivalent1.ts runs correctly:
+
+      [31mAssertionError: At marker '1': quick info text: expected 'type Test = {\n    prop1: Wrapper<"he…' to equal 'type Test = {\n    prop1: "hello";\n}'[0m
+      [32m+ expected[0m [31m- actual[0m
+
+       type Test = {
+      [31m-    prop1: Wrapper<"hello">;[0m
+      [32m+    prop1: "hello";[0m
+       }
+      [0m[90m
+      at _TestState.verifyQuickInfoString (src/harness/fourslashImpl.ts:1942:16)
+      at _TestState.verifyQuickInfoAt (src/harness/fourslashImpl.ts:1914:14)
+      at Verify.quickInfoAt (src/harness/fourslashInterfaceImpl.ts:300:20)
+      at eval (quickInfoAssertionNodeNotReusedWhenTypeNotEquivalent1.js:30:8)
+      at runCode (src/harness/fourslashImpl.ts:4747:9)
+      at runFourSlashTestContent (src/harness/fourslashImpl.ts:4718:5)
+      at runFourSlashTest (src/harness/fourslashImpl.ts:4701:5)
+      at Context.<anonymous> (src/testRunner/fourslashRunner.ts:59:39)
+      at processImmediate (node:internal/timers:485:21)
+[0m
+
+
+Error in runtests in 6.5s
+Error: Process exited with code: 3
+Completed runtests with errors in 7.6s
+

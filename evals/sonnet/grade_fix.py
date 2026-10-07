@@ -49,7 +49,9 @@ HIDDEN = {
     },
     "ts-60573": {
         "files": TS_TESTS,
-        "cmd": "npx hereby runtests --tests=AssertionNodeNotReusedWhenTypeNotEquivalent1",
+        # The new test, then declaration-emit neighbours that a too-broad change to node reuse would break.
+        "cmd": "npx hereby runtests --tests=AssertionNodeNotReusedWhenTypeNotEquivalent1 && "
+               "npx hereby runtests --tests=declarationEmit && npx hereby runtests --tests=isolatedDeclaration",
     },
 }
 TEST_PATH = re.compile(r"(^|/)(tests?|__tests__|spec)(/|$)|[._-](test|spec)\.[a-z]+$|_test\.go$")

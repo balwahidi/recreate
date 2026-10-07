@@ -8,14 +8,14 @@ So far every Sonnet test used "Reproduce this bug" or "Look into this bug report
 
 ## Cases: five, chosen for grading quality, not count
 
-Each case's grader was checked before any run: it fails at the checkout, and it passes with the upstream fix twice in a row. Results are in `evals/results/fix-validate/`.
+Each case's grader was checked before any run: it fails at the checkout, and it passes with the upstream fix twice in a row. A sixth valid grader, eslint-19637, is held in reserve and not used. Results are in `evals/results/fix-validate/`.
 
 | Case | Hidden tests (from the upstream fix) | Also run (existing neighbours) | What a wrong or partial fix trips |
 |---|---|---|---|
 | eslint-19957 | 3 new valid literals in the rule's test file | the rest of `no-loss-of-precision` tests | a fix limited to the reported literal, or one that stops flagging real precision loss |
 | eslint-19924 | `tools/check-emfile-handling.js` running `--fix` on ulimit+1 files, `ulimit -n 1024` | `tests/lib/eslint/eslint.js` | a fix that doesn't hold under real EMFILE, or that breaks `outputFixes` |
 | vue-13611 | underscore slot names (`_foo`, `_inner`) at runtime | the rest of `componentSlots.spec.ts`, and compiler `vSlot.spec.ts` | a template-only workaround; a fix that exposes internal slot keys |
-| ts-60573 | new compiler and fourslash baselines for the reported type | the rest of the matched baseline tests | any change in the printed type or the declaration emit |
+| ts-60573 | new compiler and fourslash baselines for the reported type | every `declarationEmit` and `isolatedDeclaration` test | a wrong printed type; a too-broad change to node reuse that alters other declaration output |
 | ripgrep-3009 | `panic_in_parallel` (the report) and `panic_in_parallel_builder` (a panic in the visitor builder, not in the report), 3 runs | every `ignore` lib test | a fix for the visitor panic only; a fix that still hangs sometimes |
 
 The agent's whole patch is applied. Then the upstream test files are checked out on top, overwriting the agent's own edits to those files. The ripgrep tests are appended to `mod tests` under `hidden_` names.

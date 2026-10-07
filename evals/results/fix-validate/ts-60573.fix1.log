@@ -1,0 +1,137 @@
+===== run 1: exit 0
+Using ~/grade/ts-60573/repo/Herebyfile.mjs to run runtests
+Starting lib
+Starting generate-diagnostics
+> /opt/node22/bin/node scripts/processDiagnosticMessages.mjs src/compiler/diagnosticMessages.json
+Reading diagnostics from src/compiler/diagnosticMessages.json
+Finished generate-diagnostics in 114ms
+Starting bundle-tests
+Starting build-tests
+Starting build-services
+Finished lib in 271ms
+Finished build-tests in 526ms
+Finished build-services in 525ms
+Starting dts-services
+> /opt/node22/bin/node ./scripts/dtsBundler.mjs --entrypoint ./built/local/typescript/typescript.d.ts --output ./built/local/typescript.d.ts
+Finished bundle-tests in 1s
+Bundling ./built/local/typescript/typescript.d.ts to ./built/local/typescript.d.ts and ./built/local/typescript.internal.d.ts
+Finished dts-services in 3s
+Starting dts-lssl
+Finished dts-lssl in 2ms
+Starting runtests
+Running tests with config: {"test":["AssertionNodeNotReusedWhenTypeNotEquivalent1"],"light":true,"noColor":false,"timeout":40000,"keepFailed":false}
+> /opt/node22/bin/node /root/grade/ts-60573/repo/node_modules/mocha/bin/_mocha -R /root/grade/ts-60573/repo/scripts/failed-tests.cjs -O "reporter=mocha-fivemat-progress-reporter" -g "AssertionNodeNotReusedWhenTypeNotEquivalent1" --colors -t 40000 ./built/local/run.js
+
+    [0mcompiler tests[0m
+[J[90m  [[0m[36m[0m...................................[90m][0m
+completed: 6 tests
+passed:	[32m6[0m
+failed:	0
+
+
+    [0mfourslash tests[0m
+[J[90m  [[0m[36m[0m...................................[90m][0m
+
+[92m [0m[32m 7 passing[0m[90m (910ms)[0m
+
+Finished runtests in 3.4s
+Completed runtests in 7.1s
+Using ~/grade/ts-60573/repo/Herebyfile.mjs to run runtests
+Starting lib
+Starting generate-diagnostics
+> /opt/node22/bin/node scripts/processDiagnosticMessages.mjs src/compiler/diagnosticMessages.json
+Reading diagnostics from src/compiler/diagnosticMessages.json
+Finished generate-diagnostics in 111ms
+Starting bundle-tests
+Starting build-tests
+Starting build-services
+Finished lib in 228ms
+Finished build-tests in 531ms
+Finished build-services in 531ms
+Starting dts-services
+Finished dts-services in 1ms
+Starting dts-lssl
+Finished dts-lssl in 8ms
+Finished bundle-tests in 908ms
+Starting runtests
+Running tests with config: {"test":["declarationEmit"],"light":true,"noColor":false,"timeout":40000,"keepFailed":false}
+> /opt/node22/bin/node /root/grade/ts-60573/repo/node_modules/mocha/bin/_mocha -R /root/grade/ts-60573/repo/scripts/failed-tests.cjs -O "reporter=mocha-fivemat-progress-reporter" -g "declarationEmit" --colors -t 40000 ./built/local/run.js
+
+    [0mconformance tests[0m
+[J[90m  [[0m[36m[0m...................................[90m][0m
+completed: 144 tests
+passed:	[32m144[0m
+failed:	0
+
+
+    [0mcompiler tests[0m
+[J[90m  [[0m[36m[0m...................................[90m][0m[J[90m  [[0m[36m[0m...................................[90m][0m
+completed: 1428 tests
+passed:	[32m1428[0m
+failed:	0
+
+
+    [0mtranspile tests[0m
+[J[90m  [[0m[36m[0m...................................[90m][0m
+completed: 1 tests
+passed:	[32m1[0m
+failed:	0
+
+
+    [0munittests:: tsbuild:: declarationEmit::[0m
+[J[90m  [[0m[36m▬▬[0m.................................[90m][0m[J[90m  [[0m[36m▬▬▬▬▬[0m..............................[90m][0m[J[90m  [[0m[36m▬▬▬▬▬▬▬▬▬[0m..........................[90m][0m[J[90m  [[0m[36m▬▬▬▬▬▬▬▬▬▬▬▬[0m.......................[90m][0m[J[90m  [[0m[36m▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬[0m....................[90m][0m[J[90m  [[0m[36m▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬[0m................[90m][0m[J[90m  [[0m[36m▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬[0m.............[90m][0m[J[90m  [[0m[36m▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬[0m..........[90m][0m[J[90m  [[0m[36m▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬[0m......[90m][0m[J[90m  [[0m[36m▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬[0m...[90m][0m[J[90m  [[0m[36m▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬[0m[90m][0m
+completed: 11 tests
+passed:	[32m11[0m
+failed:	0
+
+
+    [0munittests:: tsbuildWatch:: watchMode:: programUpdates::[0m
+[J[90m  [[0m[36m[0m...................................[90m][0m[J[90m  [[0m[36m▬[0m..................................[90m][0m[J[90m  [[0m[36m▬▬▬[0m................................[90m][0m[J[90m  [[0m[36m▬▬▬▬[0m...............................[90m][0m
+completed: 4 tests
+passed:	[32m4[0m
+failed:	0
+
+
+    [0munittests:: tsc:: declarationEmit::[0m
+[J[90m  [[0m[36m▬[0m..................................[90m][0m[J[90m  [[0m[36m▬▬▬[0m................................[90m][0m[J[90m  [[0m[36m▬▬▬▬▬▬[0m.............................[90m][0m[J[90m  [[0m[36m▬▬▬▬▬▬▬▬[0m...........................[90m][0m[J[90m  [[0m[36m▬▬▬▬▬▬▬▬▬▬▬[0m........................[90m][0m[J[90m  [[0m[36m▬▬▬▬▬▬▬▬▬▬▬▬▬[0m......................[90m][0m[J[90m  [[0m[36m▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬[0m...................[90m][0m[J[90m  [[0m[36m▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬[0m.................[90m][0m[J[90m  [[0m[36m▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬[0m..............[90m][0m[J[90m  [[0m[36m▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬[0m............[90m][0m[J[90m  [[0m[36m▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬[0m.........[90m][0m[J[90m  [[0m[36m▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬[0m.......[90m][0m[J[90m  [[0m[36m▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬[0m....[90m][0m[J[90m  [[0m[36m▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬[0m..[90m][0m[J[90m  [[0m[36m▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬[0m[90m][0m
+
+[92m [0m[32m 1603 passing[0m[90m (28s)[0m
+
+Finished runtests in 30.3s
+Completed runtests in 31.3s
+Using ~/grade/ts-60573/repo/Herebyfile.mjs to run runtests
+Starting lib
+Starting generate-diagnostics
+> /opt/node22/bin/node scripts/processDiagnosticMessages.mjs src/compiler/diagnosticMessages.json
+Reading diagnostics from src/compiler/diagnosticMessages.json
+Finished generate-diagnostics in 117ms
+Starting bundle-tests
+Starting build-tests
+Starting build-services
+Finished lib in 359ms
+Finished build-tests in 552ms
+Finished build-services in 552ms
+Starting dts-services
+Finished dts-services in 1ms
+Starting dts-lssl
+Finished dts-lssl in 2ms
+Finished bundle-tests in 1s
+Starting runtests
+Running tests with config: {"test":["isolatedDeclaration"],"light":true,"noColor":false,"timeout":40000,"keepFailed":false}
+> /opt/node22/bin/node /root/grade/ts-60573/repo/node_modules/mocha/bin/_mocha -R /root/grade/ts-60573/repo/scripts/failed-tests.cjs -O "reporter=mocha-fivemat-progress-reporter" -g "isolatedDeclaration" --colors -t 40000 ./built/local/run.js
+
+    [0mcompiler tests[0m
+[J[90m  [[0m[36m[0m...................................[90m][0m
+completed: 138 tests
+passed:	[32m138[0m
+failed:	0
+
+
+    [0munittests:: config:: showConfig[0m
+[J[90m  [[0m[36m[0m...................................[90m][0m
+
+[92m [0m[32m 139 passing[0m[90m (3s)[0m
+
+Finished runtests in 5.6s
+Completed runtests in 6.7s
+
