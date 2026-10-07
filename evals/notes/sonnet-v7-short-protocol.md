@@ -41,3 +41,15 @@ This is the user's bar: quality no worse, and no more tokens. Adopt v7 only if a
 3. **P:** no more production files in final patches than v5, across reproduce and investigate.
 4. **H:** v7 states the already-fixed status at least as often as v5 (2 pairs).
 5. **Tokens:** v7's median over its 20 runs is at most v5's median in the same plan.
+
+## Addendum: cross-run interference (written before two of the four ripgrep runs finished)
+
+The two ripgrep pairs (13 and 14) ran four agents at once on one machine. Their test binaries share a name (`ignore-ecb739db799020ac`). Run 36df0aaebf (pair 13, v7) cleared its own hung test with `pkill -x` by name. Its `pgrep` output shows a hung test of bd75270ed7 (pair 14, v5) in the same process list, and its report says the kill may have hit that run.
+
+Grading replays each patch alone afterwards, so verdicts are unaffected. What an agent observes during its run may not be.
+
+How this is handled, fixed before bd75270ed7 and b7cac4025c finished:
+1. Every ripgrep transcript is checked for kills by name and for other runs' paths, and the results are reported.
+2. The decision rule is applied with and without pairs 13 and 14.
+3. If the two results differ, both ripgrep pairs are rerun, one run at a time, and the rerun replaces them.
+4. Otherwise the original runs stand.
