@@ -50,6 +50,10 @@ DESIGN = {
             ("eslint-19637", "investigate", 1), ("vue-13611", "investigate", 1),
         ],
     },
+    "confirm": {
+        "arms": ["v3", "v5"],
+        "units": [("eslint-19924", "reproduce", 4), ("ts-60573", "reproduce", 4)],
+    },
     "context": {
         "arms": ["none"],
         "units": [

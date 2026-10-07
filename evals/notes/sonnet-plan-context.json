@@ -1,0 +1,100 @@
+{
+ "name": "context",
+ "seed": 2080689275693437973,
+ "launch_order": [
+  8,
+  6,
+  7,
+  4,
+  11,
+  10,
+  2,
+  5,
+  9,
+  1,
+  3
+ ],
+ "skills": {
+  "none": null
+ },
+ "model": "sonnet (Agent tool subagent)",
+ "runs": [
+  {
+   "run_id": "9991fba99b",
+   "pair": 1,
+   "case": "eslint-19957",
+   "task": "reproduce",
+   "arm": "none"
+  },
+  {
+   "run_id": "278e86b1ef",
+   "pair": 2,
+   "case": "eslint-19924",
+   "task": "reproduce",
+   "arm": "none"
+  },
+  {
+   "run_id": "a19b435ddd",
+   "pair": 3,
+   "case": "eslint-19637",
+   "task": "reproduce",
+   "arm": "none"
+  },
+  {
+   "run_id": "23b15d9dc2",
+   "pair": 4,
+   "case": "vue-13611",
+   "task": "reproduce",
+   "arm": "none"
+  },
+  {
+   "run_id": "851292345a",
+   "pair": 5,
+   "case": "urfave-cli-2176",
+   "task": "reproduce",
+   "arm": "none"
+  },
+  {
+   "run_id": "90e235621a",
+   "pair": 6,
+   "case": "pydantic-11849",
+   "task": "reproduce",
+   "arm": "none"
+  },
+  {
+   "run_id": "c68e820f51",
+   "pair": 7,
+   "case": "ripgrep-3009",
+   "task": "reproduce",
+   "arm": "none"
+  },
+  {
+   "run_id": "c23ecc3639",
+   "pair": 8,
+   "case": "ts-60573",
+   "task": "reproduce",
+   "arm": "none"
+  },
+  {
+   "run_id": "dde41caa01",
+   "pair": 9,
+   "case": "eslint-20209-fixed",
+   "task": "reproduce",
+   "arm": "none"
+  },
+  {
+   "run_id": "c08dfb7329",
+   "pair": 10,
+   "case": "eslint-19637",
+   "task": "investigate",
+   "arm": "none"
+  },
+  {
+   "run_id": "4c1b395207",
+   "pair": 11,
+   "case": "vue-13611",
+   "task": "investigate",
+   "arm": "none"
+  }
+ ]
+}

@@ -1,0 +1,141 @@
+{
+ "name": "confirm",
+ "seed": 14780827108019108494,
+ "launch_order": [
+  1,
+  5,
+  7,
+  3,
+  4,
+  2,
+  6,
+  8
+ ],
+ "skills": {
+  "v3": {
+   "path": "SKILL.md",
+   "sha256": "3e89ff9123a7bbded60c23106acc39fc4f1a39749b3c04e92ea0c793a7daf5aa",
+   "words": 289
+  },
+  "v5": {
+   "path": "evals/variants/SKILL-v5.md",
+   "sha256": "06a8a675cf267f040114c5fd5034a062ec366b89d866ce87f4da1153f8e67619",
+   "words": 383
+  }
+ },
+ "model": "sonnet (Agent tool subagent)",
+ "runs": [
+  {
+   "run_id": "866f289585",
+   "pair": 1,
+   "case": "eslint-19924",
+   "task": "reproduce",
+   "arm": "v3"
+  },
+  {
+   "run_id": "7392545745",
+   "pair": 1,
+   "case": "eslint-19924",
+   "task": "reproduce",
+   "arm": "v5"
+  },
+  {
+   "run_id": "d3c635b434",
+   "pair": 2,
+   "case": "eslint-19924",
+   "task": "reproduce",
+   "arm": "v3"
+  },
+  {
+   "run_id": "5e1f5fc7f6",
+   "pair": 2,
+   "case": "eslint-19924",
+   "task": "reproduce",
+   "arm": "v5"
+  },
+  {
+   "run_id": "c53b576813",
+   "pair": 3,
+   "case": "eslint-19924",
+   "task": "reproduce",
+   "arm": "v3"
+  },
+  {
+   "run_id": "1bdf00b2fb",
+   "pair": 3,
+   "case": "eslint-19924",
+   "task": "reproduce",
+   "arm": "v5"
+  },
+  {
+   "run_id": "784f28b00c",
+   "pair": 4,
+   "case": "eslint-19924",
+   "task": "reproduce",
+   "arm": "v3"
+  },
+  {
+   "run_id": "b04c4bf6f1",
+   "pair": 4,
+   "case": "eslint-19924",
+   "task": "reproduce",
+   "arm": "v5"
+  },
+  {
+   "run_id": "d913f34ce1",
+   "pair": 5,
+   "case": "ts-60573",
+   "task": "reproduce",
+   "arm": "v3"
+  },
+  {
+   "run_id": "9724dab909",
+   "pair": 5,
+   "case": "ts-60573",
+   "task": "reproduce",
+   "arm": "v5"
+  },
+  {
+   "run_id": "c7abe918d8",
+   "pair": 6,
+   "case": "ts-60573",
+   "task": "reproduce",
+   "arm": "v3"
+  },
+  {
+   "run_id": "8e79e0dc9b",
+   "pair": 6,
+   "case": "ts-60573",
+   "task": "reproduce",
+   "arm": "v5"
+  },
+  {
+   "run_id": "5ce63c6792",
+   "pair": 7,
+   "case": "ts-60573",
+   "task": "reproduce",
+   "arm": "v3"
+  },
+  {
+   "run_id": "5017d7d8f0",
+   "pair": 7,
+   "case": "ts-60573",
+   "task": "reproduce",
+   "arm": "v5"
+  },
+  {
+   "run_id": "d0df9187ff",
+   "pair": 8,
+   "case": "ts-60573",
+   "task": "reproduce",
+   "arm": "v3"
+  },
+  {
+   "run_id": "810635c432",
+   "pair": 8,
+   "case": "ts-60573",
+   "task": "reproduce",
+   "arm": "v5"
+  }
+ ]
+}

@@ -27,8 +27,16 @@ def verdict(r):
 
 
 def prod_files(r):
-    patch = json.loads((res_dir / f"{label(r)}.json").read_text()).get("patch", "")
-    files = re.findall(r"^diff --git a/(\S+)", patch, re.M)
+    path = res_dir / f"{label(r)}.json"
+    if not path.exists():
+        return []
+    patch = json.loads(path.read_text()).get("patch", "")
+    files = []
+    # A file counts only if some hunk falls outside an inline Rust `mod tests` block.
+    for chunk in re.split(r"(?m)^(?=diff --git )", patch):
+        m = re.match(r"diff --git a/(\S+)", chunk)
+        if m and any("mod tests" not in h for h in re.findall(r"(?m)^@@[^\n]*", chunk)):
+            files.append(m.group(1))
     fix = cases[r["case"]]["fix_prod_files"]
     if fix == "ALL_NON_TEST":
         return [f for f in files if f.endswith(".go") and not f.endswith("_test.go")]
