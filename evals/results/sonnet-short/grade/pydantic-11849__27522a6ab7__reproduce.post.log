@@ -1,0 +1,15 @@
+===== run 1: exit 0
+pydantic 2.11.4, python 3.13.16, 4 threads, 200 filler fields, forward reference
+iterations run: 40, iterations showing the reported symptom: 0
+RESULT: reported symptom not observed
+
+===== run 2: exit 0
+pydantic 2.11.4, python 3.13.16, 4 threads, 200 filler fields, forward reference
+iterations run: 40, iterations showing the reported symptom: 0
+RESULT: reported symptom not observed
+
+===== run 3: exit 0
+pydantic 2.11.4, python 3.13.16, 4 threads, 200 filler fields, forward reference
+iterations run: 40, iterations showing the reported symptom: 0
+RESULT: reported symptom not observed
+

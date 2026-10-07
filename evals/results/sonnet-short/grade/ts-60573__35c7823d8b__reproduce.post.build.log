@@ -1,0 +1,49 @@
+exit 0
+Using ~/grade/ts-60573/repo/Herebyfile.mjs to run local
+Starting generate-diagnostics
+> /opt/node22/bin/node scripts/processDiagnosticMessages.mjs src/compiler/diagnosticMessages.json
+Starting lib
+Starting shim-compile-cache-tsc
+Starting shim-compile-cache-tsserver
+Starting shim-compile-cache-typings-installer
+Starting bundle-watch-guard
+Starting build-watch-guard
+Starting generate-types-map
+Finished shim-compile-cache-tsc in 51ms
+Finished shim-compile-cache-typings-installer in 53ms
+Finished shim-compile-cache-tsserver in 54ms
+Finished bundle-watch-guard in 57ms
+Finished generate-types-map in 58ms
+Reading diagnostics from src/compiler/diagnosticMessages.json
+Finished generate-diagnostics in 391ms
+Starting localize
+Starting bundle-tsc
+Starting build-tsc
+Starting bundle-services
+Starting build-services
+Starting bundle-tsserver
+Starting build-tsserver
+Starting bundle-typings-installer
+Starting build-typings-installer
+Starting copy-built-local-diagnostic-messages
+Finished localize in 1ms
+Finished copy-built-local-diagnostic-messages in 17ms
+Finished build-watch-guard in 612ms
+Finished bundle-tsserver in 299ms
+Finished lib in 712ms
+Finished bundle-typings-installer in 616ms
+Finished bundle-tsc in 6.9s
+Finished bundle-services in 7.3s
+Finished build-tsc in 14.7s
+Finished build-services in 14.7s
+Finished build-tsserver in 14.7s
+Finished build-typings-installer in 14.7s
+Starting dts-services
+> /opt/node22/bin/node ./scripts/dtsBundler.mjs --entrypoint ./built/local/typescript/typescript.d.ts --output ./built/local/typescript.d.ts
+Starting lssl
+Finished lssl in 3ms
+Bundling ./built/local/typescript/typescript.d.ts to ./built/local/typescript.d.ts and ./built/local/typescript.internal.d.ts
+Finished dts-services in 10.8s
+Starting dts-lssl
+Finished dts-lssl in 4ms
+Completed local in 26s

@@ -1,0 +1,8 @@
+===== run 1: exit 0
+typescript 5.8.0-dev (built/local/typescript.js)
+fixture    repro/report.ts
+expected   type Test = { prop1: "hello"; }
+quick info type Test = { prop1: "hello"; }
+typeToString(Test) = { prop1: "hello"; }
+PASS: Test is { prop1: "hello"; }
+

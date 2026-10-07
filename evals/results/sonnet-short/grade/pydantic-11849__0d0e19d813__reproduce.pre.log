@@ -1,0 +1,18 @@
+===== run 1: exit 1
+[example 1] use while another thread is rebuilding: FAIL PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
+[example 1] first use: ok
+[example 2] use while another thread is rebuilding: FAIL AssertionError: example 2: got B(id='ok1') (a B) instead of a C
+[example 2] first use: ok
+
+===== run 2: exit 1
+[example 1] use while another thread is rebuilding: FAIL PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
+[example 1] first use: ok
+[example 2] use while another thread is rebuilding: FAIL AssertionError: example 2: got B(id='ok1') (a B) instead of a C
+[example 2] first use: ok
+
+===== run 3: exit 1
+[example 1] use while another thread is rebuilding: FAIL PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
+[example 1] first use: ok
+[example 2] use while another thread is rebuilding: FAIL AssertionError: example 2: got B(id='ok1') (a B) instead of a C
+[example 2] first use: ok
+

@@ -1,0 +1,12 @@
+===== run 1: exit 0
+pydantic 2.11.4, python 3.13.16, 8 threads per round
+no skipped subclass seen in 3000 rounds
+
+===== run 2: exit 0
+pydantic 2.11.4, python 3.13.16, 8 threads per round
+no skipped subclass seen in 3000 rounds
+
+===== run 3: exit 0
+pydantic 2.11.4, python 3.13.16, 8 threads per round
+no skipped subclass seen in 3000 rounds
+
