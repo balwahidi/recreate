@@ -1,0 +1,8 @@
+===== run 1: exit 1
+FLAGGED   9.000e+3: This number literal will lose precision at runtime.
+FLAGGED   9.000e3: This number literal will lose precision at runtime.
+FLAGGED   9.0000e4: This number literal will lose precision at runtime.
+not flagged 9.000e4
+not flagged 9.0000e5
+no-loss-of-precision reported an exactly representable literal
+
