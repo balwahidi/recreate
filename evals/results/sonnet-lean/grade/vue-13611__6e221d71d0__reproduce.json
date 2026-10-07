@@ -1,0 +1,12 @@
+{
+  "label": "vue-13611__6e221d71d0__reproduce",
+  "case": "vue-13611",
+  "runs_per_side": 1,
+  "verdict": "fail_to_pass",
+  "pre": [
+    1
+  ],
+  "post": [
+    0
+  ]
+}
