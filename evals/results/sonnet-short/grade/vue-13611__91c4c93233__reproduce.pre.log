@@ -1,0 +1,37 @@
+===== run 1: exit 1
+ Vitest  "environmentMatchGlobs" is deprecated. Use "workspace" to define different configurations instead.
+ Vitest  "environmentMatchGlobs" is deprecated. Use "workspace" to define different configurations instead.
+
+ RUN  v3.1.4 /root/grade/vue-13611/repo
+
+ ❯ |unit| packages/vue/__tests__/underscoreSlot.spec.ts (3 tests | 1 failed) 228ms
+   × slot <template> whose name starts with an underscore > renders the <template> content (names: _slot1/_slot2) 188ms
+     → expected '<section>H<div>fallback1|fallback2</d…' to be '<section>H<div>one|two</div></section>' // Object.is equality
+   ✓ slot <template> whose name starts with an underscore > control: same markup with names slot1/slot2 (no underscore) 31ms
+   ✓ slot <template> whose name starts with an underscore > control: underscore names without the conditional <template v-if> sibling 8ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| packages/vue/__tests__/underscoreSlot.spec.ts > slot <template> whose name starts with an underscore > renders the <template> content (names: _slot1/_slot2)
+AssertionError: expected '<section>H<div>fallback1|fallback2</d…' to be '<section>H<div>one|two</div></section>' // Object.is equality
+
+Expected: [32m"<section>H<div>[7mone|two[27m</div></section>"[39m
+Received: [31m"<section>H<div>[7mfallback1|fallback2[27m</div></section>"[39m
+
+ ❯ packages/vue/__tests__/underscoreSlot.spec.ts:40:52
+     38|   // passes on v3.5.13.
+     39|   it('renders the <template> content (names: _slot1/_slot2)', () => {
+     40|     expect(mountWith('_slot', usageWith('_slot'))).toBe(
+       |                                                    ^
+     41|       `<section>H<div>one|two</div></section>`,
+     42|     )
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 2 passed (3)
+   Start at  16:29:04
+   Duration  8.25s (transform 2.55s, setup 66ms, collect 3.22s, tests 228ms, environment 1.69s, prepare 374ms)
+
+

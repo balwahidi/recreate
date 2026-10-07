@@ -1,0 +1,53 @@
+===== run 1: exit 1
+ Vitest  "environmentMatchGlobs" is deprecated. Use "workspace" to define different configurations instead.
+ Vitest  "environmentMatchGlobs" is deprecated. Use "workspace" to define different configurations instead.
+
+ RUN  v3.1.4 /root/grade/vue-13611/repo
+
+ ❯ |unit| packages/vue/__tests__/slotUnderscoreName.spec.ts (2 tests | 2 failed) 217ms
+   × slot <template> with a name starting with an underscore > #slot1 and #_slot2 (names from the 3.5.13 playground) 184ms
+     → expected '<div><p>conditionally rendered slot</…' to contain '`_slot2` template works'
+   × slot <template> with a name starting with an underscore > #title and #_duration (names from the 3.5.14 playground) 32ms
+     → expected '<div><p>conditionally rendered slot</…' to contain '`_duration` template works'
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| packages/vue/__tests__/slotUnderscoreName.spec.ts > slot <template> with a name starting with an underscore > #slot1 and #_slot2 (names from the 3.5.13 playground)
+AssertionError: expected '<div><p>conditionally rendered slot</…' to contain '`_slot2` template works'
+
+Expected: [32m"`[7m_[27mslot[7m2[27m` template works"[39m
+Received: [31m"[7m<div><p>conditionally rendered slot</p><div style="color: green;">[27m`slot[7m1[27m` template works[7m</div><div style="color: red;">default content for `_slot2`</div></div>[27m"[39m
+
+ ❯ packages/vue/__tests__/slotUnderscoreName.spec.ts:124:18
+    122|     expect(html).toContain('`slot1` template works')
+    123|     // expected: the provided template is rendered, not the fallback c…
+    124|     expect(html).toContain('`_slot2` template works')
+       |                  ^
+    125|     expect(html).not.toContain('default content for `_slot2`')
+    126|   })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |unit| packages/vue/__tests__/slotUnderscoreName.spec.ts > slot <template> with a name starting with an underscore > #title and #_duration (names from the 3.5.14 playground)
+AssertionError: expected '<div><p>conditionally rendered slot</…' to contain '`_duration` template works'
+
+Expected: [32m"`_duration` template works"[39m
+Received: [31m"<div><p>conditionally rendered slot</p><div style="color: green;">`title` template works</div><div style="color: red;">default content for `_duration`</div></div>"[39m
+
+ ❯ packages/vue/__tests__/slotUnderscoreName.spec.ts:132:18
+    130|     const html = mountApp('title', '_duration')
+    131|     expect(html).toContain('`title` template works')
+    132|     expect(html).toContain('`_duration` template works')
+       |                  ^
+    133|     expect(html).not.toContain('default content for `_duration`')
+    134|   })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed (2)
+   Start at  16:29:54
+   Duration  11.83s (transform 6.77s, setup 67ms, collect 8.93s, tests 217ms, environment 596ms, prepare 719ms)
+
+

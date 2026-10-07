@@ -1,0 +1,36 @@
+===== run 1: exit 1
+--- FAIL: Test_RecreateHelpFlagParallel (0.00s)
+    --- FAIL: Test_RecreateHelpFlagParallel/hello_2 (0.04s)
+        recreate_2176_test.go:77: unexpected panic - 'runtime error: invalid memory address or nil pointer dereference' passing [] (on run 1088)
+    --- FAIL: Test_RecreateHelpFlagParallel/hello_0 (1.20s)
+        recreate_2176_test.go:77: unexpected panic - 'runtime error: invalid memory address or nil pointer dereference' passing [] (on run 13502)
+    --- FAIL: Test_RecreateHelpFlagParallel/hello_3 (3.03s)
+        recreate_2176_test.go:77: unexpected panic - 'runtime error: invalid memory address or nil pointer dereference' passing [] (on run 45512)
+FAIL
+FAIL	github.com/urfave/cli/v3	4.178s
+FAIL
+
+===== run 2: exit 1
+--- FAIL: Test_RecreateHelpFlagParallel (0.00s)
+    --- FAIL: Test_RecreateHelpFlagParallel/hello_1 (0.20s)
+        recreate_2176_test.go:77: unexpected panic - 'runtime error: invalid memory address or nil pointer dereference' passing [] (on run 716)
+    --- FAIL: Test_RecreateHelpFlagParallel/hello_2 (0.52s)
+        recreate_2176_test.go:77: unexpected panic - 'runtime error: invalid memory address or nil pointer dereference' passing [] (on run 3041)
+    --- FAIL: Test_RecreateHelpFlagParallel/hello_0 (1.13s)
+        recreate_2176_test.go:77: unexpected panic - 'runtime error: invalid memory address or nil pointer dereference' passing [] (on run 10047)
+FAIL
+FAIL	github.com/urfave/cli/v3	3.334s
+FAIL
+
+===== run 3: exit 1
+--- FAIL: Test_RecreateHelpFlagParallel (0.00s)
+    --- FAIL: Test_RecreateHelpFlagParallel/hello_2 (2.10s)
+        recreate_2176_test.go:77: unexpected panic - 'runtime error: invalid memory address or nil pointer dereference' passing [] (on run 14550)
+    --- FAIL: Test_RecreateHelpFlagParallel/hello_3 (2.24s)
+        recreate_2176_test.go:77: unexpected panic - 'runtime error: invalid memory address or nil pointer dereference' passing [] (on run 19009)
+    --- FAIL: Test_RecreateHelpFlagParallel/hello_0 (4.56s)
+        recreate_2176_test.go:77: unexpected panic - 'runtime error: invalid memory address or nil pointer dereference' passing [] (on run 44339)
+FAIL
+FAIL	github.com/urfave/cli/v3	5.529s
+FAIL
+
