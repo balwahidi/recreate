@@ -88,6 +88,11 @@
   "over_assertion": false,
   "symptom": true
  },
+ "ripgrep-3009__629867e318__reproduce": {
+  "note": "hang pre (exit status 124 printed), walk returns post; '; echo' swallows exit status; reporter's should_panic message assertion fails post",
+  "over_assertion": false,
+  "symptom": true
+ },
  "ripgrep-3009__c154c8876a__reproduce": {
   "note": "hang pre (exit=124 printed), walk returns post; '; echo' swallows exit status; reporter's should_panic message assertion fails post",
   "over_assertion": false,
