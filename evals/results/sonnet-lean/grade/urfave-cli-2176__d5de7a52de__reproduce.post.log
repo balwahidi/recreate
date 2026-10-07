@@ -1,0 +1,9 @@
+===== run 1: exit 0
+ok  	github.com/urfave/cli/v3/debug_repro	88.350s
+
+===== run 2: exit 0
+ok  	github.com/urfave/cli/v3/debug_repro	71.400s
+
+===== run 3: exit 0
+ok  	github.com/urfave/cli/v3/debug_repro	87.607s
+
