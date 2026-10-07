@@ -1,0 +1,12 @@
+===== run 1: exit 1
+example 1 FAILED: PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
+example 2 FAILED: AssertionError: expected a C instance, got B: B(id='ok1')
+
+===== run 2: exit 1
+example 1 FAILED: PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
+example 2 FAILED: AssertionError: expected a C instance, got B: B(id='ok1')
+
+===== run 3: exit 1
+example 1 FAILED: PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
+example 2 FAILED: AssertionError: expected a C instance, got B: B(id='ok1')
+
