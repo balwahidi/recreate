@@ -1,0 +1,36 @@
+===== run 1: exit 1
+example 1, forward reference:
+  thread B: PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
+  -> FAIL
+example 1, defer_build:
+  thread B: PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
+  -> FAIL
+example 2, defer_build:
+  thread B: AssertionError: got B instead of C: B(id='ok1')
+  -> FAIL
+BUG PRESENT: 3/3 scenarios failed
+
+===== run 2: exit 1
+example 1, forward reference:
+  thread B: PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
+  -> FAIL
+example 1, defer_build:
+  thread B: PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
+  -> FAIL
+example 2, defer_build:
+  thread B: AssertionError: got B instead of C: B(id='ok1')
+  -> FAIL
+BUG PRESENT: 3/3 scenarios failed
+
+===== run 3: exit 1
+example 1, forward reference:
+  thread B: PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
+  -> FAIL
+example 1, defer_build:
+  thread B: PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
+  -> FAIL
+example 2, defer_build:
+  thread B: AssertionError: got B instead of C: B(id='ok1')
+  -> FAIL
+BUG PRESENT: 3/3 scenarios failed
+
