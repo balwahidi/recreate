@@ -1,0 +1,18 @@
+{
+  "label": "ts-60573__c35eb898ae__fix",
+  "case": "ts-60573",
+  "files": [
+    "src/compiler/checker.ts",
+    "tests/baselines/reference/mappedTypeRecursiveInference.types",
+    "tests/baselines/reference/typeAssertionPropertyInDerivedTypes.js",
+    "tests/baselines/reference/typeAssertionPropertyInDerivedTypes.symbols",
+    "tests/baselines/reference/typeAssertionPropertyInDerivedTypes.types",
+    "tests/cases/compiler/typeAssertionPropertyInDerivedTypes.ts"
+  ],
+  "test_in_patch": true,
+  "F": true,
+  "applied": true,
+  "codes": [
+    0
+  ]
+}

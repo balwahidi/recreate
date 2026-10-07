@@ -1,0 +1,18 @@
+{
+  "label": "ts-60573__7156b82f2a__fix",
+  "case": "ts-60573",
+  "files": [
+    "src/compiler/checker.ts",
+    "tests/baselines/reference/typeAssertionInitializerInMappedTypeProperty.errors.txt",
+    "tests/baselines/reference/typeAssertionInitializerInMappedTypeProperty.symbols",
+    "tests/baselines/reference/typeAssertionInitializerInMappedTypeProperty.types",
+    "tests/cases/compiler/typeAssertionInitializerInMappedTypeProperty.ts",
+    "tests/cases/fourslash/quickInfoMappedTypePropertyTypeAssertion.ts"
+  ],
+  "test_in_patch": true,
+  "F": true,
+  "applied": true,
+  "codes": [
+    0
+  ]
+}
