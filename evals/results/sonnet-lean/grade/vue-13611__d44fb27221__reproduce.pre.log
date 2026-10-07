@@ -1,0 +1,36 @@
+===== run 1: exit 1
+ Vitest  "environmentMatchGlobs" is deprecated. Use "workspace" to define different configurations instead.
+ Vitest  "environmentMatchGlobs" is deprecated. Use "workspace" to define different configurations instead.
+
+ RUN  v3.1.4 /root/grade/vue-13611/repo
+
+ ❯ |unit| packages/vue/__tests__/underscoreSlotName.spec.ts (2 tests | 1 failed) 68ms
+   × slot <template> with underscore-prefixed name > renders the provided #_slot2 content next to a conditional slot template (reported bug) 59ms
+     → expected '<div><p>named</p><b>slot1 works</b><i…' to contain '_slot2 works'
+   ✓ slot <template> with underscore-prefixed name > control: same markup without the conditional sibling template 5ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| packages/vue/__tests__/underscoreSlotName.spec.ts > slot <template> with underscore-prefixed name > renders the provided #_slot2 content next to a conditional slot template (reported bug)
+AssertionError: expected '<div><p>named</p><b>slot1 works</b><i…' to contain '_slot2 works'
+
+Expected: [32m"[7m_[27mslot[7m2[27m works"[39m
+Received: [31m"[7m<div><p>named</p><b>[27mslot[7m1[27m works[7m</b><i class="default">DEFAULT _slot2</i></div>[27m"[39m
+
+ ❯ packages/vue/__tests__/underscoreSlotName.spec.ts:47:18
+     45|     // expected: both provided templates replace the fallback content
+     46|     expect(html).toContain('slot1 works')
+     47|     expect(html).toContain('_slot2 works')
+       |                  ^
+     48|     expect(html).not.toContain('DEFAULT')
+     49|   })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 passed (2)
+   Start at  14:39:46
+   Duration  4.03s (transform 2.11s, setup 27ms, collect 2.83s, tests 68ms, environment 523ms, prepare 148ms)
+
+

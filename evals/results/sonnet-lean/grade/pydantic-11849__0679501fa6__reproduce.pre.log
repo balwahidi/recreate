@@ -1,0 +1,24 @@
+===== run 1: exit 1
+example 1: Direct(...) while another thread builds Direct -> PydanticUserError('Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly')
+example 2: C.model_validate(...) while another thread builds C -> B(id='ok1')
+
+FAIL:
+  Direct(...) did not return a Direct: PydanticUserError('Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly')
+  C.model_validate(...) did not return a C: B(id='ok1')
+
+===== run 2: exit 1
+example 1: Direct(...) while another thread builds Direct -> PydanticUserError('Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly')
+example 2: C.model_validate(...) while another thread builds C -> B(id='ok1')
+
+FAIL:
+  Direct(...) did not return a Direct: PydanticUserError('Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly')
+  C.model_validate(...) did not return a C: B(id='ok1')
+
+===== run 3: exit 1
+example 1: Direct(...) while another thread builds Direct -> PydanticUserError('Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly')
+example 2: C.model_validate(...) while another thread builds C -> B(id='ok1')
+
+FAIL:
+  Direct(...) did not return a Direct: PydanticUserError('Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly')
+  C.model_validate(...) did not return a C: B(id='ok1')
+

@@ -1,0 +1,14 @@
+===== run 1: exit 0
+ Vitest  "environmentMatchGlobs" is deprecated. Use "workspace" to define different configurations instead.
+ Vitest  "environmentMatchGlobs" is deprecated. Use "workspace" to define different configurations instead.
+
+ RUN  v3.1.4 /root/grade/vue-13611/repo
+
+ ✓ |unit| packages/vue/__tests__/underscoreSlotName.spec.ts (2 tests) 40ms
+
+ Test Files  1 passed (1)
+      Tests  2 passed (2)
+   Start at  14:39:52
+   Duration  4.88s (transform 2.43s, setup 25ms, collect 3.10s, tests 40ms, environment 617ms, prepare 316ms)
+
+
