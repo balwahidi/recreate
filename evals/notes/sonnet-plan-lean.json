@@ -1,0 +1,306 @@
+{
+ "name": "lean",
+ "seed": 3554092623887575910,
+ "launch_order": [
+  17,
+  5,
+  11,
+  6,
+  19,
+  15,
+  9,
+  7,
+  8,
+  18,
+  16,
+  10,
+  3,
+  13,
+  4,
+  1,
+  2,
+  14,
+  12
+ ],
+ "skills": {
+  "v5": {
+   "path": "evals/variants/SKILL-v5.md",
+   "sha256": "06a8a675cf267f040114c5fd5034a062ec366b89d866ce87f4da1153f8e67619",
+   "words": 383
+  },
+  "v6": {
+   "path": "evals/variants/SKILL-v6.md",
+   "sha256": "241c9d0cb172080ce60678b53e05fc8f7ea3c909672778906a1a08383e2c9df2",
+   "words": 419
+  }
+ },
+ "model": "sonnet (Agent tool subagent)",
+ "runs": [
+  {
+   "run_id": "fb98e2690d",
+   "pair": 1,
+   "case": "eslint-19957",
+   "task": "reproduce",
+   "arm": "v5"
+  },
+  {
+   "run_id": "4c1e01eaa2",
+   "pair": 1,
+   "case": "eslint-19957",
+   "task": "reproduce",
+   "arm": "v6"
+  },
+  {
+   "run_id": "db792d1ab0",
+   "pair": 2,
+   "case": "eslint-19957",
+   "task": "reproduce",
+   "arm": "v5"
+  },
+  {
+   "run_id": "ef02928887",
+   "pair": 2,
+   "case": "eslint-19957",
+   "task": "reproduce",
+   "arm": "v6"
+  },
+  {
+   "run_id": "6230367be7",
+   "pair": 3,
+   "case": "eslint-19924",
+   "task": "reproduce",
+   "arm": "v5"
+  },
+  {
+   "run_id": "a8cb098daf",
+   "pair": 3,
+   "case": "eslint-19924",
+   "task": "reproduce",
+   "arm": "v6"
+  },
+  {
+   "run_id": "37dada2dc6",
+   "pair": 4,
+   "case": "eslint-19924",
+   "task": "reproduce",
+   "arm": "v5"
+  },
+  {
+   "run_id": "df38e6bd87",
+   "pair": 4,
+   "case": "eslint-19924",
+   "task": "reproduce",
+   "arm": "v6"
+  },
+  {
+   "run_id": "1fa7cad3e5",
+   "pair": 5,
+   "case": "eslint-19637",
+   "task": "reproduce",
+   "arm": "v5"
+  },
+  {
+   "run_id": "4ece10a39d",
+   "pair": 5,
+   "case": "eslint-19637",
+   "task": "reproduce",
+   "arm": "v6"
+  },
+  {
+   "run_id": "dc918f07e4",
+   "pair": 6,
+   "case": "eslint-19637",
+   "task": "reproduce",
+   "arm": "v5"
+  },
+  {
+   "run_id": "4c502723fd",
+   "pair": 6,
+   "case": "eslint-19637",
+   "task": "reproduce",
+   "arm": "v6"
+  },
+  {
+   "run_id": "6e221d71d0",
+   "pair": 7,
+   "case": "vue-13611",
+   "task": "reproduce",
+   "arm": "v5"
+  },
+  {
+   "run_id": "d44fb27221",
+   "pair": 7,
+   "case": "vue-13611",
+   "task": "reproduce",
+   "arm": "v6"
+  },
+  {
+   "run_id": "c1919b30b2",
+   "pair": 8,
+   "case": "vue-13611",
+   "task": "reproduce",
+   "arm": "v5"
+  },
+  {
+   "run_id": "59ba64e467",
+   "pair": 8,
+   "case": "vue-13611",
+   "task": "reproduce",
+   "arm": "v6"
+  },
+  {
+   "run_id": "add2fdd01c",
+   "pair": 9,
+   "case": "urfave-cli-2176",
+   "task": "reproduce",
+   "arm": "v5"
+  },
+  {
+   "run_id": "389bf7d16f",
+   "pair": 9,
+   "case": "urfave-cli-2176",
+   "task": "reproduce",
+   "arm": "v6"
+  },
+  {
+   "run_id": "d5de7a52de",
+   "pair": 10,
+   "case": "urfave-cli-2176",
+   "task": "reproduce",
+   "arm": "v5"
+  },
+  {
+   "run_id": "6cebc6f7b5",
+   "pair": 10,
+   "case": "urfave-cli-2176",
+   "task": "reproduce",
+   "arm": "v6"
+  },
+  {
+   "run_id": "0679501fa6",
+   "pair": 11,
+   "case": "pydantic-11849",
+   "task": "reproduce",
+   "arm": "v5"
+  },
+  {
+   "run_id": "8a27eb054f",
+   "pair": 11,
+   "case": "pydantic-11849",
+   "task": "reproduce",
+   "arm": "v6"
+  },
+  {
+   "run_id": "febc80d9fc",
+   "pair": 12,
+   "case": "pydantic-11849",
+   "task": "reproduce",
+   "arm": "v5"
+  },
+  {
+   "run_id": "5b1b1a6d00",
+   "pair": 12,
+   "case": "pydantic-11849",
+   "task": "reproduce",
+   "arm": "v6"
+  },
+  {
+   "run_id": "a71b4b05f9",
+   "pair": 13,
+   "case": "ripgrep-3009",
+   "task": "reproduce",
+   "arm": "v5"
+  },
+  {
+   "run_id": "a6804c3e3c",
+   "pair": 13,
+   "case": "ripgrep-3009",
+   "task": "reproduce",
+   "arm": "v6"
+  },
+  {
+   "run_id": "a31310c023",
+   "pair": 14,
+   "case": "ripgrep-3009",
+   "task": "reproduce",
+   "arm": "v5"
+  },
+  {
+   "run_id": "9fb9ca61ef",
+   "pair": 14,
+   "case": "ripgrep-3009",
+   "task": "reproduce",
+   "arm": "v6"
+  },
+  {
+   "run_id": "f6fa986b4c",
+   "pair": 15,
+   "case": "ts-60573",
+   "task": "reproduce",
+   "arm": "v5"
+  },
+  {
+   "run_id": "fcb495affd",
+   "pair": 15,
+   "case": "ts-60573",
+   "task": "reproduce",
+   "arm": "v6"
+  },
+  {
+   "run_id": "61ec5f8e77",
+   "pair": 16,
+   "case": "ts-60573",
+   "task": "reproduce",
+   "arm": "v5"
+  },
+  {
+   "run_id": "433e91e3bb",
+   "pair": 16,
+   "case": "ts-60573",
+   "task": "reproduce",
+   "arm": "v6"
+  },
+  {
+   "run_id": "bb416f538b",
+   "pair": 17,
+   "case": "eslint-20209-fixed",
+   "task": "reproduce",
+   "arm": "v5"
+  },
+  {
+   "run_id": "e518a05126",
+   "pair": 17,
+   "case": "eslint-20209-fixed",
+   "task": "reproduce",
+   "arm": "v6"
+  },
+  {
+   "run_id": "83e71c77b8",
+   "pair": 18,
+   "case": "eslint-19637",
+   "task": "investigate",
+   "arm": "v5"
+  },
+  {
+   "run_id": "c56eb9c8bb",
+   "pair": 18,
+   "case": "eslint-19637",
+   "task": "investigate",
+   "arm": "v6"
+  },
+  {
+   "run_id": "fb98cf677a",
+   "pair": 19,
+   "case": "vue-13611",
+   "task": "investigate",
+   "arm": "v5"
+  },
+  {
+   "run_id": "506bd51d10",
+   "pair": 19,
+   "case": "vue-13611",
+   "task": "investigate",
+   "arm": "v6"
+  }
+ ]
+}
