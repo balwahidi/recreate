@@ -1,0 +1,64 @@
+{
+ "name": "fix2",
+ "seed": 7331834550766501182,
+ "launch_order": [
+  1,
+  6,
+  2,
+  4,
+  3,
+  5
+ ],
+ "skills": {
+  "v8": {
+   "path": "evals/variants/SKILL-v8.md",
+   "sha256": "a6cb0a46c627847e389381ea88e8746305c9389e3becba3c5d5ce5a2a15fee4f",
+   "words": 230
+  }
+ },
+ "model": "sonnet (Agent tool subagent)",
+ "runs": [
+  {
+   "run_id": "624bcfb897",
+   "pair": 1,
+   "case": "vue-13611",
+   "task": "fix",
+   "arm": "v8"
+  },
+  {
+   "run_id": "610f1a2d55",
+   "pair": 2,
+   "case": "vue-13611",
+   "task": "fix",
+   "arm": "v8"
+  },
+  {
+   "run_id": "46aa4c9454",
+   "pair": 3,
+   "case": "vue-13611",
+   "task": "fix",
+   "arm": "v8"
+  },
+  {
+   "run_id": "31da578eff",
+   "pair": 4,
+   "case": "ripgrep-3009",
+   "task": "fix",
+   "arm": "v8"
+  },
+  {
+   "run_id": "d570c00820",
+   "pair": 5,
+   "case": "ripgrep-3009",
+   "task": "fix",
+   "arm": "v8"
+  },
+  {
+   "run_id": "938162dca0",
+   "pair": 6,
+   "case": "ripgrep-3009",
+   "task": "fix",
+   "arm": "v8"
+  }
+ ]
+}

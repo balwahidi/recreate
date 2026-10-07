@@ -18,7 +18,7 @@ from prompts import SKILL_WRAPPER, TASKS  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 WORK = pathlib.Path("/work")
-SKILLS = {"v3": "evals/notes/SKILL-v3.md", "v5": "evals/variants/SKILL-v5.md", "v6": "evals/variants/SKILL-v6.md", "v7": "evals/variants/SKILL-v7.md", "none": None}
+SKILLS = {"v3": "evals/notes/SKILL-v3.md", "v5": "evals/variants/SKILL-v5.md", "v6": "evals/variants/SKILL-v6.md", "v7": "evals/variants/SKILL-v7.md", "v8": "evals/variants/SKILL-v8.md", "none": None}
 
 PROMPT = """You are working on the {repo} repository at a fixed revision. It is already checked out at {ws}/repo (commit {checkout}). {env_note}
 
@@ -86,6 +86,11 @@ DESIGN = {
             ("eslint-19957", "fix", 2), ("eslint-19924", "fix", 2), ("vue-13611", "fix", 2),
             ("ts-60573", "fix", 2), ("ripgrep-3009", "fix", 2),
         ],
+    },
+    # v8 on the two cases v7 failed in "fix" (see evals/notes/sonnet-fix2-protocol.md).
+    "fix2": {
+        "arms": ["v8"],
+        "units": [("vue-13611", "fix", 3), ("ripgrep-3009", "fix", 3)],
     },
     "context": {
         "arms": ["none"],
