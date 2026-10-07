@@ -2,19 +2,19 @@
 Detected Linux file limit of 1025.
 Generating 1025 files in tmp/emfile-check...
 Running ESLint...
-(node:5041) ESLintIgnoreWarning: The ".eslintignore" file is no longer supported. Switch to using the "ignores" property in "eslint.config.js": https://eslint.org/docs/latest/use/configure/migration-guide#ignoring-files
+(node:16404) ESLintIgnoreWarning: The ".eslintignore" file is no longer supported. Switch to using the "ignores" property in "eslint.config.js": https://eslint.org/docs/latest/use/configure/migration-guide#ignoring-files
 (Use `node --trace-warnings ...` to show where the warning was created)
 ✅ No errors encountered running ESLint.
 Checking that this number of files would cause an EMFILE error...
-✅ EMFILE error encountered: EMFILE: too many open files, open 'tmp/emfile-check/file_110.js'
+✅ EMFILE error encountered: EMFILE: too many open files, open 'tmp/emfile-check/file_1004.js'
 
 
   ESLint
     ESLint constructor function
       ✔ should have a static property indicating the configType being used
       ✔ should have the defaultConfig static property
-      ✔ the default value of 'options.cwd' should be the current working directory. (1554ms)
-      ✔ should normalize 'options.cwd'. (90ms)
+      ✔ the default value of 'options.cwd' should be the current working directory. (516ms)
+      ✔ should normalize 'options.cwd'.
       ✔ should not modify baseConfig in the constructor
       ✔ should throw readable messages if removed options are present
       ✔ should throw readable messages if wrong type values are given to options
@@ -80,7 +80,7 @@ Checking that this number of files would cause an EMFILE error...
       TypeScript config files
         ✔ should fail to load a TS config file if jiti is not installed
         ✔ should fail to load a TS config file if an outdated version of jiti is installed
-        ✔ should handle jiti interopDefault edge cases (320ms)
+        ✔ should handle jiti interopDefault edge cases (190ms)
         Loading TypeScript config files with jiti
           ✔ should find and load eslint.config.ts when present
           ✔ should load eslint.config.ts when we have "type": "commonjs" in nearest `package.json`
@@ -94,13 +94,13 @@ Checking that this number of files would cause an EMFILE error...
           ✔ should find and load eslint.config.cts when present
           ✔ should load eslint.config.cts config file when we have "type": "commonjs" in nearest `package.json`
           ✔ should load .cts config file when we have "type": "module" in nearest `package.json`
-          ✔ should successfully load a TS config file that exports a promise (66ms)
+          ✔ should successfully load a TS config file that exports a promise
           ✔ should load a CommonJS TS config file that exports undefined with a helpful warning message
         Loading TypeScript config files with jiti-v2.0
-          ✔ should find and load eslint.config.ts when present (278ms)
+          ✔ should find and load eslint.config.ts when present (172ms)
           ✔ should load eslint.config.ts when we have "type": "commonjs" in nearest `package.json`
           ✔ should load eslint.config.ts when we have "type": "module" in nearest `package.json`
-          ✔ should load eslint.config.ts with const enums (50ms)
+          ✔ should load eslint.config.ts with const enums (43ms)
           ✔ should load eslint.config.ts with local namespace
           ✔ should allow passing a TS config file to `overrideConfigFile`
           ✔ should find and load eslint.config.mts when present
@@ -112,7 +112,7 @@ Checking that this number of files would cause an EMFILE error...
           ✔ should successfully load a TS config file that exports a promise
           ✔ should load a CommonJS TS config file that exports undefined with a helpful warning message
         Loading TypeScript config files with jiti-v2.1
-          ✔ should find and load eslint.config.ts when present (409ms)
+          ✔ should find and load eslint.config.ts when present (196ms)
           ✔ should load eslint.config.ts when we have "type": "commonjs" in nearest `package.json`
           ✔ should load eslint.config.ts when we have "type": "module" in nearest `package.json`
           ✔ should load eslint.config.ts with const enums
@@ -127,13 +127,13 @@ Checking that this number of files would cause an EMFILE error...
           ✔ should successfully load a TS config file that exports a promise
           ✔ should load a CommonJS TS config file that exports undefined with a helpful warning message
         Loading TypeScript config files natively
-          ✔ should load a TS config file when --experimental-strip-types is enabled (68ms)
+          ✔ should load a TS config file when --experimental-strip-types is enabled (49ms)
           - should load a TS config file when --experimental-transform-types is enabled
     lintFiles()
       ✔ should use correct parser when custom parser is specified
       ✔ should report zero messages when given a config file and a valid file
       ✔ should handle multiple patterns with overlapping files
-      ✔ should report zero messages when given a config file and a valid file and espree as parser
+      ✔ should report zero messages when given a config file and a valid file and espree as parser (39ms)
       ✔ should report zero messages when given a config file and a valid file and esprima as parser
       ✔ should throw if overrideConfigFile is path to a file that doesn't exist
       ✔ should throw an error when given a config file and a valid file and invalid parser
@@ -160,10 +160,10 @@ Checking that this number of files would cause an EMFILE error...
       ✔ should return zero messages when executing without a config file
       ✔ should throw if an invalid value is given to 'patterns' argument
       ✔ should stop linting files if a rule crashes
-      ✔ should not exit the process unexpectedly after a rule crashes (309ms)
+      ✔ should not exit the process unexpectedly after a rule crashes (218ms)
       Missing Configuration File
         ✔ :should throw if eslint.config.js file is not present
-        ✔ should throw if eslint.config.js file is not present even if overrideConfig was passed (50ms)
+        ✔ should throw if eslint.config.js file is not present even if overrideConfig was passed
         ✔ should throw if eslint.config.js file is not present even if overrideConfig was passed and a file path is given
         ✔ should not throw if eslint.config.js file is not present and overrideConfigFile is `true`
         ✔ should not throw if eslint.config.js file is not present and overrideConfigFile is path to a config file
@@ -214,7 +214,7 @@ Checking that this number of files would cause an EMFILE error...
         ✔ should ignore one-level down node_modules by default
         ✔ should ignore all files and throw an error when **/fixtures/** is in `ignores` in the config file
         ✔ should throw an error when all given files are ignored via ignorePatterns
-        ✔ should not throw an error when ignorePatterns is an empty array (161ms)
+        ✔ should not throw an error when ignorePatterns is an empty array (49ms)
         ✔ should return a warning when an explicitly given file is ignored
         ✔ should return a warning when an explicitly given file has no matching config
         ✔ should return a warning when an explicitly given file is outside the base path
@@ -237,10 +237,10 @@ Checking that this number of files would cause an EMFILE error...
         ✔ should disregard ignore pattern '/'
         ✔ should not skip an unignored file in base path when all files are initially ignored by '**'
       Deprecated Rules
-        ✔ should warn when deprecated rules are configured (83ms)
-        ✔ should not warn when deprecated rules are not configured (86ms)
-        ✔ should warn when deprecated rules are found in a config (39ms)
-        ✔ should add the plugin name to the replacement if available (54ms)
+        ✔ should warn when deprecated rules are configured
+        ✔ should not warn when deprecated rules are not configured
+        ✔ should warn when deprecated rules are found in a config
+        ✔ should add the plugin name to the replacement if available
       Fix Mode
         ✔ correctly autofixes semicolon-conflicting-fixes
         ✔ correctly autofixes return-conflicting-fixes
@@ -253,8 +253,8 @@ Checking that this number of files would cause an EMFILE error...
       processors
         ✔ should return two messages when executing with config file that specifies preloaded processor
         ✔ should run processors when calling lintFiles with config file that specifies preloaded processor
-        ✔ should run p
-[... 68474 chars truncated ...]
+        ✔ should run processors when calling lintText with confi
+[... 68229 chars truncated ...]
 `package.json` and CJS syntax
             - with "type": "commonjs" in `package.json` and ESM syntax
             - with "type": "module" in `package.json` and CJS syntax
@@ -445,9 +445,9 @@ Checking that this number of files would cause an EMFILE error...
       ✔ when it has 'files' they should be interpreted as relative to the config file
       ✔ when it has 'ignores' they should be interpreted as relative to the config file
     config file
-      ✔ new instance of ESLint should use the latest version of the config file (ESM) (119ms)
-      ✔ new instance of ESLint should use the latest version of the config file (CJS) (144ms)
-      ✔ new instance of ESLint should use the latest version of the config file (TypeScript) (131ms)
+      ✔ new instance of ESLint should use the latest version of the config file (ESM) (110ms)
+      ✔ new instance of ESLint should use the latest version of the config file (CJS) (114ms)
+      ✔ new instance of ESLint should use the latest version of the config file (TypeScript) (117ms)
     config with circular references
       ✔ in 'settings'
       ✔ in 'parserOptions'
@@ -529,7 +529,7 @@ Checking that this number of files would cause an EMFILE error...
       ✔ should report zero messages when given a config file and a valid file
 
 
-  1101 passing (17s)
+  1101 passing (10s)
   18 pending
 
 
