@@ -4,55 +4,48 @@ Starting lib
 Starting generate-diagnostics
 > /opt/node22/bin/node scripts/processDiagnosticMessages.mjs src/compiler/diagnosticMessages.json
 Reading diagnostics from src/compiler/diagnosticMessages.json
-Finished generate-diagnostics in 114ms
+Finished lib in 205ms
+Finished generate-diagnostics in 226ms
 Starting bundle-tests
 Starting build-tests
 Starting build-services
-Finished lib in 271ms
-Finished build-tests in 526ms
-Finished build-services in 525ms
+Finished build-tests in 1.2s
+Finished build-services in 1.2s
 Starting dts-services
 > /opt/node22/bin/node ./scripts/dtsBundler.mjs --entrypoint ./built/local/typescript/typescript.d.ts --output ./built/local/typescript.d.ts
-Finished bundle-tests in 1s
+Finished bundle-tests in 3.7s
 Bundling ./built/local/typescript/typescript.d.ts to ./built/local/typescript.d.ts and ./built/local/typescript.internal.d.ts
-Finished dts-services in 3s
+Finished dts-services in 12.7s
 Starting dts-lssl
-Finished dts-lssl in 2ms
+Finished dts-lssl in 3ms
 Starting runtests
 Running tests with config: {"test":["AssertionNodeNotReusedWhenTypeNotEquivalent1"],"light":true,"noColor":false,"timeout":40000,"keepFailed":false}
 > /opt/node22/bin/node /root/grade/ts-60573/repo/node_modules/mocha/bin/_mocha -R /root/grade/ts-60573/repo/scripts/failed-tests.cjs -O "reporter=mocha-fivemat-progress-reporter" -g "AssertionNodeNotReusedWhenTypeNotEquivalent1" --colors -t 40000 ./built/local/run.js
 
-    [0mcompiler tests[0m
-[J[90m  [[0m[36m[0m...................................[90m][0m
-completed: 6 tests
-passed:	[32m6[0m
-failed:	0
 
+[92m [0m[32m 0 passing[0m[90m (217ms)[0m
 
-    [0mfourslash tests[0m
-[J[90m  [[0m[36m[0m...................................[90m][0m
-
-[92m [0m[32m 7 passing[0m[90m (910ms)[0m
-
-Finished runtests in 3.4s
-Completed runtests in 7.1s
+Finished runtests in 5.4s
+Completed runtests in 19.8s
 Using ~/grade/ts-60573/repo/Herebyfile.mjs to run runtests
 Starting lib
 Starting generate-diagnostics
 > /opt/node22/bin/node scripts/processDiagnosticMessages.mjs src/compiler/diagnosticMessages.json
 Reading diagnostics from src/compiler/diagnosticMessages.json
-Finished generate-diagnostics in 111ms
+Finished lib in 230ms
+Finished generate-diagnostics in 321ms
 Starting bundle-tests
 Starting build-tests
 Starting build-services
-Finished lib in 228ms
-Finished build-tests in 531ms
-Finished build-services in 531ms
+Finished bundle-tests in 5.2s
+Finished build-tests in 9.9s
+Finished build-services in 9.9s
 Starting dts-services
-Finished dts-services in 1ms
+> /opt/node22/bin/node ./scripts/dtsBundler.mjs --entrypoint ./built/local/typescript/typescript.d.ts --output ./built/local/typescript.d.ts
+Bundling ./built/local/typescript/typescript.d.ts to ./built/local/typescript.d.ts and ./built/local/typescript.internal.d.ts
+Finished dts-services in 4.9s
 Starting dts-lssl
-Finished dts-lssl in 8ms
-Finished bundle-tests in 908ms
+Finished dts-lssl in 2ms
 Starting runtests
 Running tests with config: {"test":["declarationEmit"],"light":true,"noColor":false,"timeout":40000,"keepFailed":false}
 > /opt/node22/bin/node /root/grade/ts-60573/repo/node_modules/mocha/bin/_mocha -R /root/grade/ts-60573/repo/scripts/failed-tests.cjs -O "reporter=mocha-fivemat-progress-reporter" -g "declarationEmit" --colors -t 40000 ./built/local/run.js
@@ -95,27 +88,27 @@ failed:	0
     [0munittests:: tsc:: declarationEmit::[0m
 [J[90m  [[0m[36m▬[0m..................................[90m][0m[J[90m  [[0m[36m▬▬▬[0m................................[90m][0m[J[90m  [[0m[36m▬▬▬▬▬▬[0m.............................[90m][0m[J[90m  [[0m[36m▬▬▬▬▬▬▬▬[0m...........................[90m][0m[J[90m  [[0m[36m▬▬▬▬▬▬▬▬▬▬▬[0m........................[90m][0m[J[90m  [[0m[36m▬▬▬▬▬▬▬▬▬▬▬▬▬[0m......................[90m][0m[J[90m  [[0m[36m▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬[0m...................[90m][0m[J[90m  [[0m[36m▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬[0m.................[90m][0m[J[90m  [[0m[36m▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬[0m..............[90m][0m[J[90m  [[0m[36m▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬[0m............[90m][0m[J[90m  [[0m[36m▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬[0m.........[90m][0m[J[90m  [[0m[36m▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬[0m.......[90m][0m[J[90m  [[0m[36m▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬[0m....[90m][0m[J[90m  [[0m[36m▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬[0m..[90m][0m[J[90m  [[0m[36m▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬[0m[90m][0m
 
-[92m [0m[32m 1603 passing[0m[90m (28s)[0m
+[92m [0m[32m 1603 passing[0m[90m (1m)[0m
 
-Finished runtests in 30.3s
-Completed runtests in 31.3s
+Finished runtests in 1m 4.7s
+Completed runtests in 1m 19.9s
 Using ~/grade/ts-60573/repo/Herebyfile.mjs to run runtests
 Starting lib
 Starting generate-diagnostics
 > /opt/node22/bin/node scripts/processDiagnosticMessages.mjs src/compiler/diagnosticMessages.json
 Reading diagnostics from src/compiler/diagnosticMessages.json
-Finished generate-diagnostics in 117ms
+Finished lib in 172ms
+Finished generate-diagnostics in 257ms
 Starting bundle-tests
 Starting build-tests
 Starting build-services
-Finished lib in 359ms
-Finished build-tests in 552ms
-Finished build-services in 552ms
+Finished build-tests in 2.1s
+Finished build-services in 2.1s
 Starting dts-services
 Finished dts-services in 1ms
 Starting dts-lssl
-Finished dts-lssl in 2ms
-Finished bundle-tests in 1s
+Finished dts-lssl in 3ms
+Finished bundle-tests in 4.1s
 Starting runtests
 Running tests with config: {"test":["isolatedDeclaration"],"light":true,"noColor":false,"timeout":40000,"keepFailed":false}
 > /opt/node22/bin/node /root/grade/ts-60573/repo/node_modules/mocha/bin/_mocha -R /root/grade/ts-60573/repo/scripts/failed-tests.cjs -O "reporter=mocha-fivemat-progress-reporter" -g "isolatedDeclaration" --colors -t 40000 ./built/local/run.js
@@ -130,8 +123,11 @@ failed:	0
     [0munittests:: config:: showConfig[0m
 [J[90m  [[0m[36m[0m...................................[90m][0m
 
-[92m [0m[32m 139 passing[0m[90m (3s)[0m
+[92m [0m[32m 139 passing[0m[90m (6s)[0m
 
-Finished runtests in 5.6s
-Completed runtests in 6.7s
+Finished runtests in 15.4s
+Completed runtests in 19.8s
+
+hed runtests in 12.7s
+Completed runtests in 15.7s
 

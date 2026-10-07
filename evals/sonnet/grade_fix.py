@@ -26,17 +26,17 @@ TS_TESTS = [
 HIDDEN = {
     "eslint-19957": {
         "files": ["tests/lib/rules/no-loss-of-precision.js"],
-        "cmd": "npx mocha tests/lib/rules/no-loss-of-precision.js",
+        "cmd": "npx mocha --timeout 60000 tests/lib/rules/no-loss-of-precision.js",
     },
     "eslint-19637": {
         "files": ["tests/lib/rules/no-unused-expressions.js"],
         "base_files": ["tests/lib/rules/utils/ast-utils.js"],
-        "cmd": "npx mocha tests/lib/rules/no-unused-expressions.js tests/lib/rules/utils/ast-utils.js",
+        "cmd": "npx mocha --timeout 60000 tests/lib/rules/no-unused-expressions.js tests/lib/rules/utils/ast-utils.js",
     },
     "eslint-19924": {
         "files": ["tools/check-emfile-handling.js", "tests/fixtures/emfile/eslint.config.js"],
         "base_files": ["tests/lib/eslint/eslint.js"],
-        "cmd": "ulimit -n 1024 && node tools/check-emfile-handling.js && npx mocha tests/lib/eslint/eslint.js",
+        "cmd": "ulimit -n 1024 && node tools/check-emfile-handling.js && npx mocha --timeout 60000 tests/lib/eslint/eslint.js",
     },
     "vue-13611": {
         "files": ["packages/runtime-core/__tests__/componentSlots.spec.ts"],

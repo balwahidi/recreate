@@ -3,21 +3,21 @@ Using ~/grade/ts-60573/repo/Herebyfile.mjs to run runtests
 Starting lib
 Starting generate-diagnostics
 > /opt/node22/bin/node scripts/processDiagnosticMessages.mjs src/compiler/diagnosticMessages.json
+Finished lib in 354ms
 Reading diagnostics from src/compiler/diagnosticMessages.json
-Finished lib in 328ms
-Finished generate-diagnostics in 379ms
+Finished generate-diagnostics in 628ms
 Starting bundle-tests
 Starting build-tests
 Starting build-services
-Finished bundle-tests in 6.5s
-Finished build-tests in 19.1s
-Finished build-services in 19.1s
+Finished bundle-tests in 11.1s
+Finished build-tests in 26.5s
+Finished build-services in 26.5s
 Starting dts-services
 > /opt/node22/bin/node ./scripts/dtsBundler.mjs --entrypoint ./built/local/typescript/typescript.d.ts --output ./built/local/typescript.d.ts
 Bundling ./built/local/typescript/typescript.d.ts to ./built/local/typescript.d.ts and ./built/local/typescript.internal.d.ts
-Finished dts-services in 17.3s
+Finished dts-services in 18.4s
 Starting dts-lssl
-Finished dts-lssl in 203ms
+Finished dts-lssl in 2ms
 Starting runtests
 Running tests with config: {"test":["AssertionNodeNotReusedWhenTypeNotEquivalent1"],"light":true,"noColor":false,"timeout":40000,"keepFailed":false}
 > /opt/node22/bin/node /root/grade/ts-60573/repo/node_modules/mocha/bin/_mocha -R /root/grade/ts-60573/repo/scripts/failed-tests.cjs -O "reporter=mocha-fivemat-progress-reporter" -g "AssertionNodeNotReusedWhenTypeNotEquivalent1" --colors -t 40000 ./built/local/run.js
@@ -41,7 +41,7 @@ Test failure:
 fourslash test quickInfoAssertionNodeNotReusedWhenTypeNotEquivalent1.ts runs correctly
 [0m[J[90m  [[0m[31m[0m...................................[90m][0m
 
-[92m [0m[32m 4 passing[0m[90m (9s)[0m
+[92m [0m[32m 4 passing[0m[90m (7s)[0m
 [31m  3 failing[0m
 
 [0m  1) compiler tests
@@ -91,7 +91,7 @@ fourslash test quickInfoAssertionNodeNotReusedWhenTypeNotEquivalent1.ts runs cor
 [0m
 
 
-Error in runtests in 16.9s
+Error in runtests in 15.8s
 Error: Process exited with code: 3
-Completed runtests with errors in 54s
+Completed runtests with errors in 1m 1.6s
 
