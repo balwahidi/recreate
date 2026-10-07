@@ -1,0 +1,22 @@
+{
+ "eslint-19924__5935b6688d__fix": "verified",
+ "eslint-19924__704a75d518__fix": "verified",
+ "eslint-19924__7418308938__fix": "verified",
+ "eslint-19924__a1a12c09a0__fix": "verified",
+ "eslint-19957__235e937f6b__fix": "unverified",
+ "eslint-19957__2e80215287__fix": "verified",
+ "eslint-19957__48a4783998__fix": "verified",
+ "eslint-19957__edee1b3bd2__fix": "verified",
+ "ripgrep-3009__23ffa6d22f__fix": "verified",
+ "ripgrep-3009__56af1596a8__fix": "verified",
+ "ripgrep-3009__a0b227ba7e__fix": "verified",
+ "ripgrep-3009__d1cfb97e9e__fix": "verified",
+ "ts-60573__7156b82f2a__fix": "verified",
+ "ts-60573__c35eb898ae__fix": "verified",
+ "ts-60573__ceb2fe0a4a__fix": "verified",
+ "ts-60573__fb43805788__fix": "verified",
+ "vue-13611__519f131830__fix": "verified",
+ "vue-13611__5854fae123__fix": "verified",
+ "vue-13611__c5fbdcb441__fix": "verified",
+ "vue-13611__d84dc0bd98__fix": "verified"
+}
