@@ -4,10 +4,10 @@ usage: grade_fix.py <results-dir-name> [label-substring ...]
        grade_fix.py --validate <case>   check the instrument: fails at the checkout, passes with the upstream fix
 
 For each run: reset ~/grade/<case>/repo to the checkout, apply the agent's whole patch, put the
-upstream fix's test changes on top (overwriting the agent's edits to those files), and run the
-case's command. F (fixed) = the patch applies and every run of the command exits 0. The command
-runs the upstream tests plus the existing tests next to them, so a fix that breaks neighbouring
-behaviour fails too.
+upstream fix's test changes on top (overwriting the agent's edits to those files), restore the
+neighbouring test files to the checkout, and run the case's command. F (fixed) = the patch applies
+and every run of the command exits 0. Only upstream's tests and tests that existed at the checkout
+run, never the agent's own: a correct fix shouldn't fail because of a test its author added.
 """
 import json, pathlib, re, subprocess, sys
 
@@ -30,25 +30,31 @@ HIDDEN = {
     },
     "eslint-19637": {
         "files": ["tests/lib/rules/no-unused-expressions.js"],
+        "base_files": ["tests/lib/rules/utils/ast-utils.js"],
         "cmd": "npx mocha tests/lib/rules/no-unused-expressions.js tests/lib/rules/utils/ast-utils.js",
     },
     "eslint-19924": {
         "files": ["tools/check-emfile-handling.js", "tests/fixtures/emfile/eslint.config.js"],
+        "base_files": ["tests/lib/eslint/eslint.js"],
         "cmd": "ulimit -n 1024 && node tools/check-emfile-handling.js && npx mocha tests/lib/eslint/eslint.js",
     },
     "vue-13611": {
         "files": ["packages/runtime-core/__tests__/componentSlots.spec.ts"],
+        "base_files": ["packages/compiler-core/__tests__/transforms/vSlot.spec.ts"],
         "cmd": "pnpm vitest run packages/runtime-core/__tests__/componentSlots.spec.ts "
                "packages/compiler-core/__tests__/transforms/vSlot.spec.ts",
     },
     "ripgrep-3009": {
         "rust_tests": "crates/ignore/src/walk.rs",
-        "cmd": "cargo test --offline -q -p ignore --lib",
+        # The lib tests that existed at the checkout, plus the two hidden ones, by exact name.
+        "cmd": "cargo test --offline -q -p ignore --lib -- --exact $(cat {here}/ripgrep-3009-base-tests.txt) "
+               "walk::tests::hidden_panic_in_parallel walk::tests::hidden_panic_in_parallel_builder",
         "runs": 3,
         "timeout": 300,
     },
     "ts-60573": {
         "files": TS_TESTS,
+        "base_dirs": ["tests/cases", "tests/baselines/reference"],
         # The new test, then declaration-emit neighbours that a too-broad change to node reuse would break.
         "cmd": "npx hereby runtests --tests=AssertionNodeNotReusedWhenTypeNotEquivalent1 && "
                "npx hereby runtests --tests=declarationEmit && npx hereby runtests --tests=isolatedDeclaration",
@@ -66,6 +72,11 @@ def upstream_rust_tests(repo, fix, path):
 
 
 def install_tests(case, repo, spec):
+    for d in spec.get("base_dirs", []):
+        subprocess.run(["git", "checkout", case["checkout"], "--", d], cwd=repo, check=True)
+        subprocess.run(["git", "clean", "-fdq", "--", d], cwd=repo, check=True)
+    if spec.get("base_files"):
+        subprocess.run(["git", "checkout", case["checkout"], "--", *spec["base_files"]], cwd=repo, check=True)
     if "files" in spec:
         subprocess.run(["git", "checkout", case["fix"], "--", *spec["files"]], cwd=repo, check=True)
     if "rust_tests" in spec:
@@ -85,7 +96,9 @@ def run_hidden(case, patch, log):
         grade.reset(repo, case["checkout"])
         return {"F": False, "applied": False, "codes": []}
     install_tests(case, repo, spec)
-    codes = grade.side(repo, spec["cmd"], spec.get("runs", 1), spec.get("timeout", 1800), log)
+    # A private TMPDIR: ESLint's tests copy fixtures to $TMPDIR/eslint, which agents running alongside also use.
+    cmd = "export TMPDIR=$(mktemp -d) && " + spec["cmd"].replace("{here}", str(pathlib.Path(__file__).resolve().parent))
+    codes = grade.side(repo, cmd, spec.get("runs", 1), spec.get("timeout", 1800), log)
     grade.reset(repo, case["checkout"])
     return {"F": all(c == 0 for c in codes), "applied": True, "codes": codes}
 

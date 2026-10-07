@@ -48,3 +48,18 @@ With 10 pairs this can only show a large difference, and ties are expected on ea
 Cost is reported, not gated. A fix that reproduces first is expected to cost more.
 
 `SKILL.md` doesn't change on this test. It is a measurement of the shipped skill.
+
+## Amendment (grader only, written after launch but before any run finished or was graded)
+
+1. **Only upstream's tests and tests that existed at the checkout run.**
+   - The first grader also ran tests the agent itself added in the touched files and crates. A correct fix could then fail on its author's own over-strict test, and that would bias against whichever arm keeps more tests.
+   - Now neighbouring test files are restored to the checkout before grading:
+     - `tests/lib/eslint/eslint.js`;
+     - `vSlot.spec.ts`;
+     - TypeScript's `tests/cases` and `tests/baselines/reference`.
+   - ripgrep runs its 147 pre-existing lib tests and the 2 hidden ones by exact name (`evals/sonnet/ripgrep-3009-base-tests.txt`).
+2. **Every grading command runs with a private `TMPDIR`.** ESLint's test suite copies fixtures to `$TMPDIR/eslint`. Agents running at the same time use that path too, and one revalidation of eslint-19924 failed with the upstream fix because of it.
+
+All five graders were revalidated after this change: each fails at the checkout and passes twice with the upstream fix.
+
+Agents themselves still share `/tmp`. ESLint agents running at the same time can disturb each other's ESLint test runs. Both arms run under the same conditions.

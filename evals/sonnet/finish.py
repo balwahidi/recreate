@@ -21,4 +21,6 @@ py(HERE / "audit.py", one, TASKS, f"/work/plan-{name}.json")
 case = {c["id"]: c for c in json.loads((HERE.parents[1] / "cases/cases.json").read_text())["cases"]}[run["case"]]
 if case["fix"] and run["task"] == "reproduce":
     py(HERE / "grade_runs.py", f"sonnet-{name}", run_id)
+elif case["fix"] and run["task"] == "fix":
+    py(HERE / "grade_fix.py", f"sonnet-{name}", run_id)
 py(HERE / "harness.py", "cleanup", run_id)

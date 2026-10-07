@@ -2,7 +2,7 @@
 Detected Linux file limit of 1025.
 Generating 1025 files in tmp/emfile-check...
 Running ESLint...
-(node:1028) ESLintIgnoreWarning: The ".eslintignore" file is no longer supported. Switch to using the "ignores" property in "eslint.config.js": https://eslint.org/docs/latest/use/configure/migration-guide#ignoring-files
+(node:9000) ESLintIgnoreWarning: The ".eslintignore" file is no longer supported. Switch to using the "ignores" property in "eslint.config.js": https://eslint.org/docs/latest/use/configure/migration-guide#ignoring-files
 (Use `node --trace-warnings ...` to show where the warning was created)
 
 Oops! Something went wrong! :(
@@ -34,7 +34,7 @@ Error: Command failed: node bin/eslint.js tmp/emfile-check -c tests/fixtures/emf
   status: 2,
   signal: null,
   output: [ null, null, null ],
-  pid: 1027,
+  pid: 8999,
   stdout: null,
   stderr: null
 }

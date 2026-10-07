@@ -4,18 +4,20 @@ Starting lib
 Starting generate-diagnostics
 > /opt/node22/bin/node scripts/processDiagnosticMessages.mjs src/compiler/diagnosticMessages.json
 Reading diagnostics from src/compiler/diagnosticMessages.json
-Finished generate-diagnostics in 106ms
+Finished lib in 328ms
+Finished generate-diagnostics in 379ms
 Starting bundle-tests
 Starting build-tests
 Starting build-services
-Finished lib in 206ms
-Finished build-tests in 563ms
-Finished build-services in 563ms
+Finished bundle-tests in 6.5s
+Finished build-tests in 19.1s
+Finished build-services in 19.1s
 Starting dts-services
-Finished dts-services in 1ms
+> /opt/node22/bin/node ./scripts/dtsBundler.mjs --entrypoint ./built/local/typescript/typescript.d.ts --output ./built/local/typescript.d.ts
+Bundling ./built/local/typescript/typescript.d.ts to ./built/local/typescript.d.ts and ./built/local/typescript.internal.d.ts
+Finished dts-services in 17.3s
 Starting dts-lssl
-Finished dts-lssl in 4ms
-Finished bundle-tests in 995ms
+Finished dts-lssl in 203ms
 Starting runtests
 Running tests with config: {"test":["AssertionNodeNotReusedWhenTypeNotEquivalent1"],"light":true,"noColor":false,"timeout":40000,"keepFailed":false}
 > /opt/node22/bin/node /root/grade/ts-60573/repo/node_modules/mocha/bin/_mocha -R /root/grade/ts-60573/repo/scripts/failed-tests.cjs -O "reporter=mocha-fivemat-progress-reporter" -g "AssertionNodeNotReusedWhenTypeNotEquivalent1" --colors -t 40000 ./built/local/run.js
@@ -39,7 +41,7 @@ Test failure:
 fourslash test quickInfoAssertionNodeNotReusedWhenTypeNotEquivalent1.ts runs correctly
 [0m[J[90m  [[0m[31m[0m...................................[90m][0m
 
-[92m [0m[32m 4 passing[0m[90m (4s)[0m
+[92m [0m[32m 4 passing[0m[90m (9s)[0m
 [31m  3 failing[0m
 
 [0m  1) compiler tests
@@ -89,7 +91,7 @@ fourslash test quickInfoAssertionNodeNotReusedWhenTypeNotEquivalent1.ts runs cor
 [0m
 
 
-Error in runtests in 6.5s
+Error in runtests in 16.9s
 Error: Process exited with code: 3
-Completed runtests with errors in 7.6s
+Completed runtests with errors in 54s
 
