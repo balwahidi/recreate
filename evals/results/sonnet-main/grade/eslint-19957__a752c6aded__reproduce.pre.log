@@ -1,0 +1,5 @@
+===== run 1: exit 1
+FAIL: 9.000e+3 (value 9000) reported: no-loss-of-precision: This number literal will lose precision at runtime. (col 14)
+FAIL: 9.000e3 (value 9000) reported: no-loss-of-precision: This number literal will lose precision at runtime. (col 14)
+FAIL: 9.0000e4 (value 90000) reported: no-loss-of-precision: This number literal will lose precision at runtime. (col 14)
+
