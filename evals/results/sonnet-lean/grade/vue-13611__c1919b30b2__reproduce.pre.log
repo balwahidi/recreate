@@ -1,0 +1,59 @@
+===== run 1: exit 1
+ Vitest  "environmentMatchGlobs" is deprecated. Use "workspace" to define different configurations instead.
+ Vitest  "environmentMatchGlobs" is deprecated. Use "workspace" to define different configurations instead.
+
+ RUN  v3.1.4 /root/grade/vue-13611/repo
+
+ ❯ |unit| packages/vue/__tests__/underscoreSlotName.spec.ts (4 tests | 4 failed) 114ms
+   × slot template names starting with "_" - non-inline template (playground dev mode) > #_duration renders its template instead of the default slot content 72ms
+     → expected '<div><p>conditional slot</p><div clas…' to contain '_duration template works'
+   × slot template names starting with "_" - non-inline template (playground dev mode) > #_slot2 renders its template instead of the default slot content 13ms
+     → expected '<div><p>conditional slot</p><div clas…' to contain '_slot2 template works'
+   × slot template names starting with "_" - inline template (production SFC mode) > #_duration renders its template instead of the default slot content 16ms
+     → expected '<div><p>conditional slot</p><div clas…' to contain '_duration template works'
+   × slot template names starting with "_" - inline template (production SFC mode) > #_slot2 renders its template instead of the default slot content 9ms
+     → expected '<div><p>conditional slot</p><div clas…' to contain '_slot2 template works'
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| packages/vue/__tests__/underscoreSlotName.spec.ts > slot template names starting with "_" - non-inline template (playground dev mode) > #_duration renders its template instead of the default slot content
+ FAIL  |unit| packages/vue/__tests__/underscoreSlotName.spec.ts > slot template names starting with "_" - inline template (production SFC mode) > #_duration renders its template instead of the default slot content
+AssertionError: expected '<div><p>conditional slot</p><div clas…' to contain '_duration template works'
+
+Expected: [32m"_duration template works"[39m
+Received: [31m"<div><p>conditional slot</p><div class="provided">title template works</div><div class="fallback">default content for _duration</div></div>"[39m
+
+ ❯ packages/vue/__tests__/underscoreSlotName.spec.ts:137:18
+    135|     const html = renderApp('title', '_duration', inline)
+    136|     expect(html).toContain('title template works')
+    137|     expect(html).toContain('_duration template works')
+       |                  ^
+    138|     expect(html).not.toContain('default content for _duration')
+    139|   })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  |unit| packages/vue/__tests__/underscoreSlotName.spec.ts > slot template names starting with "_" - non-inline template (playground dev mode) > #_slot2 renders its template instead of the default slot content
+ FAIL  |unit| packages/vue/__tests__/underscoreSlotName.spec.ts > slot template names starting with "_" - inline template (production SFC mode) > #_slot2 renders its template instead of the default slot content
+AssertionError: expected '<div><p>conditional slot</p><div clas…' to contain '_slot2 template works'
+
+Expected: [32m"[7m_[27mslot[7m2[27m template works"[39m
+Received: [31m"[7m<div><p>conditional slot</p><div class="provided">[27mslot[7m1[27m template works[7m</div><div class="fallback">default content for _slot2</div></div>[27m"[39m
+
+ ❯ packages/vue/__tests__/underscoreSlotName.spec.ts:145:18
+    143|     const html = renderApp('slot1', '_slot2', inline)
+    144|     expect(html).toContain('slot1 template works')
+    145|     expect(html).toContain('_slot2 template works')
+       |                  ^
+    146|     expect(html).not.toContain('default content for _slot2')
+    147|   })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  4 failed (4)
+   Start at  14:50:07
+   Duration  4.48s (transform 2.43s, setup 19ms, collect 3.22s, tests 114ms, environment 473ms, prepare 121ms)
+
+
