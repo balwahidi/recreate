@@ -1,0 +1,123 @@
+===== run 1: exit 1
+--- FAIL: Test_runStress (1.41s)
+    stress_test.go:35: unexpected panic in 236 of 160000 runs
+        first stack:
+        goroutine 9 [running]:
+        runtime/debug.Stack()
+        	/usr/local/go1.24.7/src/runtime/debug/stack.go:26 +0x5e
+        github.com/urfave/cli/v3/debugrepro_test.Test_runStress.func1.1.1()
+        	/root/grade/urfave-cli-2176/repo/debugrepro/stress_test.go:25 +0x45
+        panic({0x6624a0?, 0x8a8f50?})
+        	/usr/local/go1.24.7/src/runtime/panic.go:792 +0x132
+        github.com/urfave/cli/v3.(*boolValue).Get(0x650401?)
+        	/root/grade/urfave-cli-2176/repo/flag_bool.go:71
+        github.com/urfave/cli/v3.(*FlagBase[...]).Get(...)
+        	/root/grade/urfave-cli-2176/repo/flag_impl.go:192
+        github.com/urfave/cli/v3.(*Command).Value(0xc0000fdb88, {0xc0000d9ca8, 0x4})
+        	/root/grade/urfave-cli-2176/repo/command.go:533 +0xb5
+        github.com/urfave/cli/v3.(*Command).Bool(0xc0000fdb88, {0xc0000d9ca8, 0x4})
+        	/root/grade/urfave-cli-2176/repo/flag_bool.go:28 +0x34
+        slices.IndexFunc[...](...)
+        	/usr/local/go1.24.7/src/slices/slices.go:109
+        slices.ContainsFunc[...](...)
+        	/usr/local/go1.24.7/src/slices/slices.go:124
+        github.com/urfave/cli/v3.(*Command).checkHelp(0xc0000fdb88)
+        	/root/grade/urfave-cli-2176/repo/command.go:186 +0xd7
+        github.com/urfave/cli/v3.(*Command).run(0xc0000fdb88, {0x708540, 0xc0000f5080}, {0x0, 0x0, 0x0})
+        	/root/grade/urfave-cli-2176/repo/command_run.go:198 +0x1127
+        github.com/urfave/cli/v3.(*Command).Run(...)
+        	/root/grade/urfave-cli-2176/repo/command_run.go:94
+        github.com/urfave/cli/v3/debugrepro_test.RunCli({0x0, 0x0, 0x0})
+        	/root/grade/urfave-cli-2176/repo/debugrepro/debug_test.go:20 +0x85
+        github.com/urfave/cli/v3/debugrepro_test.Test_runStress.func1.1(0x0?, 0x0?)
+        	/root/grade/urfave-cli-2176/repo/debugrepro/stress_test.go:28 +0x4b
+        github.com/urfave/cli/v3/debugrepro_test.Test_runStress.func1()
+        	/root/grade/urfave-cli-2176/repo/debugrepro/stress_test.go:29 +0x65
+        created by github.com/urfave/cli/v3/debugrepro_test.Test_runStress in goroutine 6
+        	/root/grade/urfave-cli-2176/repo/debugrepro/stress_test.go:18 +0x73
+FAIL
+FAIL	github.com/urfave/cli/v3/debugrepro	1.414s
+FAIL
+
+===== run 2: exit 1
+--- FAIL: Test_runStress (1.55s)
+    stress_test.go:35: unexpected panic in 183 of 160000 runs
+        first stack:
+        goroutine 12 [running]:
+        runtime/debug.Stack()
+        	/usr/local/go1.24.7/src/runtime/debug/stack.go:26 +0x5e
+        github.com/urfave/cli/v3/debugrepro_test.Test_runStress.func1.1.1()
+        	/root/grade/urfave-cli-2176/repo/debugrepro/stress_test.go:25 +0x45
+        panic({0x6624a0?, 0x8a8f50?})
+        	/usr/local/go1.24.7/src/runtime/panic.go:792 +0x132
+        github.com/urfave/cli/v3.(*boolValue).Get(0x650401?)
+        	/root/grade/urfave-cli-2176/repo/flag_bool.go:71
+        github.com/urfave/cli/v3.(*FlagBase[...]).Get(...)
+        	/root/grade/urfave-cli-2176/repo/flag_impl.go:192
+        github.com/urfave/cli/v3.(*Command).Value(0xc000419348, {0xc0001f3b90, 0x4})
+        	/root/grade/urfave-cli-2176/repo/command.go:533 +0xb5
+        github.com/urfave/cli/v3.(*Command).Bool(0xc000419348, {0xc0001f3b90, 0x4})
+        	/root/grade/urfave-cli-2176/repo/flag_bool.go:28 +0x34
+        slices.IndexFunc[...](...)
+        	/usr/local/go1.24.7/src/slices/slices.go:109
+        slices.ContainsFunc[...](...)
+        	/usr/local/go1.24.7/src/slices/slices.go:124
+        github.com/urfave/cli/v3.(*Command).checkHelp(0xc000419348)
+        	/root/grade/urfave-cli-2176/repo/command.go:186 +0xd7
+        github.com/urfave/cli/v3.(*Command).run(0xc000419348, {0x708540, 0xc0004129f0}, {0x0, 0x0, 0x0})
+        	/root/grade/urfave-cli-2176/repo/command_run.go:198 +0x1127
+        github.com/urfave/cli/v3.(*Command).Run(...)
+        	/root/grade/urfave-cli-2176/repo/command_run.go:94
+        github.com/urfave/cli/v3/debugrepro_test.RunCli({0x0, 0x0, 0x0})
+        	/root/grade/urfave-cli-2176/repo/debugrepro/debug_test.go:20 +0x85
+        github.com/urfave/cli/v3/debugrepro_test.Test_runStress.func1.1(0x0?, 0x0?)
+        	/root/grade/urfave-cli-2176/repo/debugrepro/stress_test.go:28 +0x4b
+        github.com/urfave/cli/v3/debugrepro_test.Test_runStress.func1()
+        	/root/grade/urfave-cli-2176/repo/debugrepro/stress_test.go:29 +0x65
+        created by github.com/urfave/cli/v3/debugrepro_test.Test_runStress in goroutine 6
+        	/root/grade/urfave-cli-2176/repo/debugrepro/stress_test.go:18 +0x73
+FAIL
+FAIL	github.com/urfave/cli/v3/debugrepro	1.562s
+FAIL
+
+===== run 3: exit 1
+--- FAIL: Test_runStress (1.53s)
+    stress_test.go:35: unexpected panic in 294 of 160000 runs
+        first stack:
+        goroutine 23 [running]:
+        runtime/debug.Stack()
+        	/usr/local/go1.24.7/src/runtime/debug/stack.go:26 +0x5e
+        github.com/urfave/cli/v3/debugrepro_test.Test_runStress.func1.1.1()
+        	/root/grade/urfave-cli-2176/repo/debugrepro/stress_test.go:25 +0x45
+        panic({0x6624a0?, 0x8a8f50?})
+        	/usr/local/go1.24.7/src/runtime/panic.go:792 +0x132
+        github.com/urfave/cli/v3.(*boolValue).Get(0x650401?)
+        	/root/grade/urfave-cli-2176/repo/flag_bool.go:71
+        github.com/urfave/cli/v3.(*FlagBase[...]).Get(...)
+        	/root/grade/urfave-cli-2176/repo/flag_impl.go:192
+        github.com/urfave/cli/v3.(*Command).Value(0xc0004c2848, {0xc000461ac0, 0x4})
+        	/root/grade/urfave-cli-2176/repo/command.go:533 +0xb5
+        github.com/urfave/cli/v3.(*Command).Bool(0xc0004c2848, {0xc000461ac0, 0x4})
+        	/root/grade/urfave-cli-2176/repo/flag_bool.go:28 +0x34
+        slices.IndexFunc[...](...)
+        	/usr/local/go1.24.7/src/slices/slices.go:109
+        slices.ContainsFunc[...](...)
+        	/usr/local/go1.24.7/src/slices/slices.go:124
+        github.com/urfave/cli/v3.(*Command).checkHelp(0xc0004c2848)
+        	/root/grade/urfave-cli-2176/repo/command.go:186 +0xd7
+        github.com/urfave/cli/v3.(*Command).run(0xc0004c2848, {0x708540, 0xc0004b59e0}, {0x0, 0x0, 0x0})
+        	/root/grade/urfave-cli-2176/repo/command_run.go:198 +0x1127
+        github.com/urfave/cli/v3.(*Command).Run(...)
+        	/root/grade/urfave-cli-2176/repo/command_run.go:94
+        github.com/urfave/cli/v3/debugrepro_test.RunCli({0x0, 0x0, 0x0})
+        	/root/grade/urfave-cli-2176/repo/debugrepro/debug_test.go:20 +0x85
+        github.com/urfave/cli/v3/debugrepro_test.Test_runStress.func1.1(0x0?, 0x0?)
+        	/root/grade/urfave-cli-2176/repo/debugrepro/stress_test.go:28 +0x4b
+        github.com/urfave/cli/v3/debugrepro_test.Test_runStress.func1()
+        	/root/grade/urfave-cli-2176/repo/debugrepro/stress_test.go:29 +0x65
+        created by github.com/urfave/cli/v3/debugrepro_test.Test_runStress in goroutine 18
+        	/root/grade/urfave-cli-2176/repo/debugrepro/stress_test.go:18 +0x73
+FAIL
+FAIL	github.com/urfave/cli/v3/debugrepro	1.537s
+FAIL
+

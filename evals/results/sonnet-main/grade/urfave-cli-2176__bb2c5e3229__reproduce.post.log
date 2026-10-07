@@ -1,0 +1,9 @@
+===== run 1: exit 0
+ok  	github.com/urfave/cli/v3/debugrepro	1.754s
+
+===== run 2: exit 0
+ok  	github.com/urfave/cli/v3/debugrepro	1.903s
+
+===== run 3: exit 0
+ok  	github.com/urfave/cli/v3/debugrepro	1.598s
+
