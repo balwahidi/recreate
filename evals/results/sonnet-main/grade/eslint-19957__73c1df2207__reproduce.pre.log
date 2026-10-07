@@ -1,0 +1,8 @@
+===== run 1: exit 1
+FAIL 9.000e+3: 9.000e+3 should not be reported
+       reported: no-loss-of-precision: This number literal will lose precision at runtime.
+FAIL 9.000e3: 9.000e3 should not be reported
+       reported: no-loss-of-precision: This number literal will lose precision at runtime.
+FAIL 9.0000e4: 9.0000e4 should not be reported
+       reported: no-loss-of-precision: This number literal will lose precision at runtime.
+
