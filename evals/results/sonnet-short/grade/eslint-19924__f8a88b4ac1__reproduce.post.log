@@ -1,0 +1,5 @@
+===== run 1: exit 0
+files=3000 fd_limit=1024 eslint_exit=0
+files still unfixed after --fix: 0/3000
+PASS: all files fixed, exit 0
+

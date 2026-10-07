@@ -1,0 +1,12 @@
+{
+  "label": "eslint-19924__1b4d8a62e5__reproduce",
+  "case": "eslint-19924",
+  "runs_per_side": 1,
+  "verdict": "fail_to_pass",
+  "pre": [
+    1
+  ],
+  "post": [
+    0
+  ]
+}

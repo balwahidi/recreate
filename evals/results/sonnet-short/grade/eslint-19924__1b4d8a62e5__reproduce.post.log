@@ -1,0 +1,5 @@
+===== run 1: exit 0
+files=3000 nofile=1024 exit=0 signal=-
+files still unfixed after --fix: 0/3000
+PASS: all files fixed, no EMFILE
+
