@@ -171,8 +171,9 @@ def collect(name, run_id):
     ws = WORK / "runs" / run_id
     repo = ws / "repo"
     subprocess.run(["git", "add", "-A"], cwd=repo, check=True)
+    # Bytes, not text=True: universal newlines would turn CRLF into LF and break patches to CRLF files (TypeScript).
     patch = subprocess.run(["git", "diff", "--cached", "--binary", case["checkout"]], cwd=repo,
-                           check=True, capture_output=True, text=True).stdout
+                           check=True, capture_output=True).stdout.decode("utf-8", errors="replace")
     read = lambda p: p.read_text() if p.exists() else ""
     result = {
         "run_id": run_id,
