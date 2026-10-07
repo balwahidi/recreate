@@ -1,0 +1,6 @@
+===== run 1: exit 1
+TypeScript 5.8.0-dev
+repro.ts: Test = { prop1: Wrapper<"hello">; }   (diagnostics: 0)
+repro_separate_line.ts: Test = { prop1: "hello"; }   (diagnostics: 0)
+BUG: expected Test = { prop1: "hello"; }
+
