@@ -1,0 +1,61 @@
+===== run 1: exit 1
+ Vitest  "environmentMatchGlobs" is deprecated. Use "workspace" to define different configurations instead.
+ Vitest  "environmentMatchGlobs" is deprecated. Use "workspace" to define different configurations instead.
+
+ RUN  v3.1.4 /root/grade/vue-13611/repo
+
+ ❯ |unit| packages/vue/__tests__/slotUnderscoreName.spec.ts (3 tests | 2 failed) 100ms
+   × slot template whose name starts with an underscore > reporter scenario: conditional #randomslotname sibling of <SubComponent> 48ms
+     → expected <div class="fallback-duration"></div> to be null // Object.is equality
+   ✓ slot template whose name starts with an underscore > control: same markup without the conditional sibling template 7ms
+   × slot template whose name starts with an underscore > reporter scenario using the exact playground SFCs 44ms
+     → expected '<div><p> As long as we are conditiona…' not to contain 'default slot content for `_duration`'
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| packages/vue/__tests__/slotUnderscoreName.spec.ts > slot template whose name starts with an underscore > reporter scenario: conditional #randomslotname sibling of <SubComponent>
+AssertionError: expected <div class="fallback-duration"></div> to be null // Object.is equality
+
+[32m- Expected:[39m 
+null
+
+[31m+ Received:[39m 
+<div
+  class="fallback-duration"
+>
+  default duration
+</div>
+
+ ❯ packages/vue/__tests__/slotUnderscoreName.spec.ts:54:54
+     52|     expect(root.querySelector('.fallback-title')).toBe(null)
+     53|     // reported bug: `_duration` template is ignored, fallback content…
+     54|     expect(root.querySelector('.fallback-duration')).toBe(null)
+       |                                                      ^
+     55|     expect(root.querySelector('.ok-duration')).not.toBe(null)
+     56|   })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |unit| packages/vue/__tests__/slotUnderscoreName.spec.ts > slot template whose name starts with an underscore > reporter scenario using the exact playground SFCs
+AssertionError: expected '<div><p> As long as we are conditiona…' not to contain 'default slot content for `_duration`'
+
+Expected: [32m"default slot content for `_duration`"[39m
+Received: [31m"<div><p> As long as we are conditionally rendering this slot, the error occurs.<br> The slot doesn't even have to exist in the component. </p><div style="color: green;">`title` template works</div><div style="color: red;">This is the default slot content for `_duration`.<br>As long as the slotname starts with an underscore, the template doesn't work.</div></div>"[39m
+
+ ❯ packages/vue/__tests__/slotUnderscoreName.spec.ts:170:32
+    168|     expect(root.innerHTML).not.toContain('default slot content for `ti…
+    169|     // reported bug: default slot content for `_duration` is rendered …
+    170|     expect(root.innerHTML).not.toContain('default slot content for `_d…
+       |                                ^
+    171|     expect(root.innerHTML).toContain('`_duration` template works')
+    172|   })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 1 passed (3)
+   Start at  13:23:20
+   Duration  2.83s (transform 1.45s, setup 16ms, collect 1.95s, tests 100ms, environment 424ms, prepare 77ms)
+
+
