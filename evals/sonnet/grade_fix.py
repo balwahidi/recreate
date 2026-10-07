@@ -86,11 +86,24 @@ def install_tests(case, repo, spec):
         f.write_text(src[:end] + upstream_rust_tests(repo, case["fix"], spec["rust_tests"]) + "\n" + src[end:])
 
 
+def drop_overwritten(patch, spec):
+    """Leave out the agent's changes to files install_tests replaces anyway, so they can't block the apply."""
+    exact = set(spec.get("files", [])) | set(spec.get("base_files", []))
+    dirs = tuple(d.rstrip("/") + "/" for d in spec.get("base_dirs", []))
+    keep = []
+    for chunk in re.split(r"(?m)^(?=diff --git )", patch or ""):
+        m = re.match(r"diff --git a/(\S+)", chunk)
+        if m and (m.group(1) in exact or m.group(1).startswith(dirs)):
+            continue
+        keep.append(chunk)
+    return "".join(keep)
+
+
 def run_hidden(case, patch, log):
     spec = HIDDEN[case["id"]]
     repo = GRADE / case["id"] / "repo"
     grade.reset(repo, case["checkout"])
-    ok, err = grade.apply(repo, patch)
+    ok, err = grade.apply(repo, drop_overwritten(patch, spec))
     if not ok:
         log.write_text(f"agent patch does not apply:\n{err}")
         grade.reset(repo, case["checkout"])
