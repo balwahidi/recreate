@@ -1,0 +1,15 @@
+{
+  "label": "vue-13611__610f1a2d55__fix",
+  "case": "vue-13611",
+  "files": [
+    "packages/runtime-core/__tests__/componentSlots.spec.ts",
+    "packages/runtime-core/src/componentSlots.ts",
+    "packages/vue/__tests__/index.spec.ts"
+  ],
+  "test_in_patch": true,
+  "F": false,
+  "applied": true,
+  "codes": [
+    1
+  ]
+}
