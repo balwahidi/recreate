@@ -27,7 +27,13 @@ RUN = {
     ],
 }
 # Skill text per arm; arms not listed get no skill.
-SKILLS = {"treatment": "SKILL.md", "minimal": "evals/variants/SKILL-minimal.md"}
+SKILLS = {
+    "treatment": "SKILL.md",
+    "minimal": "evals/variants/SKILL-minimal.md",
+    # Experiment 3 arms; see evals/notes/exp3-run-contract.md.
+    "working291": "evals/variants/SKILL-working-291.md",
+    "runcontract": "evals/variants/SKILL-run-contract.md",
+}
 
 
 def units():

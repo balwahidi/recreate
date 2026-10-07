@@ -51,7 +51,7 @@ The evaluated agent returns `final_message`, `patch` (its whole working tree dif
 3. Apply only the upstream production fix.
 4. Run the command again: the "post" side.
 
-A useful reproduction is `fail_to_pass`: non-zero exit before the fix, zero after. Commands for flaky cases run 3 times per side. Every verdict comes with pre and post logs, and I read the logs before accepting a verdict.
+A useful reproduction is `fail_to_pass`: non-zero exit before the fix, zero after. `pass_to_fail` (zero before, non-zero after) is fix-sensitive but has inverted exit status: it exits zero while the bug is present. Earlier grader versions labelled it `fails_both`. No result stored here has that pattern, but the October 2026 GPT-6.1 Sol experiments (handoff branch) do. Commands for flaky cases run 3 times per side. Every verdict comes with pre and post logs, and I read the logs before accepting a verdict.
 
 Per-case adjustments, all in `grade.py` or the grading environment:
 
