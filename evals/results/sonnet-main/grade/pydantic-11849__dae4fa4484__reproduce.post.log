@@ -1,0 +1,33 @@
+===== run 1: exit 0
+pydantic 2.11.4, python 3.13.16, switchinterval=0.005
+1) deterministic (rebuild paused while another thread uses the model):
+  during rebuild: C.model_validate(...) -> C(id='ok2') (hasattr name: True)   expected C
+  after rebuild : C.model_validate(...) -> C(id='ok3', name='test')
+2) 4 threads using a fresh, not yet built model for the first time, 100 trials (default GIL switch interval, no hooks):
+  Direct: wrong class / error in 0/100 trials; outcomes per call: {'Direct': 400}
+  C: wrong class / error in 0/100 trials; outcomes per call: {'C': 400}
+  (2.4s)
+not reproduced
+
+===== run 2: exit 0
+pydantic 2.11.4, python 3.13.16, switchinterval=0.005
+1) deterministic (rebuild paused while another thread uses the model):
+  during rebuild: C.model_validate(...) -> C(id='ok2') (hasattr name: True)   expected C
+  after rebuild : C.model_validate(...) -> C(id='ok3', name='test')
+2) 4 threads using a fresh, not yet built model for the first time, 100 trials (default GIL switch interval, no hooks):
+  Direct: wrong class / error in 0/100 trials; outcomes per call: {'Direct': 400}
+  C: wrong class / error in 0/100 trials; outcomes per call: {'C': 400}
+  (2.7s)
+not reproduced
+
+===== run 3: exit 0
+pydantic 2.11.4, python 3.13.16, switchinterval=0.005
+1) deterministic (rebuild paused while another thread uses the model):
+  during rebuild: C.model_validate(...) -> C(id='ok2') (hasattr name: True)   expected C
+  after rebuild : C.model_validate(...) -> C(id='ok3', name='test')
+2) 4 threads using a fresh, not yet built model for the first time, 100 trials (default GIL switch interval, no hooks):
+  Direct: wrong class / error in 0/100 trials; outcomes per call: {'Direct': 400}
+  C: wrong class / error in 0/100 trials; outcomes per call: {'C': 400}
+  (2.4s)
+not reproduced
+
