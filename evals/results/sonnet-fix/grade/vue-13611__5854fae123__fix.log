@@ -5,12 +5,12 @@
 
  RUN  v3.1.4 /root/grade/vue-13611/repo
 
- ✓ |unit| packages/compiler-core/__tests__/transforms/vSlot.spec.ts (28 tests) 95ms
- ❯ |unit| packages/runtime-core/__tests__/componentSlots.spec.ts (17 tests | 2 failed) 165ms
-   ✓ component: slots > initSlots: instance.slots should be set correctly 55ms
-   ✓ component: slots > initSlots: instance.slots should remove compiler marker if parent is using manual render function 2ms
-   ✓ component: slots > initSlots: ensure compiler marker non-enumerable 12ms
-   × component: slots > initSlots: should normalize object slots (when value is null, string, array) 34ms
+ ✓ |unit| packages/compiler-core/__tests__/transforms/vSlot.spec.ts (28 tests) 58ms
+ ❯ |unit| packages/runtime-core/__tests__/componentSlots.spec.ts (17 tests | 2 failed) 72ms
+   ✓ component: slots > initSlots: instance.slots should be set correctly 13ms
+   ✓ component: slots > initSlots: instance.slots should remove compiler marker if parent is using manual render function 1ms
+   ✓ component: slots > initSlots: ensure compiler marker non-enumerable 3ms
+   × component: slots > initSlots: should normalize object slots (when value is null, string, array) 15ms
      → expected "[Vue warn]: Non-function value encountered for slot "_inner". Prefer function slots for better performance." to have been warned.
 
 Actual messages:
@@ -20,19 +20,19 @@ Actual messages:
      → test case threw unexpected warnings:
  - [Vue warn]: Non-function value encountered for slot "header". Prefer function slots for better performance.
  - [Vue warn]: Non-function value encountered for slot "footer". Prefer function slots for better performance.
-   ✓ component: slots > initSlots: should normalize object slots (when value is function) 2ms
+   ✓ component: slots > initSlots: should normalize object slots (when value is function) 3ms
    ✓ component: slots > initSlots: instance.slots should be set correctly (when vnode.shapeFlag is not SLOTS_CHILDREN) 2ms
-   ✓ component: slots > updateSlots: instance.slots should be updated correctly (when slotType is number) 9ms
-   ✓ component: slots > updateSlots: instance.slots should be updated correctly (when slotType is null) 3ms
-   ✓ component: slots > updateSlots: instance.slots should be update correctly (when vnode.shapeFlag is not SLOTS_CHILDREN) 11ms
+   ✓ component: slots > updateSlots: instance.slots should be updated correctly (when slotType is number) 6ms
+   ✓ component: slots > updateSlots: instance.slots should be updated correctly (when slotType is null) 4ms
+   ✓ component: slots > updateSlots: instance.slots should be update correctly (when vnode.shapeFlag is not SLOTS_CHILDREN) 3ms
    ✓ component: slots > should respect $stable flag with a value of true 3ms
    ✓ component: slots > should respect $stable flag with a value of false 2ms
    ✓ component: slots > should not warn when mounting another app in setup 2ms
-   ✓ component: slots > basic warn 11ms
+   ✓ component: slots > basic warn 1ms
    ✓ component: slots > basic warn when mounting another app in setup 1ms
    ✓ component: slots > should not warn when render in setup 1ms
    ✓ component: slots > basic warn when render in setup 1ms
-   × component: slots > slot name starts with underscore 12ms
+   × component: slots > slot name starts with underscore 8ms
      → slots._foo is not a function
      → test case threw unexpected warnings:
  - [Vue warn]: Unhandled error during execution of render function
@@ -107,7 +107,7 @@ Error: test case threw unexpected warnings:
 
  Test Files  1 failed | 1 passed (2)
       Tests  2 failed | 43 passed (45)
-   Start at  18:49:50
-   Duration  3.82s (transform 2.85s, setup 270ms, collect 4.30s, tests 260ms, environment 1ms, prepare 650ms)
+   Start at  21:05:19
+   Duration  1.49s (transform 1.33s, setup 35ms, collect 1.87s, tests 130ms, environment 0ms, prepare 147ms)
 
 

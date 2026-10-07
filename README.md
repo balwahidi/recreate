@@ -37,6 +37,21 @@ It was tested against v5 in 20 frozen, paired Sonnet runs per arm. Details are i
 - **Shorter didn't make it worse.** The report template and status menu had no measured effect, and dropping them didn't thin the reports. v7 runs still led with a status, stated failure rates on flaky bugs, and named already-fixed reports.
 - **The one difference in quality comes from one phrase:** "without writing a fix". With a throwaway fix allowed, v5 agents tended to assert what their own fix did. On ripgrep-3009 that meant a panic message the real fix doesn't produce. Across two frozen tests, the no-fix wording passed ripgrep 4 of 4 times and v5 passed it 0 of 4.
 
+### "Fix this bug": no gain
+
+Most people ask an agent to fix a bug, so v7 was tested against no skill on "Fix this bug." The test used 5 real issues, 2 pairs each. A fix counted only if it passed the tests the upstream maintainers shipped with their fix, which the agent never saw, plus the existing tests next to them. Details are in [`evals/notes/sonnet-fix-results.md`](evals/notes/sonnet-fix-results.md).
+
+| | No skill | v7 |
+|---|---|---|
+| Fix passes upstream's own tests | **9/10** | 7/10 |
+| Fix verified with a before/after check | 9/10 | 10/10 |
+| Median tokens | 81K | 86K |
+
+- **Without the skill, Sonnet already reproduces first when fixing.** It wrote a check that failed before and passed after, and it added a regression test.
+- **With v7, fixes were narrower more often.** Every miss fixed the path its reproduction exercised and missed a sibling path that upstream also fixed.
+
+So Recreate is for reproduction and triage, not for making fixes better.
+
 ### v5 vs v3 and no skill, measured with Sonnet
 
 v5 added "The check": one command with a meaningful exit status, asserting only the report, seen passing once. 67 Sonnet runs on 9 real historical issues, each reproduction replayed against the real upstream fix the agent never saw. Details are in [`evals/notes/sonnet-v5-results.md`](evals/notes/sonnet-v5-results.md).
@@ -71,6 +86,7 @@ The earlier findings below come from 18 real historical issues: 7 dev cases and 
 
 - Two harnesses and models were used: Devin for v0 to v3, Sonnet subagents for v5 and v7. There were 1 to 6 samples per cell.
 - R was near ceiling in the v7 test, so it rules out a large quality loss on these cases, not a small one. Its token cut is a 14-of-20 pair split.
+- The fix test had 10 pairs. Its "worse" verdict rests on 2 pairs, but it clearly shows no improvement.
 - The v5 confirmatory round used the two cases where exit status decided pairs. The claim is about that mechanism.
 - Simulated-environment fidelity is still a known gap. Agents label Windows simulations correctly, but often simulate after the code has already taken the Linux branch (see `evals/notes/audit-2026-10-07.md`).
 

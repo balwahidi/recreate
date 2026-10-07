@@ -2,19 +2,19 @@
 Detected Linux file limit of 1025.
 Generating 1025 files in tmp/emfile-check...
 Running ESLint...
-(node:15314) ESLintIgnoreWarning: The ".eslintignore" file is no longer supported. Switch to using the "ignores" property in "eslint.config.js": https://eslint.org/docs/latest/use/configure/migration-guide#ignoring-files
+(node:16729) ESLintIgnoreWarning: The ".eslintignore" file is no longer supported. Switch to using the "ignores" property in "eslint.config.js": https://eslint.org/docs/latest/use/configure/migration-guide#ignoring-files
 (Use `node --trace-warnings ...` to show where the warning was created)
 ✅ No errors encountered running ESLint.
 Checking that this number of files would cause an EMFILE error...
-✅ EMFILE error encountered: EMFILE: too many open files, open 'tmp/emfile-check/file_495.js'
+✅ EMFILE error encountered: EMFILE: too many open files, open 'tmp/emfile-check/file_1004.js'
 
 
   ESLint
     ESLint constructor function
       ✔ should have a static property indicating the configType being used
       ✔ should have the defaultConfig static property
-      ✔ the default value of 'options.cwd' should be the current working directory. (1844ms)
-      ✔ should normalize 'options.cwd'. (69ms)
+      ✔ the default value of 'options.cwd' should be the current working directory. (595ms)
+      ✔ should normalize 'options.cwd'.
       ✔ should not modify baseConfig in the constructor
       ✔ should throw readable messages if removed options are present
       ✔ should throw readable messages if wrong type values are given to options
@@ -80,10 +80,10 @@ Checking that this number of files would cause an EMFILE error...
       TypeScript config files
         ✔ should fail to load a TS config file if jiti is not installed
         ✔ should fail to load a TS config file if an outdated version of jiti is installed
-        ✔ should handle jiti interopDefault edge cases (864ms)
+        ✔ should handle jiti interopDefault edge cases (216ms)
         Loading TypeScript config files with jiti
-          ✔ should find and load eslint.config.ts when present (82ms)
-          ✔ should load eslint.config.ts when we have "type": "commonjs" in nearest `package.json` (42ms)
+          ✔ should find and load eslint.config.ts when present
+          ✔ should load eslint.config.ts when we have "type": "commonjs" in nearest `package.json`
           ✔ should load eslint.config.ts when we have "type": "module" in nearest `package.json`
           ✔ should load eslint.config.ts with const enums
           ✔ should load eslint.config.ts with local namespace
@@ -94,13 +94,13 @@ Checking that this number of files would cause an EMFILE error...
           ✔ should find and load eslint.config.cts when present
           ✔ should load eslint.config.cts config file when we have "type": "commonjs" in nearest `package.json`
           ✔ should load .cts config file when we have "type": "module" in nearest `package.json`
-          ✔ should successfully load a TS config file that exports a promise (77ms)
+          ✔ should successfully load a TS config file that exports a promise
           ✔ should load a CommonJS TS config file that exports undefined with a helpful warning message
         Loading TypeScript config files with jiti-v2.0
-          ✔ should find and load eslint.config.ts when present (450ms)
+          ✔ should find and load eslint.config.ts when present (174ms)
           ✔ should load eslint.config.ts when we have "type": "commonjs" in nearest `package.json`
           ✔ should load eslint.config.ts when we have "type": "module" in nearest `package.json`
-          ✔ should load eslint.config.ts with const enums (199ms)
+          ✔ should load eslint.config.ts with const enums (40ms)
           ✔ should load eslint.config.ts with local namespace
           ✔ should allow passing a TS config file to `overrideConfigFile`
           ✔ should find and load eslint.config.mts when present
@@ -112,7 +112,7 @@ Checking that this number of files would cause an EMFILE error...
           ✔ should successfully load a TS config file that exports a promise
           ✔ should load a CommonJS TS config file that exports undefined with a helpful warning message
         Loading TypeScript config files with jiti-v2.1
-          ✔ should find and load eslint.config.ts when present (614ms)
+          ✔ should find and load eslint.config.ts when present (198ms)
           ✔ should load eslint.config.ts when we have "type": "commonjs" in nearest `package.json`
           ✔ should load eslint.config.ts when we have "type": "module" in nearest `package.json`
           ✔ should load eslint.config.ts with const enums
@@ -127,17 +127,17 @@ Checking that this number of files would cause an EMFILE error...
           ✔ should successfully load a TS config file that exports a promise
           ✔ should load a CommonJS TS config file that exports undefined with a helpful warning message
         Loading TypeScript config files natively
-          ✔ should load a TS config file when --experimental-strip-types is enabled (100ms)
+          ✔ should load a TS config file when --experimental-strip-types is enabled (51ms)
           - should load a TS config file when --experimental-transform-types is enabled
     lintFiles()
       ✔ should use correct parser when custom parser is specified
       ✔ should report zero messages when given a config file and a valid file
       ✔ should handle multiple patterns with overlapping files
-      ✔ should report zero messages when given a config file and a valid file and espree as parser (154ms)
+      ✔ should report zero messages when given a config file and a valid file and espree as parser
       ✔ should report zero messages when given a config file and a valid file and esprima as parser
       ✔ should throw if overrideConfigFile is path to a file that doesn't exist
       ✔ should throw an error when given a config file and a valid file and invalid parser
-      ✔ should work in case when `fsp.readFile()` returns an object that is not an instance of Promise from this realm (66ms)
+      ✔ should work in case when `fsp.readFile()` returns an object that is not an instance of Promise from this realm
       ✔ should report zero messages when given a directory with a .js2 file
       ✔ should report zero messages when given a directory with a .js and a .js2 file
       ✔ should skip files with non-standard extensions when they're matched only by a '*' files pattern
@@ -160,10 +160,10 @@ Checking that this number of files would cause an EMFILE error...
       ✔ should return zero messages when executing without a config file
       ✔ should throw if an invalid value is given to 'patterns' argument
       ✔ should stop linting files if a rule crashes
-      ✔ should not exit the process unexpectedly after a rule crashes (611ms)
+      ✔ should not exit the process unexpectedly after a rule crashes (211ms)
       Missing Configuration File
-        ✔ :should throw if eslint.config.js file is not present (51ms)
-        ✔ should throw if eslint.config.js file is not present even if overrideConfig was passed (79ms)
+        ✔ :should throw if eslint.config.js file is not present
+        ✔ should throw if eslint.config.js file is not present even if overrideConfig was passed
         ✔ should throw if eslint.config.js file is not present even if overrideConfig was passed and a file path is given
         ✔ should not throw if eslint.config.js file is not present and overrideConfigFile is `true`
         ✔ should not throw if eslint.config.js file is not present and overrideConfigFile is path to a config file
@@ -214,7 +214,7 @@ Checking that this number of files would cause an EMFILE error...
         ✔ should ignore one-level down node_modules by default
         ✔ should ignore all files and throw an error when **/fixtures/** is in `ignores` in the config file
         ✔ should throw an error when all given files are ignored via ignorePatterns
-        ✔ should not throw an error when ignorePatterns is an empty array (604ms)
+        ✔ should not throw an error when ignorePatterns is an empty array (44ms)
         ✔ should return a warning when an explicitly given file is ignored
         ✔ should return a warning when an explicitly given file has no matching config
         ✔ should return a warning when an explicitly given file is outside the base path
@@ -237,24 +237,26 @@ Checking that this number of files would cause an EMFILE error...
         ✔ should disregard ignore pattern '/'
         ✔ should not skip an unignored file in base path when all files are initially ignored by '**'
       Deprecated Rules
-        ✔ should warn when deprecated rules are configured (155ms)
-        ✔ should not warn when deprecated rules are not configured (85ms)
-        ✔ should warn when deprecated rules are found in a config (142ms)
-        ✔ should add the plugin name to the replacement if available (160ms)
+        ✔ should warn when deprecated rules are configured
+        ✔ should not warn when deprecated rules are not configured
+        ✔ should warn when deprecated rules are found in a config
+        ✔ should add the plugin name to the replacement if available
       Fix Mode
-        ✔ correctly autofixes semicolon-conflicting-fixes (65ms)
-        ✔ correctly autofixes return-conflicting-fixes (78ms)
-        ✔ should return fixed text on multiple files when in fix mode (49ms)
-        ✔ should run autofix even if files are cached without autofix results (72ms)
+        ✔ correctly autofixes semicolon-conflicting-fixes
+        ✔ correctly autofixes return-conflicting-fixes
+        ✔ should return fixed text on multiple files when in fix mode
+        ✔ should run autofix even if files are cached without autofix results
       plugins
         ✔ should return two messages when executing with config file that specifies a plugin
         ✔ should return two messages when executing with cli option that specifies a plugin
         ✔ should return two messages when executing with cli option that specifies preloaded plugin
       processors
         ✔ should return two messages when executing with config file that specifies preloaded processor
-        ✔ should run processors when calling lintFiles with
-[... 68849 chars truncated ...]
-      - with "type": "commonjs" in `package.json` and ESM syntax
+        ✔ should run processors when calling lintFiles with config file that specifies preloaded processor
+        ✔ should run processors when calling lintText with config file 
+[... 68207 chars truncated ...]
+ `package.json` and CJS syntax
+            - with "type": "commonjs" in `package.json` and ESM syntax
             - with "type": "module" in `package.json` and CJS syntax
             - with "type": "module" in `package.json` and ESM syntax
             - fails without unstable_native_nodejs_ts_config if jiti is not installed
@@ -443,9 +445,9 @@ Checking that this number of files would cause an EMFILE error...
       ✔ when it has 'files' they should be interpreted as relative to the config file
       ✔ when it has 'ignores' they should be interpreted as relative to the config file
     config file
-      ✔ new instance of ESLint should use the latest version of the config file (ESM) (142ms)
-      ✔ new instance of ESLint should use the latest version of the config file (CJS) (116ms)
-      ✔ new instance of ESLint should use the latest version of the config file (TypeScript) (145ms)
+      ✔ new instance of ESLint should use the latest version of the config file (ESM) (110ms)
+      ✔ new instance of ESLint should use the latest version of the config file (CJS) (112ms)
+      ✔ new instance of ESLint should use the latest version of the config file (TypeScript) (118ms)
     config with circular references
       ✔ in 'settings'
       ✔ in 'parserOptions'
@@ -474,7 +476,7 @@ Checking that this number of files would cause an EMFILE error...
       ✔ should throw an error if the cache file to be deleted exist on a read-only file system
       ✔ should not throw an error if deleting fails but cache file no longer exists
       ✔ should store in the cache a file that has lint messages and a file that doesn't have lint messages
-      ✔ should not contain in the cache a file that was deleted (41ms)
+      ✔ should not contain in the cache a file that was deleted
       ✔ should contain files that were not visited in the cache provided they still exist
       ✔ should not delete cache when executing on text
       ✔ should not delete cache when executing on text with a provided filename
@@ -490,7 +492,7 @@ Checking that this number of files would cause an EMFILE error...
       cacheStrategy
         ✔ should detect changes using a file's modification time when set to 'metadata'
         ✔ should not detect changes using a file's modification time when set to 'content'
-        ✔ should detect changes using a file's contents when set to 'content' (65ms)
+        ✔ should detect changes using a file's contents when set to 'content'
     v10_config_lookup_from_file
       ✔ should report zero messages when given a config file and a valid file
       Subdirectory Config File
@@ -502,12 +504,12 @@ Checking that this number of files would cause an EMFILE error...
         ✔ should traverse into subdir1 when parent config file specifies it as ignored and passing in subdir1/*.mjs
         ✔ should reject an error when parent config file specifies subdir1 as ignored and passing in sub*1/*.mjs
         ✔ should traverse into subdir1 when parent config file specifies it as ignored and passing in subdir1/eslint.config.mjs
-        ✔ should traverse into subdir1 when parent config file specifies it as ignored and passing in ../subdir1/eslint.config.mjs (187ms)
-        ✔ should traverse into subdir1 when parent config file specifies it as ignored and passing in ../subdir1/*.mjs (50ms)
+        ✔ should traverse into subdir1 when parent config file specifies it as ignored and passing in ../subdir1/eslint.config.mjs
+        ✔ should traverse into subdir1 when parent config file specifies it as ignored and passing in ../subdir1/*.mjs
         ✔ should traverse into subdir1 when parent config file specifies it as ignored and passing in ../subdir1
         ✔ should traverse into subdir3/subsubdir when parent config file specifies it as ignored and passing in subdir3/subsubdir
       Root config trying to ignore specific subdirectory with config
-        ✔ should traverse into subdir1 and subdir2 but not subdir3 when parent config file specifies it as ignored and passing in . (46ms)
+        ✔ should traverse into subdir1 and subdir2 but not subdir3 when parent config file specifies it as ignored and passing in .
         ✔ should not traverse into subdirectories when passing in *
         ✔ should traverse into subdir3 when parent config file specifies it as ignored and passing in subdir3
         ✔ should traverse into subdir3 when parent config file specifies it as ignored and passing in subdir3/*.js
@@ -527,7 +529,7 @@ Checking that this number of files would cause an EMFILE error...
       ✔ should report zero messages when given a config file and a valid file
 
 
-  1101 passing (26s)
+  1101 passing (9s)
   18 pending
 
 

@@ -18,6 +18,21 @@ The shipped skill is now **v7** (202 words). It replaced v5 (383 words) after a 
 - The four concurrent ripgrep runs killed each other's hung tests by process name, and both arms did it. The pre-registered check without those pairs gives the same decision.
 - Details are in `evals/notes/sonnet-v7-short-results.md`.
 
+**Fix test: v7 vs no skill on "Fix this bug."** 5 cases, 2 pairs each. Fixes were graded by upstream's own hidden tests plus existing neighbouring tests, and every grader was validated against the checkout and the upstream fix first.
+
+| | No skill | v7 |
+|---|---|---|
+| Fix correct | 9/10 | 7/10 |
+| Pairs won | 2 | 0 (8 ties) |
+| Before/after check cited (blind) | 9/10 | 10/10 |
+| Regression test added | 10/10 | 10/10 |
+| Median tokens | 80.6K | 86.4K |
+
+- Under the frozen rule this reads "Recreate fixes worse". It rests on 2 pairs.
+- Both v7 losses fixed the reproduced path and missed a sibling one: vue's render-function slots, and ripgrep's panic in the visitor builder.
+- Without the skill, Sonnet already reproduces first and adds a regression test when fixing.
+- Details are in `evals/notes/sonnet-fix-results.md`.
+
 **v5** (the rest of this section).
 
 v5 is v3 plus a "The check" section: one command that exits non-zero while the bug is present and zero once it's fixed, that asserts only the reported behavior, and that has been seen passing once. The evaluated agents were Sonnet Agent-tool subagents. Each graded reproduction was replayed against the real upstream production fix. Full results, every miss and the audit are in `evals/notes/sonnet-v5-results.md`; the protocols were frozen before their runs.
