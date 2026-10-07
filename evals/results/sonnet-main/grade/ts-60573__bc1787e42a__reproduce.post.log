@@ -1,0 +1,5 @@
+===== run 1: exit 0
+typescript 5.8.0-dev (/root/grade/ts-60573/repo/built/local/typescript.js)
+issue.ts: Test = { prop1: "hello"; }   [Test.prop1 via getTypeOfSymbol = "hello"]  OK
+workaround.ts: Test = { prop1: "hello"; }   [Test.prop1 via getTypeOfSymbol = "hello"]  OK
+
