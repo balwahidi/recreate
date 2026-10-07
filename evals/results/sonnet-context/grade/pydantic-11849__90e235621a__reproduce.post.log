@@ -1,0 +1,39 @@
+===== run 1: exit 1
+pydantic 2.11.4 python 3.13.16
+Traceback (most recent call last):
+  File "/root/grade/pydantic-11849/repo/repro_11849.py", line 242, in <module>
+    ex()
+    ~~^^
+  File "/root/grade/pydantic-11849/repo/repro_11849.py", line 117, in example1
+    result = run_while_rebuilding(lambda: Direct(id='first'), pause1, use)
+  File "/root/grade/pydantic-11849/repo/repro_11849.py", line 79, in run_while_rebuilding
+    assert not errors, errors
+           ^^^^^^^^^^
+AssertionError: [AssertionError('timed out')]
+
+===== run 2: exit 1
+pydantic 2.11.4 python 3.13.16
+Traceback (most recent call last):
+  File "/root/grade/pydantic-11849/repo/repro_11849.py", line 242, in <module>
+    ex()
+    ~~^^
+  File "/root/grade/pydantic-11849/repo/repro_11849.py", line 117, in example1
+    result = run_while_rebuilding(lambda: Direct(id='first'), pause1, use)
+  File "/root/grade/pydantic-11849/repo/repro_11849.py", line 79, in run_while_rebuilding
+    assert not errors, errors
+           ^^^^^^^^^^
+AssertionError: [AssertionError('timed out')]
+
+===== run 3: exit 1
+pydantic 2.11.4 python 3.13.16
+Traceback (most recent call last):
+  File "/root/grade/pydantic-11849/repo/repro_11849.py", line 242, in <module>
+    ex()
+    ~~^^
+  File "/root/grade/pydantic-11849/repo/repro_11849.py", line 117, in example1
+    result = run_while_rebuilding(lambda: Direct(id='first'), pause1, use)
+  File "/root/grade/pydantic-11849/repo/repro_11849.py", line 79, in run_while_rebuilding
+    assert not errors, errors
+           ^^^^^^^^^^
+AssertionError: [AssertionError('timed out')]
+

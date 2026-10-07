@@ -1,0 +1,6 @@
+===== run 1: exit 1
+FAIL (FILES=600, ulimit -n 256):
+  - ESLint threw: Error: EMFILE: too many open files, open '/tmp/eslint-emfile-eAYrFs/file31.js'
+  - eslint exited with 2, expected 0
+  - 365/600 files were not fixed
+
