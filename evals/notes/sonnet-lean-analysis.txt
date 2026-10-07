@@ -1,0 +1,44 @@
+Per run:
+  p18 eslint-19637        investigate v5   83e71c77b8 None                     R=0 S=0 A=0 H=None prod=[] tokens=63123 tools=16 s=106
+  p18 eslint-19637        investigate v6   c56eb9c8bb None                     R=0 S=0 A=0 H=None prod=[] tokens=58397 tools=13 s=78
+  p5  eslint-19637        reproduce   v5   1fa7cad3e5 fail_to_pass             R=1 S=1 A=0 H=None prod=[] tokens=66009 tools=20 s=93
+  p5  eslint-19637        reproduce   v6   4ece10a39d fail_to_pass             R=1 S=1 A=0 H=None prod=[] tokens=62281 tools=20 s=88
+  p6  eslint-19637        reproduce   v5   dc918f07e4 fail_to_pass             R=1 S=1 A=0 H=None prod=[] tokens=59797 tools=14 s=62
+  p6  eslint-19637        reproduce   v6   4c502723fd fail_to_pass             R=1 S=1 A=0 H=None prod=[] tokens=61356 tools=16 s=87
+  p3  eslint-19924        reproduce   v5   6230367be7 fail_to_pass             R=1 S=1 A=0 H=None prod=[] tokens=63062 tools=17 s=542
+  p3  eslint-19924        reproduce   v6   a8cb098daf fail_to_pass             R=1 S=1 A=0 H=None prod=[] tokens=56551 tools=14 s=242
+  p4  eslint-19924        reproduce   v5   37dada2dc6 fail_to_pass             R=1 S=1 A=0 H=None prod=[] tokens=57709 tools=12 s=282
+  p4  eslint-19924        reproduce   v6   df38e6bd87 fail_to_pass             R=1 S=1 A=0 H=None prod=[] tokens=53362 tools=9 s=180
+  p1  eslint-19957        reproduce   v5   fb98e2690d fail_to_pass             R=1 S=1 A=0 H=None prod=[] tokens=60607 tools=9 s=58
+  p1  eslint-19957        reproduce   v6   4c1e01eaa2 fail_to_pass             R=1 S=1 A=0 H=None prod=[] tokens=57728 tools=9 s=62
+  p2  eslint-19957        reproduce   v5   db792d1ab0 fail_to_pass             R=1 S=1 A=0 H=None prod=[] tokens=58209 tools=8 s=57
+  p2  eslint-19957        reproduce   v6   ef02928887 fail_to_pass             R=1 S=1 A=0 H=None prod=[] tokens=55715 tools=8 s=65
+  p17 eslint-20209-fixed  reproduce   v5   bb416f538b None                     R=0 S=0 A=0 H=True prod=[] tokens=61491 tools=11 s=64
+  p17 eslint-20209-fixed  reproduce   v6   e518a05126 None                     R=0 S=0 A=0 H=True prod=[] tokens=60555 tools=13 s=97
+  p11 pydantic-11849      reproduce   v5   0679501fa6 fail_to_pass             R=1 S=1 A=0 H=None prod=[] tokens=106101 tools=32 s=354
+  p11 pydantic-11849      reproduce   v6   8a27eb054f fail_to_pass             R=1 S=1 A=0 H=None prod=[] tokens=92808 tools=25 s=811
+  p12 pydantic-11849      reproduce   v5   febc80d9fc fail_to_pass             R=1 S=1 A=0 H=None prod=[] tokens=72414 tools=14 s=216
+  p12 pydantic-11849      reproduce   v6   5b1b1a6d00 fails_both               R=0 S=0 A=1 H=None prod=[] tokens=87165 tools=25 s=486
+  p13 ripgrep-3009        reproduce   v5   a71b4b05f9 fails_both               R=0 S=0 A=1 H=None prod=[] tokens=89116 tools=29 s=1011
+  p13 ripgrep-3009        reproduce   v6   a6804c3e3c fail_to_pass             R=1 S=1 A=0 H=None prod=[] tokens=88140 tools=31 s=1226
+  p14 ripgrep-3009        reproduce   v5   a31310c023 fails_both               R=0 S=0 A=1 H=None prod=[] tokens=85397 tools=33 s=981
+  p14 ripgrep-3009        reproduce   v6   9fb9ca61ef fail_to_pass             R=1 S=1 A=0 H=None prod=[] tokens=87166 tools=36 s=583
+  p15 ts-60573            reproduce   v5   f6fa986b4c fail_to_pass             R=1 S=1 A=0 H=None prod=[] tokens=54067 tools=8 s=64
+  p15 ts-60573            reproduce   v6   fcb495affd fail_to_pass             R=1 S=1 A=0 H=None prod=[] tokens=67961 tools=20 s=189
+  p16 ts-60573            reproduce   v5   61ec5f8e77 fail_to_pass             R=1 S=1 A=0 H=None prod=[] tokens=66999 tools=18 s=228
+  p16 ts-60573            reproduce   v6   433e91e3bb fail_to_pass             R=1 S=1 A=0 H=None prod=[] tokens=53627 tools=8 s=119
+  p9  urfave-cli-2176     reproduce   v5   add2fdd01c fail_to_pass             R=1 S=1 A=0 H=None prod=[] tokens=79159 tools=33 s=2430
+  p9  urfave-cli-2176     reproduce   v6   389bf7d16f fail_to_pass             R=1 S=1 A=0 H=None prod=[] tokens=72631 tools=32 s=755
+  p10 urfave-cli-2176     reproduce   v5   d5de7a52de fail_to_pass             R=1 S=1 A=0 H=None prod=[] tokens=86780 tools=25 s=877
+  p10 urfave-cli-2176     reproduce   v6   6cebc6f7b5 fail_to_pass             R=1 S=1 A=0 H=None prod=[] tokens=73047 tools=16 s=465
+  p19 vue-13611           investigate v5   fb98cf677a None                     R=0 S=0 A=0 H=None prod=[] tokens=77457 tools=21 s=227
+  p19 vue-13611           investigate v6   506bd51d10 None                     R=0 S=0 A=0 H=None prod=[] tokens=65360 tools=13 s=169
+  p7  vue-13611           reproduce   v5   6e221d71d0 fail_to_pass             R=1 S=1 A=0 H=None prod=[] tokens=82297 tools=23 s=391
+  p7  vue-13611           reproduce   v6   d44fb27221 fail_to_pass             R=1 S=1 A=0 H=None prod=[] tokens=63883 tools=14 s=128
+  p8  vue-13611           reproduce   v5   c1919b30b2 fail_to_pass             R=1 S=1 A=0 H=None prod=[] tokens=97742 tools=26 s=395
+  p8  vue-13611           reproduce   v6   59ba64e467 fail_to_pass             R=1 S=1 A=0 H=None prod=[] tokens=79000 tools=22 s=328
+
+R pairs: v6-only 2, v5-only 1, net 1 over 16 pairs
+tokens over 19 pairs: v5 median 66999, v6 median 63883, ratio 0.953; v6 fewer in 15
+v5: R 14/16  S 14/16  A 2  P 0  H 1/1  median tokens 66999  median tools 18  median s 228.28
+v6: R 15/16  S 15/16  A 1  P 0  H 1/1  median tokens 63883  median tools 16  median s 180.179

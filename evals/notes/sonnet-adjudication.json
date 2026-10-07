@@ -1,9 +1,26 @@
 {
  "H:21c0eb7984": true,
+ "H:bb416f538b": true,
  "H:dde41caa01": false,
  "H:e22e92e9a0": true,
+ "H:e518a05126": true,
  "H:ef7914247c": true,
  "H:f97c49cf03": true,
+ "eslint-19637__1fa7cad3e5__reproduce": {
+  "note": "'use strict' reported pre (ES3), clean post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "eslint-19637__4c502723fd__reproduce": {
+  "note": "'use strict' directives reported pre, clean post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "eslint-19637__4ece10a39d__reproduce": {
+  "note": "'use strict' reported pre, clean post",
+  "over_assertion": false,
+  "symptom": true
+ },
  "eslint-19637__5c54c6ea3c__reproduce": {
   "note": "'use strict' reported pre, clean post",
   "over_assertion": false,
@@ -24,6 +41,11 @@
   "over_assertion": false,
   "symptom": true
  },
+ "eslint-19637__dc918f07e4__reproduce": {
+  "note": "'use strict' reported pre, clean post",
+  "over_assertion": false,
+  "symptom": true
+ },
  "eslint-19637__ed30c76c0d__reproduce": {
   "note": "'use strict' reported with ecmaVersion 3 pre, clean post",
   "over_assertion": false,
@@ -39,7 +61,17 @@
   "over_assertion": false,
   "symptom": true
  },
+ "eslint-19924__37dada2dc6__reproduce": {
+  "note": "EMFILE in outputFixes pre, all fixed post",
+  "over_assertion": false,
+  "symptom": true
+ },
  "eslint-19924__5e1f5fc7f6__reproduce": {
+  "note": "EMFILE in outputFixes pre, all fixed post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "eslint-19924__6230367be7__reproduce": {
   "note": "EMFILE in outputFixes pre, all fixed post",
   "over_assertion": false,
   "symptom": true
@@ -69,6 +101,11 @@
   "over_assertion": false,
   "symptom": true
  },
+ "eslint-19924__a8cb098daf__reproduce": {
+  "note": "EMFILE pre, all fixed post",
+  "over_assertion": false,
+  "symptom": true
+ },
  "eslint-19924__b04c4bf6f1__reproduce": {
   "note": "EMFILE in outputFixes pre, all fixed post",
   "over_assertion": false,
@@ -89,8 +126,18 @@
   "over_assertion": false,
   "symptom": true
  },
+ "eslint-19924__df38e6bd87__reproduce": {
+  "note": "EMFILE pre (fd 512), all fixed post",
+  "over_assertion": false,
+  "symptom": true
+ },
  "eslint-19924__e512745906__reproduce": {
   "note": "EMFILE in outputFixes pre, fixed post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "eslint-19957__4c1e01eaa2__reproduce": {
+  "note": "9.000e+3 flagged pre, clean post",
   "over_assertion": false,
   "symptom": true
  },
@@ -114,8 +161,28 @@
   "over_assertion": false,
   "symptom": true
  },
+ "eslint-19957__db792d1ab0__reproduce": {
+  "note": "reported literals flagged pre, clean post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "eslint-19957__ef02928887__reproduce": {
+  "note": "reported literals flagged pre, clean post",
+  "over_assertion": false,
+  "symptom": true
+ },
  "eslint-19957__ef85c19e06__reproduce": {
   "note": "reported literal flagged pre, clean post; extra literals pass post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "eslint-19957__fb98e2690d__reproduce": {
+  "note": "9.000e+3 flagged pre, clean post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "pydantic-11849__0679501fa6__reproduce": {
+  "note": "BaseModel error and B-for-C pre 3/3, correct classes post",
   "over_assertion": false,
   "symptom": true
  },
@@ -124,8 +191,18 @@
   "over_assertion": false,
   "symptom": true
  },
+ "pydantic-11849__5b1b1a6d00__reproduce": {
+  "note": "wrong class / BaseModel error pre 3/3; post 2/3 clean, 1/3 trips on an unrelated RuntimeError (dictionary changed size during iteration) because the check counts any error",
+  "over_assertion": true,
+  "symptom": true
+ },
  "pydantic-11849__77bb66112e__reproduce": {
   "note": "BaseModel error and wrong class pre, 0/100 post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "pydantic-11849__8a27eb054f__reproduce": {
+  "note": "BaseModel error and B-for-C pre 3/3, OK post",
   "over_assertion": false,
   "symptom": true
  },
@@ -144,6 +221,11 @@
   "over_assertion": false,
   "symptom": true
  },
+ "pydantic-11849__febc80d9fc__reproduce": {
+  "note": "BaseModel error and B-for-C pre 3/3, OK post",
+  "over_assertion": false,
+  "symptom": true
+ },
  "ripgrep-3009__1e967925f2__reproduce": {
   "note": "hang pre (timeout 124), walk returns post; reporter's should_panic message assertion fails post (exit 101)",
   "over_assertion": false,
@@ -152,6 +234,26 @@
  "ripgrep-3009__629867e318__reproduce": {
   "note": "hang pre (exit status 124 printed), walk returns post; '; echo' swallows exit status; reporter's should_panic message assertion fails post",
   "over_assertion": false,
+  "symptom": true
+ },
+ "ripgrep-3009__9fb9ca61ef__reproduce": {
+  "note": "hang pre (timeout 124, 3/3), test passes post: walk returns",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "ripgrep-3009__a31310c023__reproduce": {
+  "note": "watchdog catches the hang pre (15 s); post the walk returns but the check fails on the propagated panic, which the report never said should be swallowed",
+  "over_assertion": true,
+  "symptom": true
+ },
+ "ripgrep-3009__a6804c3e3c__reproduce": {
+  "note": "watchdog catches the hang pre (10 s), test passes post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "ripgrep-3009__a71b4b05f9__reproduce": {
+  "note": "watchdog catches the hang pre (10 s); post the walk returns but the check fails on the propagated panic",
+  "over_assertion": true,
   "symptom": true
  },
  "ripgrep-3009__c154c8876a__reproduce": {
@@ -174,6 +276,11 @@
   "over_assertion": false,
   "symptom": true
  },
+ "ts-60573__433e91e3bb__reproduce": {
+  "note": "Wrapper<\"hello\"> pre, \"hello\" post",
+  "over_assertion": false,
+  "symptom": true
+ },
  "ts-60573__5017d7d8f0__reproduce": {
   "note": "Wrapper<\"hello\"> pre, \"hello\" post",
   "over_assertion": false,
@@ -186,6 +293,11 @@
  },
  "ts-60573__5ce63c6792__reproduce": {
   "note": "Wrapper<\"hello\"> displayed pre, \"hello\" post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "ts-60573__61ec5f8e77__reproduce": {
+  "note": "Wrapper<\"hello\"> pre, \"hello\" post",
   "over_assertion": false,
   "symptom": true
  },
@@ -234,8 +346,28 @@
   "over_assertion": false,
   "symptom": true
  },
+ "ts-60573__f6fa986b4c__reproduce": {
+  "note": "Wrapper<\"hello\"> pre, \"hello\" post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "ts-60573__fcb495affd__reproduce": {
+  "note": "Wrapper<\"hello\"> pre, \"hello\" post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "urfave-cli-2176__389bf7d16f__reproduce": {
+  "note": "nil-pointer panic pre 3/3, none post",
+  "over_assertion": false,
+  "symptom": true
+ },
  "urfave-cli-2176__6960999745__reproduce": {
   "note": "nil-pointer panic 187/400000 pre, none post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "urfave-cli-2176__6cebc6f7b5__reproduce": {
+  "note": "nil-pointer panic pre 3/3, none post",
   "over_assertion": false,
   "symptom": true
  },
@@ -245,6 +377,11 @@
   "symptom": true
  },
  "urfave-cli-2176__851292345a__reproduce": {
+  "note": "nil-pointer panic pre 3/3, none post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "urfave-cli-2176__add2fdd01c__reproduce": {
   "note": "nil-pointer panic pre 3/3, none post",
   "over_assertion": false,
   "symptom": true
@@ -259,6 +396,11 @@
   "over_assertion": false,
   "symptom": true
  },
+ "urfave-cli-2176__d5de7a52de__reproduce": {
+  "note": "nil-pointer panic pre, none post",
+  "over_assertion": false,
+  "symptom": true
+ },
  "vue-13611__23b15d9dc2__reproduce": {
   "note": "_duration default rendered pre, template post",
   "over_assertion": false,
@@ -269,13 +411,33 @@
   "over_assertion": false,
   "symptom": true
  },
+ "vue-13611__59ba64e467__reproduce": {
+  "note": "_duration default rendered pre, template post",
+  "over_assertion": false,
+  "symptom": true
+ },
  "vue-13611__675211ddfa__reproduce": {
+  "note": "_duration default rendered pre, template post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "vue-13611__6e221d71d0__reproduce": {
   "note": "_duration default rendered pre, template post",
   "over_assertion": false,
   "symptom": true
  },
  "vue-13611__83cb201d47__reproduce": {
   "note": "_duration default rendered pre, template post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "vue-13611__c1919b30b2__reproduce": {
+  "note": "underscore slots render defaults pre, templates post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "vue-13611__d44fb27221__reproduce": {
+  "note": "_slot2 default rendered pre, template post",
   "over_assertion": false,
   "symptom": true
  },

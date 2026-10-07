@@ -41,5 +41,6 @@ Per run:
   p8  vue-13611           reproduce   v5   3fad0081a1 fail_to_pass             R=1 S=1 A=0 H=None prod=[] tokens=71268 tools=17 s=184
 
 R pairs: v5-only 2, v3-only 0, net 2 over 16 pairs
+tokens over 20 pairs: v3 median 61482, v5 median 68219, ratio 1.110; v5 fewer in 8
 v3: R 12/16  S 12/16  A 0  P 0  H 2/2  median tokens 61481.5  median tools 16.0  median s 157.2735
 v5: R 14/16  S 14/16  A 0  P 0  H 2/2  median tokens 68219.0  median tools 16.5  median s 184.263

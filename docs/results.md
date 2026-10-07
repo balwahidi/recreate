@@ -19,6 +19,14 @@ v5 is v3 plus a "The check" section: one command that exits non-zero while the b
 - **v5's only misses were on ripgrep-3009.** The reporter's own `should_panic(expected = "oops!")` doesn't survive the real fix, which re-panics with a different message. Every arm hit that ceiling.
 - **The main run alone was inconclusive under its frozen rule** (net +2). A frozen confirmatory round on eslint-19924 and ts-60573 then gave v5 8/8 vs v3 5/8, which cleared its rule.
 
+**Token follow-up: v6 "lean", not adopted.** Every run starts with a fixed 43.4K-token harness context. Of the growth after that, about half is hidden reasoning and agent prose is 0.2%. So a terser output style can't move the cost; only doing less can.
+
+v6 dropped the throwaway fix from the pass-check, stopped cause-tracing on reproduce tasks, and asked for small context. Results over 19 pairs:
+- It was cheaper in 15 (median 63.9K vs 67.0K, a 4.7% cut).
+- R was 15/16 vs 14/16. v6 passed ripgrep-3009 for the first time, and lost one pydantic pair to a check that counted an unrelated error.
+
+Its frozen rule required a 10% median cut, so v5 stays. Details are in `evals/notes/sonnet-v6-lean-results.md`.
+
 Clean runs: `baseline-dev-v1`, `baseline-dev-v2`, `treatment-dev-v0`, `holdout-v0`, `repeat-v0`, `ablation-v2b`, `holdout-v3b`, `simulated-v4`, `holdout-control-r`. `ablation-v2`, `holdout-v3` and `treatment-v1-probe` are excluded because they were contaminated through shared memory (see `methodology.md`).
 
 ## 1. Faithful reproduction, mechanical replay (primary metric)

@@ -17,5 +17,6 @@ Per run:
   p8  ts-60573            reproduce   v5   810635c432 fail_to_pass             R=1 S=1 A=0 H=None prod=[] tokens=67792 tools=19 s=242
 
 R pairs: v5-only 3, v3-only 0, net 3 over 8 pairs
+tokens over 8 pairs: v3 median 61028, v5 median 64456, ratio 1.056; v5 fewer in 0
 v3: R 5/8  S 5/8  A 0  P 0  H 0/0  median tokens 61028.5  median tools 14.5  median s 247.721
 v5: R 8/8  S 8/8  A 0  P 0  H 0/0  median tokens 64456.0  median tools 17.0  median s 237.5275

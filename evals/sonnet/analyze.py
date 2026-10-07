@@ -66,12 +66,23 @@ graded = [x for x in rows if x["task"] == "reproduce" and cases[x["case"]]["fix"
 pairs = {}
 for x in graded:
     pairs.setdefault(x["pair"], {})[x["arm"]] = x
-wins = losses = 0
-for p, d in sorted(pairs.items()):
-    if "v3" in d and "v5" in d:
-        wins += d["v5"]["R"] and not d["v3"]["R"]
-        losses += d["v3"]["R"] and not d["v5"]["R"]
-print(f"\nR pairs: v5-only {wins}, v3-only {losses}, net {wins - losses} over {len(pairs)} pairs")
+arm_list = list(plan["skills"])
+if len(arm_list) == 2:
+    base, cand = arm_list
+    wins = losses = 0
+    for p, d in sorted(pairs.items()):
+        if base in d and cand in d:
+            wins += d[cand]["R"] and not d[base]["R"]
+            losses += d[base]["R"] and not d[cand]["R"]
+    print(f"\nR pairs: {cand}-only {wins}, {base}-only {losses}, net {wins - losses} over {len(pairs)} pairs")
+    tok = {}
+    for x in rows:
+        if "tokens" in x:
+            tok.setdefault(x["pair"], {})[x["arm"]] = x["tokens"]
+    both = [d for d in tok.values() if base in d and cand in d]
+    fewer = sum(d[cand] < d[base] for d in both)
+    mb = statistics.median(d[base] for d in both); mc = statistics.median(d[cand] for d in both)
+    print(f"tokens over {len(both)} pairs: {base} median {mb:.0f}, {cand} median {mc:.0f}, ratio {mc / mb:.3f}; {cand} fewer in {fewer}")
 for arm in arms:
     sub = [x for x in rows if x["arm"] == arm]
     g = [x for x in graded if x["arm"] == arm]
