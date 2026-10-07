@@ -2,17 +2,17 @@
 Detected Linux file limit of 1025.
 Generating 1025 files in tmp/emfile-check...
 Running ESLint...
-(node:9000) ESLintIgnoreWarning: The ".eslintignore" file is no longer supported. Switch to using the "ignores" property in "eslint.config.js": https://eslint.org/docs/latest/use/configure/migration-guide#ignoring-files
+(node:13279) ESLintIgnoreWarning: The ".eslintignore" file is no longer supported. Switch to using the "ignores" property in "eslint.config.js": https://eslint.org/docs/latest/use/configure/migration-guide#ignoring-files
 (Use `node --trace-warnings ...` to show where the warning was created)
 
 Oops! Something went wrong! :(
 
 ESLint: 9.30.1
 
-Error: EMFILE: too many open files, open '/root/grade/eslint-19924/repo/tmp/emfile-check/file_980.js'
+Error: EMFILE: too many open files, open '/root/grade/eslint-19924/repo/tmp/emfile-check/file_981.js'
     at async open (node:internal/fs/promises:636:25)
     at async Object.writeFile (node:internal/fs/promises:1205:14)
-    at async Promise.all (index 1004)
+    at async Promise.all (index 1005)
     at async ESLint.outputFixes (/root/grade/eslint-19924/repo/lib/eslint/eslint.js:533:3)
     at async Object.execute (/root/grade/eslint-19924/repo/lib/cli.js:637:4)
     at async main (/root/grade/eslint-19924/repo/bin/eslint.js:175:19)
@@ -34,7 +34,7 @@ Error: Command failed: node bin/eslint.js tmp/emfile-check -c tests/fixtures/emf
   status: 2,
   signal: null,
   output: [ null, null, null ],
-  pid: 8999,
+  pid: 13278,
   stdout: null,
   stderr: null
 }

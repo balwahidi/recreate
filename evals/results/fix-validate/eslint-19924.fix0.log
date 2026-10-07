@@ -1,19 +1,19 @@
-===== run 1: exit 255
+===== run 1: exit 2
 Detected Linux file limit of 1025.
 Generating 1025 files in tmp/emfile-check...
 Running ESLint...
-(node:9138) ESLintIgnoreWarning: The ".eslintignore" file is no longer supported. Switch to using the "ignores" property in "eslint.config.js": https://eslint.org/docs/latest/use/configure/migration-guide#ignoring-files
+(node:13570) ESLintIgnoreWarning: The ".eslintignore" file is no longer supported. Switch to using the "ignores" property in "eslint.config.js": https://eslint.org/docs/latest/use/configure/migration-guide#ignoring-files
 (Use `node --trace-warnings ...` to show where the warning was created)
 ✅ No errors encountered running ESLint.
 Checking that this number of files would cause an EMFILE error...
-✅ EMFILE error encountered: EMFILE: too many open files, open 'tmp/emfile-check/file_1004.js'
+✅ EMFILE error encountered: EMFILE: too many open files, open 'tmp/emfile-check/file_109.js'
 
 
   ESLint
     ESLint constructor function
       ✔ should have a static property indicating the configType being used
       ✔ should have the defaultConfig static property
-      ✔ the default value of 'options.cwd' should be the current working directory. (1439ms)
+      1) the default value of 'options.cwd' should be the current working directory.
       ✔ should normalize 'options.cwd'.
       ✔ should not modify baseConfig in the constructor
       ✔ should throw readable messages if removed options are present
@@ -22,11 +22,11 @@ Checking that this number of files would cause an EMFILE error...
       ✔ should throw readable messages if 'plugins' option contains empty key
       ✔ should warn if .eslintignore file is present
     hasFlag
-      ✔ should return true if the flag is present and active
+      ✔ should return true if the flag is present and active (62ms)
       ✔ should return true if the flag is present and active with ESLINT_FLAGS
-      ✔ should merge flags passed through API with flags passed through ESLINT_FLAGS
+      ✔ should merge flags passed through API with flags passed through ESLINT_FLAGS (81ms)
       ✔ should return true for multiple flags in ESLINT_FLAGS if the flag is present and active and one is duplicated in the API
-      ✔ should return true for multiple flags in ESLINT_FLAGS if the flag is present and active and there is leading and trailing white space
+      ✔ should return true for multiple flags in ESLINT_FLAGS if the flag is present and active and there is leading and trailing white space (41ms)
       ✔ should return true for the replacement flag if an inactive flag that has been replaced is used
       ✔ should return false if an inactive flag whose feature is enabled by default is used
       ✔ should throw an error if an inactive flag whose feature has been abandoned is used
@@ -80,12 +80,12 @@ Checking that this number of files would cause an EMFILE error...
       TypeScript config files
         ✔ should fail to load a TS config file if jiti is not installed
         ✔ should fail to load a TS config file if an outdated version of jiti is installed
-        ✔ should handle jiti interopDefault edge cases (304ms)
+        ✔ should handle jiti interopDefault edge cases (571ms)
         Loading TypeScript config files with jiti
           ✔ should find and load eslint.config.ts when present
           ✔ should load eslint.config.ts when we have "type": "commonjs" in nearest `package.json`
           ✔ should load eslint.config.ts when we have "type": "module" in nearest `package.json`
-          ✔ should load eslint.config.ts with const enums (72ms)
+          ✔ should load eslint.config.ts with const enums (39ms)
           ✔ should load eslint.config.ts with local namespace
           ✔ should allow passing a TS config file to `overrideConfigFile`
           ✔ should find and load eslint.config.mts when present
@@ -94,523 +94,443 @@ Checking that this number of files would cause an EMFILE error...
           ✔ should find and load eslint.config.cts when present
           ✔ should load eslint.config.cts config file when we have "type": "commonjs" in nearest `package.json`
           ✔ should load .cts config file when we have "type": "module" in nearest `package.json`
-          ✔ should successfully load a TS config file that exports a promise (88ms)
+          ✔ should successfully load a TS config file that exports a promise
           ✔ should load a CommonJS TS config file that exports undefined with a helpful warning message
         Loading TypeScript config files with jiti-v2.0
-          ✔ should find and load eslint.config.ts when present (266ms)
+          ✔ should find and load eslint.config.ts when present (955ms)
           ✔ should load eslint.config.ts when we have "type": "commonjs" in nearest `package.json`
           ✔ should load eslint.config.ts when we have "type": "module" in nearest `package.json`
-          1) should load eslint.config.ts with const enums
-          2) should load eslint.config.ts with local namespace
-          3) should allow passing a TS config file to `overrideConfigFile`
-          4) should find and load eslint.config.mts when present
-          5) should load eslint.config.mts when we have "type": "commonjs" in nearest `package.json`
-          6) should load eslint.config.mts config file when we have "type": "module" in nearest `package.json`
-          7) should find and load eslint.config.cts when present
-          8) should load eslint.config.cts config file when we have "type": "commonjs" in nearest `package.json`
-          9) should load .cts config file when we have "type": "module" in nearest `package.json`
-          10) should successfully load a TS config file that exports a promise
-          11) should load a CommonJS TS config file that exports undefined with a helpful warning message
+          ✔ should load eslint.config.ts with const enums (128ms)
+          ✔ should load eslint.config.ts with local namespace
+          ✔ should allow passing a TS config file to `overrideConfigFile`
+          ✔ should find and load eslint.config.mts when present
+          ✔ should load eslint.config.mts when we have "type": "commonjs" in nearest `package.json`
+          ✔ should load eslint.config.mts config file when we have "type": "module" in nearest `package.json`
+          ✔ should find and load eslint.config.cts when present
+          ✔ should load eslint.config.cts config file when we have "type": "commonjs" in nearest `package.json`
+          ✔ should load .cts config file when we have "type": "module" in nearest `package.json`
+          ✔ should successfully load a TS config file that exports a promise (126ms)
+          ✔ should load a CommonJS TS config file that exports undefined with a helpful warning message
         Loading TypeScript config files with jiti-v2.1
-          12) should find and load eslint.config.ts when present
-          13) should load eslint.config.ts when we have "type": "commonjs" in nearest `package.json`
-          14) should load eslint.config.ts when we have "type": "module" in nearest `package.json`
-          15) should load eslint.config.ts with const enums
-          16) should load eslint.config.ts with local namespace
-          17) should allow passing a TS config file to `overrideConfigFile`
-          18) should find and load eslint.config.mts when present
-          19) should load eslint.config.mts when we have "type": "commonjs" in nearest `package.json`
-          20) should load eslint.config.mts config file when we have "type": "module" in nearest `package.json`
-          21) should find and load eslint.config.cts when present
-          22) should load eslint.config.cts config file when we have "type": "commonjs" in nearest `package.json`
-          23) should load .cts config file when we have "type": "module" in nearest `package.json`
-          24) should successfully load a TS config file that exports a promise
-          25) should load a CommonJS TS config file that exports undefined with a helpful warning message
+          ✔ should find and load eslint.config.ts when present (685ms)
+          ✔ should load eslint.config.ts when we have "type": "commonjs" in nearest `package.json`
+          ✔ should load eslint.config.ts when we have "type": "module" in nearest `package.json`
+          ✔ should load eslint.config.ts with const enums
+          ✔ should load eslint.config.ts with local namespace
+          ✔ should allow passing a TS config file to `overrideConfigFile`
+          ✔ should find and load eslint.config.mts when present
+          ✔ should load eslint.config.mts when we have "type": "commonjs" in nearest `package.json`
+          ✔ should load eslint.config.mts config file when we have "type": "module" in nearest `package.json`
+          ✔ should find and load eslint.config.cts when present
+          ✔ should load eslint.config.cts config file when we have "type": "commonjs" in nearest `package.json`
+          ✔ should load .cts config file when we have "type": "module" in nearest `package.json`
+          ✔ should successfully load a TS config file that exports a promise
+          ✔ should load a CommonJS TS config file that exports undefined with a helpful warning message
         Loading TypeScript config files natively
-          ✔ should load a TS config file when --experimental-strip-types is enabled (84ms)
+          ✔ should load a TS config file when --experimental-strip-types is enabled (97ms)
           - should load a TS config file when --experimental-transform-types is enabled
     lintFiles()
       ✔ should use correct parser when custom parser is specified
       ✔ should report zero messages when given a config file and a valid file
       ✔ should handle multiple patterns with overlapping files
-      ✔ should report zero messages when given a config file and a valid file and espree as parser (87ms)
-      ✔ should report zero messages when given a config file and a valid file and esprima as parser
-      26) should throw if overrideConfigFile is path to a file that doesn't exist
+      ✔ should report zero messages when given a config file and a valid file and espree as parser (75ms)
+      ✔ should report zero messages when given a config file and a valid file and esprima as parser (56ms)
+      ✔ should throw if overrideConfigFile is path to a file that doesn't exist
       ✔ should throw an error when given a config file and a valid file and invalid parser
-      ✔ should work in case when `fsp.readFile()` returns an object that is not an instance of Promise from this realm
-      27) should report zero messages when given a directory with a .js2 file
-      28) should report zero messages when given a directory with a .js and a .js2 file
-      29) should skip files with non-standard extensions when they're matched only by a '*' files pattern
-      30) should find files and report zero messages when given a parent directory with a .js
-      31) should allow files patterns with '..' inside
-      32) should only find files in the subdir1 directory when given a directory name
-      33) should run
-      34) should work with config file that exports a promise
-      35) should report zero messages when given a '**' pattern with a .js and a .js2 file
-      36) should resolve globs when 'globInputPaths' option is true
+      ✔ should work in case when `fsp.readFile()` returns an object that is not an instance of Promise from this realm (79ms)
+      ✔ should report zero messages when given a directory with a .js2 file
+      ✔ should report zero messages when given a directory with a .js and a .js2 file
+      ✔ should skip files with non-standard extensions when they're matched only by a '*' files pattern
+      ✔ should find files and report zero messages when given a parent directory with a .js
+      ✔ should allow files patterns with '..' inside
+      ✔ should only find files in the subdir1 directory when given a directory name
+      ✔ should run
+      ✔ should work with config file that exports a promise
+      ✔ should report zero messages when given a '**' pattern with a .js and a .js2 file
+      ✔ should resolve globs when 'globInputPaths' option is true
       ✔ should not resolve globs when 'globInputPaths' option is false
-      37) should report zero messages when given a pattern with a .js and a .js2 file
-      38) should return one error message when given a config with rules with options and severity level set to error
-      39) should return 5 results when given a config and a directory of 5 valid files
-      40) should return zero messages when given a config with browser globals
-      41) should return zero messages when given an option to add browser globals
-      42) should return zero messages when given a config with sourceType set to commonjs and Node.js globals
-      43) should not return results from previous call when calling more than once
-      44) should return zero messages when executing a file with a shebang
-      45) should return zero messages when executing without a config file
+      ✔ should report zero messages when given a pattern with a .js and a .js2 file
+      ✔ should return one error message when given a config with rules with options and severity level set to error
+      ✔ should return 5 results when given a config and a directory of 5 valid files
+      ✔ should return zero messages when given a config with browser globals
+      ✔ should return zero messages when given an option to add browser globals
+      ✔ should return zero messages when given a config with sourceType set to commonjs and Node.js globals
+      ✔ should not return results from previous call when calling more than once
+      ✔ should return zero messages when executing a file with a shebang
+      ✔ should return zero messages when executing without a config file
       ✔ should throw if an invalid value is given to 'patterns' argument
-      46) should stop linting files if a rule crashes
-      ✔ should not exit the process unexpectedly after a rule crashes (289ms)
+      ✔ should stop linting files if a rule crashes
+      ✔ should not exit the process unexpectedly after a rule crashes (424ms)
       Missing Configuration File
         ✔ :should throw if eslint.config.js file is not present
         ✔ should throw if eslint.config.js file is not present even if overrideConfig was passed
         ✔ should throw if eslint.config.js file is not present even if overrideConfig was passed and a file path is given
         ✔ should not throw if eslint.config.js file is not present and overrideConfigFile is `true`
-        47) should not throw if eslint.config.js file is not present and overrideConfigFile is path to a config file
+        ✔ should not throw if eslint.config.js file is not present and overrideConfigFile is path to a config file
       Overlapping searches
-        48) should not lint the same file multiple times when the file path was passed multiple times
-        49) should not lint the same file multiple times when the file path and a pattern that matches the file were passed
-        50) should not lint the same file multiple times when multiple patterns that match the file were passed
+        ✔ should not lint the same file multiple times when the file path was passed multiple times
+        ✔ should not lint the same file multiple times when the file path and a pattern that matches the file were passed
+        ✔ should not lint the same file multiple times when multiple patterns that match the file were passed
       Invalid inputs
         ✔ should throw an error when passed a string with a single space
         ✔ should throw an error when passed an array with one empty string
         ✔ should throw an error when passed an array with two empty strings
         ✔ should throw an error when passed undefined
       Normalized inputs
-        51) should normalize to '.' when an empty string is passed
+        ✔ should normalize to '.' when an empty string is passed
         ✔ should return an empty array when an empty string is passed with passOnNoPatterns: true
-        52) should normalize to '.' when an empty array is passed
+        ✔ should normalize to '.' when an empty array is passed
         ✔ should return an empty array when an empty array is passed with passOnNoPatterns: true
       Dot files in searches
-        53) should find dot files in current directory when a . pattern is used
-        54) should find dot files in current directory when a *.js pattern is used
-        55) should find dot files in current directory when a .a.js pattern is used
+        ✔ should find dot files in current directory when a . pattern is used
+        ✔ should find dot files in current directory when a *.js pattern is used
+        ✔ should find dot files in current directory when a .a.js pattern is used
       Glob patterns without matches
-        56) should throw an error for a missing pattern when combined with a found pattern
-        57) should throw an error for an ignored directory pattern when combined with a found pattern
-        58) should throw an error for an ignored file pattern when combined with a found pattern
-        59) should always throw an error for the first unmatched file pattern
+        ✔ should throw an error for a missing pattern when combined with a found pattern
+        ✔ should throw an error for an ignored directory pattern when combined with a found pattern
+        ✔ should throw an error for an ignored file pattern when combined with a found pattern
+        ✔ should always throw an error for the first unmatched file pattern
         ✔ should not throw an error for an ignored file pattern when errorOnUnmatchedPattern is false
         ✔ should not throw an error for a non-existing file pattern when errorOnUnmatchedPattern is false
       Globbing based on configs
-        60) should report zero messages when given a directory with a .js and config file specifying a subdirectory
-        61) should glob for .jsx file in a subdirectory of the passed-in directory and not glob for any other patterns
-        62) should glob for all files in subdir when passed-in on the command line with a partial matching glob
+        ✔ should report zero messages when given a directory with a .js and config file specifying a subdirectory
+        ✔ should glob for .jsx file in a subdirectory of the passed-in directory and not glob for any other patterns
+        ✔ should glob for all files in subdir when passed-in on the command line with a partial matching glob
       Globbing based on configs with negated patterns and arrays in `files`
-        63) should not include custom extensions when negated pattern is specified in `files`
-        64) should not include custom extensions when negated pattern is specified in an array in `files`
-        65) should include custom extensions when matched by a non-universal pattern specified in an array in `files`
+        ✔ should not include custom extensions when negated pattern is specified in `files`
+        ✔ should not include custom extensions when negated pattern is specified in an array in `files`
+        ✔ should include custom extensions when matched by a non-universal pattern specified in an array in `files`
       Ignoring Files
-        66) should report on a file in the node_modules folder passed explicitly, even if ignored by default
-        67) should report on a file in a node_modules subfolder passed explicitly, even if ignored by default
-        68) should report on an ignored file with "node_modules" in its name
-        69) should suppress the warning when a file in the node_modules folder passed explicitly and warnIgnored is false
-        70) should report on globs with explicit inclusion of dotfiles
-        71) should ignore node_modules files when using ignore file
-        72) should ignore node_modules files even with ignore: false
-        73) should throw an error when all given files are ignored
-        74) should throw an error when all given files are ignored by a config object that has `name`
-        75) should throw an error when all given files are ignored even with a `./` prefix
-        76) should ignore one-level down node_modules by default
-        77) should ignore all files and throw an error when **/fixtures/** is in `ignores` in the config file
+        ✔ should report on a file in the node_modules folder passed explicitly, even if ignored by default
+        ✔ should report on a file in a node_modules subfolder passed explicitly, even if ignored by default
+        ✔ should report on an ignored file with "node_modules" in its name
+        ✔ should suppress the warning when a file in the node_modules folder passed explicitly and warnIgnored is false
+        ✔ should report on globs with explicit inclusion of dotfiles
+        ✔ should ignore node_modules files when using ignore file
+        ✔ should ignore node_modules files even with ignore: false
+        ✔ should throw an error when all given files are ignored
+        ✔ should throw an error when all given files are ignored by a config object that has `name`
+        ✔ should throw an error when all given files are ignored even with a `./` prefix
+        ✔ should ignore one-level down node_modules by default
+        ✔ should ignore all files and throw an error when **/fixtures/** is in `ignores` in the config file
         ✔ should throw an error when all given files are ignored via ignorePatterns
-        ✔ should not throw an error when ignorePatterns is an empty array (118ms)
-        78) should return a warning when an explicitly given file is ignored
-        79) should return a warning when an explicitly given file has no matching config
-        80) should return a warning when an explicitly given file is outside the base path
-        81) should suppress the warning when an explicitly given file is ignored and warnIgnored is false
-        82) should return a warning about matching ignore patterns when an explicitly given dotfile is ignored
-        83) should return two messages when given a file in excluded files list while ignore is off
-        84) should return two messages when given a file in excluded files list by a config object that has `name` while ignore is off
-        85) should process ignore patterns relative to basePath not cwd
-        86) should skip subdirectory files when ignore pattern matches deep subdirectory
-        87) should skip subdirectory files when ignore pattern matches subdirectory
-        88) should lint files even when cwd directory name matches ignores pattern
-        89) should allow reignoring of previously ignored files
-        90) should allow directories to be unignored
-        91) should allow directories to be unignored without also unignoring all files in them
-        92) should allow only subdirectories to be ignored by a pattern ending with '/'
-        93) should allow only contents of a directory but not the directory itself to be ignored by a pattern ending with '**/*'
-        94) should skip ignored files in an unignored directory
-        95) should skip files in an ignored directory even if they are matched by a negated pattern
-        96) should skip files ignored by a pattern with escape character '\'
-        97) should disregard ignore pattern '/'
-        98) should not skip an unignored file in base path when all files are initially ignored by '**'
+        ✔ should not throw an error when ignorePatterns is an empty array (78ms)
+        ✔ should return a warning when an explicitly given file is ignored
+        ✔ should return a warning when an explicitly given file has no matching config
+        ✔ should return a warning when an explicitly given file is outside the base path
+        ✔ should suppress the warning when an explicitly given file is ignored and warnIgnored is false
+        ✔ should return a warning about matching ignore patterns when an explicitly given dotfile is ignored
+        ✔ should return two messages when given a file in excluded files list while ignore is off
+        ✔ should return two messages when given a file in excluded files list by a config object that has `name` while ignore is off
+        ✔ should process ignore patterns relative to basePath not cwd
+        ✔ should skip subdirectory files when ignore pattern matches deep subdirectory
+        ✔ should skip subdirectory files when ignore pattern matches subdirectory
+        ✔ should lint files even when cwd directory name matches ignores pattern
+        ✔ should allow reignoring of previously ignored files
+        ✔ should allow directories to be unignored
+        ✔ should allow directories to be unignored without also unignoring all files in them
+        ✔ should allow only subdirectories to be ignored by a pattern ending with '/'
+        ✔ should allow only contents of a directory but not the directory itself to be ignored by a pattern ending with '**/*'
+        ✔ should skip ignored files in an unignored directory
+        ✔ should skip files in an ignored directory even if they are matched by a negated pattern
+        ✔ should skip files ignored by a pattern with escape character '\'
+        ✔ should disregard ignore pattern '/'
+        ✔ should not skip an unignored file in base path when all files are initially ignored by '**'
       Deprecated Rules
         ✔ should warn when deprecated rules are configured
         ✔ should not warn when deprecated rules are not configured
-        ✔ should warn when deprecated rules are found in a config (62ms)
-        ✔ should add the plugin name to the replacement if available (38ms)
+        ✔ should warn when deprecated rules are found in a config (190ms)
+        ✔ should add the plugin name to the replacement if available (223ms)
       Fix Mode
-        99) correctly autofixes semicolon-conflicting-fixes
-        100) correctly autofixes return-conflicting-fixes
-        101) should return fixed text on multiple files when in fix mode
-        102) should run autofix even if files are cached without autofix results
+        ✔ correctly autofixes semicolon-conflicting-fixes (154ms)
+        ✔ correctly autofixes return-conflicting-fixes (194ms)
+        ✔ should return fixed text on multiple files when in fix mode (65ms)
+        ✔ should run autofix even if files are cached without autofix results (246ms)
       plugins
-        103) should return two messages when executing with config file that specifies a plugin
-        104) should return two messages when executing with cli option that specifies a plugin
-        105) should return two messages when executing with cli option that specifies preloaded plugin
+        ✔ should return two messages when executing with config file that specifies a plugin (67ms)
+        ✔ should return two messages when executing with cli option that specifies a plugin
+        ✔ should return two messages when executing with cli option that specifies preloaded plugin (44ms)
       processors
-        106) should return two messages when executing
-[... 407575 chars truncated ...]
-oduleResolve (node:internal/modules/esm/resolve:859:10)
-      at defaultResolve (node:internal/modules/esm/resolve:983:11)
-      at #cachedDefaultResolve (node:internal/modules/esm/loader:731:20)
-      at ModuleLoader.resolve (node:internal/modules/esm/loader:708:38)
-      at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:310:38)
-      at onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:664:36)
-      at TracingChannel.tracePromise (node:diagnostics_channel:350:14)
-      at ModuleLoader.import (node:internal/modules/esm/loader:663:21)
-      at defaultImportModuleDynamicallyForScript (node:internal/modules/esm/utils:235:31)
-      at importModuleDynamicallyCallback (node:internal/modules/esm/utils:257:12)
-      at ESLint.loadFormatter (lib/eslint/eslint.js:1040:30)
-      at Context.<anonymous> (tests/lib/eslint/eslint.js:10280:36)
+        ✔ should return two messages when executing with config file that specifies preloaded processor (41ms)
+        ✔ should run processors when calling lintFiles with 
+[... 70007 chars truncated ...]
+hould match negated `files` patterns with './' prefix (39ms)
+        ✔ should match negated `ignores` patterns with './' prefix
+        ✔ should match negated global `ignores` patterns with './' prefix (44ms)
+        ✔ should match nested `files` patterns with './' prefix
+      Config objects with `basePath` property
+        ✔ should only be applied to files inside the config's base path when no `files` or `ignores` are specified (56ms)
+        ✔ should only be applied to files inside the config's base path when `files` are specified
+        ✔ should only be applied to files inside the config's base path when non-global `ignores` are specified
+        ✔ should only be applied to files inside the config's base path when both `files` and `ignores` are specified
+        ✔ should interpret `basePath` as relative to the config file location (81ms)
+        ✔ should interpret global ignores as relative to `basePath` when ignoring files
+        ✔ should interpret global ignores as relative to `basePath` when ignoring directories
+        ✔ should not apply global ignores when the `ignore` option is `false`
+    Fix Types
+      fixTypes values validation
+        ✔ should throw an error when an invalid fix type is specified
+      with lintFiles
+        ✔ should not fix any rules when fixTypes is used without fix
+        ✔ should not fix non-style rules when fixTypes has only 'layout'
+        ✔ should not fix style or problem rules when fixTypes has only 'suggestion'
+        ✔ should fix both style and problem rules when fixTypes has 'suggestion' and 'layout'
+      with lintText
+        ✔ should not fix any rules when fixTypes is used without fix
+        ✔ should not fix non-style rules when fixTypes has only 'layout'
+        ✔ should not fix style or problem rules when fixTypes has only 'suggestion'
+        ✔ should fix both style and problem rules when fixTypes has 'suggestion' and 'layout'
+    isPathIgnored
+      ✔ should check if the given path is ignored
+      ✔ should return false if ignoring is disabled
+      ✔ should return true for default ignores even if ignoring is disabled
+      ✔ should throw if non-string value is given to 'filePath' parameter
+      about the default ignore patterns
+        ✔ should always apply default ignore patterns if ignore option is true
+        ✔ should still apply default ignore patterns if ignore option is false
+        ✔ should allow subfolders of defaultPatterns to be unignored by ignorePattern constructor option
+        ✔ should allow subfolders of defaultPatterns to be unignored by ignores in overrideConfig
+        ✔ should ignore .git directory
+        ✔ should still ignore .git directory when ignore option disabled
+        ✔ should not ignore absolute paths containing '..'
+        ✔ should ignore /node_modules/ relative to cwd without any configured ignore patterns
+        ✔ should not inadvertently ignore all files in parent directories
+      with ignorePatterns option
+        ✔ should accept a string for options.ignorePatterns
+        ✔ should accept an array for options.ignorePattern
+        ✔ should interpret ignorePatterns as relative to cwd
+        ✔ should return true for files which match an ignorePattern even if they do not exist on the filesystem
+        ✔ should return true for file matching an ignore pattern exactly
+        ✔ should return false for file in subfolder of cwd matching an ignore pattern with a base filename
+        ✔ should return true for file matching a child of an ignore pattern
+        ✔ should return true for file matching a grandchild of a directory when the pattern is directory/**
+        ✔ should return false for file not matching any ignore pattern
+        ✔ two globstar '**' ignore pattern should ignore files in nested directories
+      with config ignores ignorePatterns option
+        ✔ should return false for ignored file when unignored with ignore pattern
+    loadFormatter()
+      ✔ should return a formatter object when a bundled formatter is requested
+      ✔ should return a formatter object when no argument is passed
+      ✔ should return a formatter object when a custom formatter is requested
+      ✔ should return a formatter object when a custom formatter is requested, also if the path has backslashes
+      ✔ should return a formatter object when a formatter prefixed with eslint-formatter is requested
+      ✔ should return a formatter object when a formatter is requested, also when the eslint-formatter prefix is included in the format argument
+      ✔ should return a formatter object when a formatter is requested within a scoped npm package
+      ✔ should return a formatter object when a formatter is requested within a scoped npm package, also when the eslint-formatter prefix is included in the format argument
+      ✔ should throw if a custom formatter doesn't exist
+      ✔ should throw if a built-in formatter doesn't exist
+      ✔ should throw if the required formatter exists but has an error
+      ✔ should throw if a non-string formatter name is passed
+    getErrorResults()
+      ✔ should report 5 error messages when looking for errors only (38ms)
+      ✔ should not mutate passed report parameter
+      ✔ should report a warningCount of 0 when looking for errors only
+      ✔ should return 0 error or warning messages even when the file has warnings
+      ✔ should return source code of file in the `source` property
+      ✔ should contain `output` property after fixes
+    findConfigFile()
+      ✔ should return undefined when overrideConfigFile is true
+      ✔ should return undefined when a config file isn't found
+      ✔ should return custom config file path when overrideConfigFile is a nonempty string
+      ✔ should return root level eslint.config.js when overrideConfigFile is null
+      ✔ should return root level eslint.config.js when overrideConfigFile is not specified
+    Use stats option
+      ✔ should report stats
+      ✔ should report stats with fix (94ms)
+    getRulesMetaForResults()
+      ✔ should throw an error when this instance did not lint any files
+      ✔ should throw an error when results were created from a different instance
+      ✔ should treat a result without `filePath` as if the file was located in `cwd`
+      ✔ should not throw an error if a result without `filePath` contains an ignored file warning
+      ✔ should not throw an error if results contain linted files and one ignored file
+      ✔ should return empty object when there are no linting errors
+      ✔ should return one rule meta when there is a linting error
+      ✔ should return one rule meta when there is a suppressed linting error
+      ✔ should return multiple rule meta when there are multiple linting errors
+      ✔ should return multiple rule meta when there are multiple linting errors from a plugin (46ms)
+      ✔ should ignore messages not related to a rule
+      ✔ should return a non-empty value if some of the messages are related to a rule
+      ✔ should return empty object if all messages are related to unknown rules
+      ✔ should return object with meta of known rules if some messages are related to unknown rules
+    outputFixes()
+      ✔ should call fs.writeFile() for each result with output
+      ✔ should call fs.writeFile() for each result with output and not at all for a result without output
+      ✔ should throw if non object array is given to 'results' parameter
+    when evaluating code with comments to change config when allowInlineConfig is disabled
+      ✔ should report a violation for disabling rules
+      ✔ should not report a violation by default
+    when evaluating code when reportUnusedDisableDirectives is enabled
+      ✔ should report problems for unused eslint-disable directives
+    when retrieving version number
+      ✔ should return current version number
+    mutability
+      rules
+        ✔ Loading rules in one instance doesn't mutate to another instance
+    configs with 'ignores' and without 'files'
+      config with ignores: ['error.js']
+        ✔ should apply to all files except for 'error.js'
+        ✔ should apply to all files except for 'error.js' even with `ignore: false` option
+      config with ignores: ['**/*.json']
+        ✔ should not add json files as lint targets
+    with ignores config
+      ignores can add an ignore pattern ('foo.js').
+        ✔ 'isPathIgnored()' should return 'true' for 'foo.js'.
+        ✔ 'isPathIgnored()' should return 'false' for 'bar.js'.
+        ✔ 'lintFiles()' should not verify 'foo.js'.
+      ignores can add ignore patterns ('**/foo.js', '/bar.js').
+        ✔ 'isPathIgnored()' should return 'true' for 'foo.js'.
+        ✔ 'isPathIgnored()' should return 'true' for '/bar.js'.
+        ✔ 'lintFiles()' should not verify 'foo.js' and '/bar.js'.
+      ignores can unignore '/node_modules/foo' with patterns ['!node_modules/', 'node_modules/*', '!node_modules/foo/'].
+        ✔ 'isPathIgnored()' should return 'false' for 'node_modules/foo/index.js'.
+        ✔ 'isPathIgnored()' should return 'false' for 'node_modules/foo/.dot.js'.
+        ✔ 'isPathIgnored()' should return 'true' for 'node_modules/bar/index.js'.
+        ✔ 'lintFiles()' should verify 'node_modules/foo/index.js'. (67ms)
+      ignores can unignore '/node_modules/foo' with patterns ['!node_modules/', 'node_modules/*', '!node_modules/foo/**'].
+        ✔ 'isPathIgnored()' should return 'false' for 'node_modules/foo/index.js'.
+        ✔ 'isPathIgnored()' should return 'false' for 'node_modules/foo/.dot.js'.
+        ✔ 'isPathIgnored()' should return 'true' for 'node_modules/bar/index.js'.
+        ✔ 'lintFiles()' should verify 'node_modules/foo/index.js'. (47ms)
+      ignore pattern can re-ignore files that are unignored by a previous pattern.
+        ✔ 'isPathIgnored()' should return 'true' for re-ignored '.foo.js'.
+        ✔ 'isPathIgnored()' should return 'false' for unignored '.bar.js'.
+        ✔ 'lintFiles()' should not lint re-ignored '.foo.js'.
+      ignore pattern can unignore files that are ignored by a previous pattern.
+        ✔ 'isPathIgnored()' should return 'false' for unignored 'foo.js'.
+        ✔ 'isPathIgnored()' should return 'true' for ignored 'bar.js'.
+        ✔ 'lintFiles()' should verify unignored 'foo.js'.
+      ignores in a config file should not be used if ignore: false.
+        ✔ 'isPathIgnored()' should return 'false' for 'foo.js'.
+        ✔ 'lintFiles()' should verify 'foo.js'.
+    config.files adds lint targets
+      if { files: 'foo/*.txt', ignores: '**/ignore.txt' } is present,
+        ✔ 'lintFiles()' with a directory path should contain 'foo/test.txt'.
+        ✔ 'lintFiles()' with a glob pattern '*.js' should not contain 'foo/test.txt'. (77ms)
+      if { files: 'foo/*.txt', ignores: '**/ignore.txt' } is present and subdirectory is passed,
+        ✔ 'lintFiles()' with a directory path should contain 'foo/test.txt'.
+        ✔ 'lintFiles()' with a glob pattern '*.js' should not contain 'foo/test.txt'.
+      if { files: 'foo/**/*.txt' } is present,
+        ✔ 'lintFiles()' with a directory path should contain 'foo/test.txt' and 'foo/nested/test.txt'.
+      if { files: 'foo/**/*' } is present,
+        ✔ 'lintFiles()' with a directory path should NOT contain 'foo/test.txt' and 'foo/nested/test.txt'.
+    'ignores', 'files' of the configuration that the '--config' option provided should be resolved from CWD.
+      if { files: 'foo/*.txt', ... } is present by '--config node_modules/myconf/eslint.config.js',
+        ✔ 'lintFiles()' with 'foo/test.js' should use the files entry.
+        ✔ 'lintFiles()' with 'node_modules/myconf/foo/test.js' should NOT use the files entry.
+      if { files: '*', ignores: 'foo/*.txt', ... } is present by '--config bar/myconf/eslint.config.js',
+        ✔ 'lintFiles()' with 'foo/test.js' should have no errors because no rules are enabled.
+        ✔ 'lintFiles()' with 'bar/myconf/foo/test.js' should have an error because eqeqeq is enabled.
+      if { ignores: 'foo/*.js', ... } is present by '--config node_modules/myconf/eslint.config.js',
+        ✔ 'lintFiles()' with '**/*.js' should lint 'node_modules/myconf/foo/test.js' but not 'foo/test.js'.
+    baseConfig
+      ✔ can be an object
+      ✔ can be an array
+      ✔ should be inserted after default configs
+      ✔ should be inserted before configs from the config file
+      ✔ should be inserted before overrideConfig
+      ✔ should be inserted before configs from the config file and overrideConfig
+      ✔ when it has 'files' they should be interpreted as relative to the config file
+      ✔ when it has 'ignores' they should be interpreted as relative to the config file
+    config file
+      ✔ new instance of ESLint should use the latest version of the config file (ESM) (228ms)
+      ✔ new instance of ESLint should use the latest version of the config file (CJS) (124ms)
+      ✔ new instance of ESLint should use the latest version of the config file (TypeScript) (177ms)
+    config with circular references
+      ✔ in 'settings'
+      ✔ in 'parserOptions'
+    shouldUseFlatConfig
+      when the env variable `ESLINT_USE_FLAT_CONFIG` is `'true'`
+        when there is a flat config file present
+          ✔ is `true`
+        when there is no flat config file present
+          ✔ is `true`
+      when the env variable `ESLINT_USE_FLAT_CONFIG` is `'false'`
+        when there is a flat config file present
+          ✔ is `false`
+        when there is no flat config file present
+          ✔ is `false`
+      when the env variable `ESLINT_USE_FLAT_CONFIG` is unset
+        when there is a flat config file present
+          ✔ is `true`
+        when there is no flat config file present
+          ✔ is `true`
+    cache
+      ✔ should create the cache file inside cwd when no cacheLocation provided
+      ✔ should invalidate the cache if the overrideConfig changed between executions
+      ✔ should remember the files from a previous run and do not operate on them if not changed
+      ✔ when `cacheLocation` is specified, should create the cache file with `cache:true` and then delete it with `cache:false`
+      ✔ should not attempt to delete the cache file if it does not exist
+      ✔ should throw an error if the cache file to be deleted exist on a read-only file system
+      ✔ should not throw an error if deleting fails but cache file no longer exists
+      ✔ should store in the cache a file that has lint messages and a file that doesn't have lint messages
+      ✔ should not contain in the cache a file that was deleted
+      ✔ should contain files that were not visited in the cache provided they still exist (104ms)
+      ✔ should not delete cache when executing on text
+      ✔ should not delete cache when executing on text with a provided filename
+      ✔ should not delete cache when executing on files with --cache flag
+      ✔ should delete cache when executing on files without --cache flag
+      ✔ should use the specified cache file
+      ✔ should not store `usedDeprecatedRules` in the cache file
+      ✔ should store `source` as `null` in the cache file if the lint result has `source` property
+      when cacheLocation is a directory or looks like a directory
+        ✔ should create the directory and the cache file inside it when cacheLocation ends with a slash
+        ✔ should create the cache file inside existing cacheLocation directory when cacheLocation ends with a slash
+        ✔ should create the cache file inside existing cacheLocation directory when cacheLocation doesn't end with a path separator
+      cacheStrategy
+        ✔ should detect changes using a file's modification time when set to 'metadata'
+        ✔ should not detect changes using a file's modification time when set to 'content'
+        ✔ should detect changes using a file's contents when set to 'content'
+    v10_config_lookup_from_file
+      ✔ should report zero messages when given a config file and a valid file
+      Subdirectory Config File
+        ✔ should find config file when cwd doesn't have a config file
+      Root config trying to ignore subdirectory pattern with config
+        ✔ should not traverse into subdir1 when parent config file specifies it as ignored and passing in .
+        ✔ should not traverse into subdir1 when parent config file specifies it as ignored and passing in *
+        ✔ should traverse into subdir1 when parent config file specifies it as ignored and passing in subdir1
+        ✔ should traverse into subdir1 when parent config file specifies it as ignored and passing in subdir1/*.mjs
+        ✔ should reject an error when parent config file specifies subdir1 as ignored and passing in sub*1/*.mjs
+        ✔ should traverse into subdir1 when parent config file specifies it as ignored and passing in subdir1/eslint.config.mjs
+        ✔ should traverse into subdir1 when parent config file specifies it as ignored and passing in ../subdir1/eslint.config.mjs
+        ✔ should traverse into subdir1 when parent config file specifies it as ignored and passing in ../subdir1/*.mjs
+        ✔ should traverse into subdir1 when parent config file specifies it as ignored and passing in ../subdir1
+        ✔ should traverse into subdir3/subsubdir when parent config file specifies it as ignored and passing in subdir3/subsubdir
+      Root config trying to ignore specific subdirectory with config
+        ✔ should traverse into subdir1 and subdir2 but not subdir3 when parent config file specifies it as ignored and passing in .
+        ✔ should not traverse into subdirectories when passing in *
+        ✔ should traverse into subdir3 when parent config file specifies it as ignored and passing in subdir3
+        ✔ should traverse into subdir3 when parent config file specifies it as ignored and passing in subdir3/*.js
+        ✔ should lint files in subdir3 and eslint.config.cjs when parent config file specifies subdir3 as ignored and passing in subdir3/*.js, **/*.cjs
+        ✔ should lint files in subdir3 and eslint.config.cjs when parent config file specifies subdir3 as ignored and passing in **/*.cjs, subdir3/*.js
+        ✔ should traverse into subdir1 and subdir2 but not subdir3 when parent config file specifies it as ignored and passing in sub*/*.js
+        ✔ should reject an error when parent config file specifies subdir3 as ignored and passing in sub*3/*.mjs
+        ✔ should traverse into subdir1 and subdir2 but not subdir3 when parent config file specifies it as ignored and passing in sub*/*.js and **/*.cjs
+        ✔ should traverse into subdir1 and subdir2 but not subdir3 when parent config file specifies it as ignored and passing in **/*.cjs and sub*/*.js
+        ✔ should traverse into subdir3 when parent config file specifies it as ignored and passing in subdir3/eslint.config.mjs
+        ✔ should traverse into subdir3 when parent config file specifies it as ignored and passing in ../subdir3/eslint.config.mjs
+        ✔ should traverse into subdir3 when parent config file specifies it as ignored and passing in ../subdir3/*.mjs
+        ✔ should traverse into subdir3 when parent config file specifies it as ignored and passing in ../subdir3
+      with `ignorePatterns`
+        ✔ should interpret `ignorePatterns` as relative to `cwd` when `cwd` is a parent directory.
+    unstable_config_lookup_from_file
+      ✔ should report zero messages when given a config file and a valid file (60ms)
+    2) "after all" hook in "ESLint"
+
+
+  1100 passing (41s)
+  18 pending
+  2 failing
+
+  1) ESLint
+       ESLint constructor function
+         the default value of 'options.cwd' should be the current working directory.:
+     Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure "done()" is called; if returning a Promise, ensure it resolves. (/root/grade/eslint-19924/repo/tests/lib/eslint/eslint.js)
+  
+
+  2) ESLint
+       "after all" hook in "ESLint":
+     Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure "done()" is called; if returning a Promise, ensure it resolves. (/root/grade/eslint-19924/repo/tests/lib/eslint/eslint.js)
       at process.processImmediate (node:internal/timers:485:21)
-
-  462) ESLint
-       loadFormatter()
-         should return a formatter object when a formatter prefixed with eslint-formatter is requested:
-     Error [ERR_MODULE_NOT_FOUND]: There was a problem loading formatter: /root/grade/eslint-19924/repo/lib/cli-engine/formatters/bar.js
-Error: Cannot find module '/root/grade/eslint-19924/repo/lib/cli-engine/formatters/bar.js' imported from /root/grade/eslint-19924/repo/lib/eslint/eslint.js
-      at finalizeResolution (node:internal/modules/esm/resolve:274:11)
-      at moduleResolve (node:internal/modules/esm/resolve:859:10)
-      at defaultResolve (node:internal/modules/esm/resolve:983:11)
-      at #cachedDefaultResolve (node:internal/modules/esm/loader:731:20)
-      at ModuleLoader.resolve (node:internal/modules/esm/loader:708:38)
-      at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:310:38)
-      at onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:664:36)
-      at TracingChannel.tracePromise (node:diagnostics_channel:350:14)
-      at ModuleLoader.import (node:internal/modules/esm/loader:663:21)
-      at defaultImportModuleDynamicallyForScript (node:internal/modules/esm/utils:235:31)
-      at importModuleDynamicallyCallback (node:internal/modules/esm/utils:257:12)
-      at ESLint.loadFormatter (lib/eslint/eslint.js:1040:30)
-      at Context.<anonymous> (tests/lib/eslint/eslint.js:10293:36)
-      at process.processImmediate (node:internal/timers:485:21)
-
-  463) ESLint
-       loadFormatter()
-         should return a formatter object when a formatter is requested, also when the eslint-formatter prefix is included in the format argument:
-     Error [ERR_MODULE_NOT_FOUND]: There was a problem loading formatter: /root/grade/eslint-19924/repo/lib/cli-engine/formatters/eslint-formatter-bar.js
-Error: Cannot find module '/root/grade/eslint-19924/repo/lib/cli-engine/formatters/eslint-formatter-bar.js' imported from /root/grade/eslint-19924/repo/lib/eslint/eslint.js
-      at finalizeResolution (node:internal/modules/esm/resolve:274:11)
-      at moduleResolve (node:internal/modules/esm/resolve:859:10)
-      at defaultResolve (node:internal/modules/esm/resolve:983:11)
-      at #cachedDefaultResolve (node:internal/modules/esm/loader:731:20)
-      at ModuleLoader.resolve (node:internal/modules/esm/loader:708:38)
-      at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:310:38)
-      at onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:664:36)
-      at TracingChannel.tracePromise (node:diagnostics_channel:350:14)
-      at ModuleLoader.import (node:internal/modules/esm/loader:663:21)
-      at defaultImportModuleDynamicallyForScript (node:internal/modules/esm/utils:235:31)
-      at importModuleDynamicallyCallback (node:internal/modules/esm/utils:257:12)
-      at ESLint.loadFormatter (lib/eslint/eslint.js:1040:30)
-      at Context.<anonymous> (tests/lib/eslint/eslint.js:10304:36)
-      at process.processImmediate (node:internal/timers:485:21)
-
-  464) ESLint
-       loadFormatter()
-         should return a formatter object when a formatter is requested within a scoped npm package:
-     Error [ERR_MODULE_NOT_FOUND]: There was a problem loading formatter: /root/grade/eslint-19924/repo/lib/cli-engine/formatters/@somenamespace/foo.js
-Error: Cannot find module '/root/grade/eslint-19924/repo/lib/cli-engine/formatters/@somenamespace/foo.js' imported from /root/grade/eslint-19924/repo/lib/eslint/eslint.js
-      at finalizeResolution (node:internal/modules/esm/resolve:274:11)
-      at moduleResolve (node:internal/modules/esm/resolve:859:10)
-      at defaultResolve (node:internal/modules/esm/resolve:983:11)
-      at #cachedDefaultResolve (node:internal/modules/esm/loader:731:20)
-      at ModuleLoader.resolve (node:internal/modules/esm/loader:708:38)
-      at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:310:38)
-      at onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:664:36)
-      at TracingChannel.tracePromise (node:diagnostics_channel:350:14)
-      at ModuleLoader.import (node:internal/modules/esm/loader:663:21)
-      at defaultImportModuleDynamicallyForScript (node:internal/modules/esm/utils:235:31)
-      at importModuleDynamicallyCallback (node:internal/modules/esm/utils:257:12)
-      at ESLint.loadFormatter (lib/eslint/eslint.js:1040:30)
-      at Context.<anonymous> (tests/lib/eslint/eslint.js:10318:19)
-      at process.processImmediate (node:internal/timers:485:21)
-
-  465) ESLint
-       loadFormatter()
-         should return a formatter object when a formatter is requested within a scoped npm package, also when the eslint-formatter prefix is included in the format argument:
-     Error [ERR_MODULE_NOT_FOUND]: There was a problem loading formatter: /root/grade/eslint-19924/repo/lib/cli-engine/formatters/@somenamespace/eslint-formatter-foo.js
-Error: Cannot find module '/root/grade/eslint-19924/repo/lib/cli-engine/formatters/@somenamespace/eslint-formatter-foo.js' imported from /root/grade/eslint-19924/repo/lib/eslint/eslint.js
-      at finalizeResolution (node:internal/modules/esm/resolve:274:11)
-      at moduleResolve (node:internal/modules/esm/resolve:859:10)
-      at defaultResolve (node:internal/modules/esm/resolve:983:11)
-      at #cachedDefaultResolve (node:internal/modules/esm/loader:731:20)
-      at ModuleLoader.resolve (node:internal/modules/esm/loader:708:38)
-      at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:310:38)
-      at onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:664:36)
-      at TracingChannel.tracePromise (node:diagnostics_channel:350:14)
-      at ModuleLoader.import (node:internal/modules/esm/loader:663:21)
-      at defaultImportModuleDynamicallyForScript (node:internal/modules/esm/utils:235:31)
-      at importModuleDynamicallyCallback (node:internal/modules/esm/utils:257:12)
-      at ESLint.loadFormatter (lib/eslint/eslint.js:1040:30)
-      at Context.<anonymous> (tests/lib/eslint/eslint.js:10329:36)
-      at process.processImmediate (node:internal/timers:485:21)
-
-  466) ESLint
-       loadFormatter()
-         should throw if the required formatter exists but has an error:
-     AssertionError [ERR_ASSERTION]: The input did not match the regular expression /Error: Cannot find module 'this\x2dmodule\x2ddoes\x2dnot\x2dexist'/u. Input:
-
-'Error [ERR_MODULE_NOT_FOUND]: There was a problem loading formatter: /tmp/eslint/fixtures/formatters/broken.js\n' +
-  "Error: Cannot find module '/tmp/eslint/fixtures/formatters/broken.js' imported from /root/grade/eslint-19924/repo/lib/eslint/eslint.js"
-
-      at async Context.<anonymous> (tests/lib/eslint/eslint.js:10382:5)
-
-  467) ESLint
-       getErrorResults()
-         should return 0 error or warning messages even when the file has warnings:
-     Error: ENOENT: no such file or directory, stat '/tmp/eslint/fixtures/eslint.config-with-ignores.js'
-      at async Object.stat (node:internal/fs/promises:1029:18)
-      at async loadConfigFile (lib/config/config-loader.js:206:17)
-      at async ConfigLoader.calculateConfigArray (lib/config/config-loader.js:589:23)
-      at async #calculateConfigArray (lib/config/config-loader.js:370:19)
-      at async ESLint.lintText (lib/eslint/eslint.js:940:4)
-      at async Context.<anonymous> (tests/lib/eslint/eslint.js:10519:21)
-
-  468) ESLint
-       Use stats option
-         should report stats:
-     Error: No files matching 'file-to-fix.js' were found.
-      at findFiles (lib/eslint/eslint-helpers.js:589:9)
-      at async ESLint.lintFiles (lib/eslint/eslint.js:741:21)
-      at async Context.<anonymous> (tests/lib/eslint/eslint.js:10658:21)
-
-  469) ESLint
-       Use stats option
-         should report stats with fix:
-     Error: No files matching 'file-to-fix.js' were found.
-      at findFiles (lib/eslint/eslint-helpers.js:589:9)
-      at async ESLint.lintFiles (lib/eslint/eslint.js:741:21)
-      at async Context.<anonymous> (tests/lib/eslint/eslint.js:10704:21)
-
-  470) ESLint
-       getRulesMetaForResults()
-         should not throw an error if results contain linted files and one ignored file:
-     Error: No files matching 'missing-semicolon.js' were found.
-      at findFiles (lib/eslint/eslint-helpers.js:589:9)
-      at async ESLint.lintFiles (lib/eslint/eslint.js:741:21)
-      at async Context.<anonymous> (tests/lib/eslint/eslint.js:10936:21)
-
-  471) ESLint
-       baseConfig
-         should be inserted before configs from the config file:
-     Error: Could not find config file.
-      at assertConfigurationExists (lib/config/config-loader.js:80:17)
-      at ConfigLoader.loadConfigArrayForFile (lib/config/config-loader.js:414:3)
-      at async ESLint.lintText (lib/eslint/eslint.js:940:4)
-      at async Context.<anonymous> (tests/lib/eslint/eslint.js:12500:28)
-
-  472) ESLint
-       baseConfig
-         should be inserted before configs from the config file and overrideConfig:
-     Error: ENOENT: no such file or directory, stat '/tmp/eslint/fixtures/eslint.config-with-rules.js'
-      at async Object.stat (node:internal/fs/promises:1029:18)
-      at async loadConfigFile (lib/config/config-loader.js:206:17)
-      at async ConfigLoader.calculateConfigArray (lib/config/config-loader.js:589:23)
-      at async #calculateConfigArray (lib/config/config-loader.js:370:19)
-      at async ESLint.lintText (lib/eslint/eslint.js:940:4)
-      at async Context.<anonymous> (tests/lib/eslint/eslint.js:12554:6)
-
-  473) ESLint
-       baseConfig
-         when it has 'files' they should be interpreted as relative to the config file:
-     Error: Could not find config file.
-      at assertConfigurationExists (lib/config/config-loader.js:80:17)
-      at ConfigLoader.loadConfigArrayForFile (lib/config/config-loader.js:414:3)
-      at async ESLint.lintText (lib/eslint/eslint.js:940:4)
-      at async Context.<anonymous> (tests/lib/eslint/eslint.js:12588:28)
-
-  474) ESLint
-       baseConfig
-         when it has 'ignores' they should be interpreted as relative to the config file:
-     Error: Could not find config file.
-      at assertConfigurationExists (lib/config/config-loader.js:80:17)
-      at ConfigLoader.loadConfigArrayForFile (lib/config/config-loader.js:414:3)
-      at async ESLint.lintText (lib/eslint/eslint.js:940:4)
-      at async Context.<anonymous> (tests/lib/eslint/eslint.js:12610:28)
-
-  475) ESLint
-       cache
-         should create the cache file inside cwd when no cacheLocation provided:
-     Error: No files matching '/tmp/eslint/fixtures/cli-engine/console.js' were found.
-      at findFiles (lib/eslint/eslint-helpers.js:589:9)
-      at async ESLint.lintFiles (lib/eslint/eslint.js:741:21)
-      at async Context.<anonymous> (tests/lib/eslint/eslint.js:13169:4)
-
-  476) ESLint
-       cache
-         should invalidate the cache if the overrideConfig changed between executions:
-     Error: ENOENT: no such file or directory, lstat '/tmp/eslint/fixtures/cache'
-      at Object.realpathSync (node:fs:2798:29)
-      at Context.<anonymous> (tests/lib/eslint/eslint.js:13206:14)
-      at process.processImmediate (node:internal/timers:485:21)
-
-  477) ESLint
-       cache
-         should remember the files from a previous run and do not operate on them if not changed:
-     Error: ENOENT: no such file or directory, lstat '/tmp/eslint/fixtures/cache'
-      at Object.realpathSync (node:fs:2798:29)
-      at Context.<anonymous> (tests/lib/eslint/eslint.js:13294:14)
-      at process.processImmediate (node:internal/timers:485:21)
-
-  478) ESLint
-       cache
-         when `cacheLocation` is specified, should create the cache file with `cache:true` and then delete it with `cache:false`:
-     Error: ENOENT: no such file or directory, lstat '/tmp/eslint/fixtures/cache'
-      at Object.realpathSync (node:fs:2798:29)
-      at Context.<anonymous> (tests/lib/eslint/eslint.js:13370:14)
-      at process.processImmediate (node:internal/timers:485:21)
-
-  479) ESLint
-       cache
-         should not attempt to delete the cache file if it does not exist:
-     Error: No files matching '/tmp/eslint/fixtures/cache/src/test-file.js' were found.
-      at findFiles (lib/eslint/eslint-helpers.js:589:9)
-      at async ESLint.lintFiles (lib/eslint/eslint.js:741:21)
-      at async Context.<anonymous> (tests/lib/eslint/eslint.js:13417:4)
-
-  480) ESLint
-       cache
-         should not throw an error if deleting fails but cache file no longer exists:
-     Error: No files matching '/tmp/eslint/fixtures/cache/src/test-file.js' were found.
-      at findFiles (lib/eslint/eslint-helpers.js:589:9)
-      at async ESLint.lintFiles (lib/eslint/eslint.js:741:21)
-      at async Context.<anonymous> (tests/lib/eslint/eslint.js:13489:4)
-
-  481) ESLint
-       cache
-         should store in the cache a file that has lint messages and a file that doesn't have lint messages:
-     Error: ENOENT: no such file or directory, lstat '/tmp/eslint/fixtures/cache'
-      at Object.realpathSync (node:fs:2798:29)
-      at Context.<anonymous> (tests/lib/eslint/eslint.js:13518:23)
-      at process.processImmediate (node:internal/timers:485:21)
-
-  482) ESLint
-       cache
-         should not contain in the cache a file that was deleted:
-     Error: ENOENT: no such file or directory, lstat '/tmp/eslint/fixtures/cache'
-      at Object.realpathSync (node:fs:2798:29)
-      at Context.<anonymous> (tests/lib/eslint/eslint.js:13586:23)
-      at process.processImmediate (node:internal/timers:485:21)
-
-  483) ESLint
-       cache
-         should contain files that were not visited in the cache provided they still exist:
-     Error: ENOENT: no such file or directory, lstat '/tmp/eslint/fixtures/cache'
-      at Object.realpathSync (node:fs:2798:29)
-      at Context.<anonymous> (tests/lib/eslint/eslint.js:13658:23)
-      at process.processImmediate (node:internal/timers:485:21)
-
-  484) ESLint
-       cache
-         should not delete cache when executing on files with --cache flag:
-     Error: No files matching '/tmp/eslint/fixtures/cli-engine/console.js' were found.
-      at findFiles (lib/eslint/eslint-helpers.js:589:9)
-      at async ESLint.lintFiles (lib/eslint/eslint.js:741:21)
-      at async Context.<anonymous> (tests/lib/eslint/eslint.js:13797:4)
-
-  485) ESLint
-       cache
-         should delete cache when executing on files without --cache flag:
-     Error: No files matching '/tmp/eslint/fixtures/cli-engine/console.js' were found.
-      at findFiles (lib/eslint/eslint-helpers.js:589:9)
-      at async ESLint.lintFiles (lib/eslint/eslint.js:741:21)
-      at async Context.<anonymous> (tests/lib/eslint/eslint.js:13833:4)
-
-  486) ESLint
-       cache
-         should use the specified cache file:
-     Error: ENOENT: no such file or directory, lstat '/tmp/eslint/fixtures/cache'
-      at Object.realpathSync (node:fs:2798:29)
-      at Context.<anonymous> (tests/lib/eslint/eslint.js:13866:23)
-      at process.processImmediate (node:internal/timers:485:21)
-
-  487) ESLint
-       cache
-         should not store `usedDeprecatedRules` in the cache file:
-     Error: ENOENT: no such file or directory, lstat '/tmp/eslint/fixtures/cache'
-      at Object.realpathSync (node:fs:2798:29)
-      at Context.<anonymous> (tests/lib/eslint/eslint.js:13925:24)
-      at process.processImmediate (node:internal/timers:485:21)
-
-  488) ESLint
-       cache
-         should store `source` as `null` in the cache file if the lint result has `source` property:
-     Error: ENOENT: no such file or directory, lstat '/tmp/eslint/fixtures/cache'
-      at Object.realpathSync (node:fs:2798:29)
-      at Context.<anonymous> (tests/lib/eslint/eslint.js:13994:24)
-      at process.processImmediate (node:internal/timers:485:21)
-
-  489) ESLint
-       cache
-         when cacheLocation is a directory or looks like a directory
-           should create the directory and the cache file inside it when cacheLocation ends with a slash:
-     Error: No files matching '/tmp/eslint/fixtures/cache/src/test-file.js' were found.
-      at findFiles (lib/eslint/eslint-helpers.js:589:9)
-      at async ESLint.lintFiles (lib/eslint/eslint.js:741:21)
-      at async Context.<anonymous> (tests/lib/eslint/eslint.js:13043:5)
-
-  490) ESLint
-       cache
-         when cacheLocation is a directory or looks like a directory
-           should create the cache file inside existing cacheLocation directory when cacheLocation ends with a slash:
-     Error: No files matching '/tmp/eslint/fixtures/cache/src/test-file.js' were found.
-      at findFiles (lib/eslint/eslint-helpers.js:589:9)
-      at async ESLint.lintFiles (lib/eslint/eslint.js:741:21)
-      at async Context.<anonymous> (tests/lib/eslint/eslint.js:13087:5)
-
-  491) ESLint
-       cache
-         when cacheLocation is a directory or looks like a directory
-           should create the cache file inside existing cacheLocation directory when cacheLocation doesn't end with a path separator:
-     Error: No files matching '/tmp/eslint/fixtures/cache/src/test-file.js' were found.
-      at findFiles (lib/eslint/eslint-helpers.js:589:9)
-      at async ESLint.lintFiles (lib/eslint/eslint.js:741:21)
-      at async Context.<anonymous> (tests/lib/eslint/eslint.js:13131:5)
-
-  492) ESLint
-       cache
-         cacheStrategy
-           should detect changes using a file's modification time when set to 'metadata':
-     Error: ENOENT: no such file or directory, lstat '/tmp/eslint/fixtures/cache'
-      at Object.realpathSync (node:fs:2798:29)
-      at Context.<anonymous> (tests/lib/eslint/eslint.js:14063:24)
-      at process.processImmediate (node:internal/timers:485:21)
-
-  493) ESLint
-       cache
-         cacheStrategy
-           should not detect changes using a file's modification time when set to 'content':
-     Error: ENOENT: no such file or directory, lstat '/tmp/eslint/fixtures/cache'
-      at Object.realpathSync (node:fs:2798:29)
-      at Context.<anonymous> (tests/lib/eslint/eslint.js:14117:24)
-      at process.processImmediate (node:internal/timers:485:21)
-
-  494) ESLint
-       cache
-         cacheStrategy
-           should detect changes using a file's contents when set to 'content':
-     Error: ENOENT: no such file or directory, lstat '/tmp/eslint/fixtures/cache'
-      at Object.realpathSync (node:fs:2798:29)
-      at Context.<anonymous> (tests/lib/eslint/eslint.js:14170:24)
-      at process.processImmediate (node:internal/timers:485:21)
-
-  495) ESLint
-       v10_config_lookup_from_file
-         should report zero messages when given a config file and a valid file:
-     Error: No files matching '.' were found.
-      at findFiles (lib/eslint/eslint-helpers.js:589:9)
-      at async ESLint.lintFiles (lib/eslint/eslint.js:741:21)
-      at async Context.<anonymous> (tests/lib/eslint/eslint.js:14227:20)
-
-  496) ESLint
-       unstable_config_lookup_from_file
-         should report zero messages when given a config file and a valid file:
-     Error: No files matching '.' were found.
-      at findFiles (lib/eslint/eslint-helpers.js:589:9)
-      at async ESLint.lintFiles (lib/eslint/eslint.js:741:21)
-      at async Context.<anonymous> (tests/lib/eslint/eslint.js:14976:20)
 
 
 
