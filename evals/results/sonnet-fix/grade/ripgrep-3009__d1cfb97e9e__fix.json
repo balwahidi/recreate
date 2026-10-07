@@ -1,0 +1,16 @@
+{
+  "label": "ripgrep-3009__d1cfb97e9e__fix",
+  "case": "ripgrep-3009",
+  "files": [
+    "CHANGELOG.md",
+    "crates/ignore/src/walk.rs"
+  ],
+  "test_in_patch": true,
+  "F": true,
+  "applied": true,
+  "codes": [
+    0,
+    0,
+    0
+  ]
+}
