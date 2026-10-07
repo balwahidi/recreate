@@ -2,7 +2,7 @@
 
 usage: finish.py <plan-name> <run_id> <tokens> <tool_uses> <duration_ms>
 """
-import json, pathlib, subprocess, sys
+import json, os, pathlib, subprocess, sys
 
 HERE = pathlib.Path(__file__).resolve().parent
 TASKS = pathlib.Path("/tmp/claude-0/-home-user-recreate/a846bf6e-3413-543f-af03-2805ee54fa2e/tasks")
@@ -23,4 +23,5 @@ if case["fix"] and run["task"] == "reproduce":
     py(HERE / "grade_runs.py", f"sonnet-{name}", run_id)
 elif case["fix"] and run["task"] == "fix":
     py(HERE / "grade_fix.py", f"sonnet-{name}", run_id)
-py(HERE / "harness.py", "cleanup", run_id)
+if not os.environ.get("KEEP_CHECKOUT"):  # set when the agent left background work that may resume
+    py(HERE / "harness.py", "cleanup", run_id)

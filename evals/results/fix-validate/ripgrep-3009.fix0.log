@@ -3,7 +3,7 @@
 running 149 tests
 ....................................................................................... 87/149
 ..............................................................
-test result: ok. 149 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.14s
+test result: ok. 149 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.63s
 
 
 ===== run 2: exit 0
@@ -11,7 +11,7 @@ test result: ok. 149 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; fi
 running 149 tests
 ....................................................................................... 87/149
 ..............................................................
-test result: ok. 149 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.17s
+test result: ok. 149 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.84s
 
 
 ===== run 3: exit 0
@@ -19,6 +19,6 @@ test result: ok. 149 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; fi
 running 149 tests
 ....................................................................................... 87/149
 ..............................................................
-test result: ok. 149 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.14s
+test result: ok. 149 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.70s
 
 
