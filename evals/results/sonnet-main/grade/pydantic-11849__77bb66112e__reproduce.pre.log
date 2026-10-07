@@ -1,0 +1,39 @@
+===== run 1: exit 1
+pydantic 2.11.4, 4 threads, 100 trials/example, 50 padding fields
+
+example 1 (Direct): trials with a bad result: 64/100
+    120 x error: PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
+    280 x ok: Direct
+
+example 2 (A <- B <- C): trials with a bad result: 62/100
+    285 x ok: C
+    115 x WRONG CLASS: model_validate returned B, c.name -> AttributeError: 'B' object has no attribute 'name'
+
+REPRODUCED
+
+===== run 2: exit 1
+pydantic 2.11.4, 4 threads, 100 trials/example, 50 padding fields
+
+example 1 (Direct): trials with a bad result: 51/100
+     95 x error: PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
+    305 x ok: Direct
+
+example 2 (A <- B <- C): trials with a bad result: 71/100
+    135 x WRONG CLASS: model_validate returned B, c.name -> AttributeError: 'B' object has no attribute 'name'
+    265 x ok: C
+
+REPRODUCED
+
+===== run 3: exit 1
+pydantic 2.11.4, 4 threads, 100 trials/example, 50 padding fields
+
+example 1 (Direct): trials with a bad result: 58/100
+    112 x error: PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
+    288 x ok: Direct
+
+example 2 (A <- B <- C): trials with a bad result: 47/100
+    313 x ok: C
+     87 x WRONG CLASS: model_validate returned B, c.name -> AttributeError: 'B' object has no attribute 'name'
+
+REPRODUCED
+

@@ -1,0 +1,33 @@
+===== run 1: exit 0
+pydantic 2.11.4, 4 threads, 100 trials/example, 50 padding fields
+
+example 1 (Direct): trials with a bad result: 0/100
+    400 x ok: Direct
+
+example 2 (A <- B <- C): trials with a bad result: 0/100
+    400 x ok: C
+
+not reproduced
+
+===== run 2: exit 0
+pydantic 2.11.4, 4 threads, 100 trials/example, 50 padding fields
+
+example 1 (Direct): trials with a bad result: 0/100
+    400 x ok: Direct
+
+example 2 (A <- B <- C): trials with a bad result: 0/100
+    400 x ok: C
+
+not reproduced
+
+===== run 3: exit 0
+pydantic 2.11.4, 4 threads, 100 trials/example, 50 padding fields
+
+example 1 (Direct): trials with a bad result: 0/100
+    400 x ok: Direct
+
+example 2 (A <- B <- C): trials with a bad result: 0/100
+    400 x ok: C
+
+not reproduced
+

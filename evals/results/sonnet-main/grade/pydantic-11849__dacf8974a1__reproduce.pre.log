@@ -1,0 +1,15 @@
+===== run 1: exit 1
+pydantic 2.11.4, python 3.13.16, 4 threads, 50 extra fields, up to 300 trials per scenario
+FAIL direct (example 1): wrong result on trial 1/300: PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
+FAIL chain (example 2): wrong result on trial 5/300: got instance of B, expected C
+
+===== run 2: exit 1
+pydantic 2.11.4, python 3.13.16, 4 threads, 50 extra fields, up to 300 trials per scenario
+FAIL direct (example 1): wrong result on trial 1/300: PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
+FAIL chain (example 2): wrong result on trial 1/300: got instance of B, expected C
+
+===== run 3: exit 1
+pydantic 2.11.4, python 3.13.16, 4 threads, 50 extra fields, up to 300 trials per scenario
+FAIL direct (example 1): wrong result on trial 1/300: PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
+FAIL chain (example 2): wrong result on trial 1/300: got instance of B, expected C
+

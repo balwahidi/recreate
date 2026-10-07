@@ -1,0 +1,15 @@
+===== run 1: exit 0
+pydantic 2.11.4, python 3.13.16, 4 threads, 50 extra fields, up to 300 trials per scenario
+ok   direct (example 1): 300 trials, every thread got the right class
+ok   chain (example 2): 300 trials, every thread got the right class
+
+===== run 2: exit 0
+pydantic 2.11.4, python 3.13.16, 4 threads, 50 extra fields, up to 300 trials per scenario
+ok   direct (example 1): 300 trials, every thread got the right class
+ok   chain (example 2): 300 trials, every thread got the right class
+
+===== run 3: exit 0
+pydantic 2.11.4, python 3.13.16, 4 threads, 50 extra fields, up to 300 trials per scenario
+ok   direct (example 1): 300 trials, every thread got the right class
+ok   chain (example 2): 300 trials, every thread got the right class
+
