@@ -18,7 +18,7 @@ from prompts import SKILL_WRAPPER, TASKS  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 WORK = pathlib.Path("/work")
-SKILLS = {"v3": "evals/notes/SKILL-v3.md", "v5": "evals/variants/SKILL-v5.md", "v6": "evals/variants/SKILL-v6.md", "none": None}
+SKILLS = {"v3": "evals/notes/SKILL-v3.md", "v5": "evals/variants/SKILL-v5.md", "v6": "evals/variants/SKILL-v6.md", "v7": "evals/variants/SKILL-v7.md", "none": None}
 
 PROMPT = """You are working on the {repo} repository at a fixed revision. It is already checked out at {ws}/repo (commit {checkout}). {env_note}
 
@@ -62,6 +62,17 @@ DESIGN = {
             ("urfave-cli-2176", "reproduce", 2), ("pydantic-11849", "reproduce", 2),
             ("ripgrep-3009", "reproduce", 2), ("ts-60573", "reproduce", 2),
             ("eslint-20209-fixed", "reproduce", 1),
+            ("eslint-19637", "investigate", 1), ("vue-13611", "investigate", 1),
+        ],
+    },
+    "short": {
+        "arms": ["v5", "v7"],
+        "units": [
+            ("eslint-19957", "reproduce", 2), ("eslint-19924", "reproduce", 2),
+            ("eslint-19637", "reproduce", 2), ("vue-13611", "reproduce", 2),
+            ("urfave-cli-2176", "reproduce", 2), ("pydantic-11849", "reproduce", 2),
+            ("ripgrep-3009", "reproduce", 2), ("ts-60573", "reproduce", 2),
+            ("eslint-20209-fixed", "reproduce", 2),
             ("eslint-19637", "investigate", 1), ("vue-13611", "investigate", 1),
         ],
     },
