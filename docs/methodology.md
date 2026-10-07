@@ -70,9 +70,9 @@ Per-case adjustments, all in `grade.py` or the grading environment:
 
 **Grader isolation.** Each side starts from a reset checkout, with the agent patch reapplied. Git-ignored files (installed dependencies, build caches) are kept between sides and samples, because reinstalling for every side is too costly. Generated output that the commands consume is rebuilt on each side (`BUILD`). Other ignored state could still carry over, which is one more reason the logs behind each verdict that separates the arms were read by hand.
 
-## Sonnet harness (v5 evaluation)
+## Sonnet harness (v5 to v7 evaluations)
 
-`evals/sonnet/` runs the v5 evaluation with Sonnet Agent-tool subagents. Each step is a separate script:
+`evals/sonnet/` runs the v5, v6 and v7 evaluations with Sonnet Agent-tool subagents. Each step is a separate script:
 
 1. `harness.py plan` freezes a run list with a seed.
 2. `harness.py provision` copies a prepared checkout into `/work/runs/<random id>` and writes the prompt there. The checkout never contains the fix commit, and the path carries no issue, PR or fix number.
@@ -90,3 +90,7 @@ Per-case adjustments, all in `grade.py` or the grading environment:
 `prepare.py` builds the per-case agent bases and grading checkouts.
 
 Isolation is instructed, not enforced: same machine and user. It is checked afterwards by the transcript audit.
+
+Runs share one process namespace, which matters for concurrency. In the v7 test, four ripgrep runs ran at once. Their test binaries had the same name, and each agent cleared hung tests with `pkill` by name, which can hit another run's process. Replay grading is unaffected, but what an agent observes can be. Cases with hang-prone tests should run one at a time.
+
+From the v7 test on, blind review is done by a fresh agent that sees only the shuffled `blind.py` output and the symptom criteria.

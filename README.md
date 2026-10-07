@@ -2,7 +2,7 @@
 
 Turn bug reports into reproducible failures.
 
-Recreate is a single agent skill, [`SKILL.md`](SKILL.md) (383 words). It tells a coding agent to make the reported failure real before trying to fix it, and to be honest about what it actually reproduced. It also tells the agent to turn the reproduction into a check that a fix can be tested against. It isn't runtime software: no CLI, MCP server, hooks or telemetry.
+Recreate is a single agent skill, [`SKILL.md`](SKILL.md) (202 words). It tells a coding agent to make the reported failure real before trying to fix it, and to be honest about what it actually reproduced. It also tells the agent to turn the reproduction into a check that a fix can be tested against. It isn't runtime software: no CLI, MCP server, hooks or telemetry.
 
 ## Install
 
@@ -14,16 +14,34 @@ Then:
 
 ## What it changes
 
-### Current version (v5), measured with Sonnet
+### Current version (v7), measured with Sonnet
 
-v5 keeps every earlier rule and adds "The check". The reproduction must become one command that:
-- exits non-zero while the bug is present and zero once it's fixed;
-- asserts only what the report says;
-- has been seen passing once, on a last good version or with a throwaway patch that is reverted.
+v7 is the measured rules of v5 in five lines, with no report template. It tells the agent to:
+- reproduce from the reporter's exact steps, and count only the reported symptom;
+- make it one command that exits non-zero while the bug is present and zero once it's fixed, asserting only what the report says;
+- see that command pass where the expected behavior holds (a last good version, the report's workaround, or the input without the trigger), without writing a fix;
+- say "already fixed" when the report fails only on the reporter's version;
+- state a rate for flaky failures, and say so when an environment is simulated;
+- leave production code alone until the check fails.
 
-The evaluation had 67 Sonnet runs on 9 real historical issues. Every reproduction was replayed against the real upstream fix, which the agent never saw. Details are in [`evals/notes/sonnet-v5-results.md`](evals/notes/sonnet-v5-results.md).
+It was tested against v5 in 20 frozen, paired Sonnet runs per arm. Details are in [`evals/notes/sonnet-v7-short-results.md`](evals/notes/sonnet-v7-short-results.md).
 
-| | No skill | Previous skill (v3) | Current skill (v5) |
+| | v5 (383 words) | v7 (202 words) |
+|---|---|---|
+| Reproduction fails before the real fix and passes after it, with the reported symptom | 14/16 | **16/16** |
+| Production files edited (reproduce and "look into this bug") | 0 | 0 |
+| Already-fixed report stated as already fixed | 2/2 | 2/2 |
+| Median tokens per run | 73K | **64K** |
+| Median tool calls / wall time | 21 / 257 s | 15.5 / 136 s |
+
+- **Shorter didn't make it worse.** The report template and status menu had no measured effect, and dropping them didn't thin the reports. v7 runs still led with a status, stated failure rates on flaky bugs, and named already-fixed reports.
+- **The one difference in quality comes from one phrase:** "without writing a fix". With a throwaway fix allowed, v5 agents tended to assert what their own fix did. On ripgrep-3009 that meant a panic message the real fix doesn't produce. Across two frozen tests, the no-fix wording passed ripgrep 4 of 4 times and v5 passed it 0 of 4.
+
+### v5 vs v3 and no skill, measured with Sonnet
+
+v5 added "The check": one command with a meaningful exit status, asserting only the report, seen passing once. 67 Sonnet runs on 9 real historical issues, each reproduction replayed against the real upstream fix the agent never saw. Details are in [`evals/notes/sonnet-v5-results.md`](evals/notes/sonnet-v5-results.md).
+
+| | No skill | v3 | v5 |
 |---|---|---|---|
 | Reproduction fails before the real fix and passes after it | 4/8 | 17/24 | **22/24** |
 | "Look into this bug" edits production code | 2/2 | 0/2 | 0/2 |
@@ -51,7 +69,8 @@ The earlier findings below come from 18 real historical issues: 7 dev cases and 
 
 ### Limits
 
-- Two harnesses and models were used: Devin for v0 to v3, Sonnet subagents for v5. There were 1 to 6 samples per cell.
+- Two harnesses and models were used: Devin for v0 to v3, Sonnet subagents for v5 and v7. There were 1 to 6 samples per cell.
+- R was near ceiling in the v7 test, so it rules out a large quality loss on these cases, not a small one. Its token cut is a 14-of-20 pair split.
 - The v5 confirmatory round used the two cases where exit status decided pairs. The claim is about that mechanism.
 - Simulated-environment fidelity is still a known gap. Agents label Windows simulations correctly, but often simulate after the code has already taken the Linux branch (see `evals/notes/audit-2026-10-07.md`).
 

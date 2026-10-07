@@ -13,7 +13,7 @@
 
 ## Running evals
 
-- `evals/sonnet/` runs evaluated agents as Sonnet subagents with frozen plans, transcript audits and blind review (see `docs/methodology.md`). This is how v5 was evaluated.
+- `evals/sonnet/` runs evaluated agents as Sonnet subagents with frozen plans, transcript audits and blind review (see `docs/methodology.md`). This is how v5 and v7 were evaluated.
 - `evals/workflow.py` runs evaluated agents as Devin sessions. For another harness, give it the text from `evals/prompts.build_prompt(...)` and save the `final_message`, `patch` and `run_command` it returns to `evals/results/<run>/<label>.json`.
 - Evaluated agents must not share memory or notes across sessions; see the isolation note in `docs/methodology.md`.
 - `python3 evals/grade.py <run> [label filters]` replays the patches before and after the upstream fix. It expects the prepared checkouts under `~/grade/<case>/repo`, plus `fix.patch`, `upstream_test.patch` for urfave/cli, and `fix_grade.patch` for ripgrep-3009 and ts-60573 next to them.

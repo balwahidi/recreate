@@ -1,0 +1,253 @@
+===== run 1: exit 101
+   Compiling ignore v0.4.29 (/root/grade/ripgrep-3009/repo/crates/ignore)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.51s
+  Executable unittests src/lib.rs (/root/grade/ripgrep-3009/repo/target/debug/deps/ignore-ecb739db799020ac)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+     Running unittests src/lib.rs (/root/grade/ripgrep-3009/repo/target/debug/deps/ignore-ecb739db799020ac)
+
+running 1 test
+test walk::tests::panic_in_parallel - should panic ... FAILED
+
+failures:
+
+---- walk::tests::panic_in_parallel stdout ----
+
+thread '<unnamed>' (12689) panicked at crates/ignore/src/walk.rs:2504:34:
+oops!
+stack backtrace:
+   0: __rustc::rust_begin_unwind
+             at /rustc/2d8144b7880597b6e6d3dfd63a9a9efae3f533d3/library/std/src/panicking.rs:689:5
+   1: core::panicking::panic_fmt
+             at /rustc/2d8144b7880597b6e6d3dfd63a9a9efae3f533d3/library/core/src/panicking.rs:80:14
+   2: ignore::walk::tests::panic_in_parallel::{closure#0}::{closure#0}
+             at ./src/walk.rs:2504:34
+   3: <alloc::boxed::Box<dyn core::ops::function::FnMut<(core::result::Result<ignore::walk::DirEntry, ignore::Error>,), Output = ignore::walk::WalkState> + core::marker::Send> as core::ops::function::FnMut<(core::result::Result<ignore::walk::DirEntry, ignore::Error>,)>>::call_mut
+             at /rustc/2d8144b7880597b6e6d3dfd63a9a9efae3f533d3/library/alloc/src/boxed.rs:2282:9
+   4: <ignore::walk::FnVisitorImp as ignore::walk::ParallelVisitor>::visit
+             at ./src/walk.rs:1340:9
+   5: <ignore::walk::Worker>::run_one
+             at ./src/walk.rs:1762:38
+   6: <ignore::walk::Worker>::run
+             at ./src/walk.rs:1704:43
+   7: <ignore::walk::WalkParallel>::visit::{closure#1}::{closure#0}::{closure#0}
+             at ./src/walk.rs:1470:49
+note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose backtrace.
+
+thread 'walk::tests::panic_in_parallel' (12688) panicked at crates/ignore/src/walk.rs:1473:31:
+called `Result::unwrap()` on an `Err` value: Any { .. }
+stack backtrace:
+   0: __rustc::rust_begin_unwind
+             at /rustc/2d8144b7880597b6e6d3dfd63a9a9efae3f533d3/library/std/src/panicking.rs:689:5
+   1: core::panicking::panic_fmt
+             at /rustc/2d8144b7880597b6e6d3dfd63a9a9efae3f533d3/library/core/src/panicking.rs:80:14
+   2: core::result::unwrap_failed
+             at /rustc/2d8144b7880597b6e6d3dfd63a9a9efae3f533d3/library/core/src/result.rs:1867:5
+   3: <core::result::Result<(), alloc::boxed::Box<dyn core::any::Any + core::marker::Send>>>::unwrap
+             at /rustc/2d8144b7880597b6e6d3dfd63a9a9efae3f533d3/library/core/src/result.rs:1233:23
+   4: <ignore::walk::WalkParallel>::visit::{closure#1}
+             at ./src/walk.rs:1473:31
+   5: std::thread::scoped::scope::<<ignore::walk::WalkParallel>::visit::{closure#1}, ()>::{closure#0}
+             at /rustc/2d8144b7880597b6e6d3dfd63a9a9efae3f533d3/library/std/src/thread/scoped.rs:158:51
+   6: <core::panic::unwind_safe::AssertUnwindSafe<std::thread::scoped::scope<<ignore::walk::WalkParallel>::visit::{closure#1}, ()>::{closure#0}> as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/2d8144b7880597b6e6d3dfd63a9a9efae3f533d3/library/core/src/panic/unwind_safe.rs:275:9
+   7: std::panicking::catch_unwind::do_call::<core::panic::unwind_safe::AssertUnwindSafe<std::thread::scoped::scope<<ignore::walk::WalkParallel>::visit::{closure#1}, ()>::{closure#0}>, ()>
+             at /rustc/2d8144b7880597b6e6d3dfd63a9a9efae3f533d3/library/std/src/panicking.rs:581:40
+   8: __rust_try
+   9: std::panicking::catch_unwind::<(), core::panic::unwind_safe::AssertUnwindSafe<std::thread::scoped::scope<<ignore::walk::WalkParallel>::visit::{closure#1}, ()>::{closure#0}>>
+             at /rustc/2d8144b7880597b6e6d3dfd63a9a9efae3f533d3/library/std/src/panicking.rs:544:19
+  10: std::panic::catch_unwind::<core::panic::unwind_safe::AssertUnwindSafe<std::thread::scoped::scope<<ignore::walk::WalkParallel>::visit::{closure#1}, ()>::{closure#0}>, ()>
+             at /rustc/2d8144b7880597b6e6d3dfd63a9a9efae3f533d3/library/std/src/panic.rs:359:14
+  11: std::thread::scoped::scope::<<ignore::walk::WalkParallel>::visit::{closure#1}, ()>
+             at /rustc/2d8144b7880597b6e6d3dfd63a9a9efae3f533d3/library/std/src/thread/scoped.rs:158:18
+  12: <ignore::walk::WalkParallel>::visit
+             at ./src/walk.rs:1467:9
+  13: <ignore::walk::WalkParallel>::run::<ignore::walk::tests::panic_in_parallel::{closure#0}>
+             at ./src/walk.rs:1373:14
+  14: ignore::walk::tests::panic_in_parallel
+             at ./src/walk.rs:2504:14
+  15: ignore::walk::tests::panic_in_parallel::{closure#0}
+             at ./src/walk.rs:2497:27
+  16: <ignore::walk::tests::panic_in_parallel::{closure#0} as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/2d8144b7880597b6e6d3dfd63a9a9efae3f533d3/library/core/src/ops/function.rs:250:5
+  17: <fn() -> core::result::Result<(), alloc::string::String> as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/2d8144b7880597b6e6d3dfd63a9a9efae3f533d3/library/core/src/ops/function.rs:250:5
+note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose backtrace.
+note: panic did not contain expected string
+      panic message: "called `Result::unwrap()` on an `Err` value: Any { .. }"
+ expected substring: "oops!"
+
+failures:
+    walk::tests::panic_in_parallel
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 147 filtered out; finished in 0.10s
+
+error: test failed, to rerun pass `--lib`
+
+===== run 2: exit 101
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.03s
+  Executable unittests src/lib.rs (/root/grade/ripgrep-3009/repo/target/debug/deps/ignore-ecb739db799020ac)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.03s
+     Running unittests src/lib.rs (/root/grade/ripgrep-3009/repo/target/debug/deps/ignore-ecb739db799020ac)
+
+running 1 test
+test walk::tests::panic_in_parallel - should panic ... FAILED
+
+failures:
+
+---- walk::tests::panic_in_parallel stdout ----
+
+thread '<unnamed>' (12752) panicked at crates/ignore/src/walk.rs:2504:34:
+oops!
+stack backtrace:
+   0: __rustc::rust_begin_unwind
+             at /rustc/2d8144b7880597b6e6d3dfd63a9a9efae3f533d3/library/std/src/panicking.rs:689:5
+   1: core::panicking::panic_fmt
+             at /rustc/2d8144b7880597b6e6d3dfd63a9a9efae3f533d3/library/core/src/panicking.rs:80:14
+   2: ignore::walk::tests::panic_in_parallel::{closure#0}::{closure#0}
+             at ./src/walk.rs:2504:34
+   3: <alloc::boxed::Box<dyn core::ops::function::FnMut<(core::result::Result<ignore::walk::DirEntry, ignore::Error>,), Output = ignore::walk::WalkState> + core::marker::Send> as core::ops::function::FnMut<(core::result::Result<ignore::walk::DirEntry, ignore::Error>,)>>::call_mut
+             at /rustc/2d8144b7880597b6e6d3dfd63a9a9efae3f533d3/library/alloc/src/boxed.rs:2282:9
+   4: <ignore::walk::FnVisitorImp as ignore::walk::ParallelVisitor>::visit
+             at ./src/walk.rs:1340:9
+   5: <ignore::walk::Worker>::run_one
+             at ./src/walk.rs:1762:38
+   6: <ignore::walk::Worker>::run
+             at ./src/walk.rs:1704:43
+   7: <ignore::walk::WalkParallel>::visit::{closure#1}::{closure#0}::{closure#0}
+             at ./src/walk.rs:1470:49
+note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose backtrace.
+
+thread 'walk::tests::panic_in_parallel' (12751) panicked at crates/ignore/src/walk.rs:1473:31:
+called `Result::unwrap()` on an `Err` value: Any { .. }
+stack backtrace:
+   0: __rustc::rust_begin_unwind
+             at /rustc/2d8144b7880597b6e6d3dfd63a9a9efae3f533d3/library/std/src/panicking.rs:689:5
+   1: core::panicking::panic_fmt
+             at /rustc/2d8144b7880597b6e6d3dfd63a9a9efae3f533d3/library/core/src/panicking.rs:80:14
+   2: core::result::unwrap_failed
+             at /rustc/2d8144b7880597b6e6d3dfd63a9a9efae3f533d3/library/core/src/result.rs:1867:5
+   3: <core::result::Result<(), alloc::boxed::Box<dyn core::any::Any + core::marker::Send>>>::unwrap
+             at /rustc/2d8144b7880597b6e6d3dfd63a9a9efae3f533d3/library/core/src/result.rs:1233:23
+   4: <ignore::walk::WalkParallel>::visit::{closure#1}
+             at ./src/walk.rs:1473:31
+   5: std::thread::scoped::scope::<<ignore::walk::WalkParallel>::visit::{closure#1}, ()>::{closure#0}
+             at /rustc/2d8144b7880597b6e6d3dfd63a9a9efae3f533d3/library/std/src/thread/scoped.rs:158:51
+   6: <core::panic::unwind_safe::AssertUnwindSafe<std::thread::scoped::scope<<ignore::walk::WalkParallel>::visit::{closure#1}, ()>::{closure#0}> as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/2d8144b7880597b6e6d3dfd63a9a9efae3f533d3/library/core/src/panic/unwind_safe.rs:275:9
+   7: std::panicking::catch_unwind::do_call::<core::panic::unwind_safe::AssertUnwindSafe<std::thread::scoped::scope<<ignore::walk::WalkParallel>::visit::{closure#1}, ()>::{closure#0}>, ()>
+             at /rustc/2d8144b7880597b6e6d3dfd63a9a9efae3f533d3/library/std/src/panicking.rs:581:40
+   8: __rust_try
+   9: std::panicking::catch_unwind::<(), core::panic::unwind_safe::AssertUnwindSafe<std::thread::scoped::scope<<ignore::walk::WalkParallel>::visit::{closure#1}, ()>::{closure#0}>>
+             at /rustc/2d8144b7880597b6e6d3dfd63a9a9efae3f533d3/library/std/src/panicking.rs:544:19
+  10: std::panic::catch_unwind::<core::panic::unwind_safe::AssertUnwindSafe<std::thread::scoped::scope<<ignore::walk::WalkParallel>::visit::{closure#1}, ()>::{closure#0}>, ()>
+             at /rustc/2d8144b7880597b6e6d3dfd63a9a9efae3f533d3/library/std/src/panic.rs:359:14
+  11: std::thread::scoped::scope::<<ignore::walk::WalkParallel>::visit::{closure#1}, ()>
+             at /rustc/2d8144b7880597b6e6d3dfd63a9a9efae3f533d3/library/std/src/thread/scoped.rs:158:18
+  12: <ignore::walk::WalkParallel>::visit
+             at ./src/walk.rs:1467:9
+  13: <ignore::walk::WalkParallel>::run::<ignore::walk::tests::panic_in_parallel::{closure#0}>
+             at ./src/walk.rs:1373:14
+  14: ignore::walk::tests::panic_in_parallel
+             at ./src/walk.rs:2504:14
+  15: ignore::walk::tests::panic_in_parallel::{closure#0}
+             at ./src/walk.rs:2497:27
+  16: <ignore::walk::tests::panic_in_parallel::{closure#0} as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/2d8144b7880597b6e6d3dfd63a9a9efae3f533d3/library/core/src/ops/function.rs:250:5
+  17: <fn() -> core::result::Result<(), alloc::string::String> as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/2d8144b7880597b6e6d3dfd63a9a9efae3f533d3/library/core/src/ops/function.rs:250:5
+note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose backtrace.
+note: panic did not contain expected string
+      panic message: "called `Result::unwrap()` on an `Err` value: Any { .. }"
+ expected substring: "oops!"
+
+failures:
+    walk::tests::panic_in_parallel
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 147 filtered out; finished in 0.10s
+
+error: test failed, to rerun pass `--lib`
+
+===== run 3: exit 101
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+  Executable unittests src/lib.rs (/root/grade/ripgrep-3009/repo/target/debug/deps/ignore-ecb739db799020ac)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.03s
+     Running unittests src/lib.rs (/root/grade/ripgrep-3009/repo/target/debug/deps/ignore-ecb739db799020ac)
+
+running 1 test
+test walk::tests::panic_in_parallel - should panic ... FAILED
+
+failures:
+
+---- walk::tests::panic_in_parallel stdout ----
+
+thread '<unnamed>' (12815) panicked at crates/ignore/src/walk.rs:2504:34:
+oops!
+stack backtrace:
+   0: __rustc::rust_begin_unwind
+             at /rustc/2d8144b7880597b6e6d3dfd63a9a9efae3f533d3/library/std/src/panicking.rs:689:5
+   1: core::panicking::panic_fmt
+             at /rustc/2d8144b7880597b6e6d3dfd63a9a9efae3f533d3/library/core/src/panicking.rs:80:14
+   2: ignore::walk::tests::panic_in_parallel::{closure#0}::{closure#0}
+             at ./src/walk.rs:2504:34
+   3: <alloc::boxed::Box<dyn core::ops::function::FnMut<(core::result::Result<ignore::walk::DirEntry, ignore::Error>,), Output = ignore::walk::WalkState> + core::marker::Send> as core::ops::function::FnMut<(core::result::Result<ignore::walk::DirEntry, ignore::Error>,)>>::call_mut
+             at /rustc/2d8144b7880597b6e6d3dfd63a9a9efae3f533d3/library/alloc/src/boxed.rs:2282:9
+   4: <ignore::walk::FnVisitorImp as ignore::walk::ParallelVisitor>::visit
+             at ./src/walk.rs:1340:9
+   5: <ignore::walk::Worker>::run_one
+             at ./src/walk.rs:1762:38
+   6: <ignore::walk::Worker>::run
+             at ./src/walk.rs:1704:43
+   7: <ignore::walk::WalkParallel>::visit::{closure#1}::{closure#0}::{closure#0}
+             at ./src/walk.rs:1470:49
+note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose backtrace.
+
+thread 'walk::tests::panic_in_parallel' (12814) panicked at crates/ignore/src/walk.rs:1473:31:
+called `Result::unwrap()` on an `Err` value: Any { .. }
+stack backtrace:
+   0: __rustc::rust_begin_unwind
+             at /rustc/2d8144b7880597b6e6d3dfd63a9a9efae3f533d3/library/std/src/panicking.rs:689:5
+   1: core::panicking::panic_fmt
+             at /rustc/2d8144b7880597b6e6d3dfd63a9a9efae3f533d3/library/core/src/panicking.rs:80:14
+   2: core::result::unwrap_failed
+             at /rustc/2d8144b7880597b6e6d3dfd63a9a9efae3f533d3/library/core/src/result.rs:1867:5
+   3: <core::result::Result<(), alloc::boxed::Box<dyn core::any::Any + core::marker::Send>>>::unwrap
+             at /rustc/2d8144b7880597b6e6d3dfd63a9a9efae3f533d3/library/core/src/result.rs:1233:23
+   4: <ignore::walk::WalkParallel>::visit::{closure#1}
+             at ./src/walk.rs:1473:31
+   5: std::thread::scoped::scope::<<ignore::walk::WalkParallel>::visit::{closure#1}, ()>::{closure#0}
+             at /rustc/2d8144b7880597b6e6d3dfd63a9a9efae3f533d3/library/std/src/thread/scoped.rs:158:51
+   6: <core::panic::unwind_safe::AssertUnwindSafe<std::thread::scoped::scope<<ignore::walk::WalkParallel>::visit::{closure#1}, ()>::{closure#0}> as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/2d8144b7880597b6e6d3dfd63a9a9efae3f533d3/library/core/src/panic/unwind_safe.rs:275:9
+   7: std::panicking::catch_unwind::do_call::<core::panic::unwind_safe::AssertUnwindSafe<std::thread::scoped::scope<<ignore::walk::WalkParallel>::visit::{closure#1}, ()>::{closure#0}>, ()>
+             at /rustc/2d8144b7880597b6e6d3dfd63a9a9efae3f533d3/library/std/src/panicking.rs:581:40
+   8: __rust_try
+   9: std::panicking::catch_unwind::<(), core::panic::unwind_safe::AssertUnwindSafe<std::thread::scoped::scope<<ignore::walk::WalkParallel>::visit::{closure#1}, ()>::{closure#0}>>
+             at /rustc/2d8144b7880597b6e6d3dfd63a9a9efae3f533d3/library/std/src/panicking.rs:544:19
+  10: std::panic::catch_unwind::<core::panic::unwind_safe::AssertUnwindSafe<std::thread::scoped::scope<<ignore::walk::WalkParallel>::visit::{closure#1}, ()>::{closure#0}>, ()>
+             at /rustc/2d8144b7880597b6e6d3dfd63a9a9efae3f533d3/library/std/src/panic.rs:359:14
+  11: std::thread::scoped::scope::<<ignore::walk::WalkParallel>::visit::{closure#1}, ()>
+             at /rustc/2d8144b7880597b6e6d3dfd63a9a9efae3f533d3/library/std/src/thread/scoped.rs:158:18
+  12: <ignore::walk::WalkParallel>::visit
+             at ./src/walk.rs:1467:9
+  13: <ignore::walk::WalkParallel>::run::<ignore::walk::tests::panic_in_parallel::{closure#0}>
+             at ./src/walk.rs:1373:14
+  14: ignore::walk::tests::panic_in_parallel
+             at ./src/walk.rs:2504:14
+  15: ignore::walk::tests::panic_in_parallel::{closure#0}
+             at ./src/walk.rs:2497:27
+  16: <ignore::walk::tests::panic_in_parallel::{closure#0} as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/2d8144b7880597b6e6d3dfd63a9a9efae3f533d3/library/core/src/ops/function.rs:250:5
+  17: <fn() -> core::result::Result<(), alloc::string::String> as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/2d8144b7880597b6e6d3dfd63a9a9efae3f533d3/library/core/src/ops/function.rs:250:5
+note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose backtrace.
+note: panic did not contain expected string
+      panic message: "called `Result::unwrap()` on an `Err` value: Any { .. }"
+ expected substring: "oops!"
+
+failures:
+    walk::tests::panic_in_parallel
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 147 filtered out; finished in 0.10s
+
+error: test failed, to rerun pass `--lib`
+

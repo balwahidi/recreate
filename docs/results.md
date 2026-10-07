@@ -1,8 +1,24 @@
 # Results
 
-The shipped skill is now **v5** (383 words). It was adopted after a Sonnet evaluation; see section 0. Sections 1 to 7 describe the earlier v0 to v3 runs. Those all use one harness and one model, Devin sessions, with identical prompts in both arms (see `methodology.md`). Raw outputs and replay logs are in `evals/results/<run>/`, and decisions are recorded in `evals/notes/baseline-dev-v1.md`.
+The shipped skill is now **v7** (202 words). It replaced v5 (383 words) after a frozen Sonnet comparison; see section 0. Sections 1 to 7 describe the earlier v0 to v3 runs. Those all use one harness and one model, Devin sessions, with identical prompts in both arms (see `methodology.md`). Raw outputs and replay logs are in `evals/results/<run>/`, and decisions are recorded in `evals/notes/baseline-dev-v1.md`.
 
-## 0. Sonnet evaluation of v5 (current)
+## 0. Sonnet evaluations of v5 and v7
+
+**v7 "short" (current).** v7 keeps v5's measured rules in five lines and drops the report template, the status menu and the "Not reproduced" form. Its pass-check rules out writing a fix. It ran against v5 in 20 frozen, paired runs per arm and passed every criterion of the frozen rule:
+
+| | v5 | v7 |
+|---|---|---|
+| R (fails before the fix, passes after, reported symptom) | 14/16 | 16/16 |
+| Pairs won | 0 | 2 (14 ties) |
+| Production files in final patches | 0 | 0 |
+| Already-fixed status stated | 2/2 | 2/2 |
+| Median tokens (20 runs) | 73,180 | 63,789 (cheaper in 14 of 20 pairs) |
+
+- Both v5 misses were ripgrep-3009 over-assertions on the panic message, the same failure v5 showed in the v6 test. Wording that forbids a throwaway fix has now passed ripgrep 4 of 4 times, and v5 0 of 4.
+- The four concurrent ripgrep runs killed each other's hung tests by process name, and both arms did it. The pre-registered check without those pairs gives the same decision.
+- Details are in `evals/notes/sonnet-v7-short-results.md`.
+
+**v5** (the rest of this section).
 
 v5 is v3 plus a "The check" section: one command that exits non-zero while the bug is present and zero once it's fixed, that asserts only the reported behavior, and that has been seen passing once. The evaluated agents were Sonnet Agent-tool subagents. Each graded reproduction was replayed against the real upstream production fix. Full results, every miss and the audit are in `evals/notes/sonnet-v5-results.md`; the protocols were frozen before their runs.
 
@@ -25,7 +41,7 @@ v6 dropped the throwaway fix from the pass-check, stopped cause-tracing on repro
 - It was cheaper in 15 (median 63.9K vs 67.0K, a 4.7% cut).
 - R was 15/16 vs 14/16. v6 passed ripgrep-3009 for the first time, and lost one pydantic pair to a check that counted an unrelated error.
 
-Its frozen rule required a 10% median cut, so v5 stays. Details are in `evals/notes/sonnet-v6-lean-results.md`.
+Its frozen rule required a 10% median cut, so v5 stayed at the time. v7 later carried its no-fix pass-check forward. Details are in `evals/notes/sonnet-v6-lean-results.md`.
 
 Clean runs: `baseline-dev-v1`, `baseline-dev-v2`, `treatment-dev-v0`, `holdout-v0`, `repeat-v0`, `ablation-v2b`, `holdout-v3b`, `simulated-v4`, `holdout-control-r`. `ablation-v2`, `holdout-v3` and `treatment-v1-probe` are excluded because they were contaminated through shared memory (see `methodology.md`).
 
