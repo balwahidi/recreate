@@ -1,0 +1,98 @@
+diff --git a/packages/react-reconciler/src/__tests__/ReactSuspense-test.internal.js b/packages/react-reconciler/src/__tests__/ReactSuspense-test.internal.js
+index 8657365..a32997d 100644
+--- a/packages/react-reconciler/src/__tests__/ReactSuspense-test.internal.js
++++ b/packages/react-reconciler/src/__tests__/ReactSuspense-test.internal.js
+@@ -754,6 +754,93 @@ describe('ReactSuspense', () => {
+     expect(container.textContent).toEqual(['Child 1', 'Child 2'].join(''));
+   });
+ 
++  it('does not throw when a throttled retry commit is interrupted by another root updating it synchronously', async () => {
++    let storeValue = 0;
++    const storeListeners = new Set();
++    const store = {
++      subscribe(listener) {
++        storeListeners.add(listener);
++        return () => storeListeners.delete(listener);
++      },
++      getSnapshot() {
++        return storeValue;
++      },
++      set(value) {
++        storeValue = value;
++        storeListeners.forEach(listener => listener());
++      },
++    };
++
++    function Value() {
++      const value = React.useSyncExternalStore(
++        store.subscribe,
++        store.getSnapshot,
++      );
++      return <Text text={'Value ' + value} />;
++    }
++
++    function Writer() {
++      React.useEffect(() => {
++        store.set(1);
++      }, []);
++      return <Text text="Writer" />;
++    }
++
++    let resolveLazy;
++    const LazyChild = React.lazy(
++      () =>
++        new Promise(resolve => {
++          resolveLazy = () => {
++            resolve({default: () => <Text text="Lazy" />});
++            return Promise.resolve();
++          };
++        }),
++    );
++
++    const containerB = document.createElement('div');
++    const rootA = ReactDOMClient.createRoot(container);
++    const rootB = ReactDOMClient.createRoot(containerB);
++
++    await act(() => {
++      rootA.render(
++        <>
++          <Value />
++          <Suspense fallback={<Text text="Loading..." />}>
++            <LazyChild />
++          </Suspense>
++        </>,
++      );
++    });
++    assertLog(['Value 0', 'Loading...']);
++    expect(container.textContent).toEqual('Value 0Loading...');
++
++    // The lazy child resolves. The retry render completes, but its commit is
++    // throttled with a timeout because the fallback was shown recently.
++    await resolveLazy();
++    await waitForAll(['Lazy']);
++    expect(container.textContent).toEqual('Value 0Loading...');
++
++    // Root B commits, and its passive effect updates the store, which root A
++    // subscribes to. B's passive effects are still pending.
++    rootB.render(<Writer />);
++    await waitForPaint(['Writer']);
++
++    // The throttle timeout fires before B's passive effects are flushed. Those
++    // effects synchronously update root A, which must not make the deferred
++    // commit fail.
++    expect(() => jest.runOnlyPendingTimers()).not.toThrow();
++    assertLog(['Value 1']);
++
++    // The retry is still pending. It renders again and is throttled again.
++    await waitForAll(['Lazy']);
++    expect(container.textContent).toEqual('Value 1Loading...');
++
++    jest.runOnlyPendingTimers();
++    await waitForAll([]);
++    expect(container.textContent).toEqual('Value 1Lazy');
++    expect(containerB.textContent).toEqual('Writer');
++  });
++
+   describe('outside concurrent mode (legacy)', () => {
+     // @gate !disableLegacyMode
+     it('a mounted class component can suspend without losing state', async () => {
