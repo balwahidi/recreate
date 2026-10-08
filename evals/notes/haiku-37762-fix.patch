@@ -1,0 +1,34 @@
+diff --git a/packages/react-reconciler/src/ReactFiberWorkLoop.js b/packages/react-reconciler/src/ReactFiberWorkLoop.js
+index d049562..a7a822e 100644
+--- a/packages/react-reconciler/src/ReactFiberWorkLoop.js
++++ b/packages/react-reconciler/src/ReactFiberWorkLoop.js
+@@ -3536,6 +3536,7 @@ function completeRoot(
+ ): void {
+   root.cancelPendingCommit = null;
+ 
++  const currentBeforeFlush = root.current;
+   do {
+     // `flushPassiveEffects` will call `flushSyncUpdateQueue` at the end, which
+     // means `flushPassiveEffects` will sometimes result in additional
+@@ -3547,6 +3548,21 @@ function completeRoot(
+   } while (pendingEffectsStatus !== NO_PENDING_EFFECTS);
+   flushRenderPhaseStrictModeWarningsInDEV();
+ 
++  if (
++    finishedWork !== null &&
++    (root.current !== currentBeforeFlush || root.cancelPendingCommit !== null)
++  ) {
++    // The flush above can render this root synchronously, e.g. when a passive
++    // effect of another root updates it. That render either committed its own
++    // tree (`root.current` changed) or has a commit pending
++    // (`root.cancelPendingCommit`), and it reuses `finishedWork` as its
++    // work-in-progress tree. Either way, `finishedWork` is stale. Committing it
++    // here would throw "Cannot commit the same tree as before" or revert to an
++    // older tree. The lanes for this commit are still pending on the root, so
++    // the newer render takes care of any remaining work.
++    return;
++  }
++
+   if ((executionContext & (RenderContext | CommitContext)) !== NoContext) {
+     throw new Error('Should not already be working.');
+   }
