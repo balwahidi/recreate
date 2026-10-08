@@ -1,0 +1,37 @@
+diff --git a/packages/react-reconciler/src/ReactFiberWorkLoop.js b/packages/react-reconciler/src/ReactFiberWorkLoop.js
+index d049562..c6142ab 100644
+--- a/packages/react-reconciler/src/ReactFiberWorkLoop.js
++++ b/packages/react-reconciler/src/ReactFiberWorkLoop.js
+@@ -3534,7 +3534,16 @@ function completeRoot(
+   completedRenderStartTime: number, // Profiling-only
+   completedRenderEndTime: number, // Profiling-only
+ ): void {
+-  root.cancelPendingCommit = null;
++  // The passive effects flushed below can synchronously render this root again,
++  // for example when an effect on another root updates a store this root reads.
++  // That render reuses `root.current.alternate`, which is `finishedWork`, so
++  // this commit would be stale. While flushing, keep a cancel callback registered
++  // so that starting a new render of this root (see prepareFreshStack) marks
++  // this commit as superseded.
++  let isSuperseded = false;
++  root.cancelPendingCommit = () => {
++    isSuperseded = true;
++  };
+ 
+   do {
+     // `flushPassiveEffects` will call `flushSyncUpdateQueue` at the end, which
+@@ -3547,6 +3556,14 @@ function completeRoot(
+   } while (pendingEffectsStatus !== NO_PENDING_EFFECTS);
+   flushRenderPhaseStrictModeWarningsInDEV();
+ 
++  if (isSuperseded) {
++    // A newer render of this root started during the flush and may already have
++    // committed. Drop this commit. The newer render schedules any remaining work
++    // on this root.
++    return;
++  }
++  root.cancelPendingCommit = null;
++
+   if ((executionContext & (RenderContext | CommitContext)) !== NoContext) {
+     throw new Error('Should not already be working.');
+   }
