@@ -1,6 +1,6 @@
 # Results
 
-The shipped skill is now **v7** (202 words). It replaced v5 (383 words) after a frozen Sonnet comparison; see section 0. Sections 1 to 7 describe the earlier v0 to v3 runs. Those all use one harness and one model, Devin sessions, with identical prompts in both arms (see `methodology.md`). Raw outputs and replay logs are in `evals/results/<run>/`, and decisions are recorded in `evals/notes/baseline-dev-v1.md`.
+The shipped skill is reproduction-only: v7's measured rules, with its hand-off to fixing replaced by "don't fix it", because the fix tests below showed no gain. v7 (202 words) replaced v5 (383 words) after a frozen Sonnet comparison; see section 0. Sections 1 to 7 describe the earlier v0 to v3 runs. Those all use one harness and one model, Devin sessions, with identical prompts in both arms (see `methodology.md`). Raw outputs and replay logs are in `evals/results/<run>/`, and decisions are recorded in `evals/notes/baseline-dev-v1.md`.
 
 ## 0. Sonnet evaluations of v5 and v7
 

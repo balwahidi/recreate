@@ -2,6 +2,8 @@
 
 `SKILL.md` is the product, so treat a change to its instructions like a code change that needs evidence.
 
+Recreate only reproduces bugs. Changes that make it fix bugs are out of scope: three tests (`evals/notes/sonnet-fix-results.md`, `sonnet-fix2-results.md`, `haiku-37762-arms-results.md`) found no gain from steering the fix.
+
 ## Proposing an instruction change
 
 1. **Name the failure.** Give a case and a transcript where an agent with the current skill does the wrong thing. Instructions that sound good but come with no observed failure aren't accepted.
