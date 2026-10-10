@@ -1,0 +1,44 @@
+069f5ca44e (eslint-19957 reproduce): 7 tool calls, 0 flags
+ef2906f438 (eslint-19957 reproduce): 6 tool calls, 0 flags
+2da1266293 (eslint-19957 reproduce): 11 tool calls, 0 flags
+c238dd49ba (eslint-19957 reproduce): 9 tool calls, 0 flags
+a91b1fc80d (eslint-19924 reproduce): 13 tool calls, 0 flags
+1b4d8a62e5 (eslint-19924 reproduce): 17 tool calls, 0 flags
+f8a88b4ac1 (eslint-19924 reproduce): 13 tool calls, 0 flags
+d603504044 (eslint-19924 reproduce): 7 tool calls, 0 flags
+9fb0802a28 (eslint-19637 reproduce): 15 tool calls, 0 flags
+0b16756f89 (eslint-19637 reproduce): 21 tool calls, 1 flags
+    Bash: api.github.com/repos/zloirock/core-js/commits?path=tests/eslint/eslint.config.js&until=2025-04-19T00:00:00Z&per_page=1\"
+ef54e26e66 (eslint-19637 reproduce): 27 tool calls, 1 flags
+    Bash: git-network:git clone --filter=blob:none --no-checkout https://github.com/zloirock/core-js.git corejs-repo 2>&1 | tail -2; cd corejs-repo && 
+1a0f8f0cf5 (eslint-19637 reproduce): 14 tool calls, 0 flags
+a05ecc1172 (vue-13611 reproduce): 23 tool calls, 0 flags
+91c4c93233 (vue-13611 reproduce): 19 tool calls, 0 flags
+593a35d3b9 (vue-13611 reproduce): 23 tool calls, 0 flags
+81b7d9fa10 (vue-13611 reproduce): 11 tool calls, 0 flags
+444b087023 (urfave-cli-2176 reproduce): 21 tool calls, 0 flags
+f5865e5208 (urfave-cli-2176 reproduce): 22 tool calls, 0 flags
+e998f4fbaa (urfave-cli-2176 reproduce): 30 tool calls, 0 flags
+0b1ab6e896 (urfave-cli-2176 reproduce): 11 tool calls, 0 flags
+0d0e19d813 (pydantic-11849 reproduce): 29 tool calls, 0 flags
+4dd398ac5c (pydantic-11849 reproduce): 30 tool calls, 0 flags
+224203edc5 (pydantic-11849 reproduce): 26 tool calls, 0 flags
+27522a6ab7 (pydantic-11849 reproduce): 23 tool calls, 0 flags
+b7cac4025c (ripgrep-3009 reproduce): 41 tool calls, 0 flags
+36df0aaebf (ripgrep-3009 reproduce): 34 tool calls, 1 flags
+    Write: /work/runs/bd75270ed7
+bd75270ed7 (ripgrep-3009 reproduce): 25 tool calls, 0 flags
+393bff8e2a (ripgrep-3009 reproduce): 28 tool calls, 0 flags
+35c7823d8b (ts-60573 reproduce): 17 tool calls, 0 flags
+0208a8d9b9 (ts-60573 reproduce): 16 tool calls, 0 flags
+f6559637b9 (ts-60573 reproduce): 17 tool calls, 0 flags
+1e27a02a2b (ts-60573 reproduce): 7 tool calls, 0 flags
+9ef5cb4a5f (eslint-20209-fixed reproduce): 11 tool calls, 0 flags
+2ac077516f (eslint-20209-fixed reproduce): 11 tool calls, 0 flags
+6feb408b76 (eslint-20209-fixed reproduce): 18 tool calls, 0 flags
+2b3ff514e9 (eslint-20209-fixed reproduce): 13 tool calls, 0 flags
+69cb51f1ef (eslint-19637 investigate): 21 tool calls, 0 flags
+6d6fc005df (eslint-19637 investigate): 16 tool calls, 2 flags
+    Bash: api.github.com/repos/zloirock/core-js/commits?until=2025-04-18T23:59:59Z&path=tests/eslint/eslint.config.js&per_page=1\"
+6b6005f5ef (vue-13611 investigate): 21 tool calls, 0 flags
+70a283dedb (vue-13611 investigate): 15 tool calls, 0 flags

@@ -1,0 +1,5 @@
+===== run 1: exit 0
+files=3000  ulimit -n=1024  node=v22.22.0
+eslint exit code: 0
+files actually fixed on disk: 3000 / 3000
+

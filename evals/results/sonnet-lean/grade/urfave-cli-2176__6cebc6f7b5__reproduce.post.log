@@ -1,0 +1,9 @@
+===== run 1: exit 0
+ok  	github.com/urfave/cli/v3/repro_helpflag	3.476s
+
+===== run 2: exit 0
+ok  	github.com/urfave/cli/v3/repro_helpflag	3.559s
+
+===== run 3: exit 0
+ok  	github.com/urfave/cli/v3/repro_helpflag	3.712s
+

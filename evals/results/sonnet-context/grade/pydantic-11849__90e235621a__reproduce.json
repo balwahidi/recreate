@@ -1,0 +1,16 @@
+{
+  "label": "pydantic-11849__90e235621a__reproduce",
+  "case": "pydantic-11849",
+  "runs_per_side": 3,
+  "verdict": "fails_both",
+  "pre": [
+    1,
+    1,
+    1
+  ],
+  "post": [
+    1,
+    1,
+    1
+  ]
+}

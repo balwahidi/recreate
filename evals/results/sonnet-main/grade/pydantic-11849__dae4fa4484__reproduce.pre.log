@@ -1,0 +1,33 @@
+===== run 1: exit 1
+pydantic 2.11.4, python 3.13.16, switchinterval=0.005
+1) deterministic (rebuild paused while another thread uses the model):
+  during rebuild: C.model_validate(...) -> B(id='ok2') (hasattr name: False)   expected C
+  after rebuild : C.model_validate(...) -> C(id='ok3', name='test')
+2) 4 threads using a fresh, not yet built model for the first time, 100 trials (default GIL switch interval, no hooks):
+  Direct: wrong class / error in 13/100 trials; outcomes per call: {'Direct': 375, 'PydanticUserError(base-model-instantiated)': 25}
+  C: wrong class / error in 16/100 trials; outcomes per call: {'B': 34, 'C': 366}
+  (2.4s)
+BUG REPRODUCED
+
+===== run 2: exit 1
+pydantic 2.11.4, python 3.13.16, switchinterval=0.005
+1) deterministic (rebuild paused while another thread uses the model):
+  during rebuild: C.model_validate(...) -> B(id='ok2') (hasattr name: False)   expected C
+  after rebuild : C.model_validate(...) -> C(id='ok3', name='test')
+2) 4 threads using a fresh, not yet built model for the first time, 100 trials (default GIL switch interval, no hooks):
+  Direct: wrong class / error in 15/100 trials; outcomes per call: {'Direct': 361, 'PydanticUserError(base-model-instantiated)': 39}
+  C: wrong class / error in 19/100 trials; outcomes per call: {'C': 366, 'B': 34}
+  (2.6s)
+BUG REPRODUCED
+
+===== run 3: exit 1
+pydantic 2.11.4, python 3.13.16, switchinterval=0.005
+1) deterministic (rebuild paused while another thread uses the model):
+  during rebuild: C.model_validate(...) -> B(id='ok2') (hasattr name: False)   expected C
+  after rebuild : C.model_validate(...) -> C(id='ok3', name='test')
+2) 4 threads using a fresh, not yet built model for the first time, 100 trials (default GIL switch interval, no hooks):
+  Direct: wrong class / error in 11/100 trials; outcomes per call: {'Direct': 372, 'PydanticUserError(base-model-instantiated)': 28}
+  C: wrong class / error in 16/100 trials; outcomes per call: {'C': 365, 'B': 35}
+  (2.4s)
+BUG REPRODUCED
+

@@ -1,0 +1,164 @@
+{
+  "experiment": "exp3-run-contract",
+  "status": "frozen before any run; not executed",
+  "frozen_at": "2026-10-07T12:42:27.477639+00:00",
+  "random_seed": 10039909816902935167,
+  "model": "gpt-6.1-sol",
+  "reasoning_effort": "medium",
+  "skills": {
+    "current": {
+      "path": "evals/variants/SKILL-working-291.md",
+      "sha256": "f0bb40aa76f2dd82a5db91975ecf9a45fc408653db7d9ce12856019a4cd6f034",
+      "words": 291
+    },
+    "candidate": {
+      "path": "evals/variants/SKILL-run-contract.md",
+      "sha256": "c342255606a4e0f9e4e557fe02bd430f25b2a6dd90bcc95f33179469ab63c493",
+      "words": 301
+    }
+  },
+  "single_change": {
+    "old": "**Run** (one command),",
+    "new": "**Run** (one command: exit non-zero while the bug is present, zero once fixed),"
+  },
+  "prompt": "evals/prompts.py unchanged; task 'reproduce'; no exit-status convention added to the shared prompt",
+  "grader": "evals/grade.py with classify(): fail_to_pass / pass_to_fail / fails_both / passes_pre",
+  "coding_contexts": 24,
+  "max_active_contexts": 3,
+  "same_pair_sequential": true,
+  "no_automatic_replacements": true,
+  "pairs": [
+    {
+      "pair": 1,
+      "case": "pnpm-10290",
+      "task": "reproduce",
+      "repeat": 1,
+      "order": [
+        "candidate",
+        "current"
+      ],
+      "budget_seconds": 600
+    },
+    {
+      "pair": 2,
+      "case": "pnpm-10290",
+      "task": "reproduce",
+      "repeat": 2,
+      "order": [
+        "current",
+        "candidate"
+      ],
+      "budget_seconds": 600
+    },
+    {
+      "pair": 3,
+      "case": "pnpm-10290",
+      "task": "reproduce",
+      "repeat": 3,
+      "order": [
+        "current",
+        "candidate"
+      ],
+      "budget_seconds": 600
+    },
+    {
+      "pair": 4,
+      "case": "ts-60573",
+      "task": "reproduce",
+      "repeat": 1,
+      "order": [
+        "current",
+        "candidate"
+      ],
+      "budget_seconds": 600
+    },
+    {
+      "pair": 5,
+      "case": "ts-60573",
+      "task": "reproduce",
+      "repeat": 2,
+      "order": [
+        "candidate",
+        "current"
+      ],
+      "budget_seconds": 600
+    },
+    {
+      "pair": 6,
+      "case": "ts-60573",
+      "task": "reproduce",
+      "repeat": 3,
+      "order": [
+        "candidate",
+        "current"
+      ],
+      "budget_seconds": 600
+    },
+    {
+      "pair": 7,
+      "case": "pydantic-11849",
+      "task": "reproduce",
+      "repeat": 1,
+      "order": [
+        "candidate",
+        "current"
+      ],
+      "budget_seconds": 600
+    },
+    {
+      "pair": 8,
+      "case": "pydantic-11849",
+      "task": "reproduce",
+      "repeat": 2,
+      "order": [
+        "candidate",
+        "current"
+      ],
+      "budget_seconds": 600
+    },
+    {
+      "pair": 9,
+      "case": "pydantic-11849",
+      "task": "reproduce",
+      "repeat": 3,
+      "order": [
+        "current",
+        "candidate"
+      ],
+      "budget_seconds": 600
+    },
+    {
+      "pair": 10,
+      "case": "eslint-19957",
+      "task": "reproduce",
+      "repeat": 1,
+      "order": [
+        "current",
+        "candidate"
+      ],
+      "budget_seconds": 600
+    },
+    {
+      "pair": 11,
+      "case": "eslint-19957",
+      "task": "reproduce",
+      "repeat": 2,
+      "order": [
+        "candidate",
+        "current"
+      ],
+      "budget_seconds": 600
+    },
+    {
+      "pair": 12,
+      "case": "eslint-19957",
+      "task": "reproduce",
+      "repeat": 3,
+      "order": [
+        "candidate",
+        "current"
+      ],
+      "budget_seconds": 600
+    }
+  ]
+}

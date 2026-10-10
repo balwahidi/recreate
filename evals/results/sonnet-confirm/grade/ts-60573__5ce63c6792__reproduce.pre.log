@@ -1,0 +1,6 @@
+===== run 1: exit 1
+typescript 5.8.0-dev
+Test (displayed)        = { prop1: Wrapper<"hello">; }
+Test["prop1"] (actual)  = "hello"
+BUG PRESENT: expected `{ prop1: "hello"; }`
+

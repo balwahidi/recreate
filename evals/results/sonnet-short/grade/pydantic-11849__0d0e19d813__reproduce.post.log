@@ -1,0 +1,18 @@
+===== run 1: exit 0
+[example 1] use while another thread is rebuilding: ok
+[example 1] first use: ok
+[example 2] use while another thread is rebuilding: ok
+[example 2] first use: ok
+
+===== run 2: exit 0
+[example 1] use while another thread is rebuilding: ok
+[example 1] first use: ok
+[example 2] use while another thread is rebuilding: ok
+[example 2] first use: ok
+
+===== run 3: exit 0
+[example 1] use while another thread is rebuilding: ok
+[example 1] first use: ok
+[example 2] use while another thread is rebuilding: ok
+[example 2] first use: ok
+

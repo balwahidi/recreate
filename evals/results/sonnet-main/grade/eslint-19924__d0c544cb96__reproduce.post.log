@@ -1,0 +1,5 @@
+===== run 1: exit 0
+files=9000 ulimit -n=8192 node=v22.22.0
+eslint exit status: 0; files still containing 'var' after --fix: 0 / 9000
+OK: all files fixed
+

@@ -1,0 +1,19 @@
+{
+  "label": "ts-60573__ceb2fe0a4a__fix",
+  "case": "ts-60573",
+  "files": [
+    "src/compiler/checker.ts",
+    "tests/baselines/reference/mappedTypeRecursiveInference.types",
+    "tests/baselines/reference/typeAssertionPropertyTypeNotReusedForMappedProperty.js",
+    "tests/baselines/reference/typeAssertionPropertyTypeNotReusedForMappedProperty.symbols",
+    "tests/baselines/reference/typeAssertionPropertyTypeNotReusedForMappedProperty.types",
+    "tests/cases/compiler/typeAssertionPropertyTypeNotReusedForMappedProperty.ts",
+    "tests/cases/fourslash/quickInfoMappedTypeTypeAssertionProperty.ts"
+  ],
+  "test_in_patch": true,
+  "F": true,
+  "applied": true,
+  "codes": [
+    0
+  ]
+}

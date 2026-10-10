@@ -1,0 +1,15 @@
+===== run 1: exit 1
+BUG PRESENT:
+  - Direct(...) raised PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
+  - C.model_validate({...}) returned B(id='ok1'), an instance of B, not C
+
+===== run 2: exit 1
+BUG PRESENT:
+  - Direct(...) raised PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
+  - C.model_validate({...}) returned B(id='ok1'), an instance of B, not C
+
+===== run 3: exit 1
+BUG PRESENT:
+  - Direct(...) raised PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
+  - C.model_validate({...}) returned B(id='ok1'), an instance of B, not C
+

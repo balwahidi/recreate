@@ -1,0 +1,55 @@
+===== run 1: exit 1
+no-loss-of-precision on `const test = 9.000e+3 // 9000`: 1:14 This number literal will lose precision at runtime.
+node:assert:150
+  throw new AssertionError(obj);
+  ^
+
+AssertionError [ERR_ASSERTION]: expected `9.000e+3` (exactly 9000) to be valid, but no-loss-of-precision reported it
++ actual - expected
+
++ [
++   {
++     column: 14,
++     endColumn: 22,
++     endLine: 1,
++     line: 1,
++     message: 'This number literal will lose precision at runtime.',
++     messageId: 'noLossOfPrecision',
++     nodeType: 'Literal',
++     ruleId: 'no-loss-of-precision',
++     severity: 2
++   }
++ ]
+- []
+
+    at Object.<anonymous> (/root/grade/eslint-19957/repo/repro/no-loss-of-precision-trailing-zeros.js:28:8)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: [
+    {
+      ruleId: 'no-loss-of-precision',
+      severity: 2,
+      message: 'This number literal will lose precision at runtime.',
+      line: 1,
+      column: 14,
+      nodeType: 'Literal',
+      messageId: 'noLossOfPrecision',
+      endLine: 1,
+      endColumn: 22
+    }
+  ],
+  expected: [],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.22.0
+

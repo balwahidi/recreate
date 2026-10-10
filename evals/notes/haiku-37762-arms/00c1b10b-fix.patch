@@ -1,0 +1,84 @@
+diff --git a/packages/react-reconciler/src/ReactFiberRootScheduler.js b/packages/react-reconciler/src/ReactFiberRootScheduler.js
+index 26b6255..3df619d 100644
+--- a/packages/react-reconciler/src/ReactFiberRootScheduler.js
++++ b/packages/react-reconciler/src/ReactFiberRootScheduler.js
+@@ -48,6 +48,7 @@ import {
+   getRootWithPendingPassiveEffects,
+   getPendingPassiveEffectsLanes,
+   hasPendingCommitEffects,
++  isFlushingEffectsBeforeCommit,
+   isWorkLoopSuspendedOnData,
+   performWorkOnRoot,
+ } from './ReactFiberWorkLoop';
+@@ -193,6 +194,14 @@ function flushSyncWorkAcrossRoots_impl(
+     return;
+   }
+ 
++  if (isFlushingEffectsBeforeCommit()) {
++    // A root is about to commit, and its pending effects are still being
++    // flushed. Rendering a root now could reuse the tree that is about to
++    // commit. The sync work stays scheduled, and it is flushed when that commit
++    // finishes or by the scheduled microtask.
++    return;
++  }
++
+   if (!mightHavePendingSyncWork) {
+     // Fast path. There's no sync work to do.
+     return;
+diff --git a/packages/react-reconciler/src/ReactFiberWorkLoop.js b/packages/react-reconciler/src/ReactFiberWorkLoop.js
+index d049562..9b3fb58 100644
+--- a/packages/react-reconciler/src/ReactFiberWorkLoop.js
++++ b/packages/react-reconciler/src/ReactFiberWorkLoop.js
+@@ -745,6 +745,9 @@ let pendingDidIncludeRenderPhaseUpdate: boolean = false;
+ let pendingSuspendedCommitReason: SuspendedCommitReason = null; // Profiling-only
+ let pendingDelayedCommitReason: DelayedCommitReason = IMMEDIATE_COMMIT; // Profiling-only
+ let pendingSuspendedViewTransitionReason: null | string = null; // Profiling-only
++// True while completeRoot flushes the pending effects of the previous commit,
++// before it commits a new tree. See completeRoot.
++let flushingEffectsBeforeCommit: boolean = false;
+ 
+ // Use these to prevent an infinite loop of nested updates
+ const NESTED_UPDATE_LIMIT = 50;
+@@ -1968,6 +1971,12 @@ export function isAlreadyRendering(): boolean {
+   return (executionContext & (RenderContext | CommitContext)) !== NoContext;
+ }
+ 
++// Whether completeRoot is flushing the previous commit's pending effects before
++// committing a new tree. Sync work must not render any root while this is true.
++export function isFlushingEffectsBeforeCommit(): boolean {
++  return flushingEffectsBeforeCommit;
++}
++
+ export function isInvalidExecutionContextForEventFunction(): boolean {
+   // Used to throw if certain APIs are called from the wrong context.
+   return (executionContext & RenderContext) !== NoContext;
+@@ -3536,15 +3545,20 @@ function completeRoot(
+ ): void {
+   root.cancelPendingCommit = null;
+ 
+-  do {
+-    // `flushPassiveEffects` will call `flushSyncUpdateQueue` at the end, which
+-    // means `flushPassiveEffects` will sometimes result in additional
+-    // passive effects. So we need to keep flushing in a loop until there are
+-    // no more pending effects.
+-    // TODO: Might be better if `flushPassiveEffects` did not automatically
+-    // flush synchronous work at the end, to avoid factoring hazards like this.
+-    flushPendingEffects();
+-  } while (pendingEffectsStatus !== NO_PENDING_EFFECTS);
++  // Flush the pending effects of the previous commit before committing this
++  // tree. Those effects can synchronously update this root. If that sync work
++  // rendered this root here, the render would reuse `finishedWork` as its
++  // work-in-progress tree and commit it, so this commit would then find
++  // `finishedWork` already committed. So sync work is deferred until this
++  // commit is done. See isFlushingEffectsBeforeCommit.
++  flushingEffectsBeforeCommit = true;
++  try {
++    do {
++      flushPendingEffects();
++    } while (pendingEffectsStatus !== NO_PENDING_EFFECTS);
++  } finally {
++    flushingEffectsBeforeCommit = false;
++  }
+   flushRenderPhaseStrictModeWarningsInDEV();
+ 
+   if ((executionContext & (RenderContext | CommitContext)) !== NoContext) {

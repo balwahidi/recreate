@@ -1,0 +1,12 @@
+===== run 1: exit 0
+[Direct (BaseModel subclass)] ok: thread 2 got Direct(id='test', description=Translatable(en='ok'))
+[C(B(A(BaseModel)))] ok: thread 2 got C(id='ok2', name='test')
+
+===== run 2: exit 0
+[Direct (BaseModel subclass)] ok: thread 2 got Direct(id='test', description=Translatable(en='ok'))
+[C(B(A(BaseModel)))] ok: thread 2 got C(id='ok2', name='test')
+
+===== run 3: exit 0
+[Direct (BaseModel subclass)] ok: thread 2 got Direct(id='test', description=Translatable(en='ok'))
+[C(B(A(BaseModel)))] ok: thread 2 got C(id='ok2', name='test')
+

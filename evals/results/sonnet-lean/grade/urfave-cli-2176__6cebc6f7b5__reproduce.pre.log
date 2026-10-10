@@ -1,0 +1,117 @@
+===== run 1: exit 1
+--- FAIL: Test_stress (3.64s)
+    stress_test.go:57: hideHelp=false completed_runs=319865 panics=135 of 320000
+    stress_test.go:59: unexpected panic (first of 135): runtime error: invalid memory address or nil pointer dereference
+        goroutine 28 [running]:
+        runtime/debug.Stack()
+        	/usr/local/go1.24.7/src/runtime/debug/stack.go:26 +0x5e
+        github.com/urfave/cli/v3/repro_helpflag_test.Test_stress.func1.1.1()
+        	/root/grade/urfave-cli-2176/repo/repro_helpflag/stress_test.go:41 +0x55
+        panic({0x6624c0?, 0x8a8f50?})
+        	/usr/local/go1.24.7/src/runtime/panic.go:792 +0x132
+        github.com/urfave/cli/v3.(*boolValue).Get(0x1?)
+        	/root/grade/urfave-cli-2176/repo/flag_bool.go:71
+        github.com/urfave/cli/v3.(*FlagBase[...]).Get(...)
+        	/root/grade/urfave-cli-2176/repo/flag_impl.go:192
+        github.com/urfave/cli/v3.(*Command).Value(0xc00040cb08, {0x70da00, 0x1})
+        	/root/grade/urfave-cli-2176/repo/command.go:533 +0xb5
+        github.com/urfave/cli/v3.(*Command).Bool(0xc00040cb08, {0x70da00, 0x1})
+        	/root/grade/urfave-cli-2176/repo/flag_bool.go:28 +0x34
+        slices.IndexFunc[...](...)
+        	/usr/local/go1.24.7/src/slices/slices.go:109
+        slices.ContainsFunc[...](...)
+        	/usr/local/go1.24.7/src/slices/slices.go:124
+        github.com/urfave/cli/v3.(*Command).checkHelp(0xc00040cb08)
+        	/root/grade/urfave-cli-2176/repo/command.go:186 +0xd7
+        github.com/urfave/cli/v3.(*Command).run(0xc00040cb08, {0x708600, 0xc0001fccf0}, {0x0, 0x0, 0x0})
+        	/root/grade/urfave-cli-2176/repo/command_run.go:198 +0x1127
+        github.com/urfave/cli/v3.(*Command).Run(...)
+        	/root/grade/urfave-cli-2176/repo/command_run.go:94
+        github.com/urfave/cli/v3/repro_helpflag_test.Test_stress.func1.1(0x0?, 0x0?, 0x0, 0xc000010258)
+        	/root/grade/urfave-cli-2176/repo/repro_helpflag/stress_test.go:49 +0xa5
+        github.com/urfave/cli/v3/repro_helpflag_test.Test_stress.func1()
+        	/root/grade/urfave-cli-2176/repo/repro_helpflag/stress_test.go:51 +0x73
+        created by github.com/urfave/cli/v3/repro_helpflag_test.Test_stress in goroutine 6
+        	/root/grade/urfave-cli-2176/repo/repro_helpflag/stress_test.go:34 +0xb9
+FAIL
+FAIL	github.com/urfave/cli/v3/repro_helpflag	3.650s
+FAIL
+
+===== run 2: exit 1
+--- FAIL: Test_stress (3.57s)
+    stress_test.go:57: hideHelp=false completed_runs=319870 panics=130 of 320000
+    stress_test.go:59: unexpected panic (first of 130): runtime error: invalid memory address or nil pointer dereference
+        goroutine 35 [running]:
+        runtime/debug.Stack()
+        	/usr/local/go1.24.7/src/runtime/debug/stack.go:26 +0x5e
+        github.com/urfave/cli/v3/repro_helpflag_test.Test_stress.func1.1.1()
+        	/root/grade/urfave-cli-2176/repo/repro_helpflag/stress_test.go:41 +0x55
+        panic({0x6624c0?, 0x8a8f50?})
+        	/usr/local/go1.24.7/src/runtime/panic.go:792 +0x132
+        github.com/urfave/cli/v3.(*boolValue).Get(0x1?)
+        	/root/grade/urfave-cli-2176/repo/flag_bool.go:71
+        github.com/urfave/cli/v3.(*FlagBase[...]).Get(...)
+        	/root/grade/urfave-cli-2176/repo/flag_impl.go:192
+        github.com/urfave/cli/v3.(*Command).Value(0xc0002a1088, {0x70da00, 0x1})
+        	/root/grade/urfave-cli-2176/repo/command.go:533 +0xb5
+        github.com/urfave/cli/v3.(*Command).Bool(0xc0002a1088, {0x70da00, 0x1})
+        	/root/grade/urfave-cli-2176/repo/flag_bool.go:28 +0x34
+        slices.IndexFunc[...](...)
+        	/usr/local/go1.24.7/src/slices/slices.go:109
+        slices.ContainsFunc[...](...)
+        	/usr/local/go1.24.7/src/slices/slices.go:124
+        github.com/urfave/cli/v3.(*Command).checkHelp(0xc0002a1088)
+        	/root/grade/urfave-cli-2176/repo/command.go:186 +0xd7
+        github.com/urfave/cli/v3.(*Command).run(0xc0002a1088, {0x708600, 0xc0002a4360}, {0x0, 0x0, 0x0})
+        	/root/grade/urfave-cli-2176/repo/command_run.go:198 +0x1127
+        github.com/urfave/cli/v3.(*Command).Run(...)
+        	/root/grade/urfave-cli-2176/repo/command_run.go:94
+        github.com/urfave/cli/v3/repro_helpflag_test.Test_stress.func1.1(0x0?, 0x0?, 0x0, 0xc000010258)
+        	/root/grade/urfave-cli-2176/repo/repro_helpflag/stress_test.go:49 +0xa5
+        github.com/urfave/cli/v3/repro_helpflag_test.Test_stress.func1()
+        	/root/grade/urfave-cli-2176/repo/repro_helpflag/stress_test.go:51 +0x73
+        created by github.com/urfave/cli/v3/repro_helpflag_test.Test_stress in goroutine 6
+        	/root/grade/urfave-cli-2176/repo/repro_helpflag/stress_test.go:34 +0xb9
+FAIL
+FAIL	github.com/urfave/cli/v3/repro_helpflag	3.589s
+FAIL
+
+===== run 3: exit 1
+--- FAIL: Test_stress (3.52s)
+    stress_test.go:57: hideHelp=false completed_runs=319860 panics=140 of 320000
+    stress_test.go:59: unexpected panic (first of 140): runtime error: invalid memory address or nil pointer dereference
+        goroutine 21 [running]:
+        runtime/debug.Stack()
+        	/usr/local/go1.24.7/src/runtime/debug/stack.go:26 +0x5e
+        github.com/urfave/cli/v3/repro_helpflag_test.Test_stress.func1.1.1()
+        	/root/grade/urfave-cli-2176/repo/repro_helpflag/stress_test.go:41 +0x55
+        panic({0x6624c0?, 0x8a8f50?})
+        	/usr/local/go1.24.7/src/runtime/panic.go:792 +0x132
+        github.com/urfave/cli/v3.(*boolValue).Get(0x650401?)
+        	/root/grade/urfave-cli-2176/repo/flag_bool.go:71
+        github.com/urfave/cli/v3.(*FlagBase[...]).Get(...)
+        	/root/grade/urfave-cli-2176/repo/flag_impl.go:192
+        github.com/urfave/cli/v3.(*Command).Value(0xc00020bb88, {0xc000208490, 0x4})
+        	/root/grade/urfave-cli-2176/repo/command.go:533 +0xb5
+        github.com/urfave/cli/v3.(*Command).Bool(0xc00020bb88, {0xc000208490, 0x4})
+        	/root/grade/urfave-cli-2176/repo/flag_bool.go:28 +0x34
+        slices.IndexFunc[...](...)
+        	/usr/local/go1.24.7/src/slices/slices.go:109
+        slices.ContainsFunc[...](...)
+        	/usr/local/go1.24.7/src/slices/slices.go:124
+        github.com/urfave/cli/v3.(*Command).checkHelp(0xc00020bb88)
+        	/root/grade/urfave-cli-2176/repo/command.go:186 +0xd7
+        github.com/urfave/cli/v3.(*Command).run(0xc00020bb88, {0x708600, 0xc0000f5ef0}, {0x0, 0x0, 0x0})
+        	/root/grade/urfave-cli-2176/repo/command_run.go:198 +0x1127
+        github.com/urfave/cli/v3.(*Command).Run(...)
+        	/root/grade/urfave-cli-2176/repo/command_run.go:94
+        github.com/urfave/cli/v3/repro_helpflag_test.Test_stress.func1.1(0x0?, 0x0?, 0x0, 0xc000010258)
+        	/root/grade/urfave-cli-2176/repo/repro_helpflag/stress_test.go:49 +0xa5
+        github.com/urfave/cli/v3/repro_helpflag_test.Test_stress.func1()
+        	/root/grade/urfave-cli-2176/repo/repro_helpflag/stress_test.go:51 +0x73
+        created by github.com/urfave/cli/v3/repro_helpflag_test.Test_stress in goroutine 6
+        	/root/grade/urfave-cli-2176/repo/repro_helpflag/stress_test.go:34 +0xb9
+FAIL
+FAIL	github.com/urfave/cli/v3/repro_helpflag	3.523s
+FAIL
+

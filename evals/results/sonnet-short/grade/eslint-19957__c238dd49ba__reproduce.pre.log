@@ -1,0 +1,9 @@
+===== run 1: exit 1
+FAIL 9.000e+3  (= 9000) -> no-loss-of-precision: This number literal will lose precision at runtime.
+FAIL 9.000e3   (= 9000) -> no-loss-of-precision: This number literal will lose precision at runtime.
+FAIL 9.0000e4  (= 90000) -> no-loss-of-precision: This number literal will lose precision at runtime.
+ok   9.000e4   (= 90000) -> no report
+ok   9.0000e5  (= 900000) -> no report
+ok   9e3       (= 9000) -> no report
+ok   9000      (= 9000) -> no report
+

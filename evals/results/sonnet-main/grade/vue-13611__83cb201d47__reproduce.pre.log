@@ -1,0 +1,56 @@
+===== run 1: exit 1
+ Vitest  "environmentMatchGlobs" is deprecated. Use "workspace" to define different configurations instead.
+ Vitest  "environmentMatchGlobs" is deprecated. Use "workspace" to define different configurations instead.
+
+ RUN  v3.1.4 /root/grade/vue-13611/repo
+
+ ❯ |unit| packages/vue/__tests__/underscoreSlotName.spec.ts (5 tests | 2 failed) 72ms
+   × slot template whose name starts with an underscore > BUG: #_duration template is used (reporter scenario) 48ms
+     → expected '<div><p>random</p><div class="t-title…' to contain 'duration template works'
+   ✓ slot template whose name starts with an underscore > control: #title template is used (reporter scenario) 5ms
+   ✓ slot template whose name starts with an underscore > control: slot named without underscore works (reporter scenario) 10ms
+   ✓ slot template whose name starts with an underscore > control: underscore slot works without the conditional sibling template 4ms
+   × slot template whose name starts with an underscore > BUG (also): same with the conditional sibling template v-if=false 3ms
+     → expected '<div><div class="t-title">title templ…' to contain 'duration template works'
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| packages/vue/__tests__/underscoreSlotName.spec.ts > slot template whose name starts with an underscore > BUG: #_duration template is used (reporter scenario)
+AssertionError: expected '<div><p>random</p><div class="t-title…' to contain 'duration template works'
+
+Expected: [32m"duration template works"[39m
+Received: [31m"<div><p>random</p><div class="t-title">title template works</div><div class="d-duration">default duration</div></div>"[39m
+
+ ❯ packages/vue/__tests__/underscoreSlotName.spec.ts:65:18
+     63|   it('BUG: #_duration template is used (reporter scenario)', () => {
+     64|     const html = mountApp({})
+     65|     expect(html).toContain('duration template works')
+       |                  ^
+     66|     expect(html).not.toContain('default duration')
+     67|   })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |unit| packages/vue/__tests__/underscoreSlotName.spec.ts > slot template whose name starts with an underscore > BUG (also): same with the conditional sibling template v-if=false
+AssertionError: expected '<div><div class="t-title">title templ…' to contain 'duration template works'
+
+Expected: [32m"duration template works"[39m
+Received: [31m"<div><div class="t-title">title template works</div><div class="d-duration">default duration</div></div>"[39m
+
+ ❯ packages/vue/__tests__/underscoreSlotName.spec.ts:90:18
+     88|   it('BUG (also): same with the conditional sibling template v-if=fals…
+     89|     const html = mountApp({ cond: false })
+     90|     expect(html).toContain('duration template works')
+       |                  ^
+     91|     expect(html).not.toContain('default duration')
+     92|   })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 3 passed (5)
+   Start at  13:12:10
+   Duration  3.07s (transform 1.63s, setup 22ms, collect 2.04s, tests 72ms, environment 526ms, prepare 85ms)
+
+

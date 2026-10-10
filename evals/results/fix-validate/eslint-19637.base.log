@@ -1,0 +1,1150 @@
+===== run 1: exit 1
+
+
+  no-unused-expressions
+    valid
+      ✔ function f(){}
+      ✔ a = b
+      ✔ new a
+      ✔ {}
+      ✔ f(); g()
+      ✔ i++
+      ✔ a()
+      ✔ a && a()
+      ✔ a() || (b = c)
+      ✔ a ? b() : c()
+      ✔ a ? b() || (c = d) : e()
+      ✔ delete foo.bar
+      ✔ void new C
+      ✔ "use strict";
+      1) "use strict";
+      ✔ "directive one"; "directive two"; f();
+      ✔ function foo() {"use strict"; return true; }
+      ✔ var foo = () => {"use strict"; return true; }
+      ✔ function foo() {"directive one"; "directive two"; f(); }
+      ✔ function foo() { var foo = "use strict"; return true; }
+      ✔ function* foo(){ yield 0; }
+      ✔ async function foo() { await 5; }
+      ✔ async function foo() { await foo.bar; }
+      ✔ async function foo() { bar && await baz; }
+      ✔ async function foo() { foo ? await bar : await baz; }
+      ✔ tag`tagged template literal`
+      ✔ shouldNotBeAffectedByAllowTemplateTagsOption()
+      ✔ import("foo")
+      ✔ func?.("foo")
+      ✔ obj?.foo("bar")
+      ✔ <div />
+      ✔ <></>
+      ✔ var partial = <div />
+      ✔ var partial = <div />
+      ✔ var partial = <></>
+    invalid
+      ✔ 0
+      ✔ a
+      ✔ f(), 0
+      ✔ {0}
+      ✔ []
+      ✔ a && b();
+      ✔ a() || false
+      ✔ a || (b = c)
+      ✔ a ? b() || (c = d) : e
+      ✔ `untagged template literal`
+      ✔ tag`tagged template literal`
+      ✔ a && b()
+      ✔ a ? b() : c()
+      ✔ a || b
+      ✔ a() && b
+      ✔ a ? b : 0
+      ✔ a ? b : c()
+      ✔ foo.bar;
+      ✔ !a
+      ✔ +a
+      ✔ "directive one"; f(); "directive two";
+      ✔ function foo() {"directive one"; f(); "directive two"; }
+      ✔ if (0) { "not a directive"; f(); }
+      ✔ function foo() { var foo = true; "use strict"; }
+      ✔ var foo = () => { var foo = true; "use strict"; }
+      ✔ `untagged template literal`
+      ✔ `untagged template literal`
+      ✔ tag`tagged template literal`
+      ✔ obj?.foo
+      ✔ obj?.foo.bar
+      ✔ obj?.foo().bar
+      ✔ <div />
+      ✔ <></>
+      ✔ class C { static { 'use strict'; } }
+      ✔ class C { static { 
+'foo'
+'bar'
+ } }
+
+  no-unused-expressions
+    valid
+      ✔ 
+\u0009\u0009test.age?.toLocaleString();
+\u0009  
+      ✔ 
+\u0009\u0009let a = (a?.b).c;
+\u0009  
+      ✔ 
+\u0009\u0009let b = a?.['b'];
+\u0009  
+      ✔ 
+\u0009\u0009let c = one[2]?.[3][4];
+\u0009  
+      ✔ 
+\u0009\u0009one[2]?.[3][4]?.();
+\u0009  
+      ✔ 
+\u0009\u0009a?.['b']?.c();
+\u0009  
+      ✔ 
+\u0009\u0009module Foo {
+\u0009\u0009  'use strict';
+\u0009\u0009}
+\u0009  
+      ✔ 
+\u0009\u0009namespace Foo {
+\u0009\u0009  'use strict';
+  
+\u0009\u0009  export class Foo {}
+\u0009\u0009  export class Bar {}
+\u0009\u0009}
+\u0009  
+      ✔ 
+\u0009\u0009function foo() {
+\u0009\u0009  'use strict';
+  
+\u0009\u0009  return null;
+\u0009\u0009}
+\u0009  
+      ✔ 
+\u0009\u0009import('./foo');
+\u0009  
+      ✔ 
+\u0009\u0009import('./foo').then(() => {});
+\u0009  
+      ✔ 
+\u0009\u0009class Foo<T> {}
+\u0009\u0009new Foo<string>();
+\u0009  
+      ✔ foo && foo?.();
+      ✔ foo && import('./foo');
+      ✔ foo ? import('./foo') : import('./bar');
+      ✔ <div/> as any
+      ✔ foo && foo()!;
+      ✔ 
+\u0009\u0009\u0009\u0009declare const foo:  Function | undefined;
+\u0009\u0009\u0009\u0009<any>(foo && foo()!)
+\u0009\u0009\u0009
+      ✔ 
+\u0009\u0009\u0009\u0009(Foo && Foo())<string, number>;
+\u0009\u0009\u0009
+    invalid
+      ✔ 
+  if (0) 0;
+\u0009\u0009
+      ✔ 
+  f(0), {};
+\u0009\u0009
+      ✔ 
+  a, b();
+\u0009\u0009
+      ✔ 
+  a() &&
+\u0009function namedFunctionInExpressionContext() {
+\u0009  f();
+\u0009};
+\u0009\u0009
+      ✔ 
+  a?.b;
+\u0009\u0009
+      ✔ 
+  (a?.b).c;
+\u0009\u0009
+      ✔ 
+  a?.['b'];
+\u0009\u0009
+      ✔ 
+  (a?.['b']).c;
+\u0009\u0009
+      ✔ 
+  a?.b()?.c;
+\u0009\u0009
+      ✔ 
+  (a?.b()).c;
+\u0009\u0009
+      ✔ 
+  one[2]?.[3][4];
+\u0009\u0009
+      ✔ 
+  one.two?.three.four;
+\u0009\u0009
+      ✔ 
+  module Foo {
+\u0009const foo = true;
+\u0009'use strict';
+  }
+\u0009\u0009
+      ✔ 
+  namespace Foo {
+\u0009export class Foo {}
+\u0009export class Bar {}
+  
+\u0009'use strict';
+  }
+\u0009\u0009
+      ✔ 
+  function foo() {
+\u0009const foo = true;
+  
+\u0009'use strict';
+  }
+\u0009\u0009
+      ✔ foo && foo?.bar;
+      ✔ foo ? foo?.bar : bar.baz;
+      ✔ 
+  class Foo<T> {}
+  Foo<string>;
+\u0009\u0009
+      ✔ Map<string, string>;
+      ✔ 
+  declare const foo: number | undefined;
+  foo;
+\u0009\u0009
+      ✔ 
+  declare const foo: number | undefined;
+  foo as any;
+\u0009\u0009
+      ✔ 
+  declare const foo: number | undefined;
+  <any>foo;
+\u0009\u0009
+      ✔ 
+  declare const foo: number | undefined;
+  foo!;
+\u0009\u0009
+
+  ast-utils
+    ECMASCRIPT_GLOBALS
+      ✔ should contain es3 globals
+      ✔ should contain es5 globals
+      ✔ should contain es2015 globals
+      ✔ should contain es2017 globals
+      ✔ should contain es2020 globals
+      ✔ should contain es2021 globals
+    isTokenOnSameLine
+      ✔ should return false if the tokens are not on the same line
+      ✔ should return true if the tokens are on the same line
+    isNullOrUndefined
+      ✔ should return true if the argument is null
+      ✔ should return true if the argument is undefined
+      ✔ should return false if the argument is a number
+      ✔ should return false if the argument is a string
+      ✔ should return false if the argument is a boolean
+      ✔ should return false if the argument is an object
+      ✔ should return false if the argument is a unicode regex
+    checkReference
+      ✔ should return true if reference is assigned for catch
+      ✔ should return true if reference is assigned for const
+      ✔ should return false if reference is not assigned for const
+      ✔ should return true if reference is assigned for class
+      ✔ should return false if reference is not assigned for class
+    isDirectiveComment
+      ✔ should return false if it is not a directive line comment
+      ✔ should return false if it is not a directive block comment
+      ✔ should return true if it is a directive line comment
+      ✔ should return true if it is a directive block comment
+    isParenthesised
+      ✔ should return false for not parenthesised nodes
+      ✔ should return true for not parenthesised nodes
+    isFunction
+      ✔ should return true for FunctionDeclaration
+      ✔ should return true for FunctionExpression
+      ✔ should return true for AllowFunctionExpression
+      ✔ should return false for Program, VariableDeclaration, BlockStatement
+    isLoop
+      ✔ should return true for DoWhileStatement
+      ✔ should return true for ForInStatement
+      ✔ should return true for ForOfStatement
+      ✔ should return true for ForStatement
+      ✔ should return true for WhileStatement
+      ✔ should return false for Program, VariableDeclaration, BlockStatement
+    isInLoop
+      ✔ should return true for a loop itself
+      ✔ should return true for a loop condition
+      ✔ should return true for a loop assignee
+      ✔ should return true for a node within a loop body
+      ✔ should return false for a node outside a loop body
+      ✔ should return false when the loop is not in the current function
+    getStaticStringValue
+      ✔ should return 0 for 0
+      ✔ should return 1 for 1
+      ✔ should return 12 for 12
+      ✔ should return  for ''
+      ✔ should return foo for 'foo'
+      ✔ should return false for false
+      ✔ should return true for true
+      ✔ should return null for null
+      ✔ should return 0 for 0.
+      ✔ should return 0 for .0
+      ✔ should return 1 for 1.
+      ✔ should return 0.1 for .1
+      ✔ should return 0.12 for .12
+      ✔ should return 0.12 for 0.12
+      ✔ should return 12.34 for 12.34
+      ✔ should return 12000 for 12e3
+      ✔ should return 0.012 for 12e-3
+      ✔ should return 1234000 for 12.34e5
+      ✔ should return 0.0001234 for 12.34e-5
+      ✔ should return 9 for 011
+      ✔ should return 81 for 081
+      ✔ should return 3 for 0b11
+      ✔ should return 3 for 0b011
+      ✔ should return 9 for 0o11
+      ✔ should return 9 for 0o011
+      ✔ should return 17 for 0x11
+      ✔ should return 17 for 0x011
+      ✔ should return /a/ for /a/
+      ✔ should return /a/i for /a/i
+      ✔ should return /[0-9]/ for /[0-9]/
+      ✔ should return /(?<zero>0)/ for /(?<zero>0)/
+      ✔ should return /(?<zero>0)/s for /(?<zero>0)/s
+      ✔ should return /(?<=a)b/s for /(?<=a)b/s
+      ✔ should return  for ``
+      ✔ should return foo for `foo`
+      ✔ should return null for `${''}`
+      ✔ should return null for `${0}`
+      ✔ should return null for tag``
+      ✔ should return null for -0
+      ✔ should return null for -1
+      ✔ should return null for 1 + 2
+      ✔ should return null for []
+      ✔ should return null for ({})
+      ✔ should return null for foo
+      ✔ should return null for undefined
+      ✔ should return null for this
+      ✔ should return null for (function () {})
+      ✔ should return text of regex literal even if it's not supported natively.
+      ✔ should return text of bigint literal even if it's not supported natively.
+    getStaticPropertyName
+      ✔ should return 'b' for `a.b`
+      ✔ should return 'b' for `a['b']`
+      ✔ should return 'b' for `a[`b`]`
+      ✔ should return '100' for `a[100]`
+      ✔ should return null for `a[b]`
+      ✔ should return null for `a['a' + 'b']`
+      ✔ should return null for `a[tag`b`]`
+      ✔ should return null for `a[`${b}`]`
+      ✔ should return 'b' for `b: 1`
+      ✔ should return 'b' for `b() {}`
+      ✔ should return 'b' for `get b() {}`
+      ✔ should return 'b' for `['b']: 1`
+      ✔ should return 'b' for `['b']() {}`
+      ✔ should return 'b' for `[`b`]: 1`
+      ✔ should return '100' for` [100]: 1`
+      ✔ should return '/(?<zero>0)/' for `[/(?<zero>0)/]: 1`
+      ✔ should return null for `[b]: 1`
+      ✔ should return null for `['a' + 'b']: 1`
+      ✔ should return null for `[tag`b`]: 1`
+      ✔ should return null for `[`${b}`]: 1`
+      ✔ should return null for non member expressions
+    getDirectivePrologue
+      ✔ should return empty array if node is not a Program, FunctionDeclaration, FunctionExpression, or ArrowFunctionExpression
+      ✔ should return empty array if node is a braceless ArrowFunctionExpression node
+      ✔ should return empty array if there are no directives in Program body
+      ✔ should return empty array if there are no directives in FunctionDeclaration body
+      ✔ should return empty array if there are no directives in FunctionExpression body
+      ✔ should return empty array if there are no directives in ArrowFunctionExpression body
+      ✔ should return directives in Program body
+      ✔ should return directives in FunctionDeclaration body
+      ✔ should return directives in FunctionExpression body
+      ✔ should return directives in ArrowFunctionExpression body
+    isDecimalInteger
+      ✔ should return true for 0
+      ✔ should return true for 5
+      ✔ should return true for 8
+      ✔ should return true for 9
+      ✔ should return true for 50
+      ✔ should return true for 123
+      ✔ should return true for 1_0
+      ✔ should return true for 1_0_1
+      ✔ should return true for 12_3
+      ✔ should return true for 5_000
+      ✔ should return true for 500_0
+      ✔ should return true for 500_00
+      ✔ should return true for 5_000_00
+      ✔ should return true for 1_234_56
+      ✔ should return true for 1_2_3_4
+      ✔ should return true for 11_22_33_44
+      ✔ should return true for 1_23_4_56_7_89
+      ✔ should return true for 08
+      ✔ should return true for 09
+      ✔ should return true for 008
+      ✔ should return true for 0192
+      ✔ should return true for 0180
+      ✔ should return true for 090
+      ✔ should return true for 088
+      ✔ should return true for 099
+      ✔ should return true for 089
+      ✔ should return true for 0098
+      ✔ should return true for 01892
+      ✔ should return true for 08192
+      ✔ should return true for 01829
+      ✔ should return true for 018290
+      ✔ should return false for 0.
+      ✔ should return false for 5.
+      ✔ should return false for .0
+      ✔ should return false for .5
+      ✔ should return false for 5.0
+      ✔ should return false for 5.00_00
+      ✔ should return false for 5.0_1
+      ✔ should return false for 0.1_0
+      ✔ should return false for 5.1_2
+      ✔ should return false for 1.23_45
+      ✔ should return false for .0_1
+      ✔ should return false for .12_34
+      ✔ should return false for 05
+      ✔ should return false for 0123
+      ✔ should return false for 076543210
+      ✔ should return false for 08.
+      ✔ should return false for 0x5
+      ✔ should return false for 0b11_01
+      ✔ should return false for 0o0_1
+      ✔ should return false for 0x56_78
+      ✔ should return false for 5e0
+      ✔ should return false for 0.e1
+      ✔ should return false for .0e1
+      ✔ should return false for 5e0_1
+      ✔ should return false for 5e1_000
+      ✔ should return false for 5e12_34
+      ✔ should return false for 5e-0
+      ✔ should return false for 5e-0_1
+      ✔ should return false for 5e-1_2
+      ✔ should return false for 1_2.3_4e5_6
+      ✔ should return false for 1n
+      ✔ should return false for 1_2n
+      ✔ should return false for 1_000n
+      ✔ should return false for '5'
+    isDecimalIntegerNumericToken
+      ✔ should return true for 0
+      ✔ should return true for 5
+      ✔ should return true for 8
+      ✔ should return true for 9
+      ✔ should return true for 50
+      ✔ should return true for 123
+      ✔ should return true for 1_0
+      ✔ should return true for 1_0_1
+      ✔ should return true for 12_3
+      ✔ should return true for 5_000
+      ✔ should return true for 500_0
+      ✔ should return true for 500_00
+      ✔ should return true for 5_000_00
+      ✔ should return true for 1_234_56
+      ✔ should return true for 1_2_3_4
+      ✔ should return true for 11_22_33_44
+      ✔ should return true for 1_23_4_56_7_89
+      ✔ should return true for 08
+      ✔ should return true for 09
+      ✔ should return true for 008
+      ✔ should return true for 0192
+      ✔ should return true for 0180
+      ✔ should return true for 090
+      ✔ should return true for 088
+      ✔ should return true for 099
+      ✔ should return true for 089
+      ✔ should return true for 0098
+      ✔ should return true for 01892
+      ✔ should return true for 08192
+      ✔ should return true for 01829
+      ✔ should return true for 018290
+      ✔ should return false for 0.
+      ✔ should return false for 5.
+      ✔ should return false for .0
+      ✔ should return false for .5
+      ✔ should return false for 5.0
+      ✔ should return false for 5.00_00
+      ✔ should return false for 5.0_1
+      ✔ should return false for 0.1_0
+      ✔ should return false for 5.1_2
+      ✔ should return false for 1.23_45
+      ✔ should return false for .0_1
+      ✔ should return false for .12_34
+      ✔ should return false for 05
+      ✔ should return false for 0123
+      ✔ should return false for 076543210
+      ✔ should return false for 08.
+      ✔ should return false for 0x5
+      ✔ should return false for 0b11_01
+      ✔ should return false for 0o0_1
+      ✔ should return false for 0x56_78
+      ✔ should return false for 5e0
+      ✔ should return false for 0.e1
+      ✔ should return false for .0e1
+      ✔ should return false for 5e0_1
+      ✔ should return false for 5e1_000
+      ✔ should return false for 5e12_34
+      ✔ should return false for 5e-0
+      ✔ should return false for 5e-0_1
+      ✔ should return false for 5e-1_2
+      ✔ should return false for 1_2.3_4e5_6
+      ✔ should return false for 1n
+      ✔ should return false for 1_2n
+      ✔ should return false for 1_000n
+      ✔ should return false for '5'
+    getFunctionNameWithKind
+      ✔ should return "function 'foo'" for "function foo() {}".
+      ✔ should return "function 'foo'" for "(function foo() {})".
+      ✔ should return "function" for "(function() {})".
+      ✔ should return "generator function 'foo'" for "function* foo() {}".
+      ✔ should return "generator function 'foo'" for "(function* foo() {})".
+      ✔ should return "generator function" for "(function*() {})".
+      ✔ should return "arrow function" for "() => {}".
+      ✔ should return "async arrow function" for "async () => {}".
+      ✔ should return "method 'foo'" for "({ foo: function foo() {} })".
+      ✔ should return "method 'foo'" for "({ foo: function() {} })".
+      ✔ should return "method ''" for "({ '': function() {} })".
+      ✔ should return "method 'foo'" for "({ ['foo']: function() {} })".
+      ✔ should return "method ''" for "({ ['']: function() {} })".
+      ✔ should return "method" for "({ [foo]: function() {} })".
+      ✔ should return "method 'foo'" for "({ foo() {} })".
+      ✔ should return "generator method 'foo'" for "({ foo: function* foo() {} })".
+      ✔ should return "generator method 'foo'" for "({ foo: function*() {} })".
+      ✔ should return "generator method 'foo'" for "({ ['foo']: function*() {} })".
+      ✔ should return "generator method" for "({ [foo]: function*() {} })".
+      ✔ should return "generator method 'foo'" for "({ *foo() {} })".
+      ✔ should return "async method 'foo'" for "({ foo: async function foo() {} })".
+      ✔ should return "async method 'foo'" for "({ foo: async function() {} })".
+      ✔ should return "async method 'foo'" for "({ ['foo']: async function() {} })".
+      ✔ should return "async method" for "({ [foo]: async function() {} })".
+      ✔ should return "async method 'foo'" for "({ async foo() {} })".
+      ✔ should return "getter 'foo'" for "({ get foo() {} })".
+      ✔ should return "setter 'foo'" for "({ set foo(a) {} })".
+      ✔ should return "constructor" for "class A { constructor() {} }".
+      ✔ should return "method 'foo'" for "class A { foo() {} }".
+      ✔ should return "generator method 'foo'" for "class A { *foo() {} }".
+      ✔ should return "async method 'foo'" for "class A { async foo() {} }".
+      ✔ should return "method 'foo'" for "class A { ['foo']() {} }".
+      ✔ should return "generator method 'foo'" for "class A { *['foo']() {} }".
+      ✔ should return "async method 'foo'" for "class A { async ['foo']() {} }".
+      ✔ should return "method" for "class A { [foo]() {} }".
+      ✔ should return "generator method" for "class A { *[foo]() {} }".
+      ✔ should return "async method" for "class A { async [foo]() {} }".
+      ✔ should return "getter 'foo'" for "class A { get foo() {} }".
+      ✔ should return "setter 'foo'" for "class A { set foo(a) {} }".
+      ✔ should return "static method 'foo'" for "class A { static foo() {} }".
+      ✔ should return "static generator method 'foo'" for "class A { static *foo() {} }".
+      ✔ should return "static async method 'foo'" for "class A { static async foo() {} }".
+      ✔ should return "static getter 'foo'" for "class A { static get foo() {} }".
+      ✔ should return "static setter 'foo'" for "class A { static set foo(a) {} }".
+      ✔ should return "method 'foo'" for "class A { foo = () => {}; }".
+      ✔ should return "method 'foo'" for "class A { foo = function() {}; }".
+      ✔ should return "method 'foo'" for "class A { foo = function bar() {}; }".
+      ✔ should return "static method 'foo'" for "class A { static foo = () => {}; }".
+      ✔ should return "method '#foo'" for "class A { '#foo' = () => {}; }".
+      ✔ should return "private method #foo" for "class A { #foo = () => {}; }".
+      ✔ should return "static private method #foo" for "class A { static #foo = () => {}; }".
+      ✔ should return "method '#foo'" for "class A { '#foo'() {} }".
+      ✔ should return "private method #foo" for "class A { #foo() {} }".
+      ✔ should return "static private method #foo" for "class A { static #foo() {} }".
+    getFunctionHeadLoc
+      ✔ should return "{"start":{"line":1,"column":0},"end":{"line":1,"column":12}}" for "function foo() {}".
+      ✔ should return "{"start":{"line":1,"column":1},"end":{"line":1,"column":13}}" for "(function foo() {})".
+      ✔ should return "{"start":{"line":1,"column":1},"end":{"line":1,"column":9}}" for "(function() {})".
+      ✔ should return "{"start":{
+[... 9655 chars truncated ...]
+      ✔ should return false for '('.
+      ✔ should return false for 'obj'.
+      ✔ should return false for '&&'.
+      ✔ should return false for 'foo'.
+      ✔ should return false for ')'.
+      ✔ should return false for '{'.
+      ✔ should return false for 'obj'.
+      ✔ should return false for '['.
+      ✔ should return false for 'foo'.
+      ✔ should return true for ']'.
+      ✔ should return false for '('.
+      ✔ should return false for ')'.
+      ✔ should return false for ';'.
+      ✔ should return false for '}'.
+    isNotClosingBracketToken
+      ✔ should return false for 'if'.
+      ✔ should return false for '('.
+      ✔ should return false for 'obj'.
+      ✔ should return false for '&&'.
+      ✔ should return false for 'foo'.
+      ✔ should return false for ')'.
+      ✔ should return false for '{'.
+      ✔ should return false for 'obj'.
+      ✔ should return false for '['.
+      ✔ should return false for 'foo'.
+      ✔ should return true for ']'.
+      ✔ should return false for '('.
+      ✔ should return false for ')'.
+      ✔ should return false for ';'.
+      ✔ should return false for '}'.
+    isClosingParenToken
+      ✔ should return false for 'if'.
+      ✔ should return false for '('.
+      ✔ should return false for 'obj'.
+      ✔ should return false for '&&'.
+      ✔ should return false for 'foo'.
+      ✔ should return true for ')'.
+      ✔ should return false for '{'.
+      ✔ should return false for 'obj'.
+      ✔ should return false for '['.
+      ✔ should return false for 'foo'.
+      ✔ should return false for ']'.
+      ✔ should return false for '('.
+      ✔ should return true for ')'.
+      ✔ should return false for ';'.
+      ✔ should return false for '}'.
+    isNotClosingParenToken
+      ✔ should return false for 'if'.
+      ✔ should return false for '('.
+      ✔ should return false for 'obj'.
+      ✔ should return false for '&&'.
+      ✔ should return false for 'foo'.
+      ✔ should return true for ')'.
+      ✔ should return false for '{'.
+      ✔ should return false for 'obj'.
+      ✔ should return false for '['.
+      ✔ should return false for 'foo'.
+      ✔ should return false for ']'.
+      ✔ should return false for '('.
+      ✔ should return true for ')'.
+      ✔ should return false for ';'.
+      ✔ should return false for '}'.
+    isColonToken
+      ✔ should return false for 'const'.
+      ✔ should return false for 'obj'.
+      ✔ should return false for '='.
+      ✔ should return false for '{'.
+      ✔ should return false for 'foo'.
+      ✔ should return true for ':'.
+      ✔ should return false for '1'.
+      ✔ should return false for ','.
+      ✔ should return false for 'bar'.
+      ✔ should return true for ':'.
+      ✔ should return false for '2'.
+      ✔ should return false for '}'.
+      ✔ should return false for ';'.
+    isNotColonToken
+      ✔ should return false for 'const'.
+      ✔ should return false for 'obj'.
+      ✔ should return false for '='.
+      ✔ should return false for '{'.
+      ✔ should return false for 'foo'.
+      ✔ should return true for ':'.
+      ✔ should return false for '1'.
+      ✔ should return false for ','.
+      ✔ should return false for 'bar'.
+      ✔ should return true for ':'.
+      ✔ should return false for '2'.
+      ✔ should return false for '}'.
+      ✔ should return false for ';'.
+    isCommaToken
+      ✔ should return false for 'const'.
+      ✔ should return false for 'obj'.
+      ✔ should return false for '='.
+      ✔ should return false for '{'.
+      ✔ should return false for 'foo'.
+      ✔ should return false for ':'.
+      ✔ should return false for '1'.
+      ✔ should return true for ','.
+      ✔ should return false for 'bar'.
+      ✔ should return false for ':'.
+      ✔ should return false for '2'.
+      ✔ should return false for '}'.
+      ✔ should return false for ';'.
+    isNotCommaToken
+      ✔ should return false for 'const'.
+      ✔ should return false for 'obj'.
+      ✔ should return false for '='.
+      ✔ should return false for '{'.
+      ✔ should return false for 'foo'.
+      ✔ should return false for ':'.
+      ✔ should return false for '1'.
+      ✔ should return true for ','.
+      ✔ should return false for 'bar'.
+      ✔ should return false for ':'.
+      ✔ should return false for '2'.
+      ✔ should return false for '}'.
+      ✔ should return false for ';'.
+    isDotToken
+      ✔ should return false for 'const'.
+      ✔ should return false for 'obj'.
+      ✔ should return false for '='.
+      ✔ should return false for '{'.
+      ✔ should return false for 'foo'.
+      ✔ should return false for ':'.
+      ✔ should return false for '1.5'.
+      ✔ should return false for ','.
+      ✔ should return false for 'bar'.
+      ✔ should return false for ':'.
+      ✔ should return false for 'a'.
+      ✔ should return true for '.'.
+      ✔ should return false for 'b'.
+      ✔ should return false for '}'.
+      ✔ should return false for ';'.
+    isNotDotToken
+      ✔ should return true for 'const'.
+      ✔ should return true for 'obj'.
+      ✔ should return true for '='.
+      ✔ should return true for '{'.
+      ✔ should return true for 'foo'.
+      ✔ should return true for ':'.
+      ✔ should return true for '1.5'.
+      ✔ should return true for ','.
+      ✔ should return true for 'bar'.
+      ✔ should return true for ':'.
+      ✔ should return true for 'a'.
+      ✔ should return false for '.'.
+      ✔ should return true for 'b'.
+      ✔ should return true for '}'.
+      ✔ should return true for ';'.
+    isCommentToken
+      ✔ should return false for 'const'.
+      ✔ should return false for 'obj'.
+      ✔ should return false for '='.
+      ✔ should return false for '{'.
+      ✔ should return false for 'foo'.
+      ✔ should return false for ':'.
+      ✔ should return false for '1'.
+      ✔ should return false for ','.
+      ✔ should return false for 'bar'.
+      ✔ should return false for ':'.
+      ✔ should return false for '2'.
+      ✔ should return false for '}'.
+      ✔ should return false for ';'.
+      ✔ should return true for 'block'.
+      ✔ should return true for 'line'.
+    isKeywordToken
+      ✔ should return true for 'const'.
+      ✔ should return false for 'obj'.
+      ✔ should return false for '='.
+      ✔ should return false for '{'.
+      ✔ should return false for 'foo'.
+      ✔ should return false for ':'.
+      ✔ should return false for '1'.
+      ✔ should return false for ','.
+      ✔ should return false for 'bar'.
+      ✔ should return false for ':'.
+      ✔ should return false for '2'.
+      ✔ should return false for '}'.
+      ✔ should return false for ';'.
+    isOpeningBraceToken
+      ✔ should return false for 'if'.
+      ✔ should return false for '('.
+      ✔ should return false for 'obj'.
+      ✔ should return false for '&&'.
+      ✔ should return false for 'foo'.
+      ✔ should return false for ')'.
+      ✔ should return true for '{'.
+      ✔ should return false for 'obj'.
+      ✔ should return false for '['.
+      ✔ should return false for 'foo'.
+      ✔ should return false for ']'.
+      ✔ should return false for '('.
+      ✔ should return false for ')'.
+      ✔ should return false for ';'.
+      ✔ should return false for '}'.
+    isNotOpeningBraceToken
+      ✔ should return false for 'if'.
+      ✔ should return false for '('.
+      ✔ should return false for 'obj'.
+      ✔ should return false for '&&'.
+      ✔ should return false for 'foo'.
+      ✔ should return false for ')'.
+      ✔ should return true for '{'.
+      ✔ should return false for 'obj'.
+      ✔ should return false for '['.
+      ✔ should return false for 'foo'.
+      ✔ should return false for ']'.
+      ✔ should return false for '('.
+      ✔ should return false for ')'.
+      ✔ should return false for ';'.
+      ✔ should return false for '}'.
+    isOpeningBracketToken
+      ✔ should return false for 'if'.
+      ✔ should return false for '('.
+      ✔ should return false for 'obj'.
+      ✔ should return false for '&&'.
+      ✔ should return false for 'foo'.
+      ✔ should return false for ')'.
+      ✔ should return false for '{'.
+      ✔ should return false for 'obj'.
+      ✔ should return true for '['.
+      ✔ should return false for 'foo'.
+      ✔ should return false for ']'.
+      ✔ should return false for '('.
+      ✔ should return false for ')'.
+      ✔ should return false for ';'.
+      ✔ should return false for '}'.
+    isNotOpeningBracketToken
+      ✔ should return false for 'if'.
+      ✔ should return false for '('.
+      ✔ should return false for 'obj'.
+      ✔ should return false for '&&'.
+      ✔ should return false for 'foo'.
+      ✔ should return false for ')'.
+      ✔ should return false for '{'.
+      ✔ should return false for 'obj'.
+      ✔ should return true for '['.
+      ✔ should return false for 'foo'.
+      ✔ should return false for ']'.
+      ✔ should return false for '('.
+      ✔ should return false for ')'.
+      ✔ should return false for ';'.
+      ✔ should return false for '}'.
+    isOpeningParenToken
+      ✔ should return false for 'if'.
+      ✔ should return true for '('.
+      ✔ should return false for 'obj'.
+      ✔ should return false for '&&'.
+      ✔ should return false for 'foo'.
+      ✔ should return false for ')'.
+      ✔ should return false for '{'.
+      ✔ should return false for 'obj'.
+      ✔ should return false for '['.
+      ✔ should return false for 'foo'.
+      ✔ should return false for ']'.
+      ✔ should return true for '('.
+      ✔ should return false for ')'.
+      ✔ should return false for ';'.
+      ✔ should return false for '}'.
+    isNotOpeningParenToken
+      ✔ should return false for 'if'.
+      ✔ should return true for '('.
+      ✔ should return false for 'obj'.
+      ✔ should return false for '&&'.
+      ✔ should return false for 'foo'.
+      ✔ should return false for ')'.
+      ✔ should return false for '{'.
+      ✔ should return false for 'obj'.
+      ✔ should return false for '['.
+      ✔ should return false for 'foo'.
+      ✔ should return false for ']'.
+      ✔ should return true for '('.
+      ✔ should return false for ')'.
+      ✔ should return false for ';'.
+      ✔ should return false for '}'.
+    isSemicolonToken
+      ✔ should return false for 'if'.
+      ✔ should return false for '('.
+      ✔ should return false for 'obj'.
+      ✔ should return false for '&&'.
+      ✔ should return false for 'foo'.
+      ✔ should return false for ')'.
+      ✔ should return false for '{'.
+      ✔ should return false for 'obj'.
+      ✔ should return false for '['.
+      ✔ should return false for 'foo'.
+      ✔ should return false for ']'.
+      ✔ should return false for '('.
+      ✔ should return false for ')'.
+      ✔ should return true for ';'.
+      ✔ should return false for '}'.
+    isNotSemicolonToken
+      ✔ should return false for 'if'.
+      ✔ should return false for '('.
+      ✔ should return false for 'obj'.
+      ✔ should return false for '&&'.
+      ✔ should return false for 'foo'.
+      ✔ should return false for ')'.
+      ✔ should return false for '{'.
+      ✔ should return false for 'obj'.
+      ✔ should return false for '['.
+      ✔ should return false for 'foo'.
+      ✔ should return false for ']'.
+      ✔ should return false for '('.
+      ✔ should return false for ')'.
+      ✔ should return true for ';'.
+      ✔ should return false for '}'.
+    isNullLiteral
+      ✔ returns false for 5
+      ✔ returns true for null
+      ✔ returns false for /abc/u
+      ✔ returns false for true
+      ✔ returns false for 'null'
+      ✔ returns false for foo
+    createGlobalLinebreakMatcher
+      ✔ returns a regular expression with the g flag
+      ✔ returns unique objects on each call
+      correctly matches linebreaks
+        ✔ foo
+        ✔ foobar
+        ✔ foo
+
+        ✔ foo
+bar
+        ✔ foo
+bar
+        ✔ foo bar
+        ✔ foo bar
+    canTokensBeAdjacent
+      ✔ foo, bar
+      ✔ ;foo, bar
+      ✔ ;, bar
+      ✔ ), bar
+      ✔ foo0, bar
+      ✔ foo;, bar
+      ✔ foo, 0
+      ✔ of, .2
+      ✔ 2, .2
+      ✔ of, 'foo'
+      ✔ foo, `bar`
+      ✔ `foo`, in
+      ✔ of, 0.2
+      ✔ of, 0.
+      ✔ .2, foo
+      ✔ 2., foo
+      ✔ +, -
+      ✔ ++, -
+      ✔ +, --
+      ✔ ++, --
+      ✔ -, +
+      ✔ --, +
+      ✔ -, ++
+      ✔ --, ++
+      ✔ +, +
+      ✔ -, -
+      ✔ ++, +
+      ✔ --, -
+      ✔ +, ++
+      ✔ -, --
+      ✔ a/, b
+      ✔ a/, +b
+      ✔ a+, /^regex$/
+      ✔ a/, /^regex$/
+      ✔ a+, /**/
+      ✔ a+, /**/b
+      ✔ //, a
+      ✔ a/, /**/b
+      ✔ a+, //
+      ✔ a+, //
+b
+      ✔ a/, //
+b
+      ✔ /**/, b
+      ✔ a/**/, b
+      ✔ /**/a, b
+      ✔ a, /**/b
+      ✔ a, b/**/
+      ✔ a, //
+b
+      ✔ a, b//
+      ✔ #!/usr/bin/env node, (
+      ✔ 123invalidtoken, (
+      ✔ (, 123invalidtoken
+      ✔ (, 1n
+      ✔ 1n, +
+      ✔ 1n, in
+      ✔ return, #x
+      ✔ yield, #x
+      ✔ get, #x
+      ✔ #!/usr/bin/env node, (
+    equalTokens
+      ✔ should return true if tokens are equal
+      ✔ should return false if tokens are not equal
+    equalLiteralValue
+      should return true if two regex values are same, even if it's not supported natively.
+        ✔ should return true if it compared {
+  type: 'Literal',
+  value: /(?:)/u { [lastIndex]: 0 },
+  regex: { pattern: '(?:)', flags: 'u' }
+} and {
+  type: 'Literal',
+  value: /(?:)/u { [lastIndex]: 0 },
+  regex: { pattern: '(?:)', flags: 'u' }
+}
+        ✔ should return true if it compared {
+  type: 'Literal',
+  value: null,
+  regex: { pattern: '(?:)', flags: 'u' }
+} and {
+  type: 'Literal',
+  value: null,
+  regex: { pattern: '(?:)', flags: 'u' }
+}
+        ✔ should return false if it compared {
+  type: 'Literal',
+  value: null,
+  regex: { pattern: '(?:)', flags: 'u' }
+} and {
+  type: 'Literal',
+  value: /(?:)/ { [lastIndex]: 0 },
+  regex: { pattern: '(?:)', flags: '' }
+}
+        ✔ should return false if it compared {
+  type: 'Literal',
+  value: null,
+  regex: { pattern: '(?:a)', flags: 'u' }
+} and {
+  type: 'Literal',
+  value: null,
+  regex: { pattern: '(?:b)', flags: 'u' }
+}
+      should return true if two bigint values are same, even if it's not supported natively.
+        ✔ should return true if it compared { type: 'Literal', value: null, bigint: '1' } and { type: 'Literal', value: null, bigint: '1' }
+        ✔ should return false if it compared { type: 'Literal', value: null, bigint: '1' } and { type: 'Literal', value: null, bigint: '2' }
+        ✔ should return true if it compared { type: 'Literal', value: 1n, bigint: '1' } and { type: 'Literal', value: 1n, bigint: '1' }
+        ✔ should return false if it compared { type: 'Literal', value: 1n, bigint: '1' } and { type: 'Literal', value: 2n, bigint: '2' }
+    hasOctalOrNonOctalDecimalEscapeSequence
+      ✔ should return false for 0
+      ✔ should return false for 1
+      ✔ should return false for 8
+      ✔ should return false for 12
+      ✔ should return false for 80
+      ✔ should return true for \1
+      ✔ should return true for \2
+      ✔ should return true for \7
+      ✔ should return true for \00
+      ✔ should return true for \01
+      ✔ should return true for \02
+      ✔ should return true for \07
+      ✔ should return true for \08
+      ✔ should return true for \09
+      ✔ should return true for \10
+      ✔ should return true for \12
+      ✔ should return true for  \1
+      ✔ should return true for \1 
+      ✔ should return true for a\1
+      ✔ should return true for \1a
+      ✔ should return true for a\1a
+      ✔ should return true for  \01
+      ✔ should return true for \01 
+      ✔ should return true for a\01
+      ✔ should return true for \01a
+      ✔ should return true for a\01a
+      ✔ should return true for a\08a
+      ✔ should return true for \0\1
+      ✔ should return true for \0\01
+      ✔ should return true for \0\08
+      ✔ should return true for \n\1
+      ✔ should return true for \n\01
+      ✔ should return true for \n\08
+      ✔ should return true for \\\1
+      ✔ should return true for \\\01
+      ✔ should return true for \\\08
+      ✔ should return true for \8
+      ✔ should return true for \9
+      ✔ should return true for a\8a
+      ✔ should return true for \0\8
+      ✔ should return true for \8\0
+      ✔ should return true for \80
+      ✔ should return true for \81
+      ✔ should return true for \\\8
+      ✔ should return true for \
+\1
+      ✔ should return true for foo\
+bar\2baz
+      ✔ should return true for \
+\8
+      ✔ should return true for foo\
+bar\9baz
+      ✔ should return false for \0
+      ✔ should return false for  \0
+      ✔ should return false for \0 
+      ✔ should return false for a\0
+      ✔ should return false for \0a
+      ✔ should return false for \\
+      ✔ should return false for \\0
+      ✔ should return false for \\01
+      ✔ should return false for \\08
+      ✔ should return false for \\1
+      ✔ should return false for \\12
+      ✔ should return false for \\\0
+      ✔ should return false for \0\\
+      ✔ should return false for 01
+      ✔ should return false for 08
+      ✔ should return false for \a
+      ✔ should return false for \n
+      ✔ should return false for \
+
+      ✔ should return false for foo\
+bar
+      ✔ should return false for 128\
+349
+    isLogicalAssignmentOperator
+      ✔ should return true for &&=
+      ✔ should return true for ||=
+      ✔ should return true for ??=
+      ✔ should return false for &&
+      ✔ should return false for ||
+      ✔ should return false for ??
+      ✔ should return false for =
+      ✔ should return false for &=
+      ✔ should return false for |=
+      ✔ should return false for +=
+      ✔ should return false for **=
+      ✔ should return false for ==
+      ✔ should return false for ===
+    isTopLevelExpressionStatement
+      ✔ should return false for a Program node
+      ✔ should return false if the node is not an ExpressionStatement
+      ✔ should return false for `"use strict";` in `if (foo) { "use strict"; }`
+      ✔ should return false for `"use strict";` in `{ "use strict"; }`
+      ✔ should return false for `"use strict";` in `switch (foo) { case bar: "use strict"; }`
+      ✔ should return true for `foo;` in `foo; bar;`
+      ✔ should return true for `bar;` in `foo; bar;`
+      ✔ should return true for `bar;` in `function foo() { bar; }`
+      ✔ should return true for `foo();` in `var foo = function () { foo(); };`
+      ✔ should return true for `'bar';` in `var foo = () => { 'bar'; }`
+      ✔ should return true for `"use strict"` in `"use strict"`
+      ✔ should return true for `(`use strict`)` in `(`use strict`)`
+    isStaticTemplateLiteral
+      ✔ returns true for ``
+      ✔ returns true for `foo`
+      ✔ returns false for `foo${bar}`
+      ✔ returns false for "foo"
+      ✔ returns false for foo`bar`
+    isDirective
+      ✔ should return true for `"use strict";` in `"use strict";`
+      ✔ should return true for `"use asm";` in `"use strict"; "use asm";`
+      ✔ should return true for `"foo";` in `const a = () => { "foo"; }`
+      ✔ should return true for `"";` in `"";`
+      ✔ should return false for `"foo";` in `{ "foo"; }`
+      ✔ should return false for `foo();` in `foo();`
+      ✔ should return false for `"foo" + "bar";` in `"foo" + "bar";`
+      ✔ should return false for `12345;` in `12345;`
+      ✔ should return false for ``foo`;` in ``foo`;`
+      ✔ should return false for `('foo');` in `('foo');`
+      ✔ should return false for `"use strict";` in `foo(); "use strict";`
+
+
+  1049 passing (632ms)
+  1 failing
+
+  1) no-unused-expressions
+       valid
+         "use strict";:
+
+      AssertionError [ERR_ASSERTION]: Should have no errors but had 1: [
+  {
+    ruleId: 'rule-to-test/no-unused-expressions',
+    severity: 1,
+    message: 'Expected an assignment or function call and instead saw an expression.',
+    line: 1,
+    column: 1,
+    nodeType: 'ExpressionStatement',
+    messageId: 'unusedExpression',
+    endLine: 1,
+    endColumn: 14
+  }
+]
+
+1 !== 0
+
+      + expected - actual
+
+      -1
+      +0
+      
+      at testValidTemplate (lib/rule-tester/rule-tester.js:992:11)
+      at Context.<anonymous> (lib/rule-tester/rule-tester.js:1536:10)
+      at process.processImmediate (node:internal/timers:485:21)
+
+
+
+

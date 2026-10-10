@@ -1,0 +1,22 @@
+Per run:
+  p1  eslint-19924        reproduce   v3   866f289585 passes_pre               R=0 S=0 A=0 H=None prod=[] tokens=54715 tools=9 s=264
+  p1  eslint-19924        reproduce   v5   7392545745 fail_to_pass             R=1 S=1 A=0 H=None prod=[] tokens=56535 tools=11 s=146
+  p2  eslint-19924        reproduce   v3   d3c635b434 passes_pre               R=0 S=0 A=0 H=None prod=[] tokens=53764 tools=11 s=289
+  p2  eslint-19924        reproduce   v5   5e1f5fc7f6 fail_to_pass             R=1 S=1 A=0 H=None prod=[] tokens=59231 tools=14 s=335
+  p3  eslint-19924        reproduce   v3   c53b576813 fail_to_pass             R=1 S=1 A=0 H=None prod=[] tokens=57994 tools=13 s=231
+  p3  eslint-19924        reproduce   v5   1bdf00b2fb fail_to_pass             R=1 S=1 A=0 H=None prod=[] tokens=58828 tools=13 s=270
+  p4  eslint-19924        reproduce   v3   784f28b00c fail_to_pass             R=1 S=1 A=0 H=None prod=[] tokens=51895 tools=8 s=169
+  p4  eslint-19924        reproduce   v5   b04c4bf6f1 fail_to_pass             R=1 S=1 A=0 H=None prod=[] tokens=61120 tools=16 s=321
+  p5  ts-60573            reproduce   v3   d913f34ce1 fail_to_pass             R=1 S=1 A=0 H=None prod=[] tokens=64063 tools=17 s=155
+  p5  ts-60573            reproduce   v5   9724dab909 fail_to_pass             R=1 S=1 A=0 H=None prod=[] tokens=71340 tools=23 s=211
+  p6  ts-60573            reproduce   v3   c7abe918d8 passes_pre               R=0 S=0 A=0 H=None prod=[] tokens=65713 tools=16 s=295
+  p6  ts-60573            reproduce   v5   8e79e0dc9b fail_to_pass             R=1 S=1 A=0 H=None prod=[] tokens=68445 tools=18 s=233
+  p7  ts-60573            reproduce   v3   5ce63c6792 fail_to_pass             R=1 S=1 A=0 H=None prod=[] tokens=71491 tools=16 s=198
+  p7  ts-60573            reproduce   v5   5017d7d8f0 fail_to_pass             R=1 S=1 A=0 H=None prod=[] tokens=74745 tools=22 s=220
+  p8  ts-60573            reproduce   v3   d0df9187ff fail_to_pass             R=1 S=1 A=0 H=None prod=[] tokens=66288 tools=16 s=372
+  p8  ts-60573            reproduce   v5   810635c432 fail_to_pass             R=1 S=1 A=0 H=None prod=[] tokens=67792 tools=19 s=242
+
+R pairs: v5-only 3, v3-only 0, net 3 over 8 pairs
+tokens over 8 pairs: v3 median 61028, v5 median 64456, ratio 1.056; v5 fewer in 0
+v3: R 5/8  S 5/8  A 0  P 0  H 0/0  median tokens 61028.5  median tools 14.5  median s 247.721
+v5: R 8/8  S 8/8  A 0  P 0  H 0/0  median tokens 64456.0  median tools 17.0  median s 237.5275

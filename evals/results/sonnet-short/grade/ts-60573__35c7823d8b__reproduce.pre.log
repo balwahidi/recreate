@@ -1,0 +1,10 @@
+===== run 1: exit 1
+typescript 5.8.0-dev
+quick info for Test:
+type Test = {
+    prop1: Wrapper<"hello">;
+}
+
+FAIL: expected "type Test = { prop1: \"hello\"; }"
+      actual   "type Test = { prop1: Wrapper<\"hello\">; }"
+

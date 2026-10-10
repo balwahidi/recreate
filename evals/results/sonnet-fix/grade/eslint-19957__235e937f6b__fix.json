@@ -1,0 +1,14 @@
+{
+  "label": "eslint-19957__235e937f6b__fix",
+  "case": "eslint-19957",
+  "files": [
+    "lib/rules/no-loss-of-precision.js",
+    "tests/lib/rules/no-loss-of-precision.js"
+  ],
+  "test_in_patch": true,
+  "F": true,
+  "applied": true,
+  "codes": [
+    0
+  ]
+}

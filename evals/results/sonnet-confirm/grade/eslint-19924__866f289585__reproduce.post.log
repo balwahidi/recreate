@@ -1,0 +1,5 @@
+===== run 1: exit 0
+node v22.22.0, ulimit -n (before) = 20000, files = 9000
+ulimit -n (eslint process) = 1024
+eslint exit code: 0
+

@@ -1,0 +1,9 @@
+===== run 1: exit 0
+ESLint 9.25.0 (/root/grade/eslint-19637/repo)
+  [control] ecmaVersion 5, top of file: 0 message(s)
+  [control] ecmaVersion latest, top of file: 0 message(s)
+  [ok]   ecmaVersion 3, top of file: no messages
+  [ok]   ecmaVersion 3, top of function body: no messages
+
+OK: 'use strict' directives are not reported.
+

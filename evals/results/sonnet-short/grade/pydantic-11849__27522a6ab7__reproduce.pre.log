@@ -1,0 +1,21 @@
+===== run 1: exit 1
+pydantic 2.11.4, python 3.13.16, 4 threads, 200 filler fields, forward reference
+iterations run: 1, iterations showing the reported symptom: 1
+     3 x SYMPTOM: PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
+     3 x SYMPTOM: got an instance of B, expected C
+RESULT: BUG REPRODUCED (reported symptom observed)
+
+===== run 2: exit 1
+pydantic 2.11.4, python 3.13.16, 4 threads, 200 filler fields, forward reference
+iterations run: 1, iterations showing the reported symptom: 1
+     3 x SYMPTOM: got an instance of B, expected C
+     1 x SYMPTOM: PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
+RESULT: BUG REPRODUCED (reported symptom observed)
+
+===== run 3: exit 1
+pydantic 2.11.4, python 3.13.16, 4 threads, 200 filler fields, forward reference
+iterations run: 1, iterations showing the reported symptom: 1
+     1 x SYMPTOM: PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
+     1 x SYMPTOM: got an instance of B, expected C
+RESULT: BUG REPRODUCED (reported symptom observed)
+

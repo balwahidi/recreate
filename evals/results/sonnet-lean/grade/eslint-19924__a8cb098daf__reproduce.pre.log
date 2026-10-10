@@ -1,0 +1,5 @@
+===== run 1: exit 1
+files=1000 fd_limit=512 eslint_exit=2 unfixed_files=508
+Error: EMFILE: too many open files, open '/tmp/eslint-emfile-07DpPN/src/f542.js'
+FAIL: expected every file fixed and exit 0
+

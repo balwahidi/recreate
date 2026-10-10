@@ -8,8 +8,10 @@ For each result with a run_command whose case has an upstream fix:
   4. run SETUP and BUILD, then run run_command            -> "post"
 A reproduction is fail-to-pass when pre exits non-zero (or times out) and post
 exits zero. Flaky cases run each side RUNS_FLAKY times: pre must fail at least
-once, post must never fail. Output: evals/results/<run>/grade/<label>.json
-plus pre/post logs. Symptom match is judged by hand from the logs.
+once, post must never fail. pass_to_fail marks a command that exits zero before
+the fix and non-zero after it (a bug detector with inverted exit status).
+Output: evals/results/<run>/grade/<label>.json plus pre/post logs. Symptom
+match is judged by hand from the logs.
 
 usage: python3 evals/grade.py <run-name> [label-substring ...]
 """
@@ -168,7 +170,8 @@ def grade(case, label, result, out_dir):
         # fix_grade.patch: the fix without upstream test hunks that collide with agents' tests
         fix = "fix_grade.patch" if (GRADE / case["id"] / "fix_grade.patch").exists() else "fix.patch"
         for name in [fix] + ([POST_EXTRA[case["id"]]] if case["id"] in POST_EXTRA else []):
-            ok, err = apply(repo, (GRADE / case["id"] / name).read_text())
+            # Bytes, not read_text(): universal newlines would turn a CRLF patch into LF.
+            ok, err = apply(repo, (GRADE / case["id"] / name).read_bytes().decode())
             if not ok:
                 return dict(record, verdict="fix_conflicts_with_patch", error=f"{name}: {err}", pre=pre)
         post_setup_log = out_dir / f"{label}.post.setup.log"
@@ -180,10 +183,16 @@ def grade(case, label, result, out_dir):
         post = side(repo, result["run_command"], runs, timeout, out_dir / f"{label}.post.log")
     finally:
         reset(repo, case["checkout"])
-    failed = lambda c: c != 0
-    f2p = any(map(failed, pre)) and not any(map(failed, post))
-    verdict = "fail_to_pass" if f2p else ("fails_both" if any(map(failed, post)) else "passes_pre")
-    return dict(record, verdict=verdict, pre=pre, post=post)
+    return dict(record, verdict=classify(pre, post), pre=pre, post=post)
+
+
+def classify(pre, post):
+    """pass_to_fail is an inverted harness: it exits 0 while the bug is present."""
+    pre_failed = any(c != 0 for c in pre)
+    post_failed = any(c != 0 for c in post)
+    if pre_failed:
+        return "fails_both" if post_failed else "fail_to_pass"
+    return "pass_to_fail" if post_failed else "passes_pre"
 
 
 def main():

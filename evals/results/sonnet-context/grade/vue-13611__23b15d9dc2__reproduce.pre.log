@@ -1,0 +1,84 @@
+===== run 1: exit 1
+ Vitest  "environmentMatchGlobs" is deprecated. Use "workspace" to define different configurations instead.
+ Vitest  "environmentMatchGlobs" is deprecated. Use "workspace" to define different configurations instead.
+
+ RUN  v3.1.4 /root/grade/vue-13611/repo
+
+stdout | packages/vue/__tests__/slotUnderscoreRepro.spec.ts > slot names starting with underscore (repro) > prints compiled output (debug)
+const _Vue = Vue
+
+return function render(_ctx, _cache) {
+  with (_ctx) {
+    const { createElementVNode: _createElementVNode, resolveComponent: _resolveComponent, withCtx: _withCtx, createVNode: _createVNode, createSlots: _createSlots, openBlock: _openBlock, createBlock: _createBlock } = _Vue
+
+    const _component_SubComponent = _resolveComponent("SubComponent")
+    const _component_BaseLayout = _resolveComponent("BaseLayout")
+
+    return (_openBlock(), _createBlock(_component_BaseLayout, null, _createSlots({
+      default: _withCtx(() => [
+        _createVNode(_component_SubComponent, null, {
+          title: _withCtx(() => [
+            _createElementVNode("b", null, "title works")
+          ]),
+          _duration: _withCtx(() => [
+            _createElementVNode("b", null, "_duration works")
+          ]),
+          _: 1 /* STABLE */
+        })
+      ]),
+      _: 2 /* DYNAMIC */
+    }, [
+      cond
+        ? {
+            name: "randomslotname",
+            fn: _withCtx(() => [
+              _createElementVNode("p", null, "rand")
+            ]),
+            key: "0"
+          }
+        : undefined
+    ]), 1024 /* DYNAMIC_SLOTS */))
+  }
+}
+
+stdout | packages/vue/__tests__/slotUnderscoreRepro.spec.ts > slot names starting with underscore (repro) > without conditional sibling template (works)
+NO v-if sibling   => <div><b>title works</b><b>_duration works</b></div>
+
+stdout | packages/vue/__tests__/slotUnderscoreRepro.spec.ts > slot names starting with underscore (repro) > control: non-underscore name with conditional sibling template (works)
+CONTROL (no underscore) => <div><p>rand</p><b>title works</b><b>duration works</b></div>
+
+stdout | packages/vue/__tests__/slotUnderscoreRepro.spec.ts > slot names starting with underscore (repro) > with conditional sibling template (BUG)
+WITH v-if sibling => <div><p>rand</p><b>title works</b><span>DEFAULT _duration</span></div>
+
+ ❯ |unit| packages/vue/__tests__/slotUnderscoreRepro.spec.ts (4 tests | 1 failed) 57ms
+   ✓ slot names starting with underscore (repro) > prints compiled output (debug) 11ms
+   ✓ slot names starting with underscore (repro) > without conditional sibling template (works) 20ms
+   ✓ slot names starting with underscore (repro) > control: non-underscore name with conditional sibling template (works) 7ms
+   × slot names starting with underscore (repro) > with conditional sibling template (BUG) 16ms
+     → expected '<div><p>rand</p><b>title works</b><sp…' to contain '_duration works'
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| packages/vue/__tests__/slotUnderscoreRepro.spec.ts > slot names starting with underscore (repro) > with conditional sibling template (BUG)
+AssertionError: expected '<div><p>rand</p><b>title works</b><sp…' to contain '_duration works'
+
+Expected: [32m"_duration works"[39m
+Received: [31m"<div><p>rand</p><b>title works</b><span>DEFAULT _duration</span></div>"[39m
+
+ ❯ packages/vue/__tests__/slotUnderscoreRepro.spec.ts:87:18
+     85|     console.log('WITH v-if sibling =>', html)
+     86|     expect(html).toContain('title works')
+     87|     expect(html).toContain('_duration works')
+       |                  ^
+     88|     expect(html).not.toContain('DEFAULT')
+     89|   })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 3 passed (4)
+   Start at  13:57:00
+   Duration  4.57s (transform 2.32s, setup 31ms, collect 2.82s, tests 57ms, environment 578ms, prepare 217ms)
+
+

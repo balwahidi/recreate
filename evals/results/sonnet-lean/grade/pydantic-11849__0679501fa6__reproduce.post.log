@@ -1,0 +1,18 @@
+===== run 1: exit 0
+example 1: Direct(...) while another thread builds Direct -> Direct(id='test', description=Translatable(en='ok'), later=None, gate=None)
+example 2: C.model_validate(...) while another thread builds C -> C(id='ok1', name='test', later=None, gate=None)
+
+OK
+
+===== run 2: exit 0
+example 1: Direct(...) while another thread builds Direct -> Direct(id='test', description=Translatable(en='ok'), later=None, gate=None)
+example 2: C.model_validate(...) while another thread builds C -> C(id='ok1', name='test', later=None, gate=None)
+
+OK
+
+===== run 3: exit 0
+example 1: Direct(...) while another thread builds Direct -> Direct(id='test', description=Translatable(en='ok'), later=None, gate=None)
+example 2: C.model_validate(...) while another thread builds C -> C(id='ok1', name='test', later=None, gate=None)
+
+OK
+

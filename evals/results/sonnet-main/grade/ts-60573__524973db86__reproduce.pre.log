@@ -1,0 +1,7 @@
+===== run 1: exit 1
+typescript 5.8.0-dev
+typeToString(Test): { prop1: Wrapper<"hello">; }
+quickinfo:          type Test = { prop1: Wrapper<"hello">; }
+FAIL: expected typeToString(Test) to be { prop1: "hello"; }
+FAIL: expected hover to be type Test = { prop1: "hello"; }
+

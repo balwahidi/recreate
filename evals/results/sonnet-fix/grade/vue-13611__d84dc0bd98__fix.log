@@ -1,0 +1,113 @@
+===== run 1: exit 1
+ Vitest  "environmentMatchGlobs" is deprecated. Use "workspace" to define different configurations instead.
+ Vitest  "environmentMatchGlobs" is deprecated. Use "workspace" to define different configurations instead.
+ Vitest  "environmentMatchGlobs" is deprecated. Use "workspace" to define different configurations instead.
+
+ RUN  v3.1.4 /root/grade/vue-13611/repo
+
+ ✓ |unit| packages/compiler-core/__tests__/transforms/vSlot.spec.ts (28 tests) 60ms
+ ❯ |unit| packages/runtime-core/__tests__/componentSlots.spec.ts (17 tests | 2 failed) 46ms
+   ✓ component: slots > initSlots: instance.slots should be set correctly 8ms
+   ✓ component: slots > initSlots: instance.slots should remove compiler marker if parent is using manual render function 1ms
+   ✓ component: slots > initSlots: ensure compiler marker non-enumerable 2ms
+   × component: slots > initSlots: should normalize object slots (when value is null, string, array) 9ms
+     → expected "[Vue warn]: Non-function value encountered for slot "_inner". Prefer function slots for better performance." to have been warned.
+
+Actual messages:
+
+ - [Vue warn]: Non-function value encountered for slot "header". Prefer function slots for better performance.
+ - [Vue warn]: Non-function value encountered for slot "footer". Prefer function slots for better performance.
+     → test case threw unexpected warnings:
+ - [Vue warn]: Non-function value encountered for slot "header". Prefer function slots for better performance.
+ - [Vue warn]: Non-function value encountered for slot "footer". Prefer function slots for better performance.
+   ✓ component: slots > initSlots: should normalize object slots (when value is function) 2ms
+   ✓ component: slots > initSlots: instance.slots should be set correctly (when vnode.shapeFlag is not SLOTS_CHILDREN) 1ms
+   ✓ component: slots > updateSlots: instance.slots should be updated correctly (when slotType is number) 4ms
+   ✓ component: slots > updateSlots: instance.slots should be updated correctly (when slotType is null) 2ms
+   ✓ component: slots > updateSlots: instance.slots should be update correctly (when vnode.shapeFlag is not SLOTS_CHILDREN) 2ms
+   ✓ component: slots > should respect $stable flag with a value of true 1ms
+   ✓ component: slots > should respect $stable flag with a value of false 1ms
+   ✓ component: slots > should not warn when mounting another app in setup 1ms
+   ✓ component: slots > basic warn 1ms
+   ✓ component: slots > basic warn when mounting another app in setup 1ms
+   ✓ component: slots > should not warn when render in setup 1ms
+   ✓ component: slots > basic warn when render in setup 1ms
+   × component: slots > slot name starts with underscore 5ms
+     → slots._foo is not a function
+     → test case threw unexpected warnings:
+ - [Vue warn]: Unhandled error during execution of render function
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| packages/runtime-core/__tests__/componentSlots.spec.ts > component: slots > initSlots: should normalize object slots (when value is null, string, array)
+Error: expected "[Vue warn]: Non-function value encountered for slot "_inner". Prefer function slots for better performance." to have been warned.
+
+Actual messages:
+
+ - [Vue warn]: Non-function value encountered for slot "header". Prefer function slots for better performance.
+ - [Vue warn]: Non-function value encountered for slot "footer". Prefer function slots for better performance.
+ ❯ packages/runtime-core/__tests__/componentSlots.spec.ts:80:7
+     78|     expect(
+     79|       '[Vue warn]: Non-function value encountered for slot "_inner". P…
+     80|     ).toHaveBeenWarned()
+       |       ^
+     81| 
+     82|     expect(
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  |unit| packages/runtime-core/__tests__/componentSlots.spec.ts > component: slots > initSlots: should normalize object slots (when value is null, string, array)
+Error: test case threw unexpected warnings:
+ - [Vue warn]: Non-function value encountered for slot "header". Prefer function slots for better performance.
+ - [Vue warn]: Non-function value encountered for slot "footer". Prefer function slots for better performance.
+ ❯ scripts/setup-vitest.ts:101:11
+     99|   warn.mockRestore()
+    100|   if (nonAssertedWarnings.length) {
+    101|     throw new Error(
+       |           ^
+    102|       `test case threw unexpected warnings:\n - ${nonAssertedWarnings.…
+    103|         '\n - ',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  |unit| packages/runtime-core/__tests__/componentSlots.spec.ts > component: slots > slot name starts with underscore
+TypeError: slots._foo is not a function
+ ❯ Proxy.<anonymous> packages/runtime-core/__tests__/componentSlots.spec.ts:454:28
+    452|     const Comp = {
+    453|       setup(_: any, { slots }: any) {
+    454|         return () => slots._foo()
+       |                            ^
+    455|       },
+    456|     }
+ ❯ Module.renderComponentRoot packages/runtime-core/src/componentRenderUtils.ts:94:17
+ ❯ ReactiveEffect.componentUpdateFn [as fn] packages/runtime-core/src/renderer.ts:1365:47
+ ❯ ReactiveEffect.run packages/reactivity/src/effect.ts:168:19
+ ❯ setupRenderEffect packages/runtime-core/src/renderer.ts:1587:5
+ ❯ mountComponent packages/runtime-core/src/renderer.ts:1231:7
+ ❯ processComponent packages/runtime-core/src/renderer.ts:1154:9
+ ❯ patch packages/runtime-core/src/renderer.ts:443:11
+ ❯ ReactiveEffect.componentUpdateFn [as fn] packages/runtime-core/src/renderer.ts:1372:11
+ ❯ ReactiveEffect.run packages/reactivity/src/effect.ts:168:19
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+ FAIL  |unit| packages/runtime-core/__tests__/componentSlots.spec.ts > component: slots > slot name starts with underscore
+Error: test case threw unexpected warnings:
+ - [Vue warn]: Unhandled error during execution of render function
+ ❯ scripts/setup-vitest.ts:101:11
+     99|   warn.mockRestore()
+    100|   if (nonAssertedWarnings.length) {
+    101|     throw new Error(
+       |           ^
+    102|       `test case threw unexpected warnings:\n - ${nonAssertedWarnings.…
+    103|         '\n - ',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  2 failed | 43 passed (45)
+   Start at  21:05:25
+   Duration  1.52s (transform 1.33s, setup 39ms, collect 1.91s, tests 105ms, environment 0ms, prepare 176ms)
+
+

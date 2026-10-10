@@ -1,0 +1,36 @@
+===== run 1: exit 1
+pydantic 2.11.4 python 3.13.16
+[BUG] example 1 (direct subclass of BaseModel): Direct(...) in 2nd thread -> PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
+[ok ] example 1 (after rebuild finished): Direct(id="x") works
+[BUG] example 2 (chain of inheritance): C.model_validate(...) in 2nd thread -> B(id='ok1')
+[BUG] example 2 (attribute access): c1.name raises AttributeError("'B' object has no attribute 'name'")
+[ok ] example 2 (after rebuild finished): C.model_validate(...) -> C(id='ok2', name='test', slow='')
+[BUG] example 3 (explicit model_rebuild(force=True) of a complete model): Child3.model_validate(...) in 2nd thread -> Base3(x=1)
+[BUG] example 4 (unsynchronised threads): attempt 947: Leaf.model_validate() gave ['Base', 'Base', 'Base', 'Base', 'Base', 'Base', 'Leaf', 'Leaf']
+
+BUG REPRODUCED
+
+===== run 2: exit 1
+pydantic 2.11.4 python 3.13.16
+[BUG] example 1 (direct subclass of BaseModel): Direct(...) in 2nd thread -> PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
+[ok ] example 1 (after rebuild finished): Direct(id="x") works
+[BUG] example 2 (chain of inheritance): C.model_validate(...) in 2nd thread -> B(id='ok1')
+[BUG] example 2 (attribute access): c1.name raises AttributeError("'B' object has no attribute 'name'")
+[ok ] example 2 (after rebuild finished): C.model_validate(...) -> C(id='ok2', name='test', slow='')
+[BUG] example 3 (explicit model_rebuild(force=True) of a complete model): Child3.model_validate(...) in 2nd thread -> Base3(x=1)
+[BUG] example 4 (unsynchronised threads): attempt 426: Leaf.model_validate() gave ['Base', 'Leaf', 'Leaf', 'Leaf', 'Leaf', 'Leaf', 'Leaf', 'Leaf']
+
+BUG REPRODUCED
+
+===== run 3: exit 1
+pydantic 2.11.4 python 3.13.16
+[BUG] example 1 (direct subclass of BaseModel): Direct(...) in 2nd thread -> PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
+[ok ] example 1 (after rebuild finished): Direct(id="x") works
+[BUG] example 2 (chain of inheritance): C.model_validate(...) in 2nd thread -> B(id='ok1')
+[BUG] example 2 (attribute access): c1.name raises AttributeError("'B' object has no attribute 'name'")
+[ok ] example 2 (after rebuild finished): C.model_validate(...) -> C(id='ok2', name='test', slow='')
+[BUG] example 3 (explicit model_rebuild(force=True) of a complete model): Child3.model_validate(...) in 2nd thread -> Base3(x=1)
+[BUG] example 4 (unsynchronised threads): attempt 1153: Leaf.model_validate() gave ['Base', 'Base', 'Leaf', 'Leaf', 'Leaf', 'Leaf', 'Leaf', 'Leaf']
+
+BUG REPRODUCED
+

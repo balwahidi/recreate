@@ -1,0 +1,27 @@
+===== run 1: exit 0
+example 1, forward reference:
+  -> ok
+example 1, defer_build:
+  -> ok
+example 2, defer_build:
+  -> ok
+all scenarios behaved as expected
+
+===== run 2: exit 0
+example 1, forward reference:
+  -> ok
+example 1, defer_build:
+  -> ok
+example 2, defer_build:
+  -> ok
+all scenarios behaved as expected
+
+===== run 3: exit 0
+example 1, forward reference:
+  -> ok
+example 1, defer_build:
+  -> ok
+example 2, defer_build:
+  -> ok
+all scenarios behaved as expected
+

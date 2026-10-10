@@ -1,0 +1,21 @@
+===== run 1: exit 1
+--- FAIL: Test_RunParallelStress (0.29s)
+    help_flag_parallel_test.go:84: unexpected panic in round 2147: runtime error: invalid memory address or nil pointer dereference
+FAIL
+FAIL	github.com/urfave/cli/v3	0.294s
+FAIL
+
+===== run 2: exit 1
+--- FAIL: Test_RunParallelStress (0.07s)
+    help_flag_parallel_test.go:84: unexpected panic in round 715: runtime error: invalid memory address or nil pointer dereference
+FAIL
+FAIL	github.com/urfave/cli/v3	0.075s
+FAIL
+
+===== run 3: exit 1
+--- FAIL: Test_RunParallelStress (0.03s)
+    help_flag_parallel_test.go:84: unexpected panic in round 310: runtime error: invalid memory address or nil pointer dereference
+FAIL
+FAIL	github.com/urfave/cli/v3	0.038s
+FAIL
+

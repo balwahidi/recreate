@@ -1,0 +1,9 @@
+===== run 1: exit 0
+OK: models are usable from another thread while being rebuilt
+
+===== run 2: exit 0
+OK: models are usable from another thread while being rebuilt
+
+===== run 3: exit 0
+OK: models are usable from another thread while being rebuilt
+

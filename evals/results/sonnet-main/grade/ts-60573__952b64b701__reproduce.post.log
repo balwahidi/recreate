@@ -1,0 +1,5 @@
+===== run 1: exit 0
+ts 5.8.0-dev
+Test = { prop1: "hello"; }
+OK
+

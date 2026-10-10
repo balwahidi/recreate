@@ -1,0 +1,5 @@
+===== run 1: exit 0
+code: const test = 9.000e+3 // 9000
+reported: []
+OK: no report
+

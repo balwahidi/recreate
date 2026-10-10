@@ -1,0 +1,15 @@
+Per run:
+  p10 eslint-19637        investigate none c08dfb7329 None                     R=0 S=0 A=0 H=None prod=['lib/rules/no-unused-expressions.js'] tokens=72713 tools=19 s=158
+  p3  eslint-19637        reproduce   none a19b435ddd fail_to_pass             R=1 S=1 A=0 H=None prod=[] tokens=55568 tools=11 s=47
+  p2  eslint-19924        reproduce   none 278e86b1ef passes_pre               R=0 S=0 A=0 H=None prod=[] tokens=52677 tools=9 s=153
+  p1  eslint-19957        reproduce   none 9991fba99b fail_to_pass             R=1 S=1 A=0 H=None prod=[] tokens=54676 tools=8 s=33
+  p9  eslint-20209-fixed  reproduce   none dde41caa01 None                     R=0 S=0 A=0 H=False prod=[] tokens=67831 tools=12 s=93
+  p6  pydantic-11849      reproduce   none 90e235621a fails_both               R=0 S=0 A=0 H=None prod=[] tokens=79445 tools=16 s=128
+  p7  ripgrep-3009        reproduce   none c68e820f51 passes_pre               R=0 S=0 A=0 H=None prod=[] tokens=62996 tools=20 s=272
+  p8  ts-60573            reproduce   none c23ecc3639 passes_pre               R=0 S=0 A=0 H=None prod=[] tokens=64032 tools=18 s=243
+  p5  urfave-cli-2176     reproduce   none 851292345a fail_to_pass             R=1 S=1 A=0 H=None prod=[] tokens=59624 tools=9 s=185
+  p11 vue-13611           investigate none 4c1b395207 None                     R=0 S=0 A=0 H=None prod=['packages/runtime-core/src/componentSlots.ts'] tokens=85317 tools=27 s=356
+  p4  vue-13611           reproduce   none 23b15d9dc2 fail_to_pass             R=1 S=1 A=0 H=None prod=[] tokens=64611 tools=13 s=94
+
+R pairs: v5-only 0, v3-only 0, net 0 over 8 pairs
+none: R 4/8  S 4/8  A 0  P 2  H 0/1  median tokens 64032  median tools 13  median s 153.005

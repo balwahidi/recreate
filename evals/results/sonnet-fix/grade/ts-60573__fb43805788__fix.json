@@ -1,0 +1,20 @@
+{
+  "label": "ts-60573__fb43805788__fix",
+  "case": "ts-60573",
+  "files": [
+    "src/compiler/checker.ts",
+    "src/compiler/expressionToTypeNode.ts",
+    "src/compiler/types.ts",
+    "tests/baselines/reference/typeAssertionInPropertyOfMappedType.errors.txt",
+    "tests/baselines/reference/typeAssertionInPropertyOfMappedType.js",
+    "tests/baselines/reference/typeAssertionInPropertyOfMappedType.symbols",
+    "tests/baselines/reference/typeAssertionInPropertyOfMappedType.types",
+    "tests/cases/compiler/typeAssertionInPropertyOfMappedType.ts"
+  ],
+  "test_in_patch": true,
+  "F": true,
+  "applied": true,
+  "codes": [
+    0
+  ]
+}

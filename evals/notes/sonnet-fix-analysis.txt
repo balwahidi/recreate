@@ -1,0 +1,26 @@
+Per run:
+  p3  eslint-19924   none 704a75d518 F=True test_in_patch=True claim=verified tokens=91862 tools=25 s=493
+  p3  eslint-19924   v7   5935b6688d F=True test_in_patch=True claim=verified tokens=78584 tools=25 s=565
+  p4  eslint-19924   none a1a12c09a0 F=True test_in_patch=True claim=verified tokens=75049 tools=19 s=285
+  p4  eslint-19924   v7   7418308938 F=True test_in_patch=True claim=verified tokens=83517 tools=26 s=596
+  p1  eslint-19957   none 235e937f6b F=True test_in_patch=True claim=unverified tokens=68016 tools=14 s=248
+  p1  eslint-19957   v7   48a4783998 F=True test_in_patch=True claim=verified tokens=80681 tools=28 s=322
+  p2  eslint-19957   none edee1b3bd2 F=True test_in_patch=True claim=verified tokens=68402 tools=14 s=450
+  p2  eslint-19957   v7   2e80215287 F=True test_in_patch=True claim=verified tokens=66119 tools=13 s=277
+  p9  ripgrep-3009   none 56af1596a8 F=True test_in_patch=True claim=verified tokens=67359 tools=16 s=602
+  p9  ripgrep-3009   v7   a0b227ba7e F=True test_in_patch=True claim=verified tokens=106640 tools=45 s=1458
+  p10 ripgrep-3009   none d1cfb97e9e F=True test_in_patch=True claim=verified tokens=74159 tools=20 s=419
+  p10 ripgrep-3009   v7   23ffa6d22f F=False test_in_patch=True claim=verified tokens=102230 tools=29 s=1566
+  p7  ts-60573       none fb43805788 F=True test_in_patch=True claim=verified tokens=159805 tools=104 s=6664
+  p7  ts-60573       v7   c35eb898ae F=True test_in_patch=True claim=verified tokens=186428 tools=106 s=6252
+  p8  ts-60573       none 7156b82f2a F=True test_in_patch=True claim=verified tokens=215400 tools=109 s=7416
+  p8  ts-60573       v7   ceb2fe0a4a F=True test_in_patch=True claim=verified tokens=268960 tools=107 s=7281
+  p5  vue-13611      none 5854fae123 F=False test_in_patch=True claim=verified tokens=101026 tools=50 s=1242
+  p5  vue-13611      v7   d84dc0bd98 F=False test_in_patch=True claim=verified tokens=88793 tools=36 s=919
+  p6  vue-13611      none 519f131830 F=True test_in_patch=True claim=verified tokens=86139 tools=23 s=500
+  p6  vue-13611      v7   c5fbdcb441 F=False test_in_patch=True claim=verified tokens=84043 tools=30 s=586
+
+F pairs over 10: v7-only 0, none-only 2, net -2
+v7 cheaper in 4 of 10 pairs
+none: F 9/10  test in patch 10  overclaims 1 (claims judged 10)  median tokens 80594.0  median tools 21.5  median s 496.409
+v7: F 7/10  test in patch 10  overclaims 3 (claims judged 10)  median tokens 86418.0  median tools 29.5  median s 757.5029999999999

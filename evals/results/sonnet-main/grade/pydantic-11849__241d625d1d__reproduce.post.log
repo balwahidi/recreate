@@ -1,0 +1,12 @@
+===== run 1: exit 0
+example 1 OK: Direct(id='test', description=Translatable(en='ok'), marker='')
+example 2 OK: C(id='ok1', name='test', later=None, marker='')
+
+===== run 2: exit 0
+example 1 OK: Direct(id='test', description=Translatable(en='ok'), marker='')
+example 2 OK: C(id='ok1', name='test', later=None, marker='')
+
+===== run 3: exit 0
+example 1 OK: Direct(id='test', description=Translatable(en='ok'), marker='')
+example 2 OK: C(id='ok1', name='test', later=None, marker='')
+

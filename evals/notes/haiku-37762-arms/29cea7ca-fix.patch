@@ -1,0 +1,31 @@
+diff --git a/packages/react-reconciler/src/ReactFiberWorkLoop.js b/packages/react-reconciler/src/ReactFiberWorkLoop.js
+index d049562..b8b2c46 100644
+--- a/packages/react-reconciler/src/ReactFiberWorkLoop.js
++++ b/packages/react-reconciler/src/ReactFiberWorkLoop.js
+@@ -3536,6 +3536,12 @@ function completeRoot(
+ ): void {
+   root.cancelPendingCommit = null;
+ 
++  // Passive effects flushed below can synchronously render and commit this
++  // root again (e.g. a passive effect that writes to a store or calls
++  // flushSync). `finishedWork` was rendered on top of the current tree, so
++  // remember that tree to detect when the flush has replaced it.
++  const currentBeforeFlush = root.current;
++
+   do {
+     // `flushPassiveEffects` will call `flushSyncUpdateQueue` at the end, which
+     // means `flushPassiveEffects` will sometimes result in additional
+@@ -3551,6 +3557,13 @@ function completeRoot(
+     throw new Error('Should not already be working.');
+   }
+ 
++  if (root.current !== currentBeforeFlush) {
++    // The flush above committed this root, so `finishedWork` is stale. It was
++    // rendered on top of a tree that is no longer current, and committing it
++    // now would overwrite that commit. Skip it.
++    return;
++  }
++
+   if (enableProfilerTimer && enableComponentPerformanceTrack) {
+     // Log the previous render phase once we commit. I.e. we weren't interrupted.
+     setCurrentTrackFromLanes(lanes);

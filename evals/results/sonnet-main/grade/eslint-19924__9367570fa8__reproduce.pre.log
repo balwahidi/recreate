@@ -1,0 +1,17 @@
+===== run 1: exit 2
+node v22.22.0, ulimit -n 1024, files: 9000
+
+Oops! Something went wrong! :(
+
+ESLint: 9.30.1
+
+Error: EMFILE: too many open files, open '/tmp/emfile-repro-9000/file1902.js'
+    at async open (node:internal/fs/promises:636:25)
+    at async Object.writeFile (node:internal/fs/promises:1205:14)
+    at async Promise.all (index 1005)
+    at async ESLint.outputFixes (/root/grade/eslint-19924/repo/lib/eslint/eslint.js:533:3)
+    at async Object.execute (/root/grade/eslint-19924/repo/lib/cli.js:637:4)
+    at async main (/root/grade/eslint-19924/repo/bin/eslint.js:175:19)
+eslint exit code: 2
+files still unfixed: 7996
+

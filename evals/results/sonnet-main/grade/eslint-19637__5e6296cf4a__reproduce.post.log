@@ -1,0 +1,6 @@
+===== run 1: exit 0
+(node:1605) ESLintIgnoreWarning: The ".eslintignore" file is no longer supported. Switch to using the "ignores" property in "eslint.config.js": https://eslint.org/docs/latest/use/configure/migration-guide#ignoring-files
+(Use `node --trace-warnings ...` to show where the warning was created)
+ESLint 9.25.0, ecmaVersion 3, input: "'use strict';\nvar a = 1;\n"
+OK: no problems reported
+

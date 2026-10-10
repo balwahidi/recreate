@@ -1,0 +1,12 @@
+===== run 1: exit 1
+(node:9917) ESLintIgnoreWarning: The ".eslintignore" file is no longer supported. Switch to using the "ignores" property in "eslint.config.js": https://eslint.org/docs/latest/use/configure/migration-guide#ignoring-files
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+/root/grade/eslint-19957/repo/repro/9000.js
+  3:14  error  This number literal will lose precision at runtime  no-loss-of-precision
+  4:13  error  This number literal will lose precision at runtime  no-loss-of-precision
+  5:15  error  This number literal will lose precision at runtime  no-loss-of-precision
+
+✖ 3 problems (3 errors, 0 warnings)
+
+

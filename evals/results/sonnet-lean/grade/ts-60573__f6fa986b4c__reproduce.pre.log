@@ -1,0 +1,6 @@
+===== run 1: exit 1
+TypeScript 5.8.0-dev
+Expected: type Test = { prop1: "hello"; }
+Actual:   type Test = { prop1: Wrapper<"hello">; }
+FAIL: Test is not the expected type
+

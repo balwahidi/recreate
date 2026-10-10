@@ -1,0 +1,7 @@
+===== run 1: exit 1
+(node:1580) ESLintIgnoreWarning: The ".eslintignore" file is no longer supported. Switch to using the "ignores" property in "eslint.config.js": https://eslint.org/docs/latest/use/configure/migration-guide#ignoring-files
+(Use `node --trace-warnings ...` to show where the warning was created)
+ESLint 9.25.0, ecmaVersion 3, input: "'use strict';\nvar a = 1;\n"
+  1:1 no-unused-expressions: Expected an assignment or function call and instead saw an expression.
+FAIL: expected no problems for 'use strict'
+

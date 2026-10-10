@@ -1,0 +1,613 @@
+{
+ "H:21c0eb7984": true,
+ "H:2ac077516f": true,
+ "H:2b3ff514e9": true,
+ "H:6feb408b76": true,
+ "H:9ef5cb4a5f": true,
+ "H:bb416f538b": true,
+ "H:dde41caa01": false,
+ "H:e22e92e9a0": true,
+ "H:e518a05126": true,
+ "H:ef7914247c": true,
+ "H:f97c49cf03": true,
+ "eslint-19637__0b16756f89__reproduce": {
+  "note": "pre: ecmaVersion 3 gives 2 no-unused-expressions reports (1:1, 5:3) in the use-strict repro (directive inferred from script name, not printed); post: 0 problems",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "eslint-19637__1a0f8f0cf5__reproduce": {
+  "note": "pre: 'use strict' reported by no-unused-expressions with ecmaVersion 3 (file top and function body); post: no messages",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "eslint-19637__1fa7cad3e5__reproduce": {
+  "note": "'use strict' reported pre (ES3), clean post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "eslint-19637__4c502723fd__reproduce": {
+  "note": "'use strict' directives reported pre, clean post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "eslint-19637__4ece10a39d__reproduce": {
+  "note": "'use strict' reported pre, clean post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "eslint-19637__5c54c6ea3c__reproduce": {
+  "note": "'use strict' reported pre, clean post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "eslint-19637__5e6296cf4a__reproduce": {
+  "note": "'use strict' reported pre, clean post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "eslint-19637__9fb0802a28__reproduce": {
+  "note": "pre: assertion shows 'use strict' reported at 1:1 by no-unused-expressions (ES3); post: no problems",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "eslint-19637__a19b435ddd__reproduce": {
+  "note": "'use strict' directive reported pre, clean post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "eslint-19637__d7122b05ee__reproduce": {
+  "note": "'use strict' reported pre (ES3 file), clean post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "eslint-19637__dc918f07e4__reproduce": {
+  "note": "'use strict' reported pre, clean post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "eslint-19637__ed30c76c0d__reproduce": {
+  "note": "'use strict' reported with ecmaVersion 3 pre, clean post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "eslint-19637__ef54e26e66__reproduce": {
+  "note": "pre: 'use strict' reported at 1:1 by no-unused-expressions; post: no problems",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "eslint-19924__1b4d8a62e5__reproduce": {
+  "note": "pre: EMFILE from writeFile in ESLint.outputFixes, 1997/3000 unfixed; post: all files fixed, no EMFILE",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "eslint-19924__1bdf00b2fb__reproduce": {
+  "note": "EMFILE in outputFixes pre, all fixed post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "eslint-19924__278e86b1ef__reproduce": {
+  "note": "EMFILE in outputFixes pre, fixed post; script exits 0 on both sides",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "eslint-19924__37dada2dc6__reproduce": {
+  "note": "EMFILE in outputFixes pre, all fixed post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "eslint-19924__5e1f5fc7f6__reproduce": {
+  "note": "EMFILE in outputFixes pre, all fixed post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "eslint-19924__6230367be7__reproduce": {
+  "note": "EMFILE in outputFixes pre, all fixed post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "eslint-19924__67029e898f__reproduce": {
+  "note": "EMFILE in outputFixes pre, fixed post; script prints eslint's exit code but itself exits 0",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "eslint-19924__7392545745__reproduce": {
+  "note": "EMFILE pre (600 files, fd 256), all fixed post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "eslint-19924__784f28b00c__reproduce": {
+  "note": "EMFILE in outputFixes pre, 3000/3000 fixed post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "eslint-19924__866f289585__reproduce": {
+  "note": "EMFILE in outputFixes pre, fixed post; script prints eslint's exit code but exits 0",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "eslint-19924__9367570fa8__reproduce": {
+  "note": "EMFILE in outputFixes pre, fixed post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "eslint-19924__a8cb098daf__reproduce": {
+  "note": "EMFILE pre, all fixed post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "eslint-19924__a91b1fc80d__reproduce": {
+  "note": "pre: EMFILE from writeFile in ESLint.outputFixes, 1997 unfixed; post: all files fixed, exit 0",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "eslint-19924__b04c4bf6f1__reproduce": {
+  "note": "EMFILE in outputFixes pre, all fixed post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "eslint-19924__c53b576813__reproduce": {
+  "note": "EMFILE in outputFixes pre, 3000/3000 fixed post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "eslint-19924__d0c544cb96__reproduce": {
+  "note": "EMFILE in outputFixes/writeFile pre, all fixed post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "eslint-19924__d3c635b434__reproduce": {
+  "note": "EMFILE in outputFixes pre, fixed post; script prints exit code and unfixed count but exits 0",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "eslint-19924__d603504044__reproduce": {
+  "note": "pre: --fix crashes with EMFILE from writeFile in outputFixes; post: all 3000 files fixed, no EMFILE",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "eslint-19924__df38e6bd87__reproduce": {
+  "note": "EMFILE pre (fd 512), all fixed post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "eslint-19924__e512745906__reproduce": {
+  "note": "EMFILE in outputFixes pre, fixed post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "eslint-19924__f8a88b4ac1__reproduce": {
+  "note": "pre: EMFILE from writeFile in ESLint.outputFixes, 1997/3000 unfixed; post: all fixed, exit 0",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "eslint-19957__069f5ca44e__reproduce": {
+  "note": "pre: 9.000e+3 (and similar) flagged by no-loss-of-precision; post: none flagged",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "eslint-19957__2da1266293__reproduce": {
+  "note": "pre: RuleTester valid case 'var x = 9.000e+3' gets noLossOfPrecision report; post: passes, not flagged",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "eslint-19957__4c1e01eaa2__reproduce": {
+  "note": "9.000e+3 flagged pre, clean post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "eslint-19957__73c1df2207__reproduce": {
+  "note": "reported literal flagged pre, clean post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "eslint-19957__9991fba99b__reproduce": {
+  "note": "reported literals flagged pre, clean post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "eslint-19957__a752c6aded__reproduce": {
+  "note": "reported literal flagged pre, clean post; extra literals all pass post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "eslint-19957__ac90aa5d75__reproduce": {
+  "note": "CLI flags 9.000e+3 pre, clean post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "eslint-19957__c238dd49ba__reproduce": {
+  "note": "pre: 9.000e+3 (and similar trailing-zero forms) flagged; post: none flagged",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "eslint-19957__db792d1ab0__reproduce": {
+  "note": "reported literals flagged pre, clean post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "eslint-19957__ef02928887__reproduce": {
+  "note": "reported literals flagged pre, clean post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "eslint-19957__ef2906f438__reproduce": {
+  "note": "pre: 'const test = 9.000e+3' reported at 1:14; post: no problems",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "eslint-19957__ef85c19e06__reproduce": {
+  "note": "reported literal flagged pre, clean post; extra literals pass post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "eslint-19957__fb98e2690d__reproduce": {
+  "note": "9.000e+3 flagged pre, clean post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "pydantic-11849__0679501fa6__reproduce": {
+  "note": "BaseModel error and B-for-C pre 3/3, correct classes post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "pydantic-11849__0d0e19d813__reproduce": {
+  "note": "pre: BaseModel-instantiated-directly error and B instead of C during concurrent rebuild in all 3 runs; post: ok in all 3 runs",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "pydantic-11849__224203edc5__reproduce": {
+  "note": "pre: 'BaseModel cannot be instantiated directly' and B returned instead of C in all 3 runs; post: correct instances in all 3 runs",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "pydantic-11849__241d625d1d__reproduce": {
+  "note": "BaseModel error and B-for-C pre 3/3, OK post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "pydantic-11849__27522a6ab7__reproduce": {
+  "note": "pre: BaseModel-instantiated-directly and B-instead-of-C symptoms in all 3 runs; post: 0 symptoms in 40 iterations x3",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "pydantic-11849__4dd398ac5c__reproduce": {
+  "note": "pre: BaseModel-instantiated-directly / B instead of C under concurrent threads in all 3 runs; post: none in 3000 rounds x3",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "pydantic-11849__5b1b1a6d00__reproduce": {
+  "note": "wrong class / BaseModel error pre 3/3; post 2/3 clean, 1/3 trips on an unrelated RuntimeError (dictionary changed size during iteration) because the check counts any error",
+  "over_assertion": true,
+  "symptom": true
+ },
+ "pydantic-11849__77bb66112e__reproduce": {
+  "note": "BaseModel error and wrong class pre, 0/100 post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "pydantic-11849__8a27eb054f__reproduce": {
+  "note": "BaseModel error and B-for-C pre 3/3, OK post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "pydantic-11849__90e235621a__reproduce": {
+  "note": "wrong class and BaseModel error pre; post fails on the script's own 'timed out' instrumentation tied to rebuild internals",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "pydantic-11849__dacf8974a1__reproduce": {
+  "note": "BaseModel error and B-for-C pre, 300 clean trials post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "pydantic-11849__dae4fa4484__reproduce": {
+  "note": "wrong class / BaseModel error pre 3/3, 0/100 post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "pydantic-11849__febc80d9fc__reproduce": {
+  "note": "BaseModel error and B-for-C pre 3/3, OK post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "ripgrep-3009__1e967925f2__reproduce": {
+  "note": "hang pre (timeout 124), walk returns post; reporter's should_panic message assertion fails post (exit 101)",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "ripgrep-3009__36df0aaebf__reproduce": {
+  "note": "pre: visitor panics 'oops!' then walk exceeds 10s deadline, test fails (101) in all runs; post: passes in 0.1-0.3s in all 3 runs",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "ripgrep-3009__393bff8e2a__reproduce": {
+  "note": "pre: visitor panic 'oops!' then 40-thread walk hits 10s deadline, fails in all 3 runs; post: passes in ~0.1s in all 3 runs",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "ripgrep-3009__629867e318__reproduce": {
+  "note": "hang pre (exit status 124 printed), walk returns post; '; echo' swallows exit status; reporter's should_panic message assertion fails post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "ripgrep-3009__9fb9ca61ef__reproduce": {
+  "note": "hang pre (timeout 124, 3/3), test passes post: walk returns",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "ripgrep-3009__a31310c023__reproduce": {
+  "note": "watchdog catches the hang pre (15 s); post the walk returns but the check fails on the propagated panic, which the report never said should be swallowed",
+  "over_assertion": true,
+  "symptom": true
+ },
+ "ripgrep-3009__a6804c3e3c__reproduce": {
+  "note": "watchdog catches the hang pre (10 s), test passes post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "ripgrep-3009__a71b4b05f9__reproduce": {
+  "note": "watchdog catches the hang pre (10 s); post the walk returns but the check fails on the propagated panic",
+  "over_assertion": true,
+  "symptom": true
+ },
+ "ripgrep-3009__b7cac4025c__reproduce": {
+  "note": "pre: panic_in_parallel times out (124) in all 3 runs; post: walk returns in ~0.1s but should_panic fails because panic message lacks expected 'oops!' substring",
+  "over_assertion": true,
+  "symptom": true
+ },
+ "ripgrep-3009__bd75270ed7__reproduce": {
+  "note": "pre: panic_in_parallel times out (124) in all 3 runs; post: walk returns but should_panic fails on panic message not containing 'oops!'",
+  "over_assertion": true,
+  "symptom": true
+ },
+ "ripgrep-3009__c154c8876a__reproduce": {
+  "note": "hang pre (exit=124 printed), walk returns post; '; echo' swallows exit status; reporter's should_panic message assertion fails post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "ripgrep-3009__c68e820f51__reproduce": {
+  "note": "hang pre (124 printed), walk returns post; '; echo' swallows exit status; reporter's panic-message assertion fails post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "ripgrep-3009__ce7ae07610__reproduce": {
+  "note": "hang pre (timeout 124), walk returns post; reporter's should_panic message assertion fails post (exit 101)",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "ts-60573__0208a8d9b9__reproduce": {
+  "note": "pre: quick info and typeToString give { prop1: Wrapper<\"hello\">; }; post: { prop1: \"hello\"; }",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "ts-60573__1e27a02a2b__reproduce": {
+  "note": "pre: Test = { prop1: Wrapper<\"hello\">; }; post: { prop1: \"hello\"; }",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "ts-60573__2a02f47ca2__reproduce": {
+  "note": "symptom right both sides; check runs tsc, which exits 2 by design on both sides",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "ts-60573__35c7823d8b__reproduce": {
+  "note": "pre: quick info Test = { prop1: Wrapper<\"hello\">; }; post: { prop1: \"hello\"; }",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "ts-60573__433e91e3bb__reproduce": {
+  "note": "Wrapper<\"hello\"> pre, \"hello\" post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "ts-60573__5017d7d8f0__reproduce": {
+  "note": "Wrapper<\"hello\"> pre, \"hello\" post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "ts-60573__524973db86__reproduce": {
+  "note": "Wrapper<\"hello\"> pre (type and quickinfo), \"hello\" post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "ts-60573__5ce63c6792__reproduce": {
+  "note": "Wrapper<\"hello\"> displayed pre, \"hello\" post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "ts-60573__61ec5f8e77__reproduce": {
+  "note": "Wrapper<\"hello\"> pre, \"hello\" post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "ts-60573__810635c432__reproduce": {
+  "note": "Wrapper<\"hello\"> pre, \"hello\" post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "ts-60573__8e79e0dc9b__reproduce": {
+  "note": "Wrapper<\"hello\"> pre, \"hello\" post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "ts-60573__952b64b701__reproduce": {
+  "note": "Wrapper<\"hello\"> pre, \"hello\" post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "ts-60573__9724dab909__reproduce": {
+  "note": "Wrapper<\"hello\"> pre, \"hello\" post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "ts-60573__bc1787e42a__reproduce": {
+  "note": "Wrapper<\"hello\"> pre, \"hello\" post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "ts-60573__c23ecc3639__reproduce": {
+  "note": "Wrapper<\"hello\"> displayed pre, \"hello\" post; tsc errors by design and script exits 0 on both sides",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "ts-60573__c7abe918d8__reproduce": {
+  "note": "Wrapper<\"hello\"> printed pre, \"hello\" post; print-only script exits 0 on both sides",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "ts-60573__d0df9187ff__reproduce": {
+  "note": "Wrapper<\"hello\"> pre, \"hello\" post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "ts-60573__d913f34ce1__reproduce": {
+  "note": "Wrapper<\"hello\"> pre, \"hello\" post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "ts-60573__f6559637b9__reproduce": {
+  "note": "pre: Test = { prop1: Wrapper<\"hello\">; }; post: { prop1: \"hello\"; }",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "ts-60573__f6fa986b4c__reproduce": {
+  "note": "Wrapper<\"hello\"> pre, \"hello\" post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "ts-60573__fcb495affd__reproduce": {
+  "note": "Wrapper<\"hello\"> pre, \"hello\" post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "urfave-cli-2176__0b1ab6e896__reproduce": {
+  "note": "pre: nil pointer panic in parallel help-flag test in 2 of 3 runs; post: ok in all 3 runs",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "urfave-cli-2176__389bf7d16f__reproduce": {
+  "note": "nil-pointer panic pre 3/3, none post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "urfave-cli-2176__444b087023__reproduce": {
+  "note": "pre: nil pointer dereference panic in help-parallel repro test in all 3 runs; post: ok in all 3 runs",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "urfave-cli-2176__6960999745__reproduce": {
+  "note": "nil-pointer panic 187/400000 pre, none post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "urfave-cli-2176__6cebc6f7b5__reproduce": {
+  "note": "nil-pointer panic pre 3/3, none post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "urfave-cli-2176__77c38ce53b__reproduce": {
+  "note": "nil-pointer panic 2/3 pre, none post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "urfave-cli-2176__851292345a__reproduce": {
+  "note": "nil-pointer panic pre 3/3, none post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "urfave-cli-2176__add2fdd01c__reproduce": {
+  "note": "nil-pointer panic pre 3/3, none post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "urfave-cli-2176__bb2c5e3229__reproduce": {
+  "note": "nil-pointer panic 236/160000 pre, none post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "urfave-cli-2176__c5a64de39b__reproduce": {
+  "note": "nil-pointer panic pre 3/3, none post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "urfave-cli-2176__d5de7a52de__reproduce": {
+  "note": "nil-pointer panic pre, none post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "urfave-cli-2176__e998f4fbaa__reproduce": {
+  "note": "pre: nil pointer panic running default help in parallel in all 3 runs; post: ok in all 3 runs",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "urfave-cli-2176__f5865e5208__reproduce": {
+  "note": "pre: nil pointer panics in parallel help-flag subtests in all 3 runs; post: ok in all 3 runs",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "vue-13611__23b15d9dc2__reproduce": {
+  "note": "_duration default rendered pre, template post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "vue-13611__3fad0081a1__reproduce": {
+  "note": "defaults rendered instead of templates pre, templates post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "vue-13611__593a35d3b9__reproduce": {
+  "note": "pre: reporter repro with conditional slot renders default content for _duration instead of template; post: passes",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "vue-13611__59ba64e467__reproduce": {
+  "note": "_duration default rendered pre, template post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "vue-13611__675211ddfa__reproduce": {
+  "note": "_duration default rendered pre, template post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "vue-13611__6e221d71d0__reproduce": {
+  "note": "_duration default rendered pre, template post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "vue-13611__81b7d9fa10__reproduce": {
+  "note": "pre: #_duration beside v-if slot template renders default-duration (control without v-if passes); post: both tests pass",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "vue-13611__83cb201d47__reproduce": {
+  "note": "_duration default rendered pre, template post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "vue-13611__91c4c93233__reproduce": {
+  "note": "pre: _slot1/_slot2 with v-if sibling render fallback1|fallback2 instead of one|two (controls pass); post: all 3 tests pass",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "vue-13611__a05ecc1172__reproduce": {
+  "note": "pre: _slot2/_duration beside conditionally rendered slot show default content; post: both tests pass",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "vue-13611__c1919b30b2__reproduce": {
+  "note": "underscore slots render defaults pre, templates post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "vue-13611__d44fb27221__reproduce": {
+  "note": "_slot2 default rendered pre, template post",
+  "over_assertion": false,
+  "symptom": true
+ },
+ "vue-13611__f2c75c31a1__reproduce": {
+  "note": "_slot2 default content rendered pre, template post",
+  "over_assertion": false,
+  "symptom": true
+ }
+}

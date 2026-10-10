@@ -1,0 +1,6 @@
+===== run 1: exit 0
+typescript 5.8.0-dev
+Test (displayed)        = { prop1: "hello"; }
+Test["prop1"] (actual)  = "hello"
+OK
+

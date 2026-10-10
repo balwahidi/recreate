@@ -1,0 +1,9 @@
+===== run 1: exit 1
+ESLint 9.25.0 (/root/grade/eslint-19637/repo)
+  [control] ecmaVersion 5, top of file: 0 message(s)
+  [control] ecmaVersion latest, top of file: 0 message(s)
+  [FAIL] ecmaVersion 3, top of file: 1:1 Expected an assignment or function call and instead saw an expression.
+  [FAIL] ecmaVersion 3, top of function body: 2:3 Expected an assignment or function call and instead saw an expression.
+
+BUG PRESENT: `no-unused-expressions` reported a 'use strict' directive.
+

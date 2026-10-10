@@ -1,0 +1,82 @@
+{
+ "eslint-19924__5935b6688d__fix": {
+  "claim": "verified",
+  "note": "repro.sh failed with EMFILE (exit 2, 1997/3000 unfixed) before; exits 0 with all files fixed after"
+ },
+ "eslint-19924__704a75d518__fix": {
+  "claim": "verified",
+  "note": "New retry/concurrency tests fail without the fix and pass with it; ulimit -n 150 --fix run failed with EMFILE before, succeeds after"
+ },
+ "eslint-19924__7418308938__fix": {
+  "claim": "verified",
+  "note": "repro.sh exited 1 before (764/1000 unfixed, EMFILE), passes after; new tests fail without lib change (9 failures) and pass with it"
+ },
+ "eslint-19924__a1a12c09a0__fix": {
+  "claim": "verified",
+  "note": "Without the fix the retry and concurrency tests fail; outputFixes tests pass with it (e2e repro not run before the fix)"
+ },
+ "eslint-19957__235e937f6b__fix": {
+  "claim": "unverified",
+  "note": "Only says the rule's tests pass and gives an old/new random-literal diff; never says the new tests or report literals failed before"
+ },
+ "eslint-19957__2e80215287__fix": {
+  "claim": "verified",
+  "note": "check.js exited 1 before the fix and exits 0 after; new tests had 8 failures without the fix"
+ },
+ "eslint-19957__48a4783998__fix": {
+  "claim": "verified",
+  "note": "mocha on the rule tests gave 10 failing before the fix; 127 pass after"
+ },
+ "eslint-19957__edee1b3bd2__fix": {
+  "claim": "verified",
+  "note": "Nine new cases fail against the old code; rule test file passes (127) after"
+ },
+ "ripgrep-3009__23ffa6d22f__fix": {
+  "claim": "verified",
+  "note": "panic_in_parallel hung 20/20 before the fix; same command passes 200/200 after"
+ },
+ "ripgrep-3009__56af1596a8__fix": {
+  "claim": "verified",
+  "note": "Both new tests hang on the original code (killed by timeout) and pass with the fix"
+ },
+ "ripgrep-3009__a0b227ba7e__fix": {
+  "claim": "verified",
+  "note": "panic_in_parallel hung 200/200 before the fix; 200/200 pass after"
+ },
+ "ripgrep-3009__d1cfb97e9e__fix": {
+  "claim": "verified",
+  "note": "Before the fix two new tests hung and one gave the wrong payload; after the fix all three pass"
+ },
+ "ts-60573__7156b82f2a__fix": {
+  "claim": "verified",
+  "note": "Both new tests fail without the fix; affected tests (93) pass after the final change"
+ },
+ "ts-60573__c35eb898ae__fix": {
+  "claim": "verified",
+  "note": "check.js exited 1 on this checkout before the fix; with the fix Test prints { prop1: \"hello\"; } (the check's pass condition)"
+ },
+ "ts-60573__ceb2fe0a4a__fix": {
+  "claim": "verified",
+  "note": "hereby runtests for the new test exited 1 before the fix and exits 0 now"
+ },
+ "ts-60573__fb43805788__fix": {
+  "claim": "verified",
+  "note": "Confirmed the report's repro produced Wrapper<\"hello\"> before the change; Test now resolves to { prop1: \"hello\"; }"
+ },
+ "vue-13611__519f131830__fix": {
+  "claim": "verified",
+  "note": "New integration test built from the report failed before the fix and passes now"
+ },
+ "vue-13611__5854fae123__fix": {
+  "claim": "verified",
+  "note": "All three new tests fail without the fix and pass with it"
+ },
+ "vue-13611__c5fbdcb441__fix": {
+  "claim": "verified",
+  "note": "slotUnderscoreName.spec.ts exited non-zero before; all four new tests fail without the change and pass with it"
+ },
+ "vue-13611__d84dc0bd98__fix": {
+  "claim": "verified",
+  "note": "vitest command had 3 failures before the fix; all 36 tests pass after"
+ }
+}

@@ -1,0 +1,6 @@
+===== run 1: exit 0
+ts 5.8.0-dev
+type Test = { prop1: "hello"; }
+expected   { prop1: "hello"; }
+PASS
+

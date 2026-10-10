@@ -1,0 +1,15 @@
+===== run 1: exit 1
+pydantic 2.11.4, python 3.13.16, 8 threads per round
+BUG REPRODUCED in round 42: 7 thread(s) saw the reported symptom, e.g.
+  Direct(...) raised PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
+
+===== run 2: exit 1
+pydantic 2.11.4, python 3.13.16, 8 threads per round
+BUG REPRODUCED in round 47: 6 thread(s) saw the reported symptom, e.g.
+  C.model_validate(...) returned B(id='ok1'), a B instead of a C
+
+===== run 3: exit 1
+pydantic 2.11.4, python 3.13.16, 8 threads per round
+BUG REPRODUCED in round 17: 7 thread(s) saw the reported symptom, e.g.
+  Direct(...) raised PydanticUserError: Pydantic models should inherit from BaseModel, BaseModel cannot be instantiated directly
+

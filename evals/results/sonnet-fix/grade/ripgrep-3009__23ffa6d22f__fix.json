@@ -1,0 +1,15 @@
+{
+  "label": "ripgrep-3009__23ffa6d22f__fix",
+  "case": "ripgrep-3009",
+  "files": [
+    "crates/ignore/src/walk.rs"
+  ],
+  "test_in_patch": true,
+  "F": false,
+  "applied": true,
+  "codes": [
+    "timeout",
+    "timeout",
+    "timeout"
+  ]
+}

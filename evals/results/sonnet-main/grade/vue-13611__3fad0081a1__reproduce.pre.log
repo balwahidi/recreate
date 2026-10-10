@@ -1,0 +1,36 @@
+===== run 1: exit 1
+ Vitest  "environmentMatchGlobs" is deprecated. Use "workspace" to define different configurations instead.
+ Vitest  "environmentMatchGlobs" is deprecated. Use "workspace" to define different configurations instead.
+ Vitest  "environmentMatchGlobs" is deprecated. Use "workspace" to define different configurations instead.
+
+ RUN  v3.1.4 /root/grade/vue-13611/repo
+
+ ❯ |unit| packages/vue/__tests__/slotUnderscoreName.spec.ts (1 test | 1 failed) 45ms
+   × <template #_slot> content replaces fallback next to a v-if slot template 44ms
+     → expected 'default1|default2' to be 'one|two' // Object.is equality
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| packages/vue/__tests__/slotUnderscoreName.spec.ts > <template #_slot> content replaces fallback next to a v-if slot template
+AssertionError: expected 'default1|default2' to be 'one|two' // Object.is equality
+
+Expected: [32m"one|two"[39m
+Received: [31m"default1|default2"[39m
+
+ ❯ packages/vue/__tests__/slotUnderscoreName.spec.ts:31:71
+     29|   const root = document.createElement('div')
+     30|   app.mount(root)
+     31|   expect(root.querySelector('.sub')!.textContent!.replace(/\s/g, '')).…
+       |                                                                       ^
+     32|     'one|two',
+     33|   )
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed (1)
+   Start at  13:15:07
+   Duration  2.49s (transform 1.28s, setup 19ms, collect 1.68s, tests 45ms, environment 376ms, prepare 70ms)
+
+

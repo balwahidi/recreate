@@ -1,0 +1,5 @@
+===== run 1: exit 0
+eslint exit status: 0 (open-file limit 1024, 1500 fixable files)
+files still unfixed: 0 / 1500
+PASS: all files fixed
+

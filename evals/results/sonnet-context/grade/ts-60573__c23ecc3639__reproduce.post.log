@@ -1,0 +1,12 @@
+===== run 1: exit 0
+== tsc diagnostics (built/local/tsc.js) ==
+repro/repro.ts(26,7): error TS2322: Type '{ prop1: "hello"; }' is not assignable to type 'number'.
+repro/repro.ts(34,7): error TS2322: Type '{ prop1: "hello"; }' is not assignable to type 'number'.
+
+== checker display vs. actual property type ==
+typescript 5.8.0-dev
+Test displays as: { prop1: "hello"; }
+Test["prop1"] actual type: "hello"
+Test2 displays as: { prop1: "hello"; }
+Test2["prop1"] actual type: "hello"
+

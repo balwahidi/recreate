@@ -51,7 +51,7 @@ The evaluated agent returns `final_message`, `patch` (its whole working tree dif
 3. Apply only the upstream production fix.
 4. Run the command again: the "post" side.
 
-A useful reproduction is `fail_to_pass`: non-zero exit before the fix, zero after. Commands for flaky cases run 3 times per side. Every verdict comes with pre and post logs, and I read the logs before accepting a verdict.
+A useful reproduction is `fail_to_pass`: non-zero exit before the fix, zero after. `pass_to_fail` (zero before, non-zero after) is fix-sensitive but has inverted exit status: it exits zero while the bug is present. Earlier grader versions labelled it `fails_both`. No result stored here has that pattern, but the October 2026 GPT-6.1 Sol experiments (handoff branch) do. Commands for flaky cases run 3 times per side. Every verdict comes with pre and post logs, and I read the logs before accepting a verdict.
 
 Per-case adjustments, all in `grade.py` or the grading environment:
 
@@ -69,3 +69,28 @@ Per-case adjustments, all in `grade.py` or the grading environment:
 - Report length in words, and session minutes compared within the same run.
 
 **Grader isolation.** Each side starts from a reset checkout, with the agent patch reapplied. Git-ignored files (installed dependencies, build caches) are kept between sides and samples, because reinstalling for every side is too costly. Generated output that the commands consume is rebuilt on each side (`BUILD`). Other ignored state could still carry over, which is one more reason the logs behind each verdict that separates the arms were read by hand.
+
+## Sonnet harness (v5 to v7 evaluations)
+
+`evals/sonnet/` runs the v5, v6 and v7 evaluations with Sonnet Agent-tool subagents. Each step is a separate script:
+
+1. `harness.py plan` freezes a run list with a seed.
+2. `harness.py provision` copies a prepared checkout into `/work/runs/<random id>` and writes the prompt there. The checkout never contains the fix commit, and the path carries no issue, PR or fix number.
+3. `harness.py collect` computes the agent's patch against the pinned checkout.
+4. `grade_runs.py` replays the patch with `evals/grade.py`:
+   - pydantic runs in its venv;
+   - urfave/cli gets its upstream test patch;
+   - TypeScript gets a CRLF version of the fix;
+   - ripgrep gets the fix without its test module;
+   - dependencies are reinstalled only when a patch touches a manifest.
+5. `audit.py` scans every transcript for tool calls outside the workspace or toward the resolution.
+6. `blind.py` shows replay logs under run ids, without the arm.
+7. `analyze.py` applies the frozen decision rule.
+
+`prepare.py` builds the per-case agent bases and grading checkouts.
+
+Isolation is instructed, not enforced: same machine and user. It is checked afterwards by the transcript audit.
+
+Runs share one process namespace, which matters for concurrency. In the v7 test, four ripgrep runs ran at once. Their test binaries had the same name, and each agent cleared hung tests with `pkill` by name, which can hit another run's process. Replay grading is unaffected, but what an agent observes can be. Cases with hang-prone tests should run one at a time.
+
+From the v7 test on, blind review is done by a fresh agent that sees only the shuffled `blind.py` output and the symptom criteria.

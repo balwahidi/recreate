@@ -1,0 +1,16 @@
+{
+  "label": "eslint-19924__7418308938__fix",
+  "case": "eslint-19924",
+  "files": [
+    "lib/eslint/eslint.js",
+    "lib/eslint/legacy-eslint.js",
+    "tests/lib/eslint/eslint.js",
+    "tests/lib/eslint/legacy-eslint.js"
+  ],
+  "test_in_patch": true,
+  "F": true,
+  "applied": true,
+  "codes": [
+    0
+  ]
+}

@@ -1,0 +1,5 @@
+===== run 1: exit 0
+typescript 5.8.0-dev
+typeToString(Test): { prop1: "hello"; }
+quickinfo:          type Test = { prop1: "hello"; }
+
