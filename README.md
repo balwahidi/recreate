@@ -89,6 +89,7 @@ Older texts are in `evals/variants/` and `evals/notes/`.
 - `cases/`: pinned historical issues and issue snapshots
 - `evals/`: prompts, replay grader, raw results and run notes
 - `evals/sonnet/`: the Sonnet harness (provisioning, audit, blind review, analysis)
+- `handoff/`: the October 2026 GPT-6.1 Sol evidence archive (evaluator-only: it holds upstream fixes)
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) to propose instruction changes.
 
